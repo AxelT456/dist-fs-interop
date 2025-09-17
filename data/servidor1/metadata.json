@@ -1,0 +1,14 @@
+{
+  "LibroA": {
+    "formato": "txt",
+    "tama\u00f1o": 65,
+    "descripcion": "Libro de ejemplo A",
+    "autor": "Autor Desconocido"
+  },
+  "LibroB": {
+    "formato": "pdf",
+    "tama\u00f1o": 45,
+    "descripcion": "Libro de ejemplo B",
+    "autor": "Otro Autor"
+  }
+}
