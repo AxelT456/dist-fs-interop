@@ -29,17 +29,17 @@ def run_test_client():
         cid = random.randint(1000, 9999)
         syn = {"type": "SYN", "seq": cid}
         jsend(sock, syn, SADDR)
-        print("-> SYN enviado...")
+            print("SYN enviado...")
 
         data, _ = sock.recvfrom(65535)
         msg = json.loads(data.decode("utf-8").splitlines()[0])
         
         if msg.get("type") == "SYN-ACK":
             sid = msg['seq']
-            print("<- SYN-ACK recibido.")
+            print("SYN-ACK recibido.")
             ack = {"type": "ACK", "ack": sid + 1, "cid": cid, "sid": sid}
             jsend(sock, ack, SADDR)
-            print("-> ACK final enviado. Conexión establecida.")
+            print("ACK final enviado. Conexión establecida.")
 
             # --- NUEVO PASO: CIFRAR EL PAYLOAD ---
             # 4. Crear una sesión de seguridad
@@ -53,7 +53,7 @@ def run_test_client():
             # 5. Cifrar el mensaje
             plaintext_payload = b"hola mundo seguro y cifrado!"
             encrypted_record = session.encrypt(plaintext_payload)
-            print(f"-> Payload cifrado: {encrypted_record}")
+            print(f"Payload cifrado: {encrypted_record}")
 
             # 6. Enviar el payload cifrado
             data_packet = {
@@ -62,12 +62,12 @@ def run_test_client():
                 "payload": encrypted_record # Enviamos el diccionario cifrado
             }
             jsend(sock, data_packet, SADDR)
-            print("-> Paquete de datos cifrado enviado.")
-            print("\n✅ Prueba del cliente finalizada con éxito.")
+            print("Paquete de datos cifrado enviado.")
+            print("\nPrueba del cliente finalizada con éxito.")
         else:
             print("Error: No se recibió SYN-ACK.")
     except socket.timeout:
-        print("❌ Error: Timeout esperando respuesta del servidor.")
+        print("Error: Timeout esperando respuesta del servidor.")
     finally:
         sock.close()
 
