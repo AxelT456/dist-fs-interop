@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href='style.css'>
+    <title>Editar {{ nombre_archivo }}</title>
+</head>
+<body>
+    <h1>Editando: {{ nombre_archivo }}</h1>
+    <form method="post">
+        <textarea name="contenido" rows="20" cols="80">{{ contenido }}</textarea><br><br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>
