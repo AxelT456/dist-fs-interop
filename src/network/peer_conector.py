@@ -1,5 +1,4 @@
 # /src/network/peer_conector.py
-
 import json
 import secrets
 from typing import Dict, Tuple, Optional
@@ -16,7 +15,7 @@ class PeerConnector:
     Orquesta la comunicación con otros servidores (peers).
     Utiliza ReliableTransport para la conexión y SecureSession para el cifrado.
     """
-    def __init__(self, transport_layer: ReliableTransport, server_id: str):
+    def _init_(self, transport_layer: ReliableTransport, server_id: str):
         self.transport = transport_layer
         self.server_id = server_id
         self.sessions: Dict[Tuple[str, int], SecureSession] = {}
