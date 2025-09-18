@@ -15,6 +15,7 @@ from src.network.peer_conector import PeerConnector
 from src.core.catalog_manager import CatalogManager
 from src.core.file_handler import FileHandler
 from src.web.controller import start_web_server
+from src.network.dns_translator.translator import DNSTranslator # ¡Importación Clave!
 
 # --- 2. Configuración ---
 CONFIG_FILE = "config.json"
@@ -30,91 +31,95 @@ class MainServer:
         # --- 3. Instanciación de Componentes ---
         self.transport = ReliableTransport(self.host, self.port)
         self.connector = PeerConnector(self.transport, self.server_id, self._on_decrypted_message)
-        
-        # Se instancia tu CatalogManager y FileHandler
         self.catalog_manager = CatalogManager(self.server_id)
         self.file_handler = FileHandler(self.server_id)
-        # Poblar el catálogo local con archivos de ejemplo
+        
+        # ¡NUEVO! Se instancia el DNSTranslator con la configuración.
+        self.translator = DNSTranslator(config)
+        
         self._populate_local_files()
-
         print(f"✅ Servidor P2P listo.")
 
     def _populate_local_files(self):
         """Simula la carga de archivos locales al iniciar."""
-        # En un sistema real, esto escanearía el directorio de datos.
-        # Usamos datos de ejemplo para la prueba.
         if self.server_id == "server-A":
             self.catalog_manager.add_local_file("LibroA.txt")
             self.catalog_manager.add_local_file("LibroB.pdf")
+        elif self.server_id == "server-B":
+            self.catalog_manager.add_local_file("DocumentoX.docx")
 
     def bootstrap_network(self):
         """
-        Orquesta el proceso de arranque y sincronización de la red.
+        Orquesta el arranque de la red usando el DNSTranslator para descubrir peers.
         """
-        print("\n--- Iniciando Bootstrap de la Red ---")
-        peers = self.config.get("peers", [])
-        if not peers:
-            print("⚠️ No hay peers en la configuración. Construyendo catálogo solo con archivos locales.")
+        print("\n--- Iniciando Bootstrap (Modo Interoperabilidad DNS) ---")
+        peers_to_find = self.config.get("peers", [])
+        if not peers_to_find:
             self.catalog_manager.build_master_catalog()
             self.catalog_manager.print_catalog_summary()
             return
 
-        # 1. Solicitar catálogos a todos los peers
-        print(f"-> Solicitando catálogos a {len(peers)} peers...")
-        request = self.catalog_manager.get_bootstrap_message() #
-        for peer in peers:
-            peer_addr = (peer["host"], peer["port"])
-            # Se establece la conexión de transporte y luego la de seguridad
-            if self.transport.connect(peer_addr):
-                self.connector.connect_and_secure(peer_addr)
-                time.sleep(0.5) # Dar tiempo para que se complete el handshake
-                self.connector.send_message(request, peer_addr)
+        # 1. Resolver, conectar y solicitar catálogos
+        print(f"-> Descubriendo y solicitando catálogos a {len(peers_to_find)} peers...")
+        request = self.catalog_manager.get_bootstrap_message()
 
-        # 2. Esperar respuestas y construir el catálogo maestro
-        print("⏳ Esperando respuestas de los peers (espera de 3 segundos)...")
+        for peer_info in peers_to_find:
+            peer_id = peer_info["id"]
+            dns_id_for_peer = peer_info["dns_id"]
+            
+            print(f"   - Resolviendo '{peer_id}' usando el DNS '{dns_id_for_peer}'...")
+            
+            # ¡AQUÍ ESTÁ LA LÓGICA CLAVE!
+            # Se usa el traductor para obtener la dirección del peer.
+            peer_addr = self.translator.resolve(peer_id, dns_id_for_peer)
+            
+            if peer_addr:
+                print(f"     ✅ Dirección resuelta: {peer_addr}")
+                # Si se encontró la dirección, se conecta y pide el catálogo
+                if self.transport.connect(peer_addr):
+                    self.connector.connect_and_secure(peer_addr)
+                    time.sleep(0.5) # Pausa para el handshake de seguridad
+                    self.connector.send_message(request, peer_addr)
+            else:
+                print(f"     ❌ Falló la resolución de '{peer_id}'.")
+
+        # 2. Esperar respuestas, construir y distribuir el catálogo maestro
+        print("\n⏳ Esperando respuestas de los peers (3 segundos)...")
         time.sleep(3)
-        self.catalog_manager.build_master_catalog() #
+        self.catalog_manager.build_master_catalog()
 
-        # 3. Distribuir el catálogo maestro completo
-        print(f"-> Distribuyendo catálogo maestro a {len(peers)} peers...")
-        distribute_request = self.catalog_manager.get_distribute_catalog_message() #
-        for peer in peers:
-            peer_addr = (peer["host"], peer["port"])
-            self.connector.send_message(distribute_request, peer_addr)
-        
+        distribute_request = self.catalog_manager.get_distribute_catalog_message()
+        print(f"-> Distribuyendo catálogo maestro a los peers resueltos...")
+        # Volvemos a resolver para asegurarnos de tener las IPs correctas para la distribución
+        for peer_info in peers_to_find:
+             peer_addr = self.translator.resolve(peer_info["id"], peer_info["dns_id"])
+             if peer_addr:
+                self.connector.send_message(distribute_request, peer_addr)
+
         self.catalog_manager.print_catalog_summary()
         print("--- ✅ Bootstrap Completado ---")
 
     def _on_decrypted_message(self, request: Dict, addr: tuple):
-        """Manejador de mensajes que delega a los componentes correctos."""
+        """Manejador principal de mensajes que delega a los componentes correctos."""
         response_data = self.process_request(request, addr)
         if response_data:
             self.connector.send_message(response_data, addr)
 
     def process_request(self, request: Dict, client_addr: tuple) -> Dict:
-        """Procesa peticiones P2P usando los manejadores."""
+        """Procesa peticiones P2P usando los manejadores de lógica."""
         msg_type = request.get("type")
         
-        # --- Lógica de Bootstrap ---
         if msg_type == "GET_CATALOG_INFO":
             return self.catalog_manager.get_local_catalog_info()
-        
         elif msg_type == "CATALOG_INFO_RESPONSE":
             self.catalog_manager.process_catalog_response(request, client_addr)
-            return None # No se necesita respuesta para un ACK
-
+            return None
         elif msg_type == "DISTRIBUTE_MASTER_CATALOG":
             self.catalog_manager.process_master_catalog_distribution(request)
             return None
-
-        # --- Lógica de Archivos ---
         elif msg_type == "GET_FILE_COPY":
             return self.file_handler.process_file_copy_request(request)
-        
-        # ... otros tipos de mensajes ...
-
         else:
-            print(f"⚠️ Mensaje con tipo desconocido recibido: {msg_type}")
             return {"type": "ERROR", "message": f"Tipo de mensaje no reconocido: {msg_type}"}
 
     def run(self):
@@ -136,7 +141,7 @@ class MainServer:
 # --- Punto de Entrada ---
 def main():
     print("="*60)
-    print("SISTEMA DE ARCHIVOS DISTRIBUIDO P2P - v4.0 (con Bootstrap)")
+    print("SISTEMA DE ARCHIVOS DISTRIBUIDO v5.0 (con Interoperabilidad DNS)")
     print("="*60)
     
     try:
@@ -148,7 +153,6 @@ def main():
 
     server = MainServer(config)
     
-    # Iniciar servidor WEB en un hilo
     web_thread = threading.Thread(
         target=start_web_server,
         args=(server.catalog_manager, server.file_handler),
@@ -156,15 +160,12 @@ def main():
     )
     web_thread.start()
 
-    # Dar un respiro para que los servidores se inicien antes del bootstrap
     print("Servidores iniciándose, esperando 5 segundos antes del bootstrap...")
     time.sleep(5)
     
-    # Iniciar el proceso de Bootstrap en un hilo para no bloquear
     bootstrap_thread = threading.Thread(target=server.bootstrap_network, daemon=True)
     bootstrap_thread.start()
 
-    # El hilo principal se queda en el bucle de escucha P2P
     server.run()
 
 if __name__ == "__main__":

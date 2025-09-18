@@ -1,94 +1,92 @@
 # /src/network/dns_translator/translator.py
-import logging
+
+import json
 import socket
+import logging
+from typing import Dict, Optional, Tuple
+
+# --- Define aquí los 5 drivers de tu equipo ---
+# Cada driver es un diccionario con dos funciones: 'encode' y 'decode'
+
+def driver_checa():
+    """Driver para el DNS que espera un formato específico."""
+    return {
+        "encode": lambda server_name: {"accion": "consultar", "nombre_servidor": server_name},
+        "decode": lambda response: (response.get("ip"), response.get("port"))
+    }
+
+def driver_axel():
+    """Driver para otro formato de DNS."""
+    return {
+        "encode": lambda server_name: {"type": "lookup", "server": server_name},
+        "decode": lambda response: (response.get("address"), response.get("port"))
+    }
+
+# ... Añade aquí los drivers de los otros 3 integrantes ...
 
 class DNSTranslator:
-    def __init__(self):
-        self.dns_drivers = {}  # id_dns -> driver_func
+    def __init__(self, config: Dict):
+        self.dns_servers_config = {dns["id"]: dns for dns in config.get("dns_servers", [])}
+        self.drivers = {}
+        self._register_drivers()
+        print(f"[DNSTranslator] Traductor inicializado con {len(self.drivers)} drivers.")
 
-    def registrar_driver(self, id_dns: int, driver_func):
-        self.dns_drivers[id_dns] = driver_func
-        logging.info(f"Driver para DNS-{id_dns} registrado.")
-    
-    def registrar_drivers(self, drivers_list: list[dict]):
-        for entry in drivers_list:
-            self.dns_drivers[entry["id"]] = entry["driver"]
-        logging.info(f"Drivers registrados: {[entry['id'] for entry in drivers_list]}")
+    def _register_drivers(self):
+        """Carga todos los drivers disponibles."""
+        self.drivers["driver_checa"] = driver_checa()
+        self.drivers["driver_axel"] = driver_axel()
+        # ... registra los otros 3 drivers aquí ...
 
-    def traducir(self, json_cliente: dict, dns_config: dict) -> str:
+    def resolve(self, server_id: str, dns_id: str) -> Optional[Tuple[str, int]]:
         """
-        json_cliente: petición del cliente
-        dns_config: {"id": 1, "ip": "192.168.0.10", "driver": driver_dns_basico}
+        Resuelve el nombre de un servidor usando el DNS y driver correctos.
+        Este es el único método que el resto de la aplicación debe llamar.
+        """
+        if dns_id not in self.dns_servers_config:
+            logging.error(f"Configuración para DNS ID '{dns_id}' no encontrada.")
+            return None
         
-        Devuelve la IP traducida (ej. "192.168.0.55")
-        """
-        id_dns = dns_config["id"]
-        if id_dns not in self.dns_drivers:
-            raise ValueError(f"No existe un driver registrado para el DNS {id_dns}")
+        dns_config = self.dns_servers_config[dns_id]
+        driver_name = dns_config.get("driver")
         
-        driver_func = self.dns_drivers[id_dns]
-
-        # 1. Convertir consulta al formato del DNS
-        consulta = driver_func["encode"](json_cliente)
-
-        # 2. Enviar la consulta al DNS remoto (simulación UDP por ejemplo)
-        ip_dns = dns_config["ip"]
-        respuesta_raw = self._enviar_consulta(ip_dns, consulta)
-
-        # 3. Interpretar la respuesta usando el driver
-        ip_resultado = driver_func["decode"](respuesta_raw)
-
-        return ip_resultado
-
-    def _enviar_consulta(self, ip: str, consulta: dict) -> dict:
-        """
-        Simula el envío de una consulta a un servidor DNS real.
-        Aquí puedes usar socket UDP/TCP, o incluso HTTP si ese DNS lo requiere.
-        """
-        logging.info(f"Enviando consulta a {ip}: {consulta}")
+        if driver_name not in self.drivers:
+            logging.error(f"Driver '{driver_name}' no encontrado para el DNS '{dns_id}'.")
+            return None
         
-        # DEMO: devolver respuesta fija
-        return {"status": "ok", "ip": "192.168.0.55"}
+        driver = self.drivers[driver_name]
+        dns_address = (dns_config["host"], dns_config["port"])
 
+        try:
+            # 1. Codificar la petición usando el driver específico
+            request_payload = driver["encode"](server_id)
+            
+            # 2. Enviar la consulta de red al servidor DNS
+            response_payload = self._send_query(dns_address, request_payload)
+            if not response_payload:
+                return None
 
-# DNS básico
-driver_dns_basico = {
-    "encode": lambda json_cliente: {
-        "accion": "consultar",
-        "nombre_archivo": json_cliente.get("archivo")
-    },
-    "decode": lambda resp: resp.get("ip")  # extraer IP del DNS
-}
+            # 3. Decodificar la respuesta usando el mismo driver
+            ip, port = driver["decode"](response_payload)
+            
+            if ip and port:
+                return (ip, port)
+            return None
+            
+        except Exception as e:
+            logging.error(f"Fallo en la resolución DNS para '{server_id}' usando '{dns_id}': {e}")
+            return None
 
-# DNS v2
-driver_dns_v2 = {
-    "encode": lambda json_cliente: {
-        "type": "lookup",
-        "file": json_cliente.get("archivo"),
-        "options": {"recursive": False}
-    },
-    "decode": lambda resp: resp.get("ip")
-}
-
-'''
-FLUJO ESPERADO
-
-dns_servers = [
-    {"id": 1, "ip": "192.168.0.10", "driver": driver_dns_basico},
-    {"id": 2, "ip": "192.168.0.11", "driver": driver_dns_v2},
-    {"id": 3, "ip": "192.168.0.12", "driver": driver_dns_basico},
-]
-
-traductor = DNSTranslator()
-traductor.registrar_drivers(dns_servers)
-
-# Cliente pide archivo
-json_cliente = {"accion": "consultar", "archivo": "reporte.pdf"}
-
-# Preguntamos al DNS-2
-ip_resultado = traductor.traducir(json_cliente, dns_servers[1])
-print(f"IP obtenida desde DNS-2: {ip_resultado}")
-
-# Ahora PeerConnector se encarga de conectarse a esa IP
-
-'''
+    def _send_query(self, dns_addr: Tuple[str, int], payload: Dict) -> Optional[Dict]:
+        """Envía una consulta UDP a un servidor DNS y espera la respuesta."""
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+                sock.settimeout(3.0) # 3 segundos de espera
+                sock.sendto(json.dumps(payload).encode("utf-8"), dns_addr)
+                data, _ = sock.recvfrom(4096)
+                return json.loads(data.decode("utf-8"))
+        except socket.timeout:
+            logging.warning(f"Timeout consultando al DNS en {dns_addr}")
+            return None
+        except Exception as e:
+            logging.error(f"Error de red consultando al DNS en {dns_addr}: {e}")
+            return None

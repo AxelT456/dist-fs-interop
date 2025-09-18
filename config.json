@@ -2,30 +2,38 @@
   "server_id": "server-A",
   "host": "127.0.0.1",
   "port": 8080,
+  "file_storage_path": "./files",
+  "log_level": "INFO",
+
+  "dns_servers": [
+    {
+      "id": "dns_de_Chris",
+      "host": "127.0.0.1",
+      "port": 5353,
+      "driver": "driver_chris"
+    },
+    {
+      "id": "dns_de_axel",
+      "host": "127.0.0.1", 
+      "port": 5354,
+      "driver": "driver_axel"
+    },
+    {
+      "id": "dns_de_marco",
+      "host": "127.0.0.1",
+      "port": 5355,
+      "driver": "driver_marco"
+    }
+  ],
+
   "peers": [
     {
       "id": "server-B",
-      "host": "127.0.0.1",
-      "port": 8081
+      "dns_id": "dns_de_axel"
     },
     {
-      "id": "server-C", 
-      "host": "127.0.0.1",
-      "port": 8082
+      "id": "server-C",
+      "dns_id": "dns_de_marco"
     }
-  ],
-  "dns_servers": [
-    {
-      "name": "dns1",
-      "host": "127.0.0.1",
-      "port": 5353
-    },
-    {
-      "name": "dns2",
-      "host": "127.0.0.1", 
-      "port": 5354
-    }
-  ],
-  "file_storage_path": "./files",
-  "log_level": "INFO"
+  ]
 }
