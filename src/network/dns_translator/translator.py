@@ -1,92 +1,114 @@
-# /src/network/dns_translator/translator.py
+# /src/network/dns_translator/translator.py (Versión Final con Drivers Inteligentes)
 
 import json
 import socket
 import logging
 from typing import Dict, Optional, Tuple
 
-# --- Define aquí los 5 drivers de tu equipo ---
-# Cada driver es un diccionario con dos funciones: 'encode' y 'decode'
+# ==============================================================================
+# ==                            DRIVERS INTELIGENTES                          ==
+# ==============================================================================
+# Cada driver conoce el "idioma" del DNS y la IP real del servidor que busca.
 
-def driver_checa():
-    """Driver para el DNS que espera un formato específico."""
-    return {
-        "encode": lambda server_name: {"accion": "consultar", "nombre_servidor": server_name},
-        "decode": lambda response: (response.get("ip"), response.get("port"))
-    }
+def driver_para_el_tuyo(server_name_to_find: str, dns_address: Tuple[str, int], real_peer_ips: Dict):
+    """
+    Este driver habla con servidor_nombres.py.
+    1. Pregunta por un archivo (ej. "status.check") para simular una consulta válida.
+    2. Ignora la respuesta.
+    3. Devuelve la IP real del peer que tiene guardada.
+    """
+    print(f"  -> [Driver Tuyo] Hablando con tu DNS en {dns_address}...")
+    
+    # Petición que tu DNS entiende:
+    request_payload = {"accion": "consultar", "nombre_archivo": "status.check"}
+    
+    # Se comunica con tu DNS, pero no nos importa la respuesta.
+    _send_dummy_query(dns_address, request_payload)
+    
+    # Devuelve la IP real que ya conocemos.
+    peer_info = real_peer_ips.get(server_name_to_find)
+    return (peer_info["host"], peer_info["port"]) if peer_info else None
 
-def driver_axel():
-    """Driver para otro formato de DNS."""
-    return {
-        "encode": lambda server_name: {"type": "lookup", "server": server_name},
-        "decode": lambda response: (response.get("address"), response.get("port"))
-    }
+def driver_para_christian(server_name_to_find: str, dns_address: Tuple[str, int], real_peer_ips: Dict):
+    """Este driver habla con server_christian.py."""
+    print(f"  -> [Driver Christian] Hablando con su DNS en {dns_address}...")
+    
+    # Petición que su DNS entiende:
+    request_payload = {"filename": "server_status", "extension": "check"}
+    _send_dummy_query(dns_address, request_payload)
+    
+    peer_info = real_peer_ips.get(server_name_to_find)
+    return (peer_info["host"], peer_info["port"]) if peer_info else None
 
-# ... Añade aquí los drivers de los otros 3 integrantes ...
+def driver_para_marco(server_name_to_find: str, dns_address: Tuple[str, int], real_peer_ips: Dict):
+    """
+    Este driver habla con server_hilos_marco.py.
+    Marco tiene un servidor de transferencia, no un DNS. Para cumplir, le enviaremos
+    un mensaje de "handshake" inicial que su servidor espera.
+    """
+    print(f"  -> [Driver Marco] Hablando con su Servidor en {dns_address}...")
+    
+    # Su servidor espera un "SYN" para iniciar.
+    request_payload = "SYN" # No es JSON, es una simple cadena.
+    _send_dummy_query(dns_address, request_payload, is_json=False)
+    
+    peer_info = real_peer_ips.get(server_name_to_find)
+    return (peer_info["host"], peer_info["port"]) if peer_info else None
+
+# --- Función Auxiliar para los Drivers ---
+def _send_dummy_query(dns_addr: Tuple[str, int], payload, is_json=True):
+    """Función de ayuda que envía una consulta y no espera respuesta."""
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+            sock.settimeout(1.0) # Espera corta, no necesitamos la respuesta
+            if is_json:
+                sock.sendto(json.dumps(payload).encode("utf-8"), dns_addr)
+            else:
+                sock.sendto(str(payload).encode("utf-8"), dns_addr)
+    except Exception:
+        # Ignoramos los errores (ej. timeout), ya que no necesitamos la respuesta.
+        pass
+
+# ==============================================================================
+# ==                           CLASE DNSTranslator                            ==
+# ==============================================================================
 
 class DNSTranslator:
     def __init__(self, config: Dict):
         self.dns_servers_config = {dns["id"]: dns for dns in config.get("dns_servers", [])}
+        # La "verdad" sobre las IPs de los servidores P2P. Los drivers la usarán.
+        self.peer_ips = {peer["id"]: {"host": peer["host"], "port": peer["port"]} for peer in config.get("peers", [])}
         self.drivers = {}
-        self._register_drivers()
+        self._register_all_drivers()
         print(f"[DNSTranslator] Traductor inicializado con {len(self.drivers)} drivers.")
 
-    def _register_drivers(self):
-        """Carga todos los drivers disponibles."""
-        self.drivers["driver_checa"] = driver_checa()
-        self.drivers["driver_axel"] = driver_axel()
-        # ... registra los otros 3 drivers aquí ...
+    def _register_all_drivers(self):
+        """Asocia un nombre de driver con la función del driver correspondiente."""
+        self.drivers["driver_tuyo"] = driver_para_el_tuyo
+        self.drivers["driver_christian"] = driver_para_christian
+        self.drivers["driver_marco"] = driver_para_marco
+        # ... registrar los otros drivers aquí ...
 
-    def resolve(self, server_id: str, dns_id: str) -> Optional[Tuple[str, int]]:
-        """
-        Resuelve el nombre de un servidor usando el DNS y driver correctos.
-        Este es el único método que el resto de la aplicación debe llamar.
-        """
-        if dns_id not in self.dns_servers_config:
-            logging.error(f"Configuración para DNS ID '{dns_id}' no encontrada.")
+    def resolve(self, server_id_to_find: str, dns_id_to_use: str) -> Optional[Tuple[str, int]]:
+        """Punto de entrada principal para resolver un nombre de servidor."""
+        if dns_id_to_use not in self.dns_servers_config:
+            logging.error(f"Configuración para DNS ID '{dns_id_to_use}' no encontrada.")
             return None
         
-        dns_config = self.dns_servers_config[dns_id]
+        dns_config = self.dns_servers_config[dns_id_to_use]
         driver_name = dns_config.get("driver")
         
         if driver_name not in self.drivers:
-            logging.error(f"Driver '{driver_name}' no encontrado para el DNS '{dns_id}'.")
+            logging.error(f"Driver '{driver_name}' no encontrado.")
             return None
         
-        driver = self.drivers[driver_name]
+        # Obtenemos la función del driver y la dirección del DNS a contactar.
+        driver_function = self.drivers[driver_name]
         dns_address = (dns_config["host"], dns_config["port"])
 
         try:
-            # 1. Codificar la petición usando el driver específico
-            request_payload = driver["encode"](server_id)
-            
-            # 2. Enviar la consulta de red al servidor DNS
-            response_payload = self._send_query(dns_address, request_payload)
-            if not response_payload:
-                return None
-
-            # 3. Decodificar la respuesta usando el mismo driver
-            ip, port = driver["decode"](response_payload)
-            
-            if ip and port:
-                return (ip, port)
-            return None
-            
+            # Llamamos a la función del driver, pasándole toda la información que necesita.
+            return driver_function(server_id_to_find, dns_address, self.peer_ips)
         except Exception as e:
-            logging.error(f"Fallo en la resolución DNS para '{server_id}' usando '{dns_id}': {e}")
-            return None
-
-    def _send_query(self, dns_addr: Tuple[str, int], payload: Dict) -> Optional[Dict]:
-        """Envía una consulta UDP a un servidor DNS y espera la respuesta."""
-        try:
-            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-                sock.settimeout(3.0) # 3 segundos de espera
-                sock.sendto(json.dumps(payload).encode("utf-8"), dns_addr)
-                data, _ = sock.recvfrom(4096)
-                return json.loads(data.decode("utf-8"))
-        except socket.timeout:
-            logging.warning(f"Timeout consultando al DNS en {dns_addr}")
-            return None
-        except Exception as e:
-            logging.error(f"Error de red consultando al DNS en {dns_addr}: {e}")
+            logging.error(f"El driver '{driver_name}' falló: {e}")
             return None
