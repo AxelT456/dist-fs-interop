@@ -1,172 +1,170 @@
 # /main_server.py
+
 import json
-import sys
 import os
-from typing import Dict, List
+import sys
+import threading
+import time
+from typing import Dict
 
-# Añade la carpeta src al path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+# --- 1. Importaciones ---
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+from src.network.transport import ReliableTransport
+from src.network.peer_conector import PeerConnector
 from src.core.catalog_manager import CatalogManager
 from src.core.file_handler import FileHandler
-from src.network.transport import ReliableTransport
-from src.network.security import SecureSession
+from src.web.controller import start_web_server
 
-class DistributedFileServer:
-    """
-    Servidor principal que integra todos los componentes del sistema distribuido.
-    Coordina la comunicación entre la lógica de negocio y la capa de red.
-    """
-    
-    def __init__(self, config_file: str = "config.json"):
-        self.config = self.load_config(config_file)
-        self.server_id = self.config["server_id"]
-        self.host = self.config["host"]
-        self.port = self.config["port"]
+# --- 2. Configuración ---
+CONFIG_FILE = "config.json"
+
+class MainServer:
+    def __init__(self, config: Dict):
+        self.config = config
+        self.server_id = config["server_id"]
+        self.host = config["host"]
+        self.port = config["port"]
+        print(f"🚀 Iniciando servidor P2P '{self.server_id}' en {self.host}:{self.port}...")
+
+        # --- 3. Instanciación de Componentes ---
+        self.transport = ReliableTransport(self.host, self.port)
+        self.connector = PeerConnector(self.transport, self.server_id, self._on_decrypted_message)
         
-        # Inicializar componentes
+        # Se instancia tu CatalogManager y FileHandler
         self.catalog_manager = CatalogManager(self.server_id)
         self.file_handler = FileHandler(self.server_id)
-        self.transport = ReliableTransport(self.host, self.port)
-        self.security_session = SecureSession()
-        
-        # Configurar peers
-        peer_addresses = [(peer["host"], peer["port"]) for peer in self.config["peers"]]
-        self.catalog_manager.set_peer_addresses(peer_addresses)
-        
-        print(f"Servidor {self.server_id} inicializado en {self.host}:{self.port}")
-    
-    def load_config(self, config_file: str) -> Dict:
-        """Carga la configuración del sistema desde archivo JSON."""
-        try:
-            with open(config_file, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            print(f"Error: Archivo de configuración no encontrado: {config_file}")
-            sys.exit(1)
-        except json.JSONDecodeError as e:
-            print(f"Error en configuración JSON: {e}")
-            sys.exit(1)
-    
-    def bootstrap_system(self):
-        """Inicializa el sistema realizando la sincronización inicial de catálogos."""
-        print("Iniciando bootstrap del sistema...")
-        
+        # Poblar el catálogo local con archivos de ejemplo
+        self._populate_local_files()
+
+        print(f"✅ Servidor P2P listo.")
+
+    def _populate_local_files(self):
+        """Simula la carga de archivos locales al iniciar."""
+        # En un sistema real, esto escanearía el directorio de datos.
+        # Usamos datos de ejemplo para la prueba.
+        if self.server_id == "server-A":
+            self.catalog_manager.add_local_file("LibroA.txt")
+            self.catalog_manager.add_local_file("LibroB.pdf")
+
+    def bootstrap_network(self):
+        """
+        Orquesta el proceso de arranque y sincronización de la red.
+        """
+        print("\n--- Iniciando Bootstrap de la Red ---")
+        peers = self.config.get("peers", [])
+        if not peers:
+            print("⚠️ No hay peers en la configuración. Construyendo catálogo solo con archivos locales.")
+            self.catalog_manager.build_master_catalog()
+            self.catalog_manager.print_catalog_summary()
+            return
+
         # 1. Solicitar catálogos a todos los peers
-        bootstrap_msg = self.catalog_manager.get_bootstrap_message()
-        peer_addresses = [(peer["host"], peer["port"]) for peer in self.config["peers"]]
+        print(f"-> Solicitando catálogos a {len(peers)} peers...")
+        request = self.catalog_manager.get_bootstrap_message() #
+        for peer in peers:
+            peer_addr = (peer["host"], peer["port"])
+            # Se establece la conexión de transporte y luego la de seguridad
+            if self.transport.connect(peer_addr):
+                self.connector.connect_and_secure(peer_addr)
+                time.sleep(0.5) # Dar tiempo para que se complete el handshake
+                self.connector.send_message(request, peer_addr)
+
+        # 2. Esperar respuestas y construir el catálogo maestro
+        print("⏳ Esperando respuestas de los peers (espera de 3 segundos)...")
+        time.sleep(3)
+        self.catalog_manager.build_master_catalog() #
+
+        # 3. Distribuir el catálogo maestro completo
+        print(f"-> Distribuyendo catálogo maestro a {len(peers)} peers...")
+        distribute_request = self.catalog_manager.get_distribute_catalog_message() #
+        for peer in peers:
+            peer_addr = (peer["host"], peer["port"])
+            self.connector.send_message(distribute_request, peer_addr)
         
-        for peer_addr in peer_addresses:
-            print(f"Enviando solicitud de catálogo a {peer_addr}")
-            # En un sistema real, aquí se enviaría el mensaje a través del transport
-            # Por ahora, simulamos la respuesta
-            self.simulate_peer_response(peer_addr)
+        self.catalog_manager.print_catalog_summary()
+        print("--- ✅ Bootstrap Completado ---")
+
+    def _on_decrypted_message(self, request: Dict, addr: tuple):
+        """Manejador de mensajes que delega a los componentes correctos."""
+        response_data = self.process_request(request, addr)
+        if response_data:
+            self.connector.send_message(response_data, addr)
+
+    def process_request(self, request: Dict, client_addr: tuple) -> Dict:
+        """Procesa peticiones P2P usando los manejadores."""
+        msg_type = request.get("type")
         
-        # 2. Construir catálogo maestro
-        master_catalog = self.catalog_manager.build_master_catalog()
-        
-        # 3. Distribuir catálogo maestro
-        distribute_msg = self.catalog_manager.get_distribute_catalog_message()
-        print(f"Catálogo maestro distribuido: {len(master_catalog)} archivos")
-        
-        print("Bootstrap del sistema completado")
-    
-    def simulate_peer_response(self, peer_addr):
-        """Simula una respuesta de peer para pruebas de integración."""
-        # En un sistema real, esto se haría a través de la red
-        mock_response = {
-            "type": "CATALOG_INFO_RESPONSE",
-            "server_id": f"server-{peer_addr[1]}",
-            "files": [f"archivo_{peer_addr[1]}.txt", f"datos_{peer_addr[1]}.csv"]
-        }
-        self.catalog_manager.process_catalog_response(mock_response, peer_addr)
-    
-    def process_message(self, message: Dict, client_addr) -> Dict:
-        """Procesa mensajes del protocolo y genera respuestas apropiadas."""
-        msg_type = message.get("type")
-        
+        # --- Lógica de Bootstrap ---
         if msg_type == "GET_CATALOG_INFO":
             return self.catalog_manager.get_local_catalog_info()
         
         elif msg_type == "CATALOG_INFO_RESPONSE":
-            success = self.catalog_manager.process_catalog_response(message, client_addr)
-            return {"type": "ACK", "status": "OK" if success else "ERROR"}
-        
+            self.catalog_manager.process_catalog_response(request, client_addr)
+            return None # No se necesita respuesta para un ACK
+
         elif msg_type == "DISTRIBUTE_MASTER_CATALOG":
-            success = self.catalog_manager.process_master_catalog_distribution(message)
-            return {"type": "ACK", "status": "OK" if success else "ERROR"}
-        
+            self.catalog_manager.process_master_catalog_distribution(request)
+            return None
+
+        # --- Lógica de Archivos ---
         elif msg_type == "GET_FILE_COPY":
-            return self.file_handler.process_file_copy_request(message)
+            return self.file_handler.process_file_copy_request(request)
         
-        elif msg_type == "FILE_COPY_RESPONSE":
-            success = self.file_handler.process_file_copy_response(message)
-            return {"type": "ACK", "status": "OK" if success else "ERROR"}
-        
-        elif msg_type == "UPDATE_FILE":
-            return self.file_handler.process_update_file_request(message)
-        
+        # ... otros tipos de mensajes ...
+
         else:
+            print(f"⚠️ Mensaje con tipo desconocido recibido: {msg_type}")
             return {"type": "ERROR", "message": f"Tipo de mensaje no reconocido: {msg_type}"}
-    
+
     def run(self):
-        """Bucle principal de procesamiento de mensajes del servidor."""
-        print("Servidor iniciado. Presiona Ctrl+C para detener.")
-        
+        """Bucle principal del servidor P2P."""
         try:
             while True:
-                # Escuchar mensajes
-                encrypted_payload, client_addr = self.transport.listen()
-                
-                if encrypted_payload:
-                    print(f"Mensaje recibido de {client_addr}")
-                    
-                    # En un sistema real, aquí se descifraría el payload
-                    # Por ahora, asumimos que ya está descifrado
-                    try:
-                        message = encrypted_payload if isinstance(encrypted_payload, dict) else json.loads(encrypted_payload)
-                        response = self.process_message(message, client_addr)
-                        
-                        if response:
-                            # En un sistema real, aquí se cifraría la respuesta
-                            self.transport.send_data(response, client_addr)
-                            print(f"Respuesta enviada a {client_addr}")
-                    
-                    except Exception as e:
-                        print(f"Error procesando mensaje: {e}")
-                        error_response = {"type": "ERROR", "message": str(e)}
-                        self.transport.send_data(error_response, client_addr)
-        
+                payload, addr = self.transport.listen()
+                if payload:
+                    self.connector.handle_incoming_packet(payload, addr)
         except KeyboardInterrupt:
-            print("\nServidor detenido por el usuario")
-        except Exception as e:
-            print(f"Error en el servidor: {e}")
+            print("\n🛑 Servidor detenido.")
         finally:
             self.cleanup()
     
     def cleanup(self):
-        """Libera recursos del sistema al cerrar el servidor."""
         print("Limpiando recursos...")
-        # Aquí se cerrarían conexiones, se guardarían archivos, etc.
-        print("Limpieza completada")
+        self.transport.stop()
 
+# --- Punto de Entrada ---
 def main():
-    """Función principal de entrada del servidor."""
     print("="*60)
-    print("SISTEMA DE ARCHIVOS DISTRIBUIDO P2P")
+    print("SISTEMA DE ARCHIVOS DISTRIBUIDO P2P - v4.0 (con Bootstrap)")
     print("="*60)
     
-    # Crear servidor
-    server = DistributedFileServer()
+    try:
+        with open(CONFIG_FILE, 'r') as f:
+            config = json.load(f)
+    except Exception as e:
+        print(f"Error fatal al cargar '{CONFIG_FILE}': {e}")
+        sys.exit(1)
+
+    server = MainServer(config)
     
-    # Realizar bootstrap
-    server.bootstrap_system()
+    # Iniciar servidor WEB en un hilo
+    web_thread = threading.Thread(
+        target=start_web_server,
+        args=(server.catalog_manager, server.file_handler),
+        daemon=True
+    )
+    web_thread.start()
+
+    # Dar un respiro para que los servidores se inicien antes del bootstrap
+    print("Servidores iniciándose, esperando 5 segundos antes del bootstrap...")
+    time.sleep(5)
     
-    # Mostrar estado inicial
-    server.catalog_manager.print_catalog_summary()
-    server.file_handler.print_file_summary()
-    
-    # Iniciar servidor
+    # Iniciar el proceso de Bootstrap en un hilo para no bloquear
+    bootstrap_thread = threading.Thread(target=server.bootstrap_network, daemon=True)
+    bootstrap_thread.start()
+
+    # El hilo principal se queda en el bucle de escucha P2P
     server.run()
 
 if __name__ == "__main__":
