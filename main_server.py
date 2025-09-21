@@ -1,172 +1,326 @@
-# /main_server.py
-
+# main_server_integrated.py
+import socket
 import json
-import os
-import sys
 import threading
+import os
+import logging
 import time
-from typing import Dict
+from typing import List, Dict, Tuple
 
-# --- 1. Importaciones ---
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from src.network.transport import ReliableTransport
+# Importaciones del sistema de red seguro
+import sys
+sys.path.append('src/network')
 from src.network.peer_conector import PeerConnector
-from src.core.catalog_manager import CatalogManager
-from src.core.file_handler import FileHandler
-from src.web.controller import start_web_server
-from src.network.dns_translator.translator import DNSTranslator # ¡Importación Clave!
+from src.network.transport import ReliableTransport
 
-# --- 2. Configuración ---
-CONFIG_FILE = "config.json"
+# Configuración de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
-class MainServer:
-    def __init__(self, config: Dict):
-        self.config = config
-        self.server_id = config["server_id"]
-        self.host = config["host"]
-        self.port = config["port"]
-        print(f"🚀 Iniciando servidor P2P '{self.server_id}' en {self.host}:{self.port}...")
+DNS_IP = "127.0.0.2"
+DNS_PORT = 50000
+SERVER_IP = "127.0.0.3"
+SERVER_PORT = 5002
+UPDATE_INTERVAL = 30
 
-        # --- 3. Instanciación de Componentes ---
-        self.transport = ReliableTransport(self.host, self.port)
-        self.connector = PeerConnector(self.transport, self.server_id, self._on_decrypted_message)
-        self.catalog_manager = CatalogManager(self.server_id)
-        self.file_handler = FileHandler(self.server_id)
+class ServidorCompletoSeguro:
+    def __init__(self, host=SERVER_IP, port=SERVER_PORT, dns_ip=DNS_IP, dns_port=DNS_PORT):
+        self.host = host
+        self.port = port
+        self.dns_ip = dns_ip
+        self.dns_port = dns_port
+        self.folder_path = "archivos"
+        self.archivos = []
+        self.ultima_actualizacion = 0
         
-        # ¡NUEVO! Se instancia el DNSTranslator con la configuración.
-        self.translator = DNSTranslator(config)
+        # Componentes de red seguros
+        self.transport = ReliableTransport(host, port)
+        self.peer_connector = PeerConnector(
+            self.transport, 
+            f"{host}:{port}", 
+            self._handle_secure_message
+        )
         
-        self._populate_local_files()
-        print(f"✅ Servidor P2P listo.")
-
-    def _populate_local_files(self):
-        """Simula la carga de archivos locales al iniciar."""
-        if self.server_id == "server-A":
-            self.catalog_manager.add_local_file("LibroA.txt")
-            self.catalog_manager.add_local_file("LibroB.pdf")
-        elif self.server_id == "server-B":
-            self.catalog_manager.add_local_file("DocumentoX.docx")
-
-    def bootstrap_network(self):
-        """
-        Orquesta el arranque de la red usando el DNSTranslator para descubrir peers.
-        """
-        print("\n--- Iniciando Bootstrap (Modo Interoperabilidad DNS) ---")
-        peers_to_find = self.config.get("peers", [])
-        if not peers_to_find:
-            self.catalog_manager.build_master_catalog()
-            self.catalog_manager.print_catalog_summary()
-            return
-
-        # 1. Resolver, conectar y solicitar catálogos
-        print(f"-> Descubriendo y solicitando catálogos a {len(peers_to_find)} peers...")
-        request = self.catalog_manager.get_bootstrap_message()
-
-        for peer_info in peers_to_find:
-            peer_id = peer_info["id"]
-            dns_id_for_peer = peer_info["dns_id"]
-            
-            print(f"   - Resolviendo '{peer_id}' usando el DNS '{dns_id_for_peer}'...")
-            
-            # ¡AQUÍ ESTÁ LA LÓGICA CLAVE!
-            # Se usa el traductor para obtener la dirección del peer.
-            peer_addr = self.translator.resolve(peer_id, dns_id_for_peer)
-            
-            if peer_addr:
-                print(f"     ✅ Dirección resuelta: {peer_addr}")
-                # Si se encontró la dirección, se conecta y pide el catálogo
-                if self.transport.connect(peer_addr):
-                    self.connector.connect_and_secure(peer_addr)
-                    time.sleep(0.5) # Pausa para el handshake de seguridad
-                    self.connector.send_message(request, peer_addr)
-            else:
-                print(f"     ❌ Falló la resolución de '{peer_id}'.")
-
-        # 2. Esperar respuestas, construir y distribuir el catálogo maestro
-        print("\n⏳ Esperando respuestas de los peers (3 segundos)...")
-        time.sleep(3)
-        self.catalog_manager.build_master_catalog()
-
-        distribute_request = self.catalog_manager.get_distribute_catalog_message()
-        print(f"-> Distribuyendo catálogo maestro a los peers resueltos...")
-        # Volvemos a resolver para asegurarnos de tener las IPs correctas para la distribución
-        for peer_info in peers_to_find:
-             peer_addr = self.translator.resolve(peer_info["id"], peer_info["dns_id"])
-             if peer_addr:
-                self.connector.send_message(distribute_request, peer_addr)
-
-        self.catalog_manager.print_catalog_summary()
-        print("--- ✅ Bootstrap Completado ---")
-
-    def _on_decrypted_message(self, request: Dict, addr: tuple):
-        """Manejador principal de mensajes que delega a los componentes correctos."""
-        response_data = self.process_request(request, addr)
-        if response_data:
-            self.connector.send_message(response_data, addr)
-
-    def process_request(self, request: Dict, client_addr: tuple) -> Dict:
-        """Procesa peticiones P2P usando los manejadores de lógica."""
-        msg_type = request.get("type")
+        # Clientes conectados (para broadcast de actualizaciones)
+        self.connected_peers = {}
+        self.running = True
         
-        if msg_type == "GET_CATALOG_INFO":
-            return self.catalog_manager.get_local_catalog_info()
-        elif msg_type == "CATALOG_INFO_RESPONSE":
-            self.catalog_manager.process_catalog_response(request, client_addr)
-            return None
-        elif msg_type == "DISTRIBUTE_MASTER_CATALOG":
-            self.catalog_manager.process_master_catalog_distribution(request)
-            return None
-        elif msg_type == "GET_FILE_COPY":
-            return self.file_handler.process_file_copy_request(request)
-        else:
-            return {"type": "ERROR", "message": f"Tipo de mensaje no reconocido: {msg_type}"}
-
-    def run(self):
-        """Bucle principal del servidor P2P."""
+        # Inicializar archivos
+        self._actualizar_lista_archivos()
+        self._iniciar_actualizador()
+        
+    def _iniciar_actualizador(self):
+        """Inicia el hilo que actualiza periódicamente la lista de archivos"""
+        def actualizador_periodico():
+            while self.running:
+                try:
+                    time.sleep(UPDATE_INTERVAL)
+                    if self.running:
+                        self._actualizar_lista_archivos()
+                        logging.info(f"Lista de archivos actualizada. Total: {len(self.archivos)}")
+                except Exception as e:
+                    logging.error(f"Error en actualizador periódico: {e}")
+        
+        thread = threading.Thread(target=actualizador_periodico, daemon=True)
+        thread.start()
+        logging.info("Actualizador periódico iniciado")
+        
+    def _consultar_dns(self, accion: str, datos: Dict = None) -> Dict:
+        """Consulta al DNS para obtener información"""
         try:
-            while True:
-                payload, addr = self.transport.listen()
-                if payload:
-                    self.connector.handle_incoming_packet(payload, addr)
-        except KeyboardInterrupt:
-            print("\n🛑 Servidor detenido.")
+            if accion == "listar_archivos" and self.archivos and time.time() - self.ultima_actualizacion < 10:
+                return {"status": "ACK", "archivos": self.archivos}
+                
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
+            sock.bind((self.host, 0))
+            
+            consulta = {"accion": accion}
+            if datos:
+                consulta.update(datos)
+            
+            sock.sendto(json.dumps(consulta).encode('utf-8'), (self.dns_ip, self.dns_port))
+            data, addr = sock.recvfrom(4096)
+            respuesta = json.loads(data.decode('utf-8'))
+            
+            if accion == "listar_archivos" and respuesta.get("status") == "ACK":
+                self.ultima_actualizacion = time.time()
+                
+            return respuesta
+                
+        except Exception as e:
+            logging.error(f"Error consultando DNS: {e}")
+            return {"status": "ERROR", "mensaje": f"Error consulting DNS: {e}"}
         finally:
-            self.cleanup()
-    
-    def cleanup(self):
-        print("Limpiando recursos...")
-        self.transport.stop()
+            if 'sock' in locals():
+                sock.close()
+        
+    def _actualizar_lista_archivos(self):
+        """Actualiza la lista de archivos desde el DNS"""
+        try:
+            respuesta = self._consultar_dns("listar_archivos")
+            if respuesta.get("status") == "ACK":
+                nuevos_archivos = respuesta.get("archivos", [])
+                
+                archivos_actualizados = []
+                for nuevo_archivo in nuevos_archivos:
+                    archivo_existente = next((a for a in self.archivos 
+                                            if a['nombre_archivo'] == nuevo_archivo['nombre_archivo']), None)
+                    
+                    if archivo_existente:
+                        nuevo_archivo['bandera'] = archivo_existente['bandera']
+                        nuevo_archivo['ip_origen'] = archivo_existente['ip_origen']
+                    else:
+                        nuevo_archivo['bandera'] = 0
+                        nuevo_archivo['ip_origen'] = self.host
+                    
+                    archivos_actualizados.append(nuevo_archivo)
+                
+                self.archivos = archivos_actualizados
+                logging.info(f"Lista de archivos actualizada. Total: {len(self.archivos)}")
+        except Exception as e:
+            logging.error(f"Error actualizando lista: {e}")
 
-# --- Punto de Entrada ---
-def main():
-    print("="*60)
-    print("SISTEMA DE ARCHIVOS DISTRIBUIDO v5.0 (con Interoperabilidad DNS)")
-    print("="*60)
-    
-    try:
-        with open(CONFIG_FILE, 'r') as f:
-            config = json.load(f)
-    except Exception as e:
-        print(f"Error fatal al cargar '{CONFIG_FILE}': {e}")
-        sys.exit(1)
+    def _handle_secure_message(self, request: Dict, peer_addr: Tuple[str, int]):
+        """Maneja mensajes seguros recibidos de peers"""
+        try:
+            accion = request.get("accion")
+            logging.info(f"Mensaje seguro de {peer_addr}: {accion}")
+            
+            if accion == "consultar":
+                response = self._manejar_consultar_seguro(request)
+            elif accion == "listar_archivos":
+                response = self._manejar_listar_seguro()
+            elif accion == "leer":
+                response = self._manejar_leer_seguro(request)
+            elif accion == "escribir":
+                response = self._manejar_escribir_seguro(request)
+            elif accion == "descargar":
+                response = self._manejar_descargar_seguro(request)
+            elif accion == "obtener_archivo_desde_otro":
+                response = self._manejar_obtener_desde_otro_seguro(request)
+            elif accion == "actualizar_lista":
+                self._actualizar_lista_archivos()
+                response = {"status": "EXITO", "mensaje": "Lista actualizada"}
+            else:
+                response = {"status": "ERROR", "mensaje": f"Acción '{accion}' no reconocida"}
+            
+            # Enviar respuesta cifrada
+            self.peer_connector.send_message(response, peer_addr)
+            
+        except Exception as e:
+            logging.error(f"Error procesando mensaje seguro: {e}")
+            error_response = {"status": "ERROR", "mensaje": str(e)}
+            self.peer_connector.send_message(error_response, peer_addr)
 
-    server = MainServer(config)
-    
-    web_thread = threading.Thread(
-        target=start_web_server,
-        args=(server.catalog_manager, server.file_handler),
-        daemon=True
-    )
-    web_thread.start()
+    def _manejar_consultar_seguro(self, request: Dict) -> Dict:
+        """Versión segura del manejo de consultas"""
+        nombre_archivo = request.get("nombre_archivo")
+        if not nombre_archivo:
+            return {"status": "ERROR", "mensaje": "Nombre de archivo requerido"}
+        
+        archivo_encontrado = None
+        for archivo in self.archivos:
+            if archivo['nombre_archivo'] == nombre_archivo and archivo['publicado']:
+                archivo_encontrado = archivo
+                break
+        
+        if archivo_encontrado:
+            return {
+                "status": "ACK",
+                "nombre_archivo": archivo_encontrado['nombre_archivo'],
+                "ttl": archivo_encontrado['ttl'],
+                "ip": archivo_encontrado['ip_origen'],
+                "puerto": self.port,
+                "bandera": archivo_encontrado['bandera']
+            }
+        else:
+            return {
+                "status": "NACK",
+                "mensaje": "Archivo no encontrado o no publicado",
+                "ip": self.host,
+                "puerto": self.port
+            }
 
-    print("Servidores iniciándose, esperando 5 segundos antes del bootstrap...")
-    time.sleep(5)
-    
-    bootstrap_thread = threading.Thread(target=server.bootstrap_network, daemon=True)
-    bootstrap_thread.start()
+    def _manejar_listar_seguro(self) -> Dict:
+        """Versión segura del listado de archivos"""
+        if not self.archivos:
+            self._actualizar_lista_archivos()
+        
+        return {
+            "status": "ACK",
+            "archivos": self.archivos,
+            "total": len(self.archivos)
+        }
 
-    server.run()
+    def _manejar_leer_seguro(self, request: Dict) -> Dict:
+        """Versión segura de lectura de archivos"""
+        nombre_archivo = request.get("nombre_archivo")
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+                
+                return {"status": "EXITO", "contenido": contenido}
+            except UnicodeDecodeError:
+                return {"status": "ERROR", "mensaje": "Archivo binario, no se puede leer como texto"}
+            except Exception as e:
+                return {"status": "ERROR", "mensaje": f"Error leyendo archivo: {e}"}
+        else:
+            return {"status": "ERROR", "mensaje": "Archivo no encontrado"}
+
+    def _manejar_escribir_seguro(self, request: Dict) -> Dict:
+        """Versión segura de escritura de archivos"""
+        nombre_archivo = request.get("nombre_archivo")
+        contenido = request.get("contenido", "")
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(contenido)
+            
+            return {"status": "EXITO", "mensaje": f"Archivo '{nombre_archivo}' guardado"}
+        except Exception as e:
+            return {"status": "ERROR", "mensaje": f"Error escribiendo archivo: {e}"}
+
+    def _manejar_descargar_seguro(self, request: Dict) -> Dict:
+        """Versión segura de descarga - envía contenido en la respuesta"""
+        nombre_archivo = request.get("nombre_archivo")
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'rb') as f:
+                    contenido_bytes = f.read()
+                
+                # Convertir a base64 para transmisión segura
+                import base64
+                contenido_b64 = base64.b64encode(contenido_bytes).decode('utf-8')
+                
+                return {
+                    "status": "EXITO",
+                    "mensaje": "Archivo listo para descarga",
+                    "contenido": contenido_b64,
+                    "size": len(contenido_bytes)
+                }
+            except Exception as e:
+                return {"status": "ERROR", "mensaje": f"Error leyendo archivo: {e}"}
+        else:
+            return {"status": "ERROR", "mensaje": "Archivo no encontrado"}
+
+    def _manejar_obtener_desde_otro_seguro(self, request: Dict) -> Dict:
+        """Versión segura para obtener archivos de otros peers"""
+        nombre_archivo = request.get("nombre_archivo")
+        ip_origen = request.get("ip_origen")
+        puerto_origen = request.get("puerto_origen")
+        
+        try:
+            peer_addr = (ip_origen, puerto_origen)
+            
+            # Establecer conexión segura con el peer
+            self.peer_connector.connect_and_secure(peer_addr)
+            
+            # Solicitar el archivo de manera segura
+            solicitud = {
+                "accion": "descargar",
+                "nombre_archivo": nombre_archivo
+            }
+            
+            self.peer_connector.send_message(solicitud, peer_addr)
+            
+            # La respuesta llegará a _handle_secure_message
+            # Por ahora retornamos que se inició el proceso
+            return {
+                "status": "PROCESO_INICIADO",
+                "mensaje": f"Solicitando '{nombre_archivo}' de manera segura de {peer_addr}"
+            }
+            
+        except Exception as e:
+            return {"status": "ERROR", "mensaje": f"Error obteniendo archivo: {e}"}
+
+    def start(self):
+        """Inicia el servidor con comunicación segura"""
+        if not os.path.exists(self.folder_path):
+            os.makedirs(self.folder_path)
+            logging.info(f"Carpeta '{self.folder_path}' creada")
+        
+        logging.info(f"Servidor seguro escuchando en {self.host}:{self.port}")
+        logging.info(f"Conectado al DNS: {self.dns_ip}:{self.dns_port}")
+        logging.info(f"Carpeta local: {os.path.abspath(self.folder_path)}")
+        logging.info(f"Archivos registrados: {len(self.archivos)}")
+        
+        try:
+            # Bucle principal de escucha segura
+            while self.running:
+                payload, addr = self.transport.listen()
+                if payload and addr:
+                    # PeerConnector maneja automáticamente handshakes y descifrado
+                    self.peer_connector.handle_incoming_packet(payload, addr)
+                    
+        except KeyboardInterrupt:
+            logging.info("\nServidor detenido por el usuario")
+        except Exception as e:
+            logging.error(f"Error en el servidor: {e}")
+        finally:
+            self.stop()
+
+    def stop(self):
+        """Detiene el servidor de manera limpia"""
+        self.running = False
+        if self.peer_connector:
+            self.peer_connector.stop()
+        logging.info("Servidor detenido")
 
 if __name__ == "__main__":
-    main()
+    print("=== Servidor Completo Seguro ===")
+    print("Comunicación cifrada con PeerConnector")
+    print("Handshake automático Diffie-Hellman")
+    print("Transporte confiable subyacente")
+    print("Ctrl+C para detener el servidor\n")
+    
+    server = ServidorCompletoSeguro()
+    server.start()

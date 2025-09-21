@@ -1,39 +1,11 @@
 {
-  "server_id": "server-A",
-  "host": "127.0.0.1",
-  "port": 8080,
-  "file_storage_path": "./files",
-  "log_level": "INFO",
-
-  "dns_servers": [
-    {
-      "id": "dns_de_Chris",
-      "host": "127.0.0.1",
-      "port": 5353,
-      "driver": "driver_chris"
-    },
-    {
-      "id": "dns_de_axel",
-      "host": "127.0.0.1", 
-      "port": 5354,
-      "driver": "driver_axel"
-    },
-    {
-      "id": "dns_de_marco",
-      "host": "127.0.0.1",
-      "port": 5355,
-      "driver": "driver_marco"
-    }
-  ],
-
-  "peers": [
-    {
-      "id": "server-B",
-      "dns_id": "dns_de_axel"
-    },
-    {
-      "id": "server-C",
-      "dns_id": "dns_de_marco"
-    }
-  ]
+    "folder_path": "C:\\Users\\marco\\OneDrive\\Desktop\\Archivosv1\\gits\\dist-fs-interop\\archivos",
+    "files": [
+        {
+            "nombre_archivo": "hola.txt",
+            "extension": ".txt",
+            "publicado": true,
+            "ttl": 0
+        }
+    ]
 }

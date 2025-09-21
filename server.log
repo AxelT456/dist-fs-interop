@@ -1,0 +1,1359 @@
+2025-09-20 16:16:36,858 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 16:16:36,859 - MainThread - WARNING - No se encontró una ruta válida en la configuración.
+2025-09-20 16:16:47,259 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:16:47,260 - MainThread - INFO - Archivos nuevos detectados: hola.txt
+2025-09-20 16:16:57,114 - MainThread - WARNING - ARCHIVO AÑADIDO: 'hola.txt' ha sido añadido a la lista y publicado.
+2025-09-20 16:16:57,115 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 16:16:57,118 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 16:17:07,117 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:17:17,118 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:17:27,120 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:17:37,121 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:17:47,122 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:17:47,941 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 59267): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 16:17:57,123 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:18:07,125 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:18:13,286 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 63829): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 16:18:17,127 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:18:27,128 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:18:37,130 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:18:47,132 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:18:57,133 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:19:07,135 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:19:17,136 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:19:27,137 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:19:37,139 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:19:47,140 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:19:57,142 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:20:07,143 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:20:17,144 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:20:27,145 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:20:37,147 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:20:47,148 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:20:57,149 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:21:07,151 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:21:17,152 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:21:27,153 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:21:37,154 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:21:47,156 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:21:57,157 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:22:07,159 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:22:17,160 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:22:27,162 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:22:37,163 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:22:47,165 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:22:57,166 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:23:07,168 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:23:17,169 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:23:27,171 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:23:37,173 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:23:47,174 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:23:57,176 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:24:07,177 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:24:17,179 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:24:27,180 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:24:37,182 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:24:47,184 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:24:57,185 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:25:07,186 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:25:17,188 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:25:27,189 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:25:37,191 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:25:47,192 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:25:57,194 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:26:07,196 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:26:17,198 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:26:27,200 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:26:37,202 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:26:47,203 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:26:57,204 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:27:07,206 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:27:17,207 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:27:27,208 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:27:37,209 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:27:47,211 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:27:57,213 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:28:07,215 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:28:17,216 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:28:27,217 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:28:37,219 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:28:47,220 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:28:57,222 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:29:07,223 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:29:17,225 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:29:27,227 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:29:37,228 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:29:47,229 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:29:57,231 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:30:07,232 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:30:17,234 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:30:27,236 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:30:37,237 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:30:47,239 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:30:57,240 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:31:07,242 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:31:17,243 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:31:27,245 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:31:37,246 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:31:47,248 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:31:57,250 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:32:07,252 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:32:17,254 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:32:27,255 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:32:37,256 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:32:47,258 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:32:57,260 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:33:07,261 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:33:17,263 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:33:27,264 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:33:37,266 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:33:47,268 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:33:57,269 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:34:07,271 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:34:17,272 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:34:27,273 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:34:37,275 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:34:47,276 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:34:57,278 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:35:07,279 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:35:17,281 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:35:27,282 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:35:37,283 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:35:47,285 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:35:57,286 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:36:07,288 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:36:17,290 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:36:27,292 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:36:37,294 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:36:47,295 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:36:57,296 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:37:07,298 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:37:17,299 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:37:27,301 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:37:37,303 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:37:47,304 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:37:57,305 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:38:07,307 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:38:17,309 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:38:27,310 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:38:37,312 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:38:47,313 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:38:57,315 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:39:07,316 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:39:17,319 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:39:27,320 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:39:37,322 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:39:47,323 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:39:57,325 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:40:07,327 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:40:17,328 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:40:27,330 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:40:37,332 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:40:47,333 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:40:57,335 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:41:07,336 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:41:17,338 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:41:27,342 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:41:37,343 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:41:47,345 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:41:57,346 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:42:07,347 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:42:17,349 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:42:27,350 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:42:37,351 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:42:47,353 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:42:57,355 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:43:07,356 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:43:17,357 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:43:27,358 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:43:37,359 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:43:47,361 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:43:57,362 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:44:07,363 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:44:17,365 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:44:27,366 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:44:37,368 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:44:47,369 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:44:57,371 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:45:07,372 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:45:17,374 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:45:27,376 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:45:37,377 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:45:47,378 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:45:57,380 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:46:07,381 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:46:17,382 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:46:27,384 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:46:37,385 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:46:47,387 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:46:57,388 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:47:07,390 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:47:17,392 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:47:27,393 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:47:37,395 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:47:47,396 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:47:57,397 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:48:07,399 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:48:17,400 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:48:27,401 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:48:37,403 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:48:47,404 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:48:57,406 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:49:07,407 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:49:17,409 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:49:27,411 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:49:37,412 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:49:47,413 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:49:57,415 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:50:07,416 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:50:17,417 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:50:27,419 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:50:37,421 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:50:47,423 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:50:57,424 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:51:07,426 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:51:17,427 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:51:27,428 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:51:37,430 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:51:47,431 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:51:57,433 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:52:07,434 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:52:17,436 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:52:27,438 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:52:37,439 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:52:47,441 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:52:57,442 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:53:07,444 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:53:17,446 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:53:27,447 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:53:37,449 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:53:47,451 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:53:57,453 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:54:07,455 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:54:17,457 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:54:27,458 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:54:37,460 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:54:47,461 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:54:57,463 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:55:07,464 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:55:17,466 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:55:27,467 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:55:37,468 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:55:47,470 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:55:57,471 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:56:07,473 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:56:17,475 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:56:27,476 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:56:37,478 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:56:47,480 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:56:57,481 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:57:07,483 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:57:17,485 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:57:27,486 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:57:37,488 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:57:47,489 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:57:57,491 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:58:07,492 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:58:17,494 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:58:27,495 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:58:37,497 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:58:47,498 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:58:57,500 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:59:07,215 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 16:59:10,841 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 16:59:10,855 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:59:10,858 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 16:59:10,860 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 16:59:20,860 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:59:30,861 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:59:40,862 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 16:59:50,865 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:00:00,867 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:00:10,869 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:00:20,871 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:00:30,873 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:00:40,874 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:00:50,876 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:01:00,878 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:01:10,880 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:01:20,882 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:01:30,883 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:01:40,885 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:01:50,887 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:02:00,889 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:02:10,890 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:02:20,892 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:02:30,894 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:02:40,896 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:02:50,897 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:03:00,899 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:03:10,313 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 49814): {'accion': 'listar_archivos'}
+2025-09-20 17:03:10,900 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:03:20,902 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:03:30,904 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:03:40,906 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:03:50,908 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:04:00,910 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:04:10,911 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:04:20,913 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:04:30,914 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:04:40,916 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:04:50,918 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:05:00,920 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:05:10,922 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:05:20,924 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:05:30,926 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:05:40,928 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:05:50,930 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:06:00,932 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:06:10,934 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:06:20,936 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:06:30,938 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:06:38,294 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 62692): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 17:06:40,939 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:06:50,940 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:07:00,942 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:07:10,943 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:07:20,944 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:07:30,946 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:07:40,948 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:07:50,949 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:08:00,950 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:08:10,951 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:08:20,953 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:08:30,954 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:08:40,956 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:08:50,957 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:09:00,959 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:09:10,960 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:09:20,962 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:09:30,964 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:09:40,965 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:09:50,966 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:10:00,968 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:10:10,969 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:10:20,971 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:10:30,972 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:10:40,974 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:10:50,976 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:11:00,978 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:11:10,980 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:11:20,981 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:11:30,982 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:11:40,984 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:11:50,985 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:12:00,986 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:12:10,988 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:12:20,989 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:12:30,990 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:12:40,992 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:12:50,994 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:13:00,995 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:13:10,997 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:13:20,999 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:13:31,000 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:13:41,002 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:13:51,004 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:14:01,005 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:14:11,007 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:14:21,008 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:14:31,009 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:14:41,011 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:14:51,013 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:15:01,015 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:15:11,016 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:15:21,018 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:15:31,019 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:15:41,020 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:15:51,022 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:16:01,023 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:16:11,024 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:16:21,026 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:16:31,028 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:16:41,029 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:16:51,030 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:17:01,032 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:17:11,033 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:17:21,035 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:17:31,037 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:17:41,038 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:17:51,039 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:18:01,041 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:18:11,043 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:18:21,044 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:18:31,045 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:18:41,047 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:18:51,048 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:19:01,050 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:19:11,052 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:19:21,054 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:19:31,055 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:19:41,056 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:19:51,058 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:20:01,059 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:20:11,061 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:20:21,062 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:20:31,064 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:20:41,065 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:20:51,067 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:21:01,068 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:21:11,070 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:21:21,072 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:21:31,073 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:21:41,075 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:21:51,076 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:22:01,078 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:22:11,080 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:22:21,081 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:22:31,083 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:22:41,085 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:22:51,086 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:23:01,088 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:23:11,090 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:23:21,092 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:23:31,093 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:23:41,095 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:23:51,097 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:24:01,098 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:24:11,100 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:24:21,101 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:24:31,103 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:24:41,104 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:24:51,106 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:25:01,107 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:25:11,108 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:25:21,109 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:25:31,111 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:25:41,113 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:25:51,113 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:26:01,115 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:26:11,117 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:26:21,118 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:26:31,120 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:26:36,390 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 55625): {'accion': 'listar_archivos'}
+2025-09-20 17:26:41,122 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:26:51,123 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:27:01,124 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:27:11,126 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:27:21,126 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:27:31,128 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:27:41,129 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:27:51,130 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:28:01,132 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:28:11,133 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:28:21,135 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:28:31,137 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:28:41,138 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:28:51,139 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:29:01,141 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:29:11,141 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:29:21,143 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:29:31,144 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:29:41,146 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:29:51,147 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:30:01,149 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:30:11,150 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:31:09,674 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 17:31:09,685 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:31:09,687 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 17:31:09,690 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 17:31:15,214 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 58815): {'accion': 'listar_archivos'}
+2025-09-20 17:32:49,710 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 17:32:49,712 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:32:49,714 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 17:32:49,717 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 17:32:57,069 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 61941): {'accion': 'listar_archivos'}
+2025-09-20 17:36:26,692 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 17:36:26,695 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:36:26,697 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 17:36:26,700 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 17:36:33,278 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 60437): {'accion': 'listar_archivos'}
+2025-09-20 17:37:07,077 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 63455): {'accion': 'listar_archivos'}
+2025-09-20 17:37:23,596 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 17:37:23,598 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:37:23,600 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 17:37:23,603 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 17:37:28,560 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 62919): {'accion': 'listar_archivos'}
+2025-09-20 17:42:23,602 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:44:04,175 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 17:44:04,178 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:44:04,179 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 17:44:04,181 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 17:44:11,611 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 52449): {'accion': 'listar_archivos'}
+2025-09-20 17:44:11,612 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('192.168.100.10', 52449)
+2025-09-20 17:47:30,223 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 56090): {'accion': 'consultar', 'nombre_archivo': 'segundo.txt'}
+2025-09-20 17:49:04,181 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:49:04,182 - ActualizadorCarpeta - INFO - Archivos nuevos detectados: segundo.txt
+2025-09-20 17:49:04,183 - ActualizadorCarpeta - INFO - ARCHIVO REGISTRADO: 'segundo.txt' ha sido añadido a la lista como no publicado.
+2025-09-20 17:49:04,185 - ActualizadorCarpeta - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 17:54:04,186 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 17:59:04,188 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:04:04,190 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:09:04,192 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:14:04,194 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:19:04,196 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:24:04,198 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:29:04,200 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:34:04,202 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:39:04,203 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:44:04,205 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:49:04,206 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:54:04,208 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 18:59:04,210 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:04:04,211 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:09:04,213 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:14:04,215 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:19:04,217 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:24:04,219 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:29:04,222 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:34:04,224 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:39:04,226 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:43:45,335 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 19:43:48,013 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 19:43:48,023 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:43:48,024 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 19:43:48,027 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 19:44:00,430 - ServidorUDP - INFO - Petición recibida de ('192.168.100.10', 52993): {'accion': 'listar_archivos'}
+2025-09-20 19:44:00,430 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('192.168.100.10', 52993)
+2025-09-20 19:48:48,026 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:53:48,028 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 19:58:48,030 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:03:05,328 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 20:03:05,330 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:03:05,332 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 20:03:05,335 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 20:08:05,334 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:12:44,742 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 20:12:44,743 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:12:44,744 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 20:12:44,747 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 20:17:44,746 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:22:44,748 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:24:06,461 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 20:24:06,462 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:24:06,463 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 20:24:06,466 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 20:29:06,465 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:34:06,479 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:38:58,820 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51270): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:39:06,480 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:39:22,334 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62549): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:40:02,758 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49938): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:43:18,676 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59278): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:43:32,957 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54151): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:43:39,029 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54152): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:44:06,482 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:45:15,761 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52423): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:45:50,978 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59456): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:49:06,484 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:50:07,234 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60853): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:50:40,315 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63426): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:51:12,980 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51781): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:51:34,948 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56786): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:53:53,225 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65026): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:53:53,228 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65027): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:54:06,486 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:54:08,994 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52972): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:55:41,199 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60494): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 20:55:41,199 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60495): {'accion': 'listar_archivos'}
+2025-09-20 20:55:41,200 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 60495)
+2025-09-20 20:56:05,494 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51734): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:59:06,487 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 20:59:31,868 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60214): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:59:46,326 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57554): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 20:59:53,861 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57555): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:00:23,150 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62013): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:00:27,479 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62014): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:00:42,127 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61179): {'accion': 'consultar', 'nombre_archivo': 'hola.txt+'}
+2025-09-20 21:00:42,128 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61180): {'accion': 'listar_archivos'}
+2025-09-20 21:00:42,129 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 61180)
+2025-09-20 21:00:49,471 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61181): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:01:43,505 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64415): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:01:43,506 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64416): {'accion': 'listar_archivos'}
+2025-09-20 21:01:43,506 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 64416)
+2025-09-20 21:01:51,626 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64417): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:03:43,421 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54378): {'accion': 'consultar', 'nombre_archivo': 'segundo.txt'}
+2025-09-20 21:03:43,421 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54379): {'accion': 'listar_archivos'}
+2025-09-20 21:03:43,422 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 54379)
+2025-09-20 21:03:43,423 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54380): {'accion': 'consultar', 'nombre_archivo': 'segundo.txt'}
+2025-09-20 21:03:52,581 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54381): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:03:52,582 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54382): {'accion': 'listar_archivos'}
+2025-09-20 21:03:52,583 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 54382)
+2025-09-20 21:04:06,489 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:07:42,948 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:07:42,949 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:07:42,950 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:07:42,953 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:08:02,669 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60733): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:08:02,670 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60734): {'accion': 'listar_archivos'}
+2025-09-20 21:08:02,670 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 60734)
+2025-09-20 21:11:09,291 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59866): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:11:09,292 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59867): {'accion': 'listar_archivos'}
+2025-09-20 21:11:09,292 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 59867)
+2025-09-20 21:12:42,952 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:15:06,436 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:15:08,770 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:15:08,771 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:15:08,774 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:15:08,776 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:18:27,242 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49542): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:18:27,243 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49543): {'accion': 'listar_archivos'}
+2025-09-20 21:18:27,244 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 49543)
+2025-09-20 21:18:50,915 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57893): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:18:50,916 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57894): {'accion': 'listar_archivos'}
+2025-09-20 21:18:50,916 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 57894)
+2025-09-20 21:20:08,776 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:22:19,754 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56977): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:22:19,779 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56978): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:25:08,778 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:27:35,284 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57972): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:27:35,285 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57973): {'accion': 'listar_archivos'}
+2025-09-20 21:27:35,286 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 57973)
+2025-09-20 21:27:47,116 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50068): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:28:13,727 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49596): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:29:44,010 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58318): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:29:44,011 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58319): {'accion': 'listar_archivos'}
+2025-09-20 21:29:44,012 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 58319)
+2025-09-20 21:30:08,780 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:33:13,424 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:33:29,573 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:33:29,575 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:33:29,578 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:33:29,581 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:33:41,272 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54216): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:33:41,274 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54217): {'accion': 'listar_archivos'}
+2025-09-20 21:33:41,275 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 54217)
+2025-09-20 21:33:52,609 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54218): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:35:09,540 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:35:12,825 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:35:12,826 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:35:12,829 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:35:12,833 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:35:20,897 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:35:20,899 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:35:20,901 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:35:22,452 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:35:35,486 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57185): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:35:35,487 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57186): {'accion': 'listar_archivos'}
+2025-09-20 21:35:35,488 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 57186)
+2025-09-20 21:35:42,085 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52206): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:38:59,973 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:39:02,374 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:39:02,376 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:39:02,377 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:39:02,380 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:39:15,917 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59798): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:39:15,918 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59799): {'accion': 'listar_archivos'}
+2025-09-20 21:39:15,919 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 59799)
+2025-09-20 21:39:56,014 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49975): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:39:56,015 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49976): {'accion': 'listar_archivos'}
+2025-09-20 21:39:56,016 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 49976)
+2025-09-20 21:40:52,016 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:42:28,570 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:42:28,573 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:42:28,574 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:42:28,576 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:42:34,684 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63783): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:42:34,685 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63784): {'accion': 'listar_archivos'}
+2025-09-20 21:42:34,686 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 63784)
+2025-09-20 21:42:38,499 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63785): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:42:38,501 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63786): {'accion': 'listar_archivos'}
+2025-09-20 21:42:38,501 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 63786)
+2025-09-20 21:42:41,308 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63787): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:42:41,309 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63788): {'accion': 'listar_archivos'}
+2025-09-20 21:42:41,310 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 63788)
+2025-09-20 21:43:00,204 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:43:02,412 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:43:02,414 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:43:02,415 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:43:02,419 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:43:10,525 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64086): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:43:10,527 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64087): {'accion': 'listar_archivos'}
+2025-09-20 21:43:10,527 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 64087)
+2025-09-20 21:43:51,687 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:43:53,621 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:43:53,624 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:43:53,626 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:43:53,628 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:44:01,039 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64508): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:44:06,126 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62683): {'accion': 'consultar', 'nombre_archivo': '1'}
+2025-09-20 21:46:04,618 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60627): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:46:35,140 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:46:37,987 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:46:37,990 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:46:37,992 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:46:37,995 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:46:42,387 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61342): {'accion': 'consultar', 'nombre_archivo': 'cualquier_archivo'}
+2025-09-20 21:47:27,485 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60963): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 21:51:13,766 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 21:51:15,951 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 21:51:15,953 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:51:15,955 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 21:51:15,957 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 21:51:23,785 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51091): {'accion': 'listar_archivos'}
+2025-09-20 21:51:23,786 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 51091)
+2025-09-20 21:51:44,029 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55873): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 21:52:51,072 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53767): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 21:56:15,957 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 21:59:46,490 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60662): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:01:15,959 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:01:38,665 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61013): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:02:02,795 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60445): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:02:47,115 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57779): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:02:51,308 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57780): {'accion': 'consultar', 'nombre_archivo': 'a'}
+2025-09-20 22:04:04,582 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 22:04:08,123 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 22:04:08,125 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:04:08,127 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 22:04:08,130 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 22:04:17,350 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53266): {'accion': 'listar_archivos'}
+2025-09-20 22:04:17,351 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 53266)
+2025-09-20 22:04:28,207 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49401): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:04:36,168 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49402): {'accion': 'consultar', 'nombre_archivo': 'hola.txt'}
+2025-09-20 22:07:57,328 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 22:07:57,331 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:07:57,333 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 22:07:57,336 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 22:08:04,830 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60051): {'accion': 'listar_archivos'}
+2025-09-20 22:08:04,831 - ServidorUDP - INFO - Enviada lista de 2 archivos a ('127.0.0.1', 60051)
+2025-09-20 22:08:11,367 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53310): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:12:57,335 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:12:57,336 - ActualizadorCarpeta - WARNING - ARCHIVO ELIMINADO: 'segundo.txt' fue eliminado de la carpeta y de la lista.
+2025-09-20 22:12:57,338 - ActualizadorCarpeta - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 22:17:57,339 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:22:57,340 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:27:57,342 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:31:25,413 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 22:31:28,453 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 22:31:28,463 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:31:28,465 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 22:31:28,467 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 22:31:43,915 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63073): {'accion': 'listar_archivos'}
+2025-09-20 22:31:43,916 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 63073)
+2025-09-20 22:31:56,126 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61543): {'accion': 'consultar', 'nombre_archivo': ''}
+2025-09-20 22:32:13,918 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53597): {'accion': 'listar_archivos'}
+2025-09-20 22:32:13,919 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 53597)
+2025-09-20 22:32:43,921 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61157): {'accion': 'listar_archivos'}
+2025-09-20 22:32:43,922 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 61157)
+2025-09-20 22:33:13,924 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51302): {'accion': 'listar_archivos'}
+2025-09-20 22:33:13,925 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 51302)
+2025-09-20 22:33:43,928 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50300): {'accion': 'listar_archivos'}
+2025-09-20 22:33:43,929 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 50300)
+2025-09-20 22:34:13,930 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64550): {'accion': 'listar_archivos'}
+2025-09-20 22:34:13,932 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 64550)
+2025-09-20 22:34:43,933 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52870): {'accion': 'listar_archivos'}
+2025-09-20 22:34:43,934 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 52870)
+2025-09-20 22:35:13,936 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54013): {'accion': 'listar_archivos'}
+2025-09-20 22:35:13,937 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 54013)
+2025-09-20 22:35:43,938 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50134): {'accion': 'listar_archivos'}
+2025-09-20 22:35:43,939 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 50134)
+2025-09-20 22:36:13,941 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56663): {'accion': 'listar_archivos'}
+2025-09-20 22:36:13,942 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 56663)
+2025-09-20 22:36:28,466 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:36:43,944 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54299): {'accion': 'listar_archivos'}
+2025-09-20 22:36:43,945 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 54299)
+2025-09-20 22:37:13,946 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61952): {'accion': 'listar_archivos'}
+2025-09-20 22:37:13,947 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 61952)
+2025-09-20 22:37:43,949 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55107): {'accion': 'listar_archivos'}
+2025-09-20 22:37:43,951 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 55107)
+2025-09-20 22:38:13,952 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58301): {'accion': 'listar_archivos'}
+2025-09-20 22:38:13,952 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 58301)
+2025-09-20 22:38:43,955 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63967): {'accion': 'listar_archivos'}
+2025-09-20 22:38:43,955 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 63967)
+2025-09-20 22:39:13,957 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53817): {'accion': 'listar_archivos'}
+2025-09-20 22:39:13,957 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 53817)
+2025-09-20 22:39:43,959 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56418): {'accion': 'listar_archivos'}
+2025-09-20 22:39:43,960 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 56418)
+2025-09-20 22:40:13,961 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56942): {'accion': 'listar_archivos'}
+2025-09-20 22:40:13,962 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 56942)
+2025-09-20 22:40:43,964 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57760): {'accion': 'listar_archivos'}
+2025-09-20 22:40:43,965 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 57760)
+2025-09-20 22:41:13,966 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56788): {'accion': 'listar_archivos'}
+2025-09-20 22:41:13,967 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 56788)
+2025-09-20 22:41:28,468 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:41:43,969 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53141): {'accion': 'listar_archivos'}
+2025-09-20 22:41:43,970 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 53141)
+2025-09-20 22:42:13,972 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54793): {'accion': 'listar_archivos'}
+2025-09-20 22:42:13,972 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 54793)
+2025-09-20 22:42:43,974 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52636): {'accion': 'listar_archivos'}
+2025-09-20 22:42:43,975 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 52636)
+2025-09-20 22:43:13,977 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55033): {'accion': 'listar_archivos'}
+2025-09-20 22:43:13,977 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 55033)
+2025-09-20 22:43:43,979 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55034): {'accion': 'listar_archivos'}
+2025-09-20 22:43:43,979 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 55034)
+2025-09-20 22:44:13,981 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54613): {'accion': 'listar_archivos'}
+2025-09-20 22:44:13,982 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 54613)
+2025-09-20 22:44:43,983 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63827): {'accion': 'listar_archivos'}
+2025-09-20 22:44:43,984 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 63827)
+2025-09-20 22:45:13,986 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65339): {'accion': 'listar_archivos'}
+2025-09-20 22:45:13,987 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 65339)
+2025-09-20 22:45:43,988 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50801): {'accion': 'listar_archivos'}
+2025-09-20 22:45:43,989 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 50801)
+2025-09-20 22:46:13,991 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51103): {'accion': 'listar_archivos'}
+2025-09-20 22:46:13,992 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 51103)
+2025-09-20 22:46:28,470 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:46:43,993 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60724): {'accion': 'listar_archivos'}
+2025-09-20 22:46:43,994 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 60724)
+2025-09-20 22:47:13,995 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63308): {'accion': 'listar_archivos'}
+2025-09-20 22:47:13,995 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 63308)
+2025-09-20 22:47:43,997 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58883): {'accion': 'listar_archivos'}
+2025-09-20 22:47:43,997 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 58883)
+2025-09-20 22:48:13,999 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50945): {'accion': 'listar_archivos'}
+2025-09-20 22:48:14,000 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 50945)
+2025-09-20 22:48:44,002 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51128): {'accion': 'listar_archivos'}
+2025-09-20 22:48:44,002 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 51128)
+2025-09-20 22:49:14,003 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49304): {'accion': 'listar_archivos'}
+2025-09-20 22:49:14,004 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 49304)
+2025-09-20 22:49:44,005 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54978): {'accion': 'listar_archivos'}
+2025-09-20 22:49:44,006 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 54978)
+2025-09-20 22:50:14,008 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49571): {'accion': 'listar_archivos'}
+2025-09-20 22:50:14,008 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 49571)
+2025-09-20 22:50:44,010 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54022): {'accion': 'listar_archivos'}
+2025-09-20 22:50:44,010 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 54022)
+2025-09-20 22:51:12,948 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58075): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-20 22:51:14,012 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55508): {'accion': 'listar_archivos'}
+2025-09-20 22:51:14,013 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 55508)
+2025-09-20 22:51:28,471 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:51:44,015 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55509): {'accion': 'listar_archivos'}
+2025-09-20 22:51:44,016 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 55509)
+2025-09-20 22:52:14,017 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64406): {'accion': 'listar_archivos'}
+2025-09-20 22:52:14,018 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 64406)
+2025-09-20 22:52:44,019 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60544): {'accion': 'listar_archivos'}
+2025-09-20 22:52:44,020 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 60544)
+2025-09-20 22:53:14,022 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50385): {'accion': 'listar_archivos'}
+2025-09-20 22:53:14,022 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 50385)
+2025-09-20 22:53:50,487 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 22:53:50,491 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:53:50,492 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 22:53:50,495 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 22:53:56,198 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52780): {'accion': 'listar_archivos'}
+2025-09-20 22:53:56,199 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 52780)
+2025-09-20 22:54:01,905 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49660): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-20 22:54:26,201 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64964): {'accion': 'listar_archivos'}
+2025-09-20 22:54:26,201 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 64964)
+2025-09-20 22:54:56,203 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53426): {'accion': 'listar_archivos'}
+2025-09-20 22:54:56,203 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 53426)
+2025-09-20 22:55:26,205 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63203): {'accion': 'listar_archivos'}
+2025-09-20 22:55:26,205 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 63203)
+2025-09-20 22:55:56,206 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60134): {'accion': 'listar_archivos'}
+2025-09-20 22:55:56,207 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 60134)
+2025-09-20 22:56:26,209 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63866): {'accion': 'listar_archivos'}
+2025-09-20 22:56:26,209 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 63866)
+2025-09-20 22:56:56,211 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58111): {'accion': 'listar_archivos'}
+2025-09-20 22:56:56,212 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 58111)
+2025-09-20 22:57:26,214 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49939): {'accion': 'listar_archivos'}
+2025-09-20 22:57:26,215 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 49939)
+2025-09-20 22:57:56,216 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57345): {'accion': 'listar_archivos'}
+2025-09-20 22:57:56,217 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.1', 57345)
+2025-09-20 22:58:19,482 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 22:58:21,955 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 22:58:21,957 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 22:58:21,958 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 22:58:21,962 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 22:58:25,292 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57924): {'accion': 'listar_archivos'}
+2025-09-20 22:58:25,292 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57924)
+2025-09-20 22:58:31,603 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52487): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-20 22:58:55,294 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56118): {'accion': 'listar_archivos'}
+2025-09-20 22:58:55,296 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56118)
+2025-09-20 22:59:25,297 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61936): {'accion': 'listar_archivos'}
+2025-09-20 22:59:25,298 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61936)
+2025-09-20 22:59:55,300 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49716): {'accion': 'listar_archivos'}
+2025-09-20 22:59:55,301 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49716)
+2025-09-20 23:00:25,302 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52983): {'accion': 'listar_archivos'}
+2025-09-20 23:00:25,303 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52983)
+2025-09-20 23:00:55,304 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64345): {'accion': 'listar_archivos'}
+2025-09-20 23:00:55,306 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64345)
+2025-09-20 23:01:25,307 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65119): {'accion': 'listar_archivos'}
+2025-09-20 23:01:25,308 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65119)
+2025-09-20 23:01:55,310 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49684): {'accion': 'listar_archivos'}
+2025-09-20 23:01:55,311 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49684)
+2025-09-20 23:02:25,312 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57415): {'accion': 'listar_archivos'}
+2025-09-20 23:02:25,313 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57415)
+2025-09-20 23:02:55,315 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51580): {'accion': 'listar_archivos'}
+2025-09-20 23:02:55,316 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51580)
+2025-09-20 23:03:21,961 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 23:03:25,317 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59074): {'accion': 'listar_archivos'}
+2025-09-20 23:03:25,318 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59074)
+2025-09-20 23:03:36,220 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 23:04:21,554 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 23:04:21,557 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 23:04:21,559 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 23:04:21,561 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 23:04:45,055 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50698): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-20 23:04:57,290 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64020): {'accion': 'listar_archivos'}
+2025-09-20 23:04:57,291 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64020)
+2025-09-20 23:05:18,776 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64021): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-20 23:05:27,293 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61878): {'accion': 'listar_archivos'}
+2025-09-20 23:05:27,293 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61878)
+2025-09-20 23:05:57,295 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49292): {'accion': 'listar_archivos'}
+2025-09-20 23:05:57,296 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49292)
+2025-09-20 23:06:27,298 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54871): {'accion': 'listar_archivos'}
+2025-09-20 23:06:27,299 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54871)
+2025-09-20 23:06:57,301 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60291): {'accion': 'listar_archivos'}
+2025-09-20 23:06:57,302 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60291)
+2025-09-20 23:07:27,304 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60963): {'accion': 'listar_archivos'}
+2025-09-20 23:07:27,305 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60963)
+2025-09-20 23:07:57,307 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49581): {'accion': 'listar_archivos'}
+2025-09-20 23:07:57,307 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49581)
+2025-09-20 23:08:27,309 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63419): {'accion': 'listar_archivos'}
+2025-09-20 23:08:27,311 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63419)
+2025-09-20 23:08:57,312 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52135): {'accion': 'listar_archivos'}
+2025-09-20 23:08:57,313 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52135)
+2025-09-20 23:09:21,561 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 23:09:27,316 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50995): {'accion': 'listar_archivos'}
+2025-09-20 23:09:27,316 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50995)
+2025-09-20 23:09:57,317 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65113): {'accion': 'listar_archivos'}
+2025-09-20 23:09:57,318 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65113)
+2025-09-20 23:10:27,319 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62796): {'accion': 'listar_archivos'}
+2025-09-20 23:10:27,320 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62796)
+2025-09-20 23:10:57,322 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51324): {'accion': 'listar_archivos'}
+2025-09-20 23:10:57,323 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51324)
+2025-09-20 23:11:27,325 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59663): {'accion': 'listar_archivos'}
+2025-09-20 23:11:27,325 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59663)
+2025-09-20 23:11:53,718 - MainThread - INFO - Deteniendo el servidor...
+2025-09-20 23:11:56,263 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-20 23:11:56,266 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 23:11:56,268 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-20 23:11:56,271 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-20 23:11:57,327 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63319): {'accion': 'listar_archivos'}
+2025-09-20 23:11:57,328 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63319)
+2025-09-20 23:12:08,942 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61303): {'accion': 'listar_archivos'}
+2025-09-20 23:12:08,943 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61303)
+2025-09-20 23:12:16,782 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62706): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-20 23:12:38,945 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62707): {'accion': 'listar_archivos'}
+2025-09-20 23:12:38,946 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62707)
+2025-09-20 23:13:08,948 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52542): {'accion': 'listar_archivos'}
+2025-09-20 23:13:08,949 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52542)
+2025-09-20 23:13:38,951 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53239): {'accion': 'listar_archivos'}
+2025-09-20 23:13:38,952 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53239)
+2025-09-20 23:14:08,954 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50061): {'accion': 'listar_archivos'}
+2025-09-20 23:14:08,955 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50061)
+2025-09-20 23:14:38,957 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56002): {'accion': 'listar_archivos'}
+2025-09-20 23:14:38,958 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56002)
+2025-09-20 23:15:08,961 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65146): {'accion': 'listar_archivos'}
+2025-09-20 23:15:08,962 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65146)
+2025-09-20 23:15:38,964 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59719): {'accion': 'listar_archivos'}
+2025-09-20 23:15:38,965 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59719)
+2025-09-20 23:16:08,967 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50576): {'accion': 'listar_archivos'}
+2025-09-20 23:16:08,968 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50576)
+2025-09-20 23:16:38,970 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52520): {'accion': 'listar_archivos'}
+2025-09-20 23:16:38,972 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52520)
+2025-09-20 23:16:56,270 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-20 23:17:00,879 - MainThread - INFO - Deteniendo el servidor...
+2025-09-21 00:10:42,276 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 00:10:42,278 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:10:42,279 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 00:10:42,282 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 00:11:16,812 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54351): {'accion': 'listar_archivos'}
+2025-09-21 00:11:16,813 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54351)
+2025-09-21 00:11:46,815 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56886): {'accion': 'listar_archivos'}
+2025-09-21 00:11:46,816 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56886)
+2025-09-21 00:12:16,818 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56670): {'accion': 'listar_archivos'}
+2025-09-21 00:12:16,819 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56670)
+2025-09-21 00:12:46,821 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64336): {'accion': 'listar_archivos'}
+2025-09-21 00:12:46,822 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64336)
+2025-09-21 00:13:16,824 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60032): {'accion': 'listar_archivos'}
+2025-09-21 00:13:16,825 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60032)
+2025-09-21 00:13:46,827 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53215): {'accion': 'listar_archivos'}
+2025-09-21 00:13:46,828 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53215)
+2025-09-21 00:14:16,830 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49312): {'accion': 'listar_archivos'}
+2025-09-21 00:14:16,831 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49312)
+2025-09-21 00:14:46,833 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64964): {'accion': 'listar_archivos'}
+2025-09-21 00:14:46,834 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64964)
+2025-09-21 00:15:16,836 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58572): {'accion': 'listar_archivos'}
+2025-09-21 00:15:16,837 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58572)
+2025-09-21 00:15:42,282 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:15:46,839 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61385): {'accion': 'listar_archivos'}
+2025-09-21 00:15:46,840 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61385)
+2025-09-21 00:16:16,844 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60147): {'accion': 'listar_archivos'}
+2025-09-21 00:16:16,846 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60147)
+2025-09-21 00:16:46,847 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63556): {'accion': 'listar_archivos'}
+2025-09-21 00:16:46,848 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63556)
+2025-09-21 00:17:16,850 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61261): {'accion': 'listar_archivos'}
+2025-09-21 00:17:16,851 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61261)
+2025-09-21 00:17:46,853 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49358): {'accion': 'listar_archivos'}
+2025-09-21 00:17:46,854 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49358)
+2025-09-21 00:18:16,856 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61682): {'accion': 'listar_archivos'}
+2025-09-21 00:18:16,857 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61682)
+2025-09-21 00:18:46,859 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54863): {'accion': 'listar_archivos'}
+2025-09-21 00:18:46,860 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54863)
+2025-09-21 00:19:16,862 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63512): {'accion': 'listar_archivos'}
+2025-09-21 00:19:16,862 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63512)
+2025-09-21 00:19:46,865 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62534): {'accion': 'listar_archivos'}
+2025-09-21 00:19:46,865 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62534)
+2025-09-21 00:20:16,867 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62845): {'accion': 'listar_archivos'}
+2025-09-21 00:20:16,868 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62845)
+2025-09-21 00:20:27,233 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53244): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 00:20:42,283 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:20:46,869 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53149): {'accion': 'listar_archivos'}
+2025-09-21 00:20:46,870 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53149)
+2025-09-21 00:21:16,872 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58008): {'accion': 'listar_archivos'}
+2025-09-21 00:21:16,873 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58008)
+2025-09-21 00:21:46,875 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64327): {'accion': 'listar_archivos'}
+2025-09-21 00:21:46,875 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64327)
+2025-09-21 00:22:16,877 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51022): {'accion': 'listar_archivos'}
+2025-09-21 00:22:16,878 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51022)
+2025-09-21 00:22:46,880 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51345): {'accion': 'listar_archivos'}
+2025-09-21 00:22:46,880 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51345)
+2025-09-21 00:23:16,882 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52042): {'accion': 'listar_archivos'}
+2025-09-21 00:23:16,883 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52042)
+2025-09-21 00:23:46,884 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63817): {'accion': 'listar_archivos'}
+2025-09-21 00:23:46,885 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63817)
+2025-09-21 00:24:16,887 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62390): {'accion': 'listar_archivos'}
+2025-09-21 00:24:16,888 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62390)
+2025-09-21 00:24:46,889 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65180): {'accion': 'listar_archivos'}
+2025-09-21 00:24:46,890 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65180)
+2025-09-21 00:25:16,892 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51356): {'accion': 'listar_archivos'}
+2025-09-21 00:25:16,892 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51356)
+2025-09-21 00:25:42,284 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:25:46,894 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60346): {'accion': 'listar_archivos'}
+2025-09-21 00:25:46,895 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60346)
+2025-09-21 00:26:16,897 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49938): {'accion': 'listar_archivos'}
+2025-09-21 00:26:16,897 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49938)
+2025-09-21 00:26:46,899 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54727): {'accion': 'listar_archivos'}
+2025-09-21 00:26:46,900 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54727)
+2025-09-21 00:27:16,901 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50199): {'accion': 'listar_archivos'}
+2025-09-21 00:27:16,902 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50199)
+2025-09-21 00:27:46,904 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63707): {'accion': 'listar_archivos'}
+2025-09-21 00:27:46,904 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63707)
+2025-09-21 00:28:16,906 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52484): {'accion': 'listar_archivos'}
+2025-09-21 00:28:16,907 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52484)
+2025-09-21 00:28:46,909 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52061): {'accion': 'listar_archivos'}
+2025-09-21 00:28:46,909 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52061)
+2025-09-21 00:29:16,911 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59798): {'accion': 'listar_archivos'}
+2025-09-21 00:29:16,912 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59798)
+2025-09-21 00:29:46,914 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60724): {'accion': 'listar_archivos'}
+2025-09-21 00:29:46,915 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60724)
+2025-09-21 00:30:16,916 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54623): {'accion': 'listar_archivos'}
+2025-09-21 00:30:16,917 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54623)
+2025-09-21 00:30:42,286 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:30:46,919 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51916): {'accion': 'listar_archivos'}
+2025-09-21 00:30:46,919 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51916)
+2025-09-21 00:31:16,921 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54774): {'accion': 'listar_archivos'}
+2025-09-21 00:31:16,922 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54774)
+2025-09-21 00:31:46,923 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64694): {'accion': 'listar_archivos'}
+2025-09-21 00:31:46,924 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64694)
+2025-09-21 00:32:16,926 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56801): {'accion': 'listar_archivos'}
+2025-09-21 00:32:16,926 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56801)
+2025-09-21 00:32:46,928 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64749): {'accion': 'listar_archivos'}
+2025-09-21 00:32:46,929 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64749)
+2025-09-21 00:33:16,931 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51318): {'accion': 'listar_archivos'}
+2025-09-21 00:33:16,932 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51318)
+2025-09-21 00:33:46,934 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50813): {'accion': 'listar_archivos'}
+2025-09-21 00:33:46,935 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50813)
+2025-09-21 00:34:16,937 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51186): {'accion': 'listar_archivos'}
+2025-09-21 00:34:16,937 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51186)
+2025-09-21 00:34:46,940 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53066): {'accion': 'listar_archivos'}
+2025-09-21 00:34:46,940 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53066)
+2025-09-21 00:35:16,942 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59975): {'accion': 'listar_archivos'}
+2025-09-21 00:35:16,943 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59975)
+2025-09-21 00:35:42,299 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:35:46,944 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65507): {'accion': 'listar_archivos'}
+2025-09-21 00:35:46,945 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65507)
+2025-09-21 00:36:16,947 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53347): {'accion': 'listar_archivos'}
+2025-09-21 00:36:16,948 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53347)
+2025-09-21 00:36:46,949 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59219): {'accion': 'listar_archivos'}
+2025-09-21 00:36:46,950 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59219)
+2025-09-21 00:37:16,952 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51391): {'accion': 'listar_archivos'}
+2025-09-21 00:37:16,952 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51391)
+2025-09-21 00:37:46,954 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59431): {'accion': 'listar_archivos'}
+2025-09-21 00:37:46,955 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59431)
+2025-09-21 00:38:15,869 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 00:38:15,873 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:38:15,875 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 00:38:15,877 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 00:38:23,338 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51721): {'accion': 'listar_archivos'}
+2025-09-21 00:38:23,339 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51721)
+2025-09-21 00:38:33,465 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51722): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 00:38:53,341 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51723): {'accion': 'listar_archivos'}
+2025-09-21 00:38:53,343 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51723)
+2025-09-21 00:39:23,345 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57930): {'accion': 'listar_archivos'}
+2025-09-21 00:39:23,346 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57930)
+2025-09-21 00:39:53,347 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62053): {'accion': 'listar_archivos'}
+2025-09-21 00:39:53,348 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62053)
+2025-09-21 00:40:23,350 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54013): {'accion': 'listar_archivos'}
+2025-09-21 00:40:23,351 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54013)
+2025-09-21 00:40:53,352 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57253): {'accion': 'listar_archivos'}
+2025-09-21 00:40:53,352 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57253)
+2025-09-21 00:41:23,354 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64163): {'accion': 'listar_archivos'}
+2025-09-21 00:41:23,355 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64163)
+2025-09-21 00:41:53,357 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55336): {'accion': 'listar_archivos'}
+2025-09-21 00:41:53,359 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55336)
+2025-09-21 00:42:23,360 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65052): {'accion': 'listar_archivos'}
+2025-09-21 00:42:23,361 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65052)
+2025-09-21 00:42:53,363 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56149): {'accion': 'listar_archivos'}
+2025-09-21 00:42:53,364 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56149)
+2025-09-21 00:43:15,877 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:43:23,366 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59659): {'accion': 'listar_archivos'}
+2025-09-21 00:43:23,366 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59659)
+2025-09-21 00:43:53,368 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62154): {'accion': 'listar_archivos'}
+2025-09-21 00:43:53,369 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62154)
+2025-09-21 00:44:23,371 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63612): {'accion': 'listar_archivos'}
+2025-09-21 00:44:23,371 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63612)
+2025-09-21 00:44:49,076 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 00:44:49,079 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:44:49,081 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 00:44:49,083 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 00:44:52,827 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63478): {'accion': 'listar_archivos'}
+2025-09-21 00:44:52,828 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63478)
+2025-09-21 00:45:00,710 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63209): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 00:45:22,831 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60804): {'accion': 'listar_archivos'}
+2025-09-21 00:45:22,832 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60804)
+2025-09-21 00:45:52,834 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56413): {'accion': 'listar_archivos'}
+2025-09-21 00:45:52,835 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56413)
+2025-09-21 00:46:22,837 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53558): {'accion': 'listar_archivos'}
+2025-09-21 00:46:22,838 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53558)
+2025-09-21 00:46:52,840 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59390): {'accion': 'listar_archivos'}
+2025-09-21 00:46:52,842 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59390)
+2025-09-21 00:47:22,843 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52740): {'accion': 'listar_archivos'}
+2025-09-21 00:47:22,844 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52740)
+2025-09-21 00:47:52,846 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53244): {'accion': 'listar_archivos'}
+2025-09-21 00:47:52,847 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53244)
+2025-09-21 00:48:22,849 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51163): {'accion': 'listar_archivos'}
+2025-09-21 00:48:22,850 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51163)
+2025-09-21 00:48:52,852 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60516): {'accion': 'listar_archivos'}
+2025-09-21 00:48:52,854 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60516)
+2025-09-21 00:49:22,856 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64721): {'accion': 'listar_archivos'}
+2025-09-21 00:49:22,857 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64721)
+2025-09-21 00:49:49,082 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:49:52,858 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49938): {'accion': 'listar_archivos'}
+2025-09-21 00:49:52,859 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49938)
+2025-09-21 00:50:22,861 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50508): {'accion': 'listar_archivos'}
+2025-09-21 00:50:22,862 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50508)
+2025-09-21 00:50:52,865 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65203): {'accion': 'listar_archivos'}
+2025-09-21 00:50:52,865 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65203)
+2025-09-21 00:51:22,867 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51329): {'accion': 'listar_archivos'}
+2025-09-21 00:51:22,868 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51329)
+2025-09-21 00:51:52,869 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61874): {'accion': 'listar_archivos'}
+2025-09-21 00:51:52,870 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61874)
+2025-09-21 00:52:22,872 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49241): {'accion': 'listar_archivos'}
+2025-09-21 00:52:22,873 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49241)
+2025-09-21 00:52:52,875 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53814): {'accion': 'listar_archivos'}
+2025-09-21 00:52:52,876 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53814)
+2025-09-21 00:53:22,877 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55497): {'accion': 'listar_archivos'}
+2025-09-21 00:53:22,878 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55497)
+2025-09-21 00:53:52,880 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50215): {'accion': 'listar_archivos'}
+2025-09-21 00:53:52,881 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50215)
+2025-09-21 00:54:22,883 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61728): {'accion': 'listar_archivos'}
+2025-09-21 00:54:22,884 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61728)
+2025-09-21 00:54:49,084 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:54:52,886 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51002): {'accion': 'listar_archivos'}
+2025-09-21 00:54:52,886 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51002)
+2025-09-21 00:55:22,889 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57360): {'accion': 'listar_archivos'}
+2025-09-21 00:55:22,890 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57360)
+2025-09-21 00:55:52,892 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51320): {'accion': 'listar_archivos'}
+2025-09-21 00:55:52,893 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51320)
+2025-09-21 00:56:22,895 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56044): {'accion': 'listar_archivos'}
+2025-09-21 00:56:22,895 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56044)
+2025-09-21 00:56:52,898 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52908): {'accion': 'listar_archivos'}
+2025-09-21 00:56:52,898 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52908)
+2025-09-21 00:57:22,900 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55483): {'accion': 'listar_archivos'}
+2025-09-21 00:57:22,900 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55483)
+2025-09-21 00:57:52,902 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54151): {'accion': 'listar_archivos'}
+2025-09-21 00:57:52,903 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54151)
+2025-09-21 00:58:22,905 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60967): {'accion': 'listar_archivos'}
+2025-09-21 00:58:22,905 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60967)
+2025-09-21 00:58:52,907 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63553): {'accion': 'listar_archivos'}
+2025-09-21 00:58:52,908 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63553)
+2025-09-21 00:59:22,909 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54142): {'accion': 'listar_archivos'}
+2025-09-21 00:59:22,910 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54142)
+2025-09-21 00:59:49,086 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 00:59:52,913 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55760): {'accion': 'listar_archivos'}
+2025-09-21 00:59:52,914 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55760)
+2025-09-21 01:00:22,916 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61159): {'accion': 'listar_archivos'}
+2025-09-21 01:00:22,916 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61159)
+2025-09-21 01:00:52,918 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59212): {'accion': 'listar_archivos'}
+2025-09-21 01:00:52,919 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59212)
+2025-09-21 01:01:08,166 - MainThread - INFO - Deteniendo el servidor...
+2025-09-21 01:01:10,672 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 01:01:10,675 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:01:10,676 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 01:01:10,679 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 01:01:16,229 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61072): {'type': 'SYN', 'seq': 401429}
+2025-09-21 01:04:22,749 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59063): {'type': 'SYN', 'seq': 431613}
+2025-09-21 01:04:55,806 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59768): {'type': 'SYN', 'seq': 494056}
+2025-09-21 01:05:28,873 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64505): {'type': 'SYN', 'seq': 954937}
+2025-09-21 01:06:01,940 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62208): {'type': 'SYN', 'seq': 979819}
+2025-09-21 01:06:10,678 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:06:35,035 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60025): {'type': 'SYN', 'seq': 216540}
+2025-09-21 01:07:08,131 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59589): {'type': 'SYN', 'seq': 480067}
+2025-09-21 01:07:08,675 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59590): {'type': 'SYN', 'seq': 419463}
+2025-09-21 01:07:27,084 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50913): {'type': 'SYN', 'seq': 730973}
+2025-09-21 01:07:41,169 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50914): {'type': 'SYN', 'seq': 893306}
+2025-09-21 01:08:02,341 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65348): {'type': 'SYN', 'seq': 950944}
+2025-09-21 01:08:14,244 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52964): {'type': 'SYN', 'seq': 586030}
+2025-09-21 01:08:18,309 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58537): {'type': 'SYN', 'seq': 191545}
+2025-09-21 01:08:47,359 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54103): {'type': 'SYN', 'seq': 654484}
+2025-09-21 01:09:20,414 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64863): {'type': 'SYN', 'seq': 539692}
+2025-09-21 01:09:53,475 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57982): {'type': 'SYN', 'seq': 694363}
+2025-09-21 01:10:26,523 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50224): {'type': 'SYN', 'seq': 466397}
+2025-09-21 01:10:59,618 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56378): {'type': 'SYN', 'seq': 413068}
+2025-09-21 01:11:10,680 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:11:23,461 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64692): {'accion': 'listar_archivos'}
+2025-09-21 01:11:23,462 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64692)
+2025-09-21 01:11:28,818 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65457): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 01:11:53,464 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59443): {'accion': 'listar_archivos'}
+2025-09-21 01:11:53,465 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59443)
+2025-09-21 01:12:23,467 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51993): {'accion': 'listar_archivos'}
+2025-09-21 01:12:23,468 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51993)
+2025-09-21 01:12:53,470 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63611): {'accion': 'listar_archivos'}
+2025-09-21 01:12:53,471 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63611)
+2025-09-21 01:13:23,472 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58294): {'accion': 'listar_archivos'}
+2025-09-21 01:13:23,474 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58294)
+2025-09-21 01:13:53,475 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53225): {'accion': 'listar_archivos'}
+2025-09-21 01:13:53,476 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53225)
+2025-09-21 01:14:23,478 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60963): {'accion': 'listar_archivos'}
+2025-09-21 01:14:23,479 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60963)
+2025-09-21 01:14:53,481 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65333): {'accion': 'listar_archivos'}
+2025-09-21 01:14:53,482 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65333)
+2025-09-21 01:15:23,483 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58920): {'accion': 'listar_archivos'}
+2025-09-21 01:15:23,484 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58920)
+2025-09-21 01:15:38,894 - MainThread - INFO - Deteniendo el servidor...
+2025-09-21 01:16:35,056 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 01:16:35,059 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:16:35,061 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 01:16:35,064 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 01:16:40,243 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51090): {'accion': 'listar_archivos'}
+2025-09-21 01:16:40,244 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51090)
+2025-09-21 01:17:10,247 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62580): {'accion': 'listar_archivos'}
+2025-09-21 01:17:10,248 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62580)
+2025-09-21 01:17:40,250 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52765): {'accion': 'listar_archivos'}
+2025-09-21 01:17:40,251 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52765)
+2025-09-21 01:18:10,253 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51686): {'accion': 'listar_archivos'}
+2025-09-21 01:18:10,254 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51686)
+2025-09-21 01:18:11,856 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49209): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 01:18:40,256 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62369): {'accion': 'listar_archivos'}
+2025-09-21 01:18:40,257 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62369)
+2025-09-21 01:19:10,259 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53189): {'accion': 'listar_archivos'}
+2025-09-21 01:19:10,260 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53189)
+2025-09-21 01:19:40,261 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58929): {'accion': 'listar_archivos'}
+2025-09-21 01:19:40,263 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58929)
+2025-09-21 01:20:10,265 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59649): {'accion': 'listar_archivos'}
+2025-09-21 01:20:10,265 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59649)
+2025-09-21 01:20:40,267 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56652): {'accion': 'listar_archivos'}
+2025-09-21 01:20:40,268 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56652)
+2025-09-21 01:21:10,269 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53456): {'accion': 'listar_archivos'}
+2025-09-21 01:21:10,270 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53456)
+2025-09-21 01:21:35,063 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:21:40,271 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65413): {'accion': 'listar_archivos'}
+2025-09-21 01:21:40,272 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65413)
+2025-09-21 01:22:10,273 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63174): {'accion': 'listar_archivos'}
+2025-09-21 01:22:10,274 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63174)
+2025-09-21 01:23:08,226 - MainThread - INFO - Deteniendo el servidor...
+2025-09-21 01:23:11,240 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 01:23:11,251 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:23:11,253 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 01:23:11,256 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 01:23:15,236 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62349): {'accion': 'listar_archivos'}
+2025-09-21 01:23:15,237 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62349)
+2025-09-21 01:23:23,187 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49184): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 01:23:45,239 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49186): {'accion': 'listar_archivos'}
+2025-09-21 01:23:45,240 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49186)
+2025-09-21 01:24:15,242 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63172): {'accion': 'listar_archivos'}
+2025-09-21 01:24:15,243 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63172)
+2025-09-21 01:24:45,245 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54756): {'accion': 'listar_archivos'}
+2025-09-21 01:24:45,246 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54756)
+2025-09-21 01:25:15,248 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53292): {'accion': 'listar_archivos'}
+2025-09-21 01:25:15,249 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53292)
+2025-09-21 01:25:45,250 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61516): {'accion': 'listar_archivos'}
+2025-09-21 01:25:45,251 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61516)
+2025-09-21 01:26:15,253 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57249): {'accion': 'listar_archivos'}
+2025-09-21 01:26:15,254 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57249)
+2025-09-21 01:26:45,256 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59760): {'accion': 'listar_archivos'}
+2025-09-21 01:26:45,257 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59760)
+2025-09-21 01:27:15,258 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63458): {'accion': 'listar_archivos'}
+2025-09-21 01:27:15,259 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63458)
+2025-09-21 01:27:45,261 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61290): {'accion': 'listar_archivos'}
+2025-09-21 01:27:45,262 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61290)
+2025-09-21 01:28:11,255 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:28:15,265 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62106): {'accion': 'listar_archivos'}
+2025-09-21 01:28:15,265 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62106)
+2025-09-21 01:28:45,267 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61446): {'accion': 'listar_archivos'}
+2025-09-21 01:28:45,268 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61446)
+2025-09-21 01:29:15,270 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49695): {'accion': 'listar_archivos'}
+2025-09-21 01:29:15,271 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49695)
+2025-09-21 01:29:45,273 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50659): {'accion': 'listar_archivos'}
+2025-09-21 01:29:45,274 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50659)
+2025-09-21 01:30:15,275 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55401): {'accion': 'listar_archivos'}
+2025-09-21 01:30:15,276 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55401)
+2025-09-21 01:30:45,278 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63869): {'accion': 'listar_archivos'}
+2025-09-21 01:30:45,279 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63869)
+2025-09-21 01:31:15,180 - MainThread - INFO - Deteniendo el servidor...
+2025-09-21 01:31:53,038 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-21 01:31:53,040 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:31:53,041 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-21 01:31:53,045 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-21 01:31:56,706 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53916): {'accion': 'listar_archivos'}
+2025-09-21 01:31:56,707 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53916)
+2025-09-21 01:32:15,812 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61148): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-21 01:32:26,709 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61150): {'accion': 'listar_archivos'}
+2025-09-21 01:32:26,710 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61150)
+2025-09-21 01:32:56,712 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63480): {'accion': 'listar_archivos'}
+2025-09-21 01:32:56,713 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63480)
+2025-09-21 01:33:26,714 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50536): {'accion': 'listar_archivos'}
+2025-09-21 01:33:26,715 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50536)
+2025-09-21 01:33:56,717 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51339): {'accion': 'listar_archivos'}
+2025-09-21 01:33:56,718 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51339)
+2025-09-21 01:34:26,719 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62953): {'accion': 'listar_archivos'}
+2025-09-21 01:34:26,720 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62953)
+2025-09-21 01:34:56,722 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54672): {'accion': 'listar_archivos'}
+2025-09-21 01:34:56,723 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54672)
+2025-09-21 01:35:26,725 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61151): {'accion': 'listar_archivos'}
+2025-09-21 01:35:26,727 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61151)
+2025-09-21 01:35:56,728 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49941): {'accion': 'listar_archivos'}
+2025-09-21 01:35:56,729 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49941)
+2025-09-21 01:36:26,731 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65143): {'accion': 'listar_archivos'}
+2025-09-21 01:36:26,732 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65143)
+2025-09-21 01:36:53,044 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:36:56,734 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51622): {'accion': 'listar_archivos'}
+2025-09-21 01:36:56,735 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51622)
+2025-09-21 01:37:26,737 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 56912): {'accion': 'listar_archivos'}
+2025-09-21 01:37:26,738 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 56912)
+2025-09-21 01:37:56,741 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 52134): {'accion': 'listar_archivos'}
+2025-09-21 01:37:56,742 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 52134)
+2025-09-21 01:38:26,743 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 61216): {'accion': 'listar_archivos'}
+2025-09-21 01:38:26,744 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 61216)
+2025-09-21 01:38:56,746 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55210): {'accion': 'listar_archivos'}
+2025-09-21 01:38:56,747 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55210)
+2025-09-21 01:39:26,749 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 59723): {'accion': 'listar_archivos'}
+2025-09-21 01:39:26,750 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 59723)
+2025-09-21 01:39:56,751 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64731): {'accion': 'listar_archivos'}
+2025-09-21 01:39:56,752 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64731)
+2025-09-21 01:40:26,754 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57255): {'accion': 'listar_archivos'}
+2025-09-21 01:40:26,755 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57255)
+2025-09-21 01:40:56,758 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 49938): {'accion': 'listar_archivos'}
+2025-09-21 01:40:56,759 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 49938)
+2025-09-21 01:41:26,761 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50484): {'accion': 'listar_archivos'}
+2025-09-21 01:41:26,762 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50484)
+2025-09-21 01:41:53,045 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:41:56,764 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 50624): {'accion': 'listar_archivos'}
+2025-09-21 01:41:56,766 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 50624)
+2025-09-21 01:42:26,768 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53901): {'accion': 'listar_archivos'}
+2025-09-21 01:42:26,769 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53901)
+2025-09-21 01:42:56,771 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53506): {'accion': 'listar_archivos'}
+2025-09-21 01:42:56,772 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53506)
+2025-09-21 01:43:26,774 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 57491): {'accion': 'listar_archivos'}
+2025-09-21 01:43:26,775 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 57491)
+2025-09-21 01:43:56,776 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 51801): {'accion': 'listar_archivos'}
+2025-09-21 01:43:56,777 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 51801)
+2025-09-21 01:44:26,779 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 65527): {'accion': 'listar_archivos'}
+2025-09-21 01:44:26,780 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 65527)
+2025-09-21 01:44:56,782 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 64050): {'accion': 'listar_archivos'}
+2025-09-21 01:44:56,783 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 64050)
+2025-09-21 01:45:26,784 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 63577): {'accion': 'listar_archivos'}
+2025-09-21 01:45:26,785 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 63577)
+2025-09-21 01:45:56,787 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58519): {'accion': 'listar_archivos'}
+2025-09-21 01:45:56,788 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58519)
+2025-09-21 01:46:26,790 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 58865): {'accion': 'listar_archivos'}
+2025-09-21 01:46:26,791 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 58865)
+2025-09-21 01:46:53,048 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-21 01:46:56,793 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 53728): {'accion': 'listar_archivos'}
+2025-09-21 01:46:56,794 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 53728)
+2025-09-21 01:47:26,796 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 60051): {'accion': 'listar_archivos'}
+2025-09-21 01:47:26,797 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 60051)
+2025-09-21 01:47:56,799 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 54829): {'accion': 'listar_archivos'}
+2025-09-21 01:47:56,800 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 54829)
+2025-09-21 01:48:26,801 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 62894): {'accion': 'listar_archivos'}
+2025-09-21 01:48:26,803 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 62894)
+2025-09-21 01:48:56,805 - ServidorUDP - INFO - Petición recibida de ('127.0.0.3', 55549): {'accion': 'listar_archivos'}
+2025-09-21 01:48:56,806 - ServidorUDP - INFO - Enviada lista de 1 archivos a ('127.0.0.3', 55549)
