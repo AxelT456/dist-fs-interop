@@ -1,0 +1,655 @@
+# server_distributed.py - Servidor que se conecta al DNS General
+import socket
+import json
+import threading
+import os
+import logging
+import time
+import sys
+from typing import List, Dict, Tuple
+from datetime import datetime
+
+# Importaciones del sistema de red seguro
+sys.path.append('src/network')
+from src.network.peer_conector import PeerConnector
+from src.network.transport import ReliableTransport
+
+# Configuración
+DNS_GENERAL_IP = "127.0.0.5"
+DNS_GENERAL_PORT = 50005
+
+# Configuración de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+class ServidorDistribuido:
+    def __init__(self, server_id: str, host: str, port: int, dns_local_ip: str, dns_local_port: int, folder_path: str = "archivos"):
+        self.server_id = server_id
+        self.host = host
+        self.port = port
+        self.dns_local_ip = dns_local_ip
+        self.dns_local_port = dns_local_port
+        self.folder_path = folder_path
+        self.running = True
+        
+        # Lista local de archivos
+        self.local_files = []
+        self.local_files_lock = threading.Lock()
+        
+        # Cache de archivos remotos conocidos
+        self.remote_files_cache = {}  # {nombre_archivo: {"server_id": id, "ip": ip, "port": port}}
+        
+        # Componentes de red seguros
+        self.transport = ReliableTransport(host, port)
+        self.peer_connector = PeerConnector(
+            self.transport, 
+            f"{host}:{port}", 
+            self._handle_secure_message
+        )
+        
+        # Crear carpeta si no existe
+        if not os.path.exists(self.folder_path):
+            os.makedirs(self.folder_path)
+            
+        # Inicializar
+        self._scan_local_files()
+        self._register_with_dns_general()
+        self._start_heartbeat()
+        self._start_udp_listener()
+        
+    def _start_udp_listener(self):
+        """Inicia un listener UDP para peticiones directas del DNS General"""
+        def udp_server():
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            try:
+                # Usar un puerto diferente para UDP (puerto + 1000)
+                udp_port = self.port + 1000
+                sock.bind((self.host, udp_port))
+                self.log(f"Listener UDP iniciado en {self.host}:{udp_port}")
+                
+                while self.running:
+                    try:
+                        data, addr = sock.recvfrom(8192)
+                        request = json.loads(data.decode('utf-8'))
+                        
+                        # Procesar petición directa
+                        if request.get("via_dns_general"):
+                            response = self._process_dns_general_request(request)
+                        else:
+                            response = {"status": "ERROR", "mensaje": "Petición no reconocida"}
+                        
+                        # Enviar respuesta
+                        sock.sendto(json.dumps(response).encode('utf-8'), addr)
+                        
+                    except json.JSONDecodeError:
+                        error_response = {"status": "ERROR", "mensaje": "JSON inválido"}
+                        sock.sendto(json.dumps(error_response).encode('utf-8'), addr)
+                    except Exception as e:
+                        self.log(f"Error en UDP listener: {e}")
+                        error_response = {"status": "ERROR", "mensaje": str(e)}
+                        try:
+                            sock.sendto(json.dumps(error_response).encode('utf-8'), addr)
+                        except:
+                            pass
+                            
+            except Exception as e:
+                self.log(f"Error iniciando UDP listener: {e}")
+            finally:
+                sock.close()
+        
+        # Iniciar en hilo separado
+        thread = threading.Thread(target=udp_server, daemon=True)
+        thread.start()
+        
+    def _process_dns_general_request(self, request: Dict) -> Dict:
+        """Procesa peticiones que llegan del DNS General"""
+        accion = request.get("accion")
+        
+        if accion == "leer":
+            return self._handle_leer_directo(request)
+        elif accion == "escribir":
+            return self._handle_escribir_directo(request)
+        else:
+            return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada vía UDP"}
+    
+    def _handle_leer_directo(self, request: Dict) -> Dict:
+        """Lee archivo local directamente (para peticiones del DNS General)"""
+        nombre_archivo = request.get("nombre_archivo")
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+                return {
+                    "status": "EXITO", 
+                    "contenido": contenido,
+                    "servidor_origen": self.server_id,
+                    "procesado_por": self.server_id
+                }
+            except Exception as e:
+                return {"status": "ERROR", "mensaje": f"Error leyendo archivo: {e}"}
+        else:
+            return {"status": "ERROR", "mensaje": f"Archivo '{nombre_archivo}' no encontrado"}
+    
+    def _handle_escribir_directo(self, request: Dict) -> Dict:
+        """Escribe archivo local directamente (para peticiones del DNS General)"""
+        nombre_archivo = request.get("nombre_archivo")
+        contenido = request.get("contenido", "")
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        
+        es_nuevo_archivo = not os.path.exists(file_path)
+        
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(contenido)
+            
+            # Si es un archivo nuevo, actualizar lista local y registro
+            if es_nuevo_archivo:
+                with self.local_files_lock:
+                    name, ext = os.path.splitext(nombre_archivo)
+                    nuevo_archivo = {
+                        "nombre_archivo": nombre_archivo,
+                        "extension": ext,
+                        "publicado": True,
+                        "ttl": 3600,
+                        "bandera": 0,
+                        "ip_origen": self.host
+                    }
+                    self.local_files.append(nuevo_archivo)
+                
+                # Actualizar registro en DNS General
+                self._register_with_dns_general()
+                
+                tipo_operacion = "creacion"
+                mensaje = f"Archivo '{nombre_archivo}' creado"
+            else:
+                tipo_operacion = "modificacion"
+                mensaje = f"Archivo '{nombre_archivo}' modificado"
+            
+            return {
+                "status": "EXITO",
+                "mensaje": mensaje,
+                "servidor_destino": self.server_id,
+                "tipo_operacion": tipo_operacion,
+                "procesado_por": self.server_id
+            }
+            
+        except Exception as e:
+            return {"status": "ERROR", "mensaje": f"Error escribiendo archivo: {e}"}
+        """Inicia un listener UDP para peticiones directas del DNS General"""
+        def udp_server():
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            try:
+                # Usar un puerto diferente para UDP (puerto + 1000)
+                udp_port = self.port + 1000
+                sock.bind((self.host, udp_port))
+                self.log(f"Listener UDP iniciado en {self.host}:{udp_port}")
+                
+                while self.running:
+                    try:
+                        data, addr = sock.recvfrom(8192)
+                        request = json.loads(data.decode('utf-8'))
+                        
+                        # Procesar petición directa
+                        if request.get("via_dns_general"):
+                            response = self._process_dns_general_request(request)
+                        else:
+                            response = {"status": "ERROR", "mensaje": "Petición no reconocida"}
+                        
+                        # Enviar respuesta
+                        sock.sendto(json.dumps(response).encode('utf-8'), addr)
+                        
+                    except json.JSONDecodeError:
+                        error_response = {"status": "ERROR", "mensaje": "JSON inválido"}
+                        sock.sendto(json.dumps(error_response).encode('utf-8'), addr)
+                    except Exception as e:
+                        self.log(f"Error en UDP listener: {e}")
+                        error_response = {"status": "ERROR", "mensaje": str(e)}
+                        try:
+                            sock.sendto(json.dumps(error_response).encode('utf-8'), addr)
+                        except:
+                            pass
+                            
+            except Exception as e:
+                self.log(f"Error iniciando UDP listener: {e}")
+            finally:
+                sock.close()
+        
+    def log(self, message):
+        logging.info(f"[{self.server_id}] {message}")
+        
+    def _scan_local_files(self):
+        """Escanea archivos locales"""
+        with self.local_files_lock:
+            self.local_files = []
+            try:
+                for filename in os.listdir(self.folder_path):
+                    if os.path.isfile(os.path.join(self.folder_path, filename)):
+                        name, ext = os.path.splitext(filename)
+                        self.local_files.append({
+                            "nombre_archivo": filename,
+                            "extension": ext,
+                            "publicado": True,  # Por defecto publicado
+                            "ttl": 3600,
+                            "bandera": 0,  # Original
+                            "ip_origen": self.host
+                        })
+                        
+                self.log(f"Escaneados {len(self.local_files)} archivos locales")
+            except Exception as e:
+                self.log(f"Error escaneando archivos locales: {e}")
+    
+    def _register_with_dns_general(self):
+        """Registra el servidor con el DNS General"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
+            
+            register_request = {
+                "accion": "registrar_servidor",
+                "server_id": self.server_id,
+                "ip": self.host,
+                "port": self.port,
+                "archivos": self.local_files
+            }
+            
+            sock.sendto(json.dumps(register_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            if response.get("status") == "ACK":
+                self.log("Registrado exitosamente en DNS General")
+            else:
+                self.log(f"Error registrando en DNS General: {response}")
+                
+        except Exception as e:
+            self.log(f"Error conectando con DNS General: {e}")
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _send_heartbeat(self):
+        """Envía heartbeat al DNS General"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(3)
+            
+            heartbeat_request = {
+                "accion": "heartbeat",
+                "server_id": self.server_id
+            }
+            
+            sock.sendto(json.dumps(heartbeat_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(1024)
+            
+        except Exception as e:
+            self.log(f"Error enviando heartbeat: {e}")
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _start_heartbeat(self):
+        """Inicia el hilo de heartbeat"""
+        def heartbeat_loop():
+            while self.running:
+                time.sleep(30)  # Cada 30 segundos
+                if self.running:
+                    self._send_heartbeat()
+        
+        thread = threading.Thread(target=heartbeat_loop, daemon=True)
+        thread.start()
+    
+    def _find_file_location(self, nombre_archivo: str) -> Dict:
+        """Encuentra dónde está ubicado un archivo"""
+        # Primero buscar localmente
+        with self.local_files_lock:
+            for archivo in self.local_files:
+                if archivo["nombre_archivo"] == nombre_archivo:
+                    return {
+                        "found": True,
+                        "local": True,
+                        "server_id": self.server_id,
+                        "ip": self.host,
+                        "port": self.port
+                    }
+        
+        # Si no está local, consultar DNS General
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
+            
+            query_request = {
+                "accion": "consultar",
+                "nombre_archivo": nombre_archivo
+            }
+            
+            sock.sendto(json.dumps(query_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            if response.get("status") == "ACK":
+                return {
+                    "found": True,
+                    "local": False,
+                    "server_id": response["server_id"],
+                    "ip": response["ip"],
+                    "port": response["puerto"]
+                }
+            else:
+                return {"found": False}
+                
+        except Exception as e:
+            self.log(f"Error consultando DNS General: {e}")
+            return {"found": False, "error": str(e)}
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _request_remote_action(self, server_id: str, accion: str, nombre_archivo: str, contenido: str = None) -> Dict:
+        """Solicita una acción a un servidor remoto a través del DNS General"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(10)
+            
+            remote_request = {
+                "accion": "solicitar_remoto",
+                "server_id": server_id,
+                "accion": accion,
+                "nombre_archivo": nombre_archivo,
+                "origen_server_id": self.server_id
+            }
+            
+            if contenido is not None:
+                remote_request["contenido"] = contenido
+            
+            sock.sendto(json.dumps(remote_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(8192)
+            response = json.loads(data.decode('utf-8'))
+            
+            return response
+            
+        except Exception as e:
+            self.log(f"Error en petición remota: {e}")
+            return {"status": "ERROR", "mensaje": str(e)}
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _handle_secure_message(self, request: Dict, peer_addr: Tuple[str, int]):
+        """Maneja mensajes seguros recibidos de peers"""
+        try:
+            accion = request.get("accion")
+            self.log(f"Mensaje seguro de {peer_addr}: {accion}")
+            
+            if accion == "consultar":
+                response = self._handle_consultar(request)
+            elif accion == "listar_archivos":
+                response = self._handle_listar_archivos()
+            elif accion == "leer":
+                response = self._handle_leer(request)
+            elif accion == "escribir":
+                response = self._handle_escribir(request)
+            elif accion == "salir":
+                response = {"status": "ACK", "mensaje": "Desconexión confirmada"}
+            else:
+                response = {"status": "ERROR", "mensaje": f"Acción '{accion}' no reconocida"}
+            
+            # Enviar respuesta cifrada
+            self.peer_connector.send_message(response, peer_addr)
+            
+        except Exception as e:
+            self.log(f"Error procesando mensaje seguro: {e}")
+            error_response = {"status": "ERROR", "mensaje": str(e)}
+            self.peer_connector.send_message(error_response, peer_addr)
+    
+    def _handle_consultar(self, request: Dict) -> Dict:
+        """Maneja consulta de archivo específico"""
+        nombre_archivo = request.get("nombre_archivo")
+        if not nombre_archivo:
+            return {"status": "ERROR", "mensaje": "Nombre de archivo requerido"}
+        
+        location_info = self._find_file_location(nombre_archivo)
+        
+        if location_info["found"]:
+            return {
+                "status": "ACK",
+                "nombre_archivo": nombre_archivo,
+                "ip": location_info["ip"],
+                "puerto": location_info["port"],
+                "local": location_info["local"],
+                "server_id": location_info["server_id"],
+                "ttl": 3600
+            }
+        else:
+            return {
+                "status": "NACK",
+                "mensaje": f"Archivo '{nombre_archivo}' no encontrado"
+            }
+    
+    def _handle_listar_archivos(self) -> Dict:
+        """Lista todos los archivos disponibles (locales + remotos conocidos)"""
+        try:
+            # Obtener lista actualizada del DNS General
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
+            
+            list_request = {"accion": "listar_archivos"}
+            sock.sendto(json.dumps(list_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(8192)
+            response = json.loads(data.decode('utf-8'))
+            
+            if response.get("status") == "ACK":
+                return response
+            else:
+                # Fallback a archivos locales
+                with self.local_files_lock:
+                    return {
+                        "status": "ACK",
+                        "archivos": self.local_files.copy(),
+                        "total": len(self.local_files),
+                        "fuente": "local_only"
+                    }
+                    
+        except Exception as e:
+            self.log(f"Error listando archivos: {e}")
+            # Fallback a archivos locales
+            with self.local_files_lock:
+                return {
+                    "status": "ACK", 
+                    "archivos": self.local_files.copy(),
+                    "total": len(self.local_files),
+                    "fuente": "local_only",
+                    "error": str(e)
+                }
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _handle_leer(self, request: Dict) -> Dict:
+        """Maneja lectura de archivo"""
+        nombre_archivo = request.get("nombre_archivo")
+        
+        # Primero intentar leer localmente
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+                return {"status": "EXITO", "contenido": contenido, "fuente": "local"}
+            except Exception as e:
+                return {"status": "ERROR", "mensaje": f"Error leyendo archivo local: {e}"}
+        
+        # Si no está local, solicitar al DNS General que maneje la lectura distribuida
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(10)
+            
+            read_request = {
+                "accion": "leer",
+                "nombre_archivo": nombre_archivo,
+                "requesting_server": self.server_id
+            }
+            
+            sock.sendto(json.dumps(read_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(8192)
+            response = json.loads(data.decode('utf-8'))
+            
+            # Añadir información de que vino del sistema distribuido
+            if response.get("status") == "EXITO":
+                response["fuente"] = f"distribuido_via_{response.get('servidor_origen', 'remoto')}"
+            
+            return response
+            
+        except Exception as e:
+            self.log(f"Error solicitando lectura distribuida: {e}")
+            return {"status": "ERROR", "mensaje": f"Archivo no encontrado: {e}"}
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _handle_escribir(self, request: Dict) -> Dict:
+        """Maneja escritura de archivo"""
+        nombre_archivo = request.get("nombre_archivo")
+        contenido = request.get("contenido", "")
+        
+        # Si el archivo existe localmente, escribir aquí directamente
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    f.write(contenido)
+                
+                self.log(f"Archivo '{nombre_archivo}' modificado localmente")
+                return {
+                    "status": "EXITO", 
+                    "mensaje": f"Archivo '{nombre_archivo}' guardado localmente",
+                    "fuente": "local"
+                }
+                
+            except Exception as e:
+                return {"status": "ERROR", "mensaje": f"Error escribiendo archivo: {e}"}
+        
+        # Si no existe localmente, usar DNS General para manejar la escritura distribuida
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(10)
+            
+            write_request = {
+                "accion": "escribir",
+                "nombre_archivo": nombre_archivo,
+                "contenido": contenido,
+                "requesting_server": self.server_id
+            }
+            
+            sock.sendto(json.dumps(write_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(8192)
+            response = json.loads(data.decode('utf-8'))
+            
+            # Si fue exitoso y se creó un nuevo archivo, actualizar nuestra lista local
+            if response.get("status") == "EXITO":
+                if response.get("tipo_operacion") == "creacion":
+                    # Solo actualizar si el archivo fue creado en este servidor
+                    if response.get("servidor_destino") == self.server_id:
+                        self._scan_local_files()
+                        self._register_with_dns_general()
+                        
+                response["fuente"] = f"distribuido_via_{response.get('servidor_destino', 'remoto')}"
+            
+            return response
+            
+        except Exception as e:
+            self.log(f"Error solicitando escritura distribuida: {e}")
+            return {"status": "ERROR", "mensaje": f"Error en escritura distribuida: {e}"}
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def start(self):
+        """Inicia el servidor distribuido"""
+        self.log(f"Servidor distribuido iniciado en {self.host}:{self.port}")
+        self.log(f"DNS Local: {self.dns_local_ip}:{self.dns_local_port}")
+        self.log(f"DNS General: {DNS_GENERAL_IP}:{DNS_GENERAL_PORT}")
+        self.log(f"Carpeta local: {os.path.abspath(self.folder_path)}")
+        
+        try:
+            # Bucle principal de escucha segura
+            while self.running:
+                payload, addr = self.transport.listen()
+                if payload and addr:
+                    # PeerConnector maneja automáticamente handshakes y descifrado
+                    self.peer_connector.handle_incoming_packet(payload, addr)
+                    
+        except KeyboardInterrupt:
+            self.log("Servidor detenido por el usuario")
+        except Exception as e:
+            self.log(f"Error en el servidor: {e}")
+        finally:
+            self.stop()
+    
+    def stop(self):
+        """Detiene el servidor de manera limpia"""
+        self.running = False
+        if self.peer_connector:
+            self.peer_connector.stop()
+        self.log("Servidor detenido")
+
+# Función para crear configuraciones de servidores
+def crear_servidor(config_name: str):
+    """Crea un servidor con configuración específica"""
+    configs = {
+        "server1": {
+            "server_id": "SERVER1",
+            "host": "127.0.0.3",
+            "port": 5002,
+            "dns_local_ip": "127.0.0.2",
+            "dns_local_port": 50000,
+            "folder_path": "archivos_server1"
+        },
+        "server2": {
+            "server_id": "SERVER2", 
+            "host": "127.0.0.4",
+            "port": 5003,
+            "dns_local_ip": "127.0.0.12",
+            "dns_local_port": 50000,
+            "folder_path": "archivos_server2"
+        },
+        "server3": {
+            "server_id": "SERVER3",
+            "host": "127.0.0.6", 
+            "port": 5004,
+            "dns_local_ip": "127.0.0.7",
+            "dns_local_port": 50001,
+            "folder_path": "archivos_server3"
+        }
+    }
+    
+    if config_name not in configs:
+        print(f"Configuración '{config_name}' no encontrada. Disponibles: {list(configs.keys())}")
+        return None
+    
+    config = configs[config_name]
+    return ServidorDistribuido(**config)
+
+if __name__ == "__main__":
+    import sys
+    
+    print("=== Servidor Distribuido ===")
+    print("Conectado al DNS General para comunicación entre servidores")
+    print("Comunicación cifrada con clientes")
+    print("Ctrl+C para detener\n")
+    
+    if len(sys.argv) != 2:
+        print("Uso: python server_distributed.py <server1|server2|server3>")
+        print("Ejemplo: python server_distributed.py server1")
+        sys.exit(1)
+    
+    config_name = sys.argv[1]
+    server = crear_servidor(config_name)
+    
+    if server:
+        server.start()
+    else:
+        sys.exit(1)

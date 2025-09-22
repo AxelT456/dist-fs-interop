@@ -11,6 +11,8 @@ LOG_FILE = 'server.log'
 UDP_IP = "127.0.0.2"  
 UDP_PORT = 50000
 UPDATE_INTERVAL_SECONDS = 300  #segundos
+SERVER_IP="127.0.0.3"
+SERVER_PORT=5002
 
 # --- Variables Globales ---
 lista_archivos = []
@@ -154,8 +156,8 @@ def hilo_servidor_udp():
                             "status": "ACK",
                             "nombre_archivo": archivo['nombre_archivo'],
                             "ttl": archivo['ttl'],
-                            "ip": "127.0.0.3",        # IP del servidor de archivos
-                            "puerto": 5002            # Puerto donde escucha PeerConnector
+                            "ip": SERVER_IP,        # IP del servidor de archivos
+                            "puerto": SERVER_PORT            # Puerto donde escucha PeerConnector
                         }
                             break
                 
@@ -163,8 +165,8 @@ def hilo_servidor_udp():
                     respuesta_obj = {
                         "status": "NACK",
                         "mensaje": "Archivo no encontrado o no publicado.",
-                        "ip": "127.0.0.3",        # IP del servidor de archivos
-                        "puerto": 5002            # Puerto donde escucha PeerConnector
+                        "ip": SERVER_IP,        # IP del servidor de archivos
+                        "puerto": SERVER_PORT            # Puerto donde escucha PeerConnector
                     }
                 
                 respuesta_json = json.dumps(respuesta_obj).encode('utf-8')
@@ -176,8 +178,8 @@ def hilo_servidor_udp():
                         "status": "ACK",
                         "archivos": lista_archivos,
                         "total": len(lista_archivos),
-                        "ip": "127.0.0.3",        # IP del servidor de archivos
-                        "puerto": 5002            # Puerto donde escucha PeerConnector
+                        "ip": SERVER_IP,        # IP del servidor de archivos
+                        "puerto": SERVER_PORT            # Puerto donde escucha PeerConnector
                     }
                 
                 respuesta_json = json.dumps(respuesta_obj, default=str).encode('utf-8')

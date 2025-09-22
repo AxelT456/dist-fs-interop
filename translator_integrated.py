@@ -1,19 +1,19 @@
-# /src/network/dns_translator/translator.py (Versión Mejorada para Sistema Distribuido)
-
+# translator_integrated.py - Traductor integrado con DNS General
 import json
 import socket
 import logging
 from typing import Dict, Optional, Tuple, List
+
+# Configuración del DNS General
+DNS_GENERAL_IP = "127.0.0.5"
+DNS_GENERAL_PORT = 50005
 
 # ==============================================================================
 # ==                            DRIVERS ESPECÍFICOS                           ==
 # ==============================================================================
 
 def driver_servidor_nombres(request: Dict, dns_address: Tuple[str, int]) -> Dict:
-    """
-    Driver para servidor_nombres.py (tu servidor original)
-    Traduce peticiones estándar a formato específico de servidor_nombres
-    """
+    """Driver para servidor_nombres.py (tu servidor original)"""
     accion = request.get("accion")
     
     try:
@@ -21,18 +21,15 @@ def driver_servidor_nombres(request: Dict, dns_address: Tuple[str, int]) -> Dict
             sock.settimeout(5)
             
             if accion == "consultar":
-                # Formato: {"accion": "consultar", "nombre_archivo": "filename"}
                 dns_request = {
                     "accion": "consultar",
                     "nombre_archivo": request.get("nombre_archivo", "server_info")
                 }
             elif accion == "listar_archivos":
-                # Formato: {"accion": "listar_archivos"}
                 dns_request = {"accion": "listar_archivos"}
             else:
                 return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada"}
             
-            # Enviar petición
             sock.sendto(json.dumps(dns_request).encode('utf-8'), dns_address)
             data, addr = sock.recvfrom(4096)
             response = json.loads(data.decode('utf-8'))
@@ -44,10 +41,7 @@ def driver_servidor_nombres(request: Dict, dns_address: Tuple[str, int]) -> Dict
         return {"status": "ERROR", "mensaje": str(e)}
 
 def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Dict:
-    """
-    Driver para servidor_christian.py 
-    Traduce peticiones estándar a formato de Christian
-    """
+    """Driver para servidor_christian.py"""
     accion = request.get("accion")
     
     try:
@@ -55,7 +49,6 @@ def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Di
             sock.settimeout(5)
             
             if accion == "consultar":
-                # Formato Christian: {"filename": "name", "extension": "ext", "type": "check"}
                 nombre_archivo = request.get("nombre_archivo", "server_info.check")
                 if "." in nombre_archivo:
                     filename, extension = nombre_archivo.rsplit(".", 1)
@@ -68,12 +61,10 @@ def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Di
                     "type": "check"
                 }
             elif accion == "listar_archivos":
-                # Formato Christian: {"type": "list"}
                 dns_request = {"type": "list"}
             else:
                 return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada"}
             
-            # Enviar petición
             sock.sendto(json.dumps(dns_request).encode('utf-8'), dns_address)
             data, addr = sock.recvfrom(4096)
             response = json.loads(data.decode('utf-8'))
@@ -87,9 +78,10 @@ def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Di
                             "nombre_archivo": f"{file_info['name']}.{file_info['extension']}",
                             "extension": f".{file_info['extension']}",
                             "publicado": True,
-                            "ttl": 3600,  # TTL por defecto
+                            "ttl": 3600,
                             "bandera": 0,
-                            "ip_origen": response.get("ip", "127.0.0.12")
+                            "ip_origen": response.get("ip", "127.0.0.12"),
+                            "servidor_principal": "SERVER2"
                         })
                     
                     return {
@@ -120,17 +112,14 @@ def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Di
         return {"status": "ERROR", "mensaje": str(e)}
 
 def driver_dns_general(request: Dict, dns_address: Tuple[str, int]) -> Dict:
-    """
-    Driver para DNS General (sistema distribuido)
-    Maneja comunicación directa con el DNS General
-    """
+    """Driver para DNS General (sistema distribuido)"""
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.settimeout(5)
             
-            # El DNS General ya usa formato estándar, solo pasamos la petición
+            # El DNS General ya usa formato estándar
             sock.sendto(json.dumps(request).encode('utf-8'), dns_address)
-            data, addr = sock.recvfrom(8192)  # Buffer más grande para listas
+            data, addr = sock.recvfrom(8192)
             response = json.loads(data.decode('utf-8'))
             
             return response
@@ -143,40 +132,26 @@ def driver_dns_general(request: Dict, dns_address: Tuple[str, int]) -> Dict:
 # ==                           CLASE DNSTranslator MEJORADA                   ==
 # ==============================================================================
 
-class DNSTranslator:
+class DNSTranslatorIntegrated:
     """
-    Traductor DNS mejorado que permite comunicación uniforme con diferentes
-    tipos de servidores DNS manteniendo compatibilidad total.
+    Traductor DNS integrado que maneja comunicación con DNS locales 
+    y DNS General del sistema distribuido.
     """
     
-    def __init__(self, config_file: str = None, config_dict: Dict = None):
-        """
-        Inicializa el traductor con configuración desde archivo o diccionario
-        """
-        if config_file:
-            self.config = self._load_config_from_file(config_file)
-        elif config_dict:
+    def __init__(self, config_dict: Dict = None):
+        """Inicializa el traductor con configuración"""
+        if config_dict:
             self.config = config_dict
         else:
-            # Configuración por defecto
             self.config = self._get_default_config()
         
         self.dns_servers = {dns["id"]: dns for dns in self.config.get("dns_servers", [])}
         self.drivers = self._register_drivers()
         
-        logging.info(f"DNSTranslator inicializado con {len(self.drivers)} drivers")
-    
-    def _load_config_from_file(self, config_file: str) -> Dict:
-        """Carga configuración desde archivo JSON"""
-        try:
-            with open(config_file, 'r') as f:
-                return json.load(f)
-        except Exception as e:
-            logging.error(f"Error cargando configuración: {e}")
-            return self._get_default_config()
+        logging.info(f"DNSTranslatorIntegrated inicializado con {len(self.drivers)} drivers")
     
     def _get_default_config(self) -> Dict:
-        """Configuración por defecto del sistema"""
+        """Configuración por defecto del sistema distribuido"""
         return {
             "dns_servers": [
                 {
@@ -184,25 +159,36 @@ class DNSTranslator:
                     "type": "servidor_nombres",
                     "host": "127.0.0.2",
                     "port": 50000,
-                    "driver": "driver_servidor_nombres"
+                    "driver": "driver_servidor_nombres",
+                    "server_id": "SERVER1"
                 },
                 {
                     "id": "servidor_christian", 
                     "type": "servidor_christian",
                     "host": "127.0.0.12",
                     "port": 50000,
-                    "driver": "driver_servidor_christian"
+                    "driver": "driver_servidor_christian",
+                    "server_id": "SERVER2"
+                },
+                {
+                    "id": "dns_alternativo",
+                    "type": "servidor_nombres", 
+                    "host": "127.0.0.7",
+                    "port": 50001,
+                    "driver": "driver_servidor_nombres",
+                    "server_id": "SERVER3"
                 },
                 {
                     "id": "dns_general",
                     "type": "dns_general", 
-                    "host": "127.0.0.5",
-                    "port": 50005,
-                    "driver": "driver_dns_general"
+                    "host": DNS_GENERAL_IP,
+                    "port": DNS_GENERAL_PORT,
+                    "driver": "driver_dns_general",
+                    "server_id": "DNS_GENERAL"
                 }
             ],
-            "default_dns": "servidor_nombres",
-            "fallback_dns": ["dns_general", "servidor_christian"]
+            "default_dns": "dns_general",
+            "fallback_dns": ["servidor_nombres", "servidor_christian", "dns_alternativo"]
         }
     
     def _register_drivers(self) -> Dict:
@@ -213,37 +199,66 @@ class DNSTranslator:
             "driver_dns_general": driver_dns_general
         }
     
-    def resolve(self, request: Dict, dns_id: str = None, use_fallback: bool = True) -> Dict:
+    def resolve_for_server(self, request: Dict, server_id: str) -> Dict:
         """
-        Resuelve una petición usando el DNS especificado
-        
-        Args:
-            request: Petición estándar {"accion": "consultar|listar_archivos", "nombre_archivo": "..."}
-            dns_id: ID del DNS a usar (None para usar el por defecto)
-            use_fallback: Si usar DNS de respaldo en caso de fallo
-            
-        Returns:
-            Respuesta estándar del DNS
+        Resuelve una petición para un servidor específico usando DNS General.
+        Usado por servidores para comunicarse entre ellos.
         """
-        # Usar DNS por defecto si no se especifica
-        if not dns_id:
-            dns_id = self.config.get("default_dns", "servidor_nombres")
+        # Siempre usar DNS General para comunicación entre servidores
+        dns_general_request = request.copy()
+        dns_general_request["requesting_server"] = server_id
         
-        # Intentar resolución con DNS principal
-        result = self._try_resolve(request, dns_id)
+        return self._try_resolve(dns_general_request, "dns_general")
+    
+    def resolve_for_client(self, request: Dict, preferred_dns: str = None) -> Dict:
+        """
+        Resuelve una petición para un cliente.
+        Puede usar DNS local o DNS General según disponibilidad.
+        """
+        # Si se especifica un DNS preferido, usarlo primero
+        if preferred_dns and preferred_dns in self.dns_servers:
+            result = self._try_resolve(request, preferred_dns)
+            if result.get("status") != "ERROR":
+                return result
         
-        # Si falla y está habilitado el fallback, intentar con otros DNS
-        if result.get("status") == "ERROR" and use_fallback:
-            fallback_dns_list = self.config.get("fallback_dns", [])
-            for fallback_dns in fallback_dns_list:
-                if fallback_dns != dns_id:  # No repetir el mismo DNS
-                    logging.info(f"Intentando fallback con {fallback_dns}")
-                    result = self._try_resolve(request, fallback_dns)
-                    if result.get("status") != "ERROR":
-                        result["fallback_used"] = fallback_dns
-                        break
+        # Usar DNS por defecto (DNS General)
+        result = self._try_resolve(request, "dns_general")
+        if result.get("status") != "ERROR":
+            return result
         
-        return result
+        # Fallback a DNS locales
+        for fallback_dns in self.config.get("fallback_dns", []):
+            logging.info(f"Intentando fallback con {fallback_dns}")
+            result = self._try_resolve(request, fallback_dns)
+            if result.get("status") != "ERROR":
+                result["fallback_used"] = fallback_dns
+                return result
+        
+        return {"status": "ERROR", "mensaje": "Ningún DNS disponible"}
+    
+    def request_remote_action(self, server_id: str, action_request: Dict) -> Dict:
+        """
+        Solicita una acción a un servidor remoto a través del DNS General.
+        Usado por servidores para coordinar acciones.
+        """
+        remote_request = {
+            "accion": "solicitar_remoto",
+            "server_id": server_id,
+            **action_request
+        }
+        
+        return self._try_resolve(remote_request, "dns_general")
+    
+    def register_server_with_general(self, server_info: Dict) -> Dict:
+        """
+        Registra un servidor con el DNS General.
+        """
+        register_request = {
+            "accion": "registrar_servidor",
+            **server_info
+        }
+        
+        return self._try_resolve(register_request, "dns_general")
     
     def _try_resolve(self, request: Dict, dns_id: str) -> Dict:
         """Intenta resolver con un DNS específico"""
@@ -267,6 +282,7 @@ class DNSTranslator:
             if isinstance(result, dict):
                 result["dns_used"] = dns_id
                 result["dns_type"] = dns_config.get("type")
+                result["server_id"] = dns_config.get("server_id")
             
             return result
             
@@ -274,11 +290,31 @@ class DNSTranslator:
             logging.error(f"Error en resolución con {dns_id}: {e}")
             return {"status": "ERROR", "mensaje": str(e)}
     
+    def send_heartbeat(self, server_info: Dict) -> Dict:
+        """Envía heartbeat al DNS General"""
+        heartbeat_request = {
+            "accion": "heartbeat",
+            **server_info
+        }
+        
+        return self._try_resolve(heartbeat_request, "dns_general")
+    
+    def get_global_file_list(self) -> Dict:
+        """Obtiene la lista global de archivos del DNS General"""
+        list_request = {"accion": "listar_archivos"}
+        return self._try_resolve(list_request, "dns_general")
+    
+    def find_file_location(self, nombre_archivo: str) -> Dict:
+        """Encuentra la ubicación de un archivo específico"""
+        search_request = {
+            "accion": "consultar",
+            "nombre_archivo": nombre_archivo
+        }
+        
+        return self._try_resolve(search_request, "dns_general")
+    
     def resolve_with_multiple_dns(self, request: Dict, dns_list: List[str] = None) -> List[Dict]:
-        """
-        Resuelve con múltiples DNS y devuelve todas las respuestas
-        Útil para comparar resultados o hacer búsquedas amplias
-        """
+        """Resuelve con múltiples DNS y devuelve todas las respuestas"""
         if not dns_list:
             dns_list = list(self.dns_servers.keys())
         
@@ -297,13 +333,14 @@ class DNSTranslator:
                 "type": config.get("type"),
                 "host": config["host"],
                 "port": config["port"],
+                "server_id": config.get("server_id"),
                 "status": "available"
             }
             for dns_id, config in self.dns_servers.items()
         ]
     
-    def test_dns_connectivity(self, dns_id: str = None) -> Dict:
-        """Prueba la conectividad con un DNS específico"""
+    def test_connectivity(self, dns_id: str = None) -> Dict:
+        """Prueba la conectividad con DNS específico o todos"""
         if dns_id:
             dns_list = [dns_id]
         else:
@@ -317,7 +354,7 @@ class DNSTranslator:
                 result = self._try_resolve(test_request, dns)
                 results[dns] = {
                     "status": "connected" if result.get("status") != "ERROR" else "error",
-                    "response_time": "< 5s",  # Simplificado
+                    "response_time": "< 5s",
                     "details": result
                 }
             except Exception as e:
@@ -327,3 +364,74 @@ class DNSTranslator:
                 }
         
         return results
+
+# ==============================================================================
+# ==                           FUNCIONES DE UTILIDAD                          ==
+# ==============================================================================
+
+def create_translator_for_server(server_id: str) -> DNSTranslatorIntegrated:
+    """Crea un traductor configurado para un servidor específico"""
+    config = {
+        "dns_servers": [
+            {
+                "id": "dns_general",
+                "type": "dns_general", 
+                "host": DNS_GENERAL_IP,
+                "port": DNS_GENERAL_PORT,
+                "driver": "driver_dns_general",
+                "server_id": "DNS_GENERAL"
+            }
+        ],
+        "default_dns": "dns_general",
+        "fallback_dns": []
+    }
+    
+    translator = DNSTranslatorIntegrated(config)
+    return translator
+
+def create_translator_for_client() -> DNSTranslatorIntegrated:
+    """Crea un traductor configurado para clientes"""
+    # Usar configuración completa con todos los DNS
+    translator = DNSTranslatorIntegrated()
+    return translator
+
+# ==============================================================================
+# ==                               EJEMPLO DE USO                             ==
+# ==============================================================================
+
+if __name__ == "__main__":
+    # Configurar logging
+    logging.basicConfig(level=logging.INFO)
+    
+    print("=== Traductor DNS Integrado ===")
+    print("Sistema distribuido con DNS General")
+    
+    # Crear traductor para cliente
+    translator = create_translator_for_client()
+    
+    print(f"DNS disponibles: {len(translator.get_available_dns())}")
+    for dns in translator.get_available_dns():
+        print(f"  - {dns['id']}: {dns['host']}:{dns['port']} ({dns['type']})")
+    
+    # Ejemplo de consulta
+    print("\nProbando consulta...")
+    result = translator.resolve_for_client({
+        "accion": "consultar", 
+        "nombre_archivo": "test.txt"
+    })
+    print(f"Resultado: {result.get('status', 'ERROR')}")
+    
+    # Ejemplo de listado
+    print("\nProbando listado...")
+    result = translator.resolve_for_client({
+        "accion": "listar_archivos"
+    })
+    print(f"Archivos encontrados: {len(result.get('archivos', []))}")
+    
+    # Prueba de conectividad
+    print("\nProbando conectividad...")
+    connectivity = translator.test_connectivity()
+    for dns_id, status in connectivity.items():
+        print(f"  - {dns_id}: {status['status']}")
+    
+    print("\n=== Traductor listo para uso ===")

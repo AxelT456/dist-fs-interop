@@ -31,14 +31,6 @@ DNS_SERVERS = [
         "server_ip": "127.0.0.4",
         "server_port": 5003,
         "description": "DNS Servidor Christian"
-    },
-    {
-        "id": "DNS3",
-        "ip": "127.0.0.7", 
-        "port": 50001,
-        "server_ip": "127.0.0.6",
-        "server_port": 5004,
-        "description": "DNS Servidor Alternativo"
     }
 ]
 
