@@ -58,6 +58,133 @@ class ServidorDistribuido:
         self._register_with_dns_general()
         self._start_heartbeat()
         self._start_udp_listener()
+        self._start_file_monitor()
+        """Inicia el monitor de archivos para detectar cambios locales"""
+        def file_monitor():
+            last_scan = {}  # {nombre_archivo: timestamp_modificacion}
+            
+            while self.running:
+                try:
+                    time.sleep(10)  # Verificar cada 10 segundos
+                    if not self.running:
+                        break
+                    
+                    current_files = {}
+                    changes_detected = False
+                    
+                    # Escanear archivos actuales
+                    if os.path.exists(self.folder_path):
+                        for filename in os.listdir(self.folder_path):
+                            if filename.endswith('.temp_checkout'):
+                                continue  # Ignorar archivos temporales
+                            
+                            filepath = os.path.join(self.folder_path, filename)
+                            if os.path.isfile(filepath):
+                                mtime = os.path.getmtime(filepath)
+                                current_files[filename] = mtime
+                    
+                    # Detectar archivos nuevos
+                    nuevos_archivos = set(current_files.keys()) - set(last_scan.keys())
+                    if nuevos_archivos:
+                        for archivo in nuevos_archivos:
+                            self.log(f"Archivo nuevo detectado: {archivo}")
+                            self._handle_nuevo_archivo(archivo)
+                        changes_detected = True
+                    
+                    # Detectar archivos eliminados
+                    archivos_eliminados = set(last_scan.keys()) - set(current_files.keys())
+                    if archivos_eliminados:
+                        for archivo in archivos_eliminados:
+                            self.log(f"Archivo eliminado detectado: {archivo}")
+                            self._handle_archivo_eliminado(archivo)
+                        changes_detected = True
+                    
+                    # Detectar archivos modificados
+                    for archivo in current_files:
+                        if archivo in last_scan and current_files[archivo] != last_scan[archivo]:
+                            self.log(f"Archivo modificado detectado: {archivo}")
+                            # Los archivos modificados no requieren acción especial
+                            # ya que el contenido se maneja via checkout/checkin
+                    
+                    # Si hubo cambios, actualizar registro
+                    if changes_detected:
+                        self._scan_local_files()
+                        self._register_with_dns_general()
+                    
+                    last_scan = current_files.copy()
+                    
+                except Exception as e:
+                    self.log(f"Error en monitor de archivos: {e}")
+                    time.sleep(5)  # Esperar más tiempo si hay error
+        
+        # Iniciar en hilo separado
+        thread = threading.Thread(target=file_monitor, daemon=True)
+        thread.start()
+        self.log("Monitor de archivos iniciado")
+    
+    def _handle_nuevo_archivo(self, nombre_archivo: str):
+        """Maneja la detección de un nuevo archivo local"""
+        try:
+            # Agregar a lista local si no existe
+            with self.local_files_lock:
+                existe = any(a["nombre_archivo"] == nombre_archivo for a in self.local_files)
+                if not existe:
+                    name, ext = os.path.splitext(nombre_archivo)
+                    nuevo_archivo = {
+                        "nombre_archivo": nombre_archivo,
+                        "extension": ext,
+                        "publicado": True,
+                        "ttl": 3600,
+                        "bandera": 0,
+                        "ip_origen": self.host
+                    }
+                    self.local_files.append(nuevo_archivo)
+                    self.log(f"Archivo '{nombre_archivo}' agregado a lista local")
+        except Exception as e:
+            self.log(f"Error manejando nuevo archivo {nombre_archivo}: {e}")
+    
+    def _handle_archivo_eliminado(self, nombre_archivo: str):
+        """Maneja la detección de un archivo eliminado localmente"""
+        try:
+            # Remover de lista local
+            with self.local_files_lock:
+                self.local_files = [a for a in self.local_files if a["nombre_archivo"] != nombre_archivo]
+                self.log(f"Archivo '{nombre_archivo}' removido de lista local")
+            
+            # Notificar al DNS General sobre la eliminación
+            self._notificar_archivo_eliminado(nombre_archivo)
+            
+        except Exception as e:
+            self.log(f"Error manejando archivo eliminado {nombre_archivo}: {e}")
+    
+    def _notificar_archivo_eliminado(self, nombre_archivo: str):
+        """Notifica al DNS General que un archivo fue eliminado"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
+            
+            notification = {
+                "accion": "archivo_eliminado",
+                "nombre_archivo": nombre_archivo,
+                "server_id": self.server_id
+            }
+            
+            sock.sendto(json.dumps(notification).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            if response.get("status") == "ACK":
+                self.log(f"DNS General notificado sobre eliminación de '{nombre_archivo}'")
+                if response.get("nuevo_propietario"):
+                    self.log(f"Nuevo propietario asignado: {response.get('nuevo_propietario')}")
+                elif response.get("archivo_eliminado_definitivamente"):
+                    self.log(f"Archivo '{nombre_archivo}' eliminado definitivamente del sistema")
+            
+        except Exception as e:
+            self.log(f"Error notificando eliminación: {e}")
+        finally:
+            if 'sock' in locals():
+                sock.close()
         
     def _start_udp_listener(self):
         """Inicia un listener UDP para peticiones directas del DNS General"""
@@ -111,8 +238,26 @@ class ServidorDistribuido:
             return self._handle_leer_directo(request)
         elif accion == "escribir":
             return self._handle_escribir_directo(request)
+        elif accion == "eliminar_temporal":
+            return self._handle_eliminar_temporal(request)
+        elif accion == "verificar_existencia":
+            return self._handle_verificar_existencia(request)
         else:
             return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada vía UDP"}
+    
+    def _handle_verificar_existencia(self, request: Dict) -> Dict:
+        """Verifica si un archivo existe localmente"""
+        nombre_archivo = request.get("nombre_archivo")
+        file_path = os.path.join(self.folder_path, nombre_archivo)
+        
+        exists = os.path.exists(file_path) and not nombre_archivo.endswith('.temp_checkout')
+        
+        return {
+            "status": "ACK",
+            "exists": exists,
+            "archivo": nombre_archivo,
+            "server_id": self.server_id
+        }
     
     def _handle_leer_directo(self, request: Dict) -> Dict:
         """Lee archivo local directamente (para peticiones del DNS General)"""
@@ -511,11 +656,11 @@ class ServidorDistribuido:
                 sock.close()
     
     def _handle_escribir(self, request: Dict) -> Dict:
-        """Maneja escritura de archivo"""
+        """Maneja escritura de archivo con sistema de checkout/check-in"""
         nombre_archivo = request.get("nombre_archivo")
         contenido = request.get("contenido", "")
         
-        # Si el archivo existe localmente, escribir aquí directamente
+        # Si el archivo existe localmente, escribir directamente
         file_path = os.path.join(self.folder_path, nombre_archivo)
         if os.path.exists(file_path):
             try:
@@ -532,37 +677,285 @@ class ServidorDistribuido:
             except Exception as e:
                 return {"status": "ERROR", "mensaje": f"Error escribiendo archivo: {e}"}
         
-        # Si no existe localmente, usar DNS General para manejar la escritura distribuida
+        # Si no existe localmente, iniciar proceso de checkout/check-in
+        return self._handle_escritura_remota(nombre_archivo, contenido)
+    
+    def _handle_escritura_remota(self, nombre_archivo: str, contenido: str) -> Dict:
+        """Maneja escritura de archivo remoto con checkout/check-in"""
+        try:
+            # Paso 1: Solicitar checkout del archivo al DNS General
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(10)
+            
+            checkout_request = {
+                "accion": "checkout_archivo",
+                "nombre_archivo": nombre_archivo,
+                "requesting_server": self.server_id
+            }
+            
+            sock.sendto(json.dumps(checkout_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(8192)
+            response = json.loads(data.decode('utf-8'))
+            
+            sock.close()
+            
+            if response.get("status") == "LOCAL":
+                # El archivo ya está local, no debería pasar pero manejamos el caso
+                return {"status": "ERROR", "mensaje": "Inconsistencia: archivo reportado como local"}
+            
+            elif response.get("status") in ["CHECKOUT_EXITOSO", "NUEVO_ARCHIVO"]:
+                # Paso 2: Crear copia temporal local
+                contenido_original = response.get("contenido", "")
+                file_path = os.path.join(self.folder_path, nombre_archivo)
+                temp_file_path = file_path + ".temp_checkout"
+                
+                try:
+                    # Crear archivo temporal con contenido original
+                    with open(temp_file_path, 'w', encoding='utf-8') as f:
+                        f.write(contenido_original)
+                    
+                    # Escribir el contenido nuevo en el archivo temporal
+                    with open(temp_file_path, 'w', encoding='utf-8') as f:
+                        f.write(contenido)
+                    
+                    self.log(f"Copia temporal creada: {temp_file_path}")
+                    
+                    # Paso 3: Hacer check-in inmediatamente (simula edición del usuario)
+                    checkin_response = self._realizar_checkin(nombre_archivo, contenido)
+                    
+                    # Limpiar archivo temporal
+                    try:
+                        if os.path.exists(temp_file_path):
+                            os.remove(temp_file_path)
+                            self.log(f"Archivo temporal eliminado: {temp_file_path}")
+                    except Exception as e:
+                        self.log(f"Error eliminando temporal: {e}")
+                    
+                    return checkin_response
+                    
+                except Exception as e:
+                    # Limpiar en caso de error
+                    try:
+                        if os.path.exists(temp_file_path):
+                            os.remove(temp_file_path)
+                    except:
+                        pass
+                    return {"status": "ERROR", "mensaje": f"Error en checkout local: {e}"}
+            
+            else:
+                return {"status": "ERROR", "mensaje": f"Error en checkout: {response.get('mensaje')}"}
+                
+        except Exception as e:
+            self.log(f"Error en escritura remota: {e}")
+            return {"status": "ERROR", "mensaje": f"Error en escritura remota: {e}"}
+    
+    def _realizar_checkin(self, nombre_archivo: str, contenido: str) -> Dict:
+        """Realiza check-in del archivo editado"""
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             sock.settimeout(10)
             
-            write_request = {
-                "accion": "escribir",
+            checkin_request = {
+                "accion": "checkin_archivo",
                 "nombre_archivo": nombre_archivo,
                 "contenido": contenido,
                 "requesting_server": self.server_id
             }
             
-            sock.sendto(json.dumps(write_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            sock.sendto(json.dumps(checkin_request).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
             data, addr = sock.recvfrom(8192)
             response = json.loads(data.decode('utf-8'))
             
-            # Si fue exitoso y se creó un nuevo archivo, actualizar nuestra lista local
-            if response.get("status") == "EXITO":
-                if response.get("tipo_operacion") == "creacion":
-                    # Solo actualizar si el archivo fue creado en este servidor
-                    if response.get("servidor_destino") == self.server_id:
+            if response.get("status") == "CHECKIN_EXITOSO":
+                return {
+                    "status": "EXITO",
+                    "mensaje": f"Archivo '{nombre_archivo}' actualizado en {response.get('servidor_final')}",
+                    "fuente": f"remoto_{response.get('servidor_final')}"
+                }
+            elif response.get("status") == "CHECKIN_NUEVO_PROPIETARIO":
+                # El servidor actual se convirtió en propietario, mantener archivo localmente
+                file_path = os.path.join(self.folder_path, nombre_archivo)
+                try:
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(contenido)
+                    
+                    # Actualizar lista local
+                    with self.local_files_lock:
+                        name, ext = os.path.splitext(nombre_archivo)
+                        nuevo_archivo = {
+                            "nombre_archivo": nombre_archivo,
+                            "extension": ext,
+                            "publicado": True,
+                            "ttl": 3600,
+                            "bandera": 0,
+                            "ip_origen": self.host
+                        }
+                        # Verificar si ya existe en la lista
+                        existe = any(a["nombre_archivo"] == nombre_archivo for a in self.local_files)
+                        if not existe:
+                            self.local_files.append(nuevo_archivo)
+                    
+                    # Re-registrar con DNS General
+                    self._register_with_dns_general()
+                    
+                    return {
+                        "status": "EXITO",
+                        "mensaje": f"Archivo original perdido. '{nombre_archivo}' ahora es propiedad de este servidor",
+                        "fuente": "local_nuevo_propietario"
+                    }
+                    
+                except Exception as e:
+                    return {"status": "ERROR", "mensaje": f"Error guardando como nuevo propietario: {e}"}
+            
+            else:
+                return {"status": "ERROR", "mensaje": f"Error en check-in: {response.get('mensaje')}"}
+                
+        except Exception as e:
+            self.log(f"Error en check-in: {e}")
+            return {"status": "ERROR", "mensaje": f"Error en check-in: {e}"}
+        finally:
+            if 'sock' in locals():
+                sock.close()
+    
+    def _handle_eliminar_temporal(self, request: Dict) -> Dict:
+        """Elimina archivo temporal tras check-in exitoso"""
+        nombre_archivo = request.get("nombre_archivo")
+        temp_file_path = os.path.join(self.folder_path, nombre_archivo + ".temp_checkout")
+        
+        try:
+            if os.path.exists(temp_file_path):
+                os.remove(temp_file_path)
+                self.log(f"Archivo temporal eliminado: {temp_file_path}")
+                return {"status": "EXITO", "mensaje": "Archivo temporal eliminado"}
+            else:
+                return {"status": "ERROR", "mensaje": "Archivo temporal no encontrado"}
+        except Exception as e:
+            return {"status": "ERROR", "mensaje": f"Error eliminando temporal: {e}"}
+        
+    def _start_file_monitor(self):
+        """Inicia el monitor de archivos para detectar cambios locales"""
+        def file_monitor():
+            last_scan = {}  # {nombre_archivo: timestamp_modificacion}
+            
+            while self.running:
+                try:
+                    time.sleep(10)  # Verificar cada 10 segundos
+                    if not self.running:
+                        break
+                    
+                    current_files = {}
+                    changes_detected = False
+                    
+                    # Escanear archivos actuales
+                    if os.path.exists(self.folder_path):
+                        for filename in os.listdir(self.folder_path):
+                            if filename.endswith('.temp_checkout'):
+                                continue  # Ignorar archivos temporales
+                            
+                            filepath = os.path.join(self.folder_path, filename)
+                            if os.path.isfile(filepath):
+                                mtime = os.path.getmtime(filepath)
+                                current_files[filename] = mtime
+                    
+                    # Detectar archivos nuevos
+                    nuevos_archivos = set(current_files.keys()) - set(last_scan.keys())
+                    if nuevos_archivos:
+                        for archivo in nuevos_archivos:
+                            self.log(f"Archivo nuevo detectado: {archivo}")
+                            self._handle_nuevo_archivo(archivo)
+                        changes_detected = True
+                    
+                    # Detectar archivos eliminados
+                    archivos_eliminados = set(last_scan.keys()) - set(current_files.keys())
+                    if archivos_eliminados:
+                        for archivo in archivos_eliminados:
+                            self.log(f"Archivo eliminado detectado: {archivo}")
+                            self._handle_archivo_eliminado(archivo)
+                        changes_detected = True
+                    
+                    # Detectar archivos modificados
+                    for archivo in current_files:
+                        if archivo in last_scan and current_files[archivo] != last_scan[archivo]:
+                            self.log(f"Archivo modificado detectado: {archivo}")
+                            # Los archivos modificados no requieren acción especial
+                            # ya que el contenido se maneja via checkout/checkin
+                    
+                    # Si hubo cambios, actualizar registro
+                    if changes_detected:
                         self._scan_local_files()
                         self._register_with_dns_general()
-                        
-                response["fuente"] = f"distribuido_via_{response.get('servidor_destino', 'remoto')}"
+                    
+                    last_scan = current_files.copy()
+                    
+                except Exception as e:
+                    self.log(f"Error en monitor de archivos: {e}")
+                    time.sleep(5)  # Esperar más tiempo si hay error
+        
+        # Iniciar en hilo separado
+        thread = threading.Thread(target=file_monitor, daemon=True)
+        thread.start()
+        self.log("Monitor de archivos iniciado")
+    
+    def _handle_nuevo_archivo(self, nombre_archivo: str):
+        """Maneja la detección de un nuevo archivo local"""
+        try:
+            # Agregar a lista local si no existe
+            with self.local_files_lock:
+                existe = any(a["nombre_archivo"] == nombre_archivo for a in self.local_files)
+                if not existe:
+                    name, ext = os.path.splitext(nombre_archivo)
+                    nuevo_archivo = {
+                        "nombre_archivo": nombre_archivo,
+                        "extension": ext,
+                        "publicado": True,
+                        "ttl": 3600,
+                        "bandera": 0,
+                        "ip_origen": self.host
+                    }
+                    self.local_files.append(nuevo_archivo)
+                    self.log(f"Archivo '{nombre_archivo}' agregado a lista local")
+        except Exception as e:
+            self.log(f"Error manejando nuevo archivo {nombre_archivo}: {e}")
+    
+    def _handle_archivo_eliminado(self, nombre_archivo: str):
+        """Maneja la detección de un archivo eliminado localmente"""
+        try:
+            # Remover de lista local
+            with self.local_files_lock:
+                self.local_files = [a for a in self.local_files if a["nombre_archivo"] != nombre_archivo]
+                self.log(f"Archivo '{nombre_archivo}' removido de lista local")
             
-            return response
+            # Notificar al DNS General sobre la eliminación
+            self._notificar_archivo_eliminado(nombre_archivo)
             
         except Exception as e:
-            self.log(f"Error solicitando escritura distribuida: {e}")
-            return {"status": "ERROR", "mensaje": f"Error en escritura distribuida: {e}"}
+            self.log(f"Error manejando archivo eliminado {nombre_archivo}: {e}")
+    
+    def _notificar_archivo_eliminado(self, nombre_archivo: str):
+        """Notifica al DNS General que un archivo fue eliminado"""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(5)
+            
+            notification = {
+                "accion": "archivo_eliminado",
+                "nombre_archivo": nombre_archivo,
+                "server_id": self.server_id
+            }
+            
+            sock.sendto(json.dumps(notification).encode('utf-8'), (DNS_GENERAL_IP, DNS_GENERAL_PORT))
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            if response.get("status") == "ACK":
+                self.log(f"DNS General notificado sobre eliminación de '{nombre_archivo}'")
+                if response.get("nuevo_propietario"):
+                    self.log(f"Nuevo propietario asignado: {response.get('nuevo_propietario')}")
+                elif response.get("archivo_eliminado_definitivamente"):
+                    self.log(f"Archivo '{nombre_archivo}' eliminado definitivamente del sistema")
+            
+        except Exception as e:
+            self.log(f"Error notificando eliminación: {e}")
         finally:
             if 'sock' in locals():
                 sock.close()

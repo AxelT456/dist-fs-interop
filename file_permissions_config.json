@@ -1,10 +1,4 @@
 {
-    "manual.txt": {
-        "name": "manual",
-        "extension": "txt",
-        "ttl": 300,
-        "can_publish": true
-    },
     "libro2.txt": {
         "name": "libro2",
         "extension": "txt",
