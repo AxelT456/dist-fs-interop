@@ -1016,6 +1016,30 @@ def crear_servidor(config_name: str):
             "dns_local_ip": "127.0.0.7",
             "dns_local_port": 50001,
             "folder_path": "archivos_server3"
+        },
+        "server_marco": {
+            "server_id": "SERVER_MARCO",
+            "host": "127.0.0.8",
+            "port": 5005,
+            "dns_local_ip": "127.0.0.8",
+            "dns_local_port": 50000,
+            "folder_path": "archivos_server_marco"
+        },
+        "server_dan": {
+            "server_id": "SERVER_DAN",
+            "host": "127.0.0.9",
+            "port": 5006,
+            "dns_local_ip": "127.0.0.9",
+            "dns_local_port": 50000,
+            "folder_path": "archivos_server_dan"
+        },
+        "server_gus": {
+            "server_id": "SERVER_GUS",
+            "host": "127.0.0.10",
+            "port": 5007,
+            "dns_local_ip": "127.0.0.10",
+            "dns_local_port": 50000,
+            "folder_path": "archivos_server_gus"
         }
     }
     

@@ -1,12 +1,12 @@
 {
-    "libro2.txt": {
-        "name": "libro2",
+    "biografias.txt": {
+        "name": "biografias",
         "extension": "txt",
         "ttl": 300,
         "can_publish": true
     },
-    "guia.txt": {
-        "name": "guia",
+    "historia.txt": {
+        "name": "historia",
         "extension": "txt",
         "ttl": 300,
         "can_publish": true

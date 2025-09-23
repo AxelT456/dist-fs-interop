@@ -14,7 +14,7 @@ sys.path.append(project_root)
 from src.network.peer_conector import PeerConnector
 from src.network.transport import ReliableTransport
 
-# Configuración de DNS disponibles
+# Configuración de DNS disponibles (expandida)
 DNS_SERVERS = [
     {
         "id": "DNS1",
@@ -31,6 +31,38 @@ DNS_SERVERS = [
         "server_ip": "127.0.0.4",
         "server_port": 5003,
         "description": "DNS Servidor Christian"
+    },
+    {
+        "id": "DNS_MARCO",
+        "ip": "127.0.0.8",
+        "port": 50000,
+        "server_ip": "127.0.0.8",
+        "server_port": 5005,
+        "description": "DNS Servidor Marco"
+    },
+    {
+        "id": "DNS_DAN",
+        "ip": "127.0.0.9",
+        "port": 50000,
+        "server_ip": "127.0.0.9",
+        "server_port": 5006,
+        "description": "DNS Servidor Dan"
+    },
+    {
+        "id": "DNS_GUS",
+        "ip": "127.0.0.10",
+        "port": 50000,
+        "server_ip": "127.0.0.10",
+        "server_port": 5007,
+        "description": "DNS Servidor Gus"
+    },
+    {
+        "id": "DNS3",
+        "ip": "127.0.0.7", 
+        "port": 50001,
+        "server_ip": "127.0.0.6",
+        "server_port": 5004,
+        "description": "DNS Servidor Alternativo"
     }
 ]
 

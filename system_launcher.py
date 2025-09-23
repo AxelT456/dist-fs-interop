@@ -7,11 +7,14 @@ import threading
 from typing import List, Dict
 
 def crear_directorios():
-    """Crea los directorios necesarios para el sistema"""
+    """Crea los directorios necesarios para el sistema expandido"""
     directorios = [
         "archivos_server1",
         "archivos_server2", 
         "archivos_server3",
+        "archivos_server_marco",
+        "archivos_server_dan", 
+        "archivos_server_gus",
         "src/network/dns_translator"
     ]
     
@@ -20,14 +23,20 @@ def crear_directorios():
             os.makedirs(directorio)
             print(f"✅ Directorio creado: {directorio}")
     
-    # Crear archivos de ejemplo
+    # Crear archivos de ejemplo en todos los servidores
     archivos_ejemplo = {
         "archivos_server1/libro1.txt": "Contenido del Libro 1 - Una historia fascinante sobre aventuras.",
         "archivos_server1/novela.txt": "Novela épica con personajes memorables y tramas complejas.",
         "archivos_server2/libro2.txt": "Contenido del Libro 2 - Ciencia ficción y tecnología avanzada.",
         "archivos_server2/manual.txt": "Manual técnico con instrucciones detalladas paso a paso.",
         "archivos_server3/libro3.txt": "Contenido del Libro 3 - Romance y drama en la época victoriana.",
-        "archivos_server3/guia.txt": "Guía completa para principiantes con ejemplos prácticos."
+        "archivos_server3/guia.txt": "Guía completa para principiantes con ejemplos prácticos.",
+        "archivos_server_marco/filosofia.txt": "Reflexiones filosóficas sobre la existencia y el tiempo.",
+        "archivos_server_marco/poesia.txt": "Colección de poemas sobre la naturaleza humana.",
+        "archivos_server_dan/algoritmos.txt": "Guía completa de algoritmos y estructuras de datos.",
+        "archivos_server_dan/programacion.txt": "Manual de buenas prácticas en programación.",
+        "archivos_server_gus/historia.txt": "Relatos históricos de civilizaciones antiguas.",
+        "archivos_server_gus/biografias.txt": "Biografías de personajes ilustres de la historia."
     }
     
     for archivo, contenido in archivos_ejemplo.items():
@@ -82,29 +91,46 @@ def iniciar_dns_general():
     return ejecutar_componente(comando, "DNS General")
 
 def iniciar_dns_locales():
-    """Inicia todos los DNS locales"""
+    """Inicia todos los DNS locales expandido"""
     procesos = []
     
     # DNS 1 (Servidor Nombres Original)
-    comando1 = [sys.executable, "servidor_nombres.py"]  # Tu archivo original
+    comando1 = [sys.executable, "servidor_nombres.py"]
     proc1 = ejecutar_componente(comando1, "DNS Local 1 (127.0.0.2:50000)", 0)
     if proc1:
         procesos.append(("DNS Local 1", proc1))
     
-    # DNS 2 (Christian)
-    comando2 = [sys.executable, "servidor_christian.py"]  # El archivo de Christian
+    # DNS 2 (Christian)  
+    comando2 = [sys.executable, "servidor_christian.py"]
     proc2 = ejecutar_componente(comando2, "DNS Local 2 (127.0.0.12:50000)", 1)
     if proc2:
         procesos.append(("DNS Local 2", proc2))
     
+    # DNS Marco
+    comando_marco = [sys.executable, "servidor_marco.py"]
+    proc_marco = ejecutar_componente(comando_marco, "DNS Marco (127.0.0.8:50000)", 2)
+    if proc_marco:
+        procesos.append(("DNS Marco", proc_marco))
+    
+    # DNS Dan
+    comando_dan = [sys.executable, "servidor_dan.py", "--folder", "archivos_server_dan", "--server-ip", "127.0.0.9", "--server-port", "5006"]
+    proc_dan = ejecutar_componente(comando_dan, "DNS Dan (127.0.0.9:50000)", 3)
+    if proc_dan:
+        procesos.append(("DNS Dan", proc_dan))
+    
+    # DNS Gus
+    comando_gus = [sys.executable, "servidor_gus.py"]
+    proc_gus = ejecutar_componente(comando_gus, "DNS Gus (127.0.0.10:50000)", 4)
+    if proc_gus:
+        procesos.append(("DNS Gus", proc_gus))
+    
     # DNS 3 (Alternativo)
-    # Aquí podrías tener otro DNS si tienes el archivo
-    print("⚠️  DNS Local 3 no configurado - usando solo DNS 1 y 2")
+    print("⚠️  DNS Local 3 (Alternativo) no configurado - usando otros DNS")
     
     return procesos
 
 def iniciar_servidores():
-    """Inicia todos los servidores distribuidos"""
+    """Inicia todos los servidores distribuidos expandido"""
     procesos = []
     
     # Servidor 1
@@ -124,6 +150,24 @@ def iniciar_servidores():
     proc3 = ejecutar_componente(comando3, "Servidor 3 (127.0.0.6:5004)", 4)
     if proc3:
         procesos.append(("Servidor 3", proc3))
+    
+    # Servidor Marco
+    comando_marco = [sys.executable, "server_distributed.py", "server_marco"]
+    proc_marco = ejecutar_componente(comando_marco, "Servidor Marco (127.0.0.8:5005)", 5)
+    if proc_marco:
+        procesos.append(("Servidor Marco", proc_marco))
+    
+    # Servidor Dan
+    comando_dan = [sys.executable, "server_distributed.py", "server_dan"]
+    proc_dan = ejecutar_componente(comando_dan, "Servidor Dan (127.0.0.9:5006)", 6)
+    if proc_dan:
+        procesos.append(("Servidor Dan", proc_dan))
+    
+    # Servidor Gus
+    comando_gus = [sys.executable, "server_distributed.py", "server_gus"]
+    proc_gus = ejecutar_componente(comando_gus, "Servidor Gus (127.0.0.10:5007)", 7)
+    if proc_gus:
+        procesos.append(("Servidor Gus", proc_gus))
     
     return procesos
 
@@ -154,17 +198,23 @@ def probar_conectividad():
         print("💡 Asegúrate de que el sistema esté iniciado")
 
 def mostrar_estado_sistema():
-    """Muestra el estado actual del sistema"""
-    print("\n📊 Estado del Sistema Distribuido")
-    print("-" * 40)
+    """Muestra el estado actual del sistema distribuido expandido"""
+    print("\n📊 Estado del Sistema Distribuido Expandido")
+    print("-" * 50)
     
     componentes = [
         ("DNS General", "127.0.0.5", 50005),
         ("DNS Local 1", "127.0.0.2", 50000),
         ("DNS Local 2", "127.0.0.12", 50000),
+        ("DNS Marco", "127.0.0.8", 50000),
+        ("DNS Dan", "127.0.0.9", 50000),
+        ("DNS Gus", "127.0.0.10", 50000),
         ("Servidor 1", "127.0.0.3", 5002),
         ("Servidor 2", "127.0.0.4", 5003),
         ("Servidor 3", "127.0.0.6", 5004),
+        ("Servidor Marco", "127.0.0.8", 5005),
+        ("Servidor Dan", "127.0.0.9", 5006),
+        ("Servidor Gus", "127.0.0.10", 5007),
     ]
     
     import socket

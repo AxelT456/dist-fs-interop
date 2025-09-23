@@ -6,7 +6,7 @@ import socket
 import logging
 import sys
 
-CONFIG_FILE = 'config.json'
+CONFIG_FILE = 'config.json_axel'
 LOG_FILE = 'server.log'
 UDP_IP = "127.0.0.2"  
 UDP_PORT = 50000

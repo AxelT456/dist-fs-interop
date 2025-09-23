@@ -5,13 +5,19 @@ import time
 import socket
 from datetime import datetime
 
-CONFIG_FILE = "file_permissions_config.json_chris"
+# --- VALORES AJUSTADOS ---
+# 1. El DNS ahora se inicializa y escucha en esta IP.
+DNS_IP = "127.0.0.21"
+DNS_PORT = 50000
+
+# 2. La IP y Puerto que el DNS enviará en sus respuestas.
+SERVER_IP = "127.0.0.10"
+SERVER_PORT = 5007
+
+# --- OTROS VALORES DE CONFIGURACIÓN ---
+CONFIG_FILE = "file_permissions_config_gus.json"
 LOG_FILE = "file_server.log"
 UPDATE_INTERVAL = 300  # 5 minutos
-DNS_PORT=50000
-DNS_IP="127.0.0.12"
-SERVER_IP="127.0.0.11"
-SERVER_PORT=5002
 
 lock = threading.Lock()
 
@@ -34,13 +40,12 @@ class FileEntry:
     def from_dict(d):
         return FileEntry(d["name"], d["extension"], d["ttl"], d["can_publish"])
 
-
 class FileServer:
     def __init__(self, folder_path):
         self.folder_path = folder_path
         self.file_list = {}  # clave: name.ext -> FileEntry
-        self.load_config()
         self.running = True
+        self.load_config()
     
     def log(self, message):
         with open(LOG_FILE, "a") as f:
@@ -57,13 +62,13 @@ class FileServer:
                         key: FileEntry.from_dict(value)
                         for key, value in data.items()
                     }
-                self.log(f"Cargada configuración desde {CONFIG_FILE}")
+                self.log(f"Configuración cargada desde {CONFIG_FILE}")
             except Exception as e:
                 self.log(f"Error al cargar configuración: {e}")
                 self.file_list = {}
         else:
             self.file_list = {}
-            self.log(f"No existe archivo de configuración. Se creará uno nuevo.")
+            self.log("No existe archivo de configuración. Se creará uno nuevo.")
     
     def save_config(self):
         with lock:
@@ -73,7 +78,6 @@ class FileServer:
         self.log(f"Configuración guardada en {CONFIG_FILE}")
     
     def scan_folder(self):
-        """Devuelve set de archivos actuales en carpeta (name.ext)"""
         files = set()
         try:
             for f in os.listdir(self.folder_path):
@@ -110,7 +114,6 @@ class FileServer:
         with lock:
             known_files = set(self.file_list.keys())
 
-            # Archivos nuevos
             new_files = current_files - known_files
             for f in new_files:
                 name, ext = f.rsplit(".", 1)
@@ -119,7 +122,6 @@ class FileServer:
                 self.file_list[f] = FileEntry(name, ext, ttl, can_publish)
                 self.log(f"Archivo '{f}' agregado con permiso {can_publish} y TTL {ttl}")
             
-            # Archivos eliminados
             removed_files = known_files - current_files
             for f in removed_files:
                 self.log(f"Archivo eliminado detectado: {f}")
@@ -138,8 +140,9 @@ class FileServer:
     
     def udp_server(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # CORRECCIÓN: Usar la IP y Puerto del DNS para inicializar
         sock.bind((DNS_IP, DNS_PORT))
-        self.log(f"Servidor UDP iniciado en {DNS_IP}:{DNS_PORT}")
+        self.log(f"Servidor DNS iniciado y escuchando en {DNS_IP}:{DNS_PORT}")
         
         while self.running:
             try:
@@ -148,16 +151,20 @@ class FileServer:
                 try:
                     req = json.loads(msg)
 
-                    # 👇 Nuevo caso: consulta de info del servidor
-                    if req.get("accion") == "consultar" and req.get("nombre_archivo") == "servidor_info":
+                    if req.get("action") == "get_server_info":
                         resp = {
                             "status": "ACK",
                             "ip": SERVER_IP,
-                            "puerto": SERVER_PORT
+                            "port": SERVER_PORT
                         }
-
+                    elif req.get("action") == "list_all_files":
+                        with lock:
+                            all_files = [fe.to_dict() for fe in self.file_list.values()]
+                        resp = {
+                            "status": "ACK",
+                            "files": all_files
+                        }
                     elif req.get("type") == "check":
-                        # Solicitud de verificación de archivo individual
                         filename = req.get("filename")
                         extension = req.get("extension")
                         if not filename or not extension:
@@ -175,22 +182,6 @@ class FileServer:
                                         "ip": SERVER_IP,
                                         "port": SERVER_PORT}
                     
-                    elif req.get("type") == "list":
-                        # Solicitud de lista de archivos disponibles
-                        with lock:
-                            available_files = [
-                                {"name": fe.name, "extension": fe.extension}
-                                for fe in self.file_list.values()
-                                if fe.can_publish
-                            ]
-                        resp = {
-                            "response": "ACK",
-                            "files": available_files,
-                            "count": len(available_files),
-                            "ip": SERVER_IP,
-                            "port": SERVER_PORT
-                        }
-                    
                     else:
                         resp = {"response": "NACK", "reason": "Solicitud no válida"}
                         
@@ -205,7 +196,8 @@ class FileServer:
     
     def start(self):
         self.log("Iniciando servidor de nombres de recursos de archivo.")
-        self.update_files()  # actualización inicial
+        self.log(f"Este DNS anunciará la IP del servidor de archivos: {SERVER_IP}:{SERVER_PORT}")
+        self.update_files()
         
         thread_update = threading.Thread(target=self.update_loop, daemon=True)
         thread_udp = threading.Thread(target=self.udp_server, daemon=True)

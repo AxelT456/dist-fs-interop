@@ -61,11 +61,11 @@ def get_listening_ports() -> List[Tuple[str, int]]:
         return []
 
 def diagnose_system():
-    """Diagnóstica el estado completo del sistema"""
-    print("🔍 DIAGNÓSTICO DEL SISTEMA DISTRIBUIDO")
+    """Diagnóstica el estado completo del sistema expandido"""
+    print("🔍 DIAGNÓSTICO DEL SISTEMA DISTRIBUIDO EXPANDIDO")
     print("=" * 60)
     
-    # Definir componentes esperados
+    # Definir componentes esperados expandidos
     components = [
         {
             "name": "DNS General",
@@ -89,11 +89,25 @@ def diagnose_system():
             "test_message": {"type": "list"}
         },
         {
-            "name": "DNS Alternativo",
-            "host": "127.0.0.7",
-            "port": 50001,
-            "type": "UDP", 
-            "test_message": {"accion": "consultar", "nombre_archivo": "test"}
+            "name": "DNS Marco",
+            "host": "127.0.0.8",
+            "port": 50000,
+            "type": "UDP",
+            "test_message": {"name": "test", "extension": "txt"}
+        },
+        {
+            "name": "DNS Dan",
+            "host": "127.0.0.9",
+            "port": 50000,
+            "type": "UDP",
+            "test_message": {"accion": "listar_archivos"}
+        },
+        {
+            "name": "DNS Gus",
+            "host": "127.0.0.10",
+            "port": 50000,
+            "type": "UDP",
+            "test_message": {"action": "list_all_files"}
         },
         {
             "name": "Servidor 1",
@@ -113,6 +127,27 @@ def diagnose_system():
             "name": "Servidor 3",
             "host": "127.0.0.6",
             "port": 5004,
+            "type": "UDP",
+            "test_message": {"accion": "listar_archivos"}
+        },
+        {
+            "name": "Servidor Marco",
+            "host": "127.0.0.8",
+            "port": 5005,
+            "type": "UDP",
+            "test_message": {"accion": "listar_archivos"}
+        },
+        {
+            "name": "Servidor Dan",
+            "host": "127.0.0.9",
+            "port": 5006,
+            "type": "UDP",
+            "test_message": {"accion": "listar_archivos"}
+        },
+        {
+            "name": "Servidor Gus",
+            "host": "127.0.0.10",
+            "port": 5007,
             "type": "UDP",
             "test_message": {"accion": "listar_archivos"}
         }
@@ -182,24 +217,39 @@ def diagnose_system():
     return active_count, len(components)
 
 def quick_start_guide():
-    """Muestra guía rápida de inicio"""
-    print("\n🚀 GUÍA RÁPIDA DE INICIO")
-    print("=" * 40)
+    """Muestra guía rápida de inicio para sistema expandido"""
+    print("\n🚀 GUÍA RÁPIDA DE INICIO - SISTEMA EXPANDIDO")
+    print("=" * 50)
     print("1. Abre una terminal y ejecuta:")
     print("   > python system_launcher.py")
     print()
     print("2. En el menú, selecciona:")
     print("   > 4 (Iniciar sistema completo)")
     print()
-    print("3. Espera a ver el mensaje:")
+    print("3. El sistema iniciará en este orden:")
+    print("   📡 DNS General (coordinador)")
+    print("   🔗 5 DNS locales (Original, Christian, Marco, Dan, Gus)")
+    print("   🖥️  6 Servidores distribuidos")
+    print()
+    print("4. Espera a ver el mensaje:")
     print("   ✅ Sistema completo iniciado")
     print()
-    print("4. Luego selecciona:")
+    print("5. Luego selecciona:")
     print("   > 5 (Iniciar cliente distribuido)")
     print()
-    print("5. En el cliente, usa:")
+    print("6. En el cliente, usa:")
     print("   > 1 (Conectar aleatoriamente)")
     print()
+    print("📊 SERVIDORES DISPONIBLES:")
+    print("   • SERVER1 (127.0.0.3:5002) ← DNS Original")
+    print("   • SERVER2 (127.0.0.4:5003) ← DNS Christian") 
+    print("   • SERVER3 (127.0.0.6:5004) ← DNS Alternativo")
+    print("   • SERVER_MARCO (127.0.0.8:5005) ← DNS Marco")
+    print("   • SERVER_DAN (127.0.0.9:5006) ← DNS Dan")
+    print("   • SERVER_GUS (127.0.0.10:5007) ← DNS Gus")
+    print()
+    print("El cliente se conectará aleatoriamente a uno de estos servidores")
+    print("pero podrá acceder a archivos de todos los demás de forma transparente.")
 
 def interactive_diagnosis():
     """Diagnóstico interactivo"""
@@ -269,12 +319,15 @@ def interactive_diagnosis():
             print("❌ Opción inválida")
 
 def create_test_files():
-    """Crea archivos de prueba en los directorios"""
+    """Crea archivos de prueba en los directorios del sistema expandido"""
     import os
     
-    print("\n📁 Creando archivos de prueba...")
+    print("\n📁 Creando archivos de prueba para sistema expandido...")
     
-    directories = ["archivos_server1", "archivos_server2", "archivos_server3"]
+    directories = [
+        "archivos_server1", "archivos_server2", "archivos_server3",
+        "archivos_server_marco", "archivos_server_dan", "archivos_server_gus"
+    ]
     
     for directory in directories:
         if not os.path.exists(directory):
@@ -282,12 +335,29 @@ def create_test_files():
             print(f"✅ Directorio creado: {directory}")
     
     test_files = {
+        # Servidor 1
         "archivos_server1/libro1.txt": "Este es el contenido del Libro 1.\nUna historia fascinante sobre aventuras.",
         "archivos_server1/manual.txt": "Manual de usuario.\nInstrucciones detalladas paso a paso.",
+        
+        # Servidor 2  
         "archivos_server2/libro2.txt": "Contenido del Libro 2.\nCiencia ficción y tecnología avanzada.", 
         "archivos_server2/guia.txt": "Guía completa.\nEjemplos prácticos para principiantes.",
+        
+        # Servidor 3
         "archivos_server3/libro3.txt": "El Libro 3 contiene.\nRomance y drama en la época victoriana.",
-        "archivos_server3/tutorial.txt": "Tutorial básico.\nConceptos fundamentales explicados."
+        "archivos_server3/tutorial.txt": "Tutorial básico.\nConceptos fundamentales explicados.",
+        
+        # Servidor Marco
+        "archivos_server_marco/filosofia.txt": "Reflexiones filosóficas sobre la existencia.\nEl tiempo y el espacio en la mente humana.",
+        "archivos_server_marco/poesia.txt": "Colección de poemas.\nSobre la naturaleza y el alma humana.",
+        
+        # Servidor Dan
+        "archivos_server_dan/algoritmos.txt": "Guía completa de algoritmos.\nEstructuras de datos avanzadas y optimización.",
+        "archivos_server_dan/programacion.txt": "Manual de programación.\nBuenas prácticas y patrones de diseño.",
+        
+        # Servidor Gus
+        "archivos_server_gus/historia.txt": "Relatos históricos fascinantes.\nCivilizaciones antiguas y sus legados.",
+        "archivos_server_gus/biografias.txt": "Biografías de personajes ilustres.\nVidas que cambiaron el curso de la historia."
     }
     
     for filepath, content in test_files.items():
@@ -298,7 +368,8 @@ def create_test_files():
         except Exception as e:
             print(f"❌ Error creando {filepath}: {e}")
     
-    print(f"\n✅ {len(test_files)} archivos de prueba creados")
+    print(f"\n✅ {len(test_files)} archivos de prueba creados en 6 servidores")
+    print("Cada servidor tiene 2 archivos únicos para probar la distribución.")
 
 if __name__ == "__main__":
     print("🔧 Herramienta de Diagnóstico del Sistema Distribuido")

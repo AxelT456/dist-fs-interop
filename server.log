@@ -1,40 +1,16 @@
-2025-09-22 00:42:41,530 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
-2025-09-22 00:42:41,531 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 00:42:41,533 - MainThread - INFO - Configuración guardada exitosamente en config.json
-2025-09-22 00:42:41,535 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
-2025-09-22 00:47:41,534 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:19:12,147 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
-2025-09-22 07:19:12,150 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:19:12,152 - MainThread - INFO - Configuración guardada exitosamente en config.json
-2025-09-22 07:19:12,156 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
-2025-09-22 07:24:12,155 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:29:12,156 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:29:41,662 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61750): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
-2025-09-22 07:34:12,157 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:39:12,160 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:44:12,162 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:49:12,164 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:53:38,275 - MainThread - INFO - Deteniendo el servidor...
-2025-09-22 07:55:10,827 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
-2025-09-22 07:55:10,829 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 07:55:10,831 - MainThread - INFO - Configuración guardada exitosamente en config.json
-2025-09-22 07:55:10,834 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
-2025-09-22 07:59:13,160 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62956): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
-2025-09-22 08:00:10,833 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 08:05:10,836 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 14:44:22,021 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
-2025-09-22 14:44:22,039 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 14:44:22,042 - MainThread - INFO - Configuración guardada exitosamente en config.json
-2025-09-22 14:44:22,049 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
-2025-09-22 14:49:22,045 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 14:51:00,924 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56716): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
-2025-09-22 14:54:22,047 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 14:59:22,062 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 15:04:22,064 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 15:09:22,079 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 15:14:22,081 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 15:16:45,429 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
-2025-09-22 15:16:45,431 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
-2025-09-22 15:16:45,435 - MainThread - INFO - Configuración guardada exitosamente en config.json
-2025-09-22 15:16:45,438 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
-2025-09-22 15:21:45,437 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos
+2025-09-22 23:28:39,774 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-22 23:28:39,775 - MainThread - WARNING - No se encontró una ruta válida en la configuración.
+2025-09-22 23:28:56,748 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-22 23:28:56,749 - MainThread - INFO - Archivos nuevos detectados: novela.txt, archivo1.txt, shared.txt, libro1.txt
+2025-09-22 23:29:03,562 - MainThread - WARNING - ARCHIVO AÑADIDO: 'novela.txt' ha sido añadido a la lista y publicado.
+2025-09-22 23:29:06,057 - MainThread - WARNING - ARCHIVO AÑADIDO: 'archivo1.txt' ha sido añadido a la lista y publicado.
+2025-09-22 23:29:08,769 - MainThread - WARNING - ARCHIVO AÑADIDO: 'shared.txt' ha sido añadido a la lista y publicado.
+2025-09-22 23:29:11,409 - MainThread - WARNING - ARCHIVO AÑADIDO: 'libro1.txt' ha sido añadido a la lista y publicado.
+2025-09-22 23:29:11,411 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-22 23:29:11,416 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+[2025-09-22T23:30:18.203498] ARCHIVO AGREGADO: poesia.txt con TTL=300
+[2025-09-22T23:30:19.995935] ARCHIVO AGREGADO: filosofia.txt con TTL=300
+2025-09-22 23:34:11,414 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-22 23:39:11,416 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-22 23:44:11,419 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-22 23:49:11,437 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1

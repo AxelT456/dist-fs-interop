@@ -111,7 +111,183 @@ def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Di
         logging.error(f"Error en driver_servidor_christian: {e}")
         return {"status": "ERROR", "mensaje": str(e)}
 
-def driver_dns_general(request: Dict, dns_address: Tuple[str, int]) -> Dict:
+def driver_servidor_marco(request: Dict, dns_address: Tuple[str, int]) -> Dict:
+    """Driver para servidor_marco.py actualizado"""
+    accion = request.get("accion")
+    
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+            sock.settimeout(5)
+            
+            if accion == "consultar":
+                nombre_archivo = request.get("nombre_archivo", "test.txt")
+                if "." in nombre_archivo:
+                    name, extension = nombre_archivo.rsplit(".", 1)
+                else:
+                    name, extension = nombre_archivo, "txt"
+                
+                dns_request = {
+                    "accion": "consultar",
+                    "name": name,
+                    "extension": extension
+                }
+            elif accion == "listar_archivos":
+                dns_request = {"accion": "listar_archivos"}
+            else:
+                return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada"}
+            
+            sock.sendto(json.dumps(dns_request).encode('utf-8'), dns_address)
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            # Traducir respuesta de Marco a formato estándar
+            if response.get("status") == "ACK":
+                if "files" in response:  # Lista de archivos
+                    archivos = []
+                    for file_info in response.get("files", []):
+                        archivos.append({
+                            "nombre_archivo": f"{file_info['name']}.{file_info['extension']}",
+                            "extension": f".{file_info['extension']}",
+                            "publicado": True,
+                            "ttl": file_info.get("ttl", 3600),
+                            "bandera": 0,
+                            "ip_origen": response.get("ip", "127.0.0.8"),
+                            "servidor_principal": "SERVER_MARCO"
+                        })
+                    
+                    return {
+                        "status": "ACK",
+                        "archivos": archivos,
+                        "total": len(archivos),
+                        "ip": response.get("ip"),
+                        "puerto": response.get("port")
+                    }
+                else:  # Consulta individual
+                    return {
+                        "status": "ACK",
+                        "nombre_archivo": request.get("nombre_archivo"),
+                        "ttl": response.get("ttl", 3600),
+                        "ip": response.get("ip"),
+                        "puerto": response.get("port")
+                    }
+            else:
+                return {
+                    "status": "NACK",
+                    "mensaje": response.get("error", "Archivo no encontrado o TTL expirado"),
+                    "ip": response.get("ip", "127.0.0.8"),
+                    "puerto": response.get("port", 5005)
+                }
+            
+    except Exception as e:
+        logging.error(f"Error en driver_servidor_marco: {e}")
+        return {"status": "ERROR", "mensaje": str(e)}
+
+def driver_servidor_dan(request: Dict, dns_address: Tuple[str, int]) -> Dict:
+    """Driver para servidor_dan.py (usa módulos app)"""
+    accion = request.get("accion")
+    
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+            sock.settimeout(5)
+            
+            if accion == "consultar":
+                nombre_archivo = request.get("nombre_archivo", "test.txt")
+                dns_request = {
+                    "accion": "consultar_ip",
+                    "filename": nombre_archivo
+                }
+            elif accion == "listar_archivos":
+                dns_request = {"accion": "listar_archivos"}
+            else:
+                return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada"}
+            
+            sock.sendto(json.dumps(dns_request).encode('utf-8'), dns_address)
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            # Traducir respuesta de Dan a formato estándar
+            if response.get("status") == "ACK":
+                if "archivos" in response:  # Lista de archivos
+                    return response  # Ya está en formato estándar
+                else:  # Consulta individual
+                    return {
+                        "status": "ACK",
+                        "nombre_archivo": response.get("filename"),
+                        "ttl": response.get("ttl", 3600),
+                        "ip": response.get("ip"),
+                        "puerto": response.get("port")
+                    }
+            else:
+                return {
+                    "status": "NACK",
+                    "mensaje": response.get("error", "Archivo no encontrado"),
+                    "ip": response.get("ip", "127.0.0.9"),
+                    "puerto": response.get("port", 5006)
+                }
+            
+    except Exception as e:
+        logging.error(f"Error en driver_servidor_dan: {e}")
+        return {"status": "ERROR", "mensaje": str(e)}
+
+def driver_servidor_gus(request: Dict, dns_address: Tuple[str, int]) -> Dict:
+    """Driver para servidor_gus.py"""
+    accion = request.get("accion")
+    
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+            sock.settimeout(5)
+            
+            if accion == "consultar":
+                dns_request = {"action": "get_server_info"}
+            elif accion == "listar_archivos":
+                dns_request = {"action": "list_all_files"}
+            else:
+                return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada"}
+            
+            sock.sendto(json.dumps(dns_request).encode('utf-8'), dns_address)
+            data, addr = sock.recvfrom(4096)
+            response = json.loads(data.decode('utf-8'))
+            
+            # Traducir respuesta de Gus a formato estándar
+            if response.get("status") == "ACK":
+                if "files" in response:  # Lista de archivos
+                    archivos = []
+                    for file_info in response.get("files", []):
+                        if file_info.get("can_publish", True):
+                            archivos.append({
+                                "nombre_archivo": f"{file_info['name']}.{file_info['extension']}",
+                                "extension": f".{file_info['extension']}",
+                                "publicado": True,
+                                "ttl": file_info.get("ttl", 3600),
+                                "bandera": 0,
+                                "ip_origen": response.get("ip", "127.0.0.10"),
+                                "servidor_principal": "SERVER_GUS"
+                            })
+                    
+                    return {
+                        "status": "ACK",
+                        "archivos": archivos,
+                        "total": len(archivos),
+                        "ip": response.get("ip"),
+                        "puerto": response.get("port", 5007)
+                    }
+                else:  # Información del servidor
+                    return {
+                        "status": "ACK",
+                        "ip": response.get("ip"),
+                        "puerto": response.get("port", 5007)
+                    }
+            else:
+                return {
+                    "status": "NACK",
+                    "mensaje": response.get("reason", "Error en servidor Gus"),
+                    "ip": "127.0.0.10",
+                    "puerto": 5007
+                }
+            
+    except Exception as e:
+        logging.error(f"Error en driver_servidor_gus: {e}")
+        return {"status": "ERROR", "mensaje": str(e)}
     """Driver para DNS General (sistema distribuido)"""
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
@@ -128,6 +304,23 @@ def driver_dns_general(request: Dict, dns_address: Tuple[str, int]) -> Dict:
         logging.error(f"Error en driver_dns_general: {e}")
         return {"status": "ERROR", "mensaje": str(e)}
 
+def driver_dns_general(request: Dict, dns_address: Tuple[str, int]) -> Dict:
+    """Driver para DNS General (sistema distribuido)"""
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+            sock.settimeout(5)
+            
+            # El DNS General ya usa formato estándar
+            sock.sendto(json.dumps(request).encode('utf-8'), dns_address)
+            data, addr = sock.recvfrom(8192)
+            response = json.loads(data.decode('utf-8'))
+            
+            return response
+            
+    except Exception as e:
+        logging.error(f"Error en driver_dns_general: {e}")
+        return {"status": "ERROR", "mensaje": str(e)}
+    
 # ==============================================================================
 # ==                           CLASE DNSTranslator MEJORADA                   ==
 # ==============================================================================
@@ -151,7 +344,7 @@ class DNSTranslatorIntegrated:
         logging.info(f"DNSTranslatorIntegrated inicializado con {len(self.drivers)} drivers")
     
     def _get_default_config(self) -> Dict:
-        """Configuración por defecto del sistema distribuido"""
+        """Configuración por defecto del sistema distribuido expandido"""
         return {
             "dns_servers": [
                 {
@@ -171,6 +364,30 @@ class DNSTranslatorIntegrated:
                     "server_id": "SERVER2"
                 },
                 {
+                    "id": "servidor_marco",
+                    "type": "servidor_marco",
+                    "host": "127.0.0.8",
+                    "port": 50000,
+                    "driver": "driver_servidor_marco",
+                    "server_id": "SERVER_MARCO"
+                },
+                {
+                    "id": "servidor_dan",
+                    "type": "servidor_dan",
+                    "host": "127.0.0.9",
+                    "port": 50000,
+                    "driver": "driver_servidor_dan",
+                    "server_id": "SERVER_DAN"
+                },
+                {
+                    "id": "servidor_gus",
+                    "type": "servidor_gus",
+                    "host": "127.0.0.10",
+                    "port": 50000,
+                    "driver": "driver_servidor_gus",
+                    "server_id": "SERVER_GUS"
+                },
+                {
                     "id": "dns_alternativo",
                     "type": "servidor_nombres", 
                     "host": "127.0.0.7",
@@ -188,7 +405,7 @@ class DNSTranslatorIntegrated:
                 }
             ],
             "default_dns": "dns_general",
-            "fallback_dns": ["servidor_nombres", "servidor_christian", "dns_alternativo"]
+            "fallback_dns": ["servidor_nombres", "servidor_christian", "servidor_marco", "servidor_dan", "servidor_gus", "dns_alternativo"]
         }
     
     def _register_drivers(self) -> Dict:
@@ -196,6 +413,9 @@ class DNSTranslatorIntegrated:
         return {
             "driver_servidor_nombres": driver_servidor_nombres,
             "driver_servidor_christian": driver_servidor_christian,
+            "driver_servidor_marco": driver_servidor_marco,
+            "driver_servidor_dan": driver_servidor_dan,
+            "driver_servidor_gus": driver_servidor_gus,
             "driver_dns_general": driver_dns_general
         }
     
