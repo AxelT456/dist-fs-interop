@@ -1,0 +1,823 @@
+2025-09-22 00:41:45,207 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 00:41:45,207 - INFO - Esperando registros de servidores...
+2025-09-22 00:43:38,517 - INFO - Petición de ('127.0.0.1', 49707): registrar_servidor
+2025-09-22 00:43:38,517 - INFO - Servidor SERVER1 registrado con 5 archivos
+2025-09-22 00:43:50,766 - INFO - Petición de ('127.0.0.1', 56483): registrar_servidor
+2025-09-22 00:43:50,766 - INFO - Servidor SERVER2 registrado con 3 archivos
+2025-09-22 00:44:08,520 - INFO - Petición de ('127.0.0.1', 65159): heartbeat
+2025-09-22 00:44:20,769 - INFO - Petición de ('127.0.0.1', 54680): heartbeat
+2025-09-22 00:44:38,522 - INFO - Petición de ('127.0.0.1', 65285): heartbeat
+2025-09-22 00:44:41,881 - INFO - Petición de ('127.0.0.1', 65286): listar_archivos
+2025-09-22 00:44:50,771 - INFO - Petición de ('127.0.0.1', 52142): heartbeat
+2025-09-22 00:45:08,524 - INFO - Petición de ('127.0.0.1', 54716): heartbeat
+2025-09-22 00:45:20,773 - INFO - Petición de ('127.0.0.1', 54717): heartbeat
+2025-09-22 00:45:38,526 - INFO - Petición de ('127.0.0.1', 55028): heartbeat
+2025-09-22 00:45:49,724 - INFO - Petición de ('127.0.0.1', 60250): consultar
+2025-09-22 00:45:50,775 - INFO - Petición de ('127.0.0.1', 59564): heartbeat
+2025-09-22 00:46:08,528 - INFO - Petición de ('127.0.0.1', 60690): heartbeat
+2025-09-22 00:46:15,612 - INFO - Petición de ('127.0.0.1', 61203): listar_archivos
+2025-09-22 00:46:20,777 - INFO - Petición de ('127.0.0.1', 61204): heartbeat
+2025-09-22 00:46:29,798 - INFO - Petición de ('127.0.0.1', 58659): consultar
+2025-09-22 00:46:29,799 - INFO - Petición de ('127.0.0.1', 58660): leer
+2025-09-22 00:46:38,530 - INFO - Petición de ('127.0.0.1', 57872): heartbeat
+2025-09-22 00:46:50,779 - INFO - Petición de ('127.0.0.1', 53579): heartbeat
+2025-09-22 00:47:07,231 - INFO - Petición de ('127.0.0.1', 59399): consultar
+2025-09-22 00:47:07,232 - INFO - Petición de ('127.0.0.1', 59400): leer
+2025-09-22 00:47:08,532 - INFO - Petición de ('127.0.0.1', 59401): heartbeat
+2025-09-22 00:47:20,780 - INFO - Petición de ('127.0.0.1', 62573): heartbeat
+2025-09-22 00:47:30,432 - INFO - Petición de ('127.0.0.1', 62574): consultar
+2025-09-22 00:47:30,433 - INFO - Petición de ('127.0.0.1', 62575): leer
+2025-09-22 00:47:34,388 - INFO - Petición de ('127.0.0.1', 62576): consultar
+2025-09-22 00:47:34,389 - INFO - Petición de ('127.0.0.1', 62577): escribir
+2025-09-22 00:47:38,533 - INFO - Petición de ('127.0.0.1', 62947): heartbeat
+2025-09-22 00:47:50,782 - INFO - Petición de ('127.0.0.1', 55852): heartbeat
+2025-09-22 00:48:08,535 - INFO - Petición de ('127.0.0.1', 57336): heartbeat
+2025-09-22 00:48:20,784 - INFO - Petición de ('127.0.0.1', 56593): heartbeat
+2025-09-22 00:48:38,537 - INFO - Petición de ('127.0.0.1', 65360): heartbeat
+2025-09-22 00:48:50,786 - INFO - Petición de ('127.0.0.1', 59315): heartbeat
+2025-09-22 00:49:08,539 - INFO - Petición de ('127.0.0.1', 59316): heartbeat
+2025-09-22 00:49:20,788 - INFO - Petición de ('127.0.0.1', 56395): heartbeat
+2025-09-22 00:49:38,541 - INFO - Petición de ('127.0.0.1', 62060): heartbeat
+2025-09-22 00:49:50,790 - INFO - Petición de ('127.0.0.1', 53909): heartbeat
+2025-09-22 00:50:08,543 - INFO - Petición de ('127.0.0.1', 56641): heartbeat
+2025-09-22 00:50:20,792 - INFO - Petición de ('127.0.0.1', 56642): heartbeat
+2025-09-22 00:50:38,545 - INFO - Petición de ('127.0.0.1', 57425): heartbeat
+2025-09-22 07:18:53,439 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 07:18:53,441 - INFO - Esperando registros de servidores...
+2025-09-22 07:20:56,805 - INFO - Petición de ('127.0.0.1', 55545): registrar_servidor
+2025-09-22 07:20:56,806 - INFO - Servidor SERVER1 registrado con 5 archivos
+2025-09-22 07:21:02,240 - INFO - Petición de ('127.0.0.1', 60633): registrar_servidor
+2025-09-22 07:21:02,240 - INFO - Servidor SERVER2 registrado con 3 archivos
+2025-09-22 07:21:26,811 - INFO - Petición de ('127.0.0.1', 52654): heartbeat
+2025-09-22 07:21:32,244 - INFO - Petición de ('127.0.0.1', 52655): heartbeat
+2025-09-22 07:21:56,813 - INFO - Petición de ('127.0.0.1', 52163): heartbeat
+2025-09-22 07:22:02,246 - INFO - Petición de ('127.0.0.1', 52164): heartbeat
+2025-09-22 07:22:26,816 - INFO - Petición de ('127.0.0.1', 61159): heartbeat
+2025-09-22 07:22:31,843 - INFO - Petición de ('127.0.0.1', 61160): listar_archivos
+2025-09-22 07:22:32,248 - INFO - Petición de ('127.0.0.1', 61161): heartbeat
+2025-09-22 07:22:56,819 - INFO - Petición de ('127.0.0.1', 60861): heartbeat
+2025-09-22 07:23:02,259 - INFO - Petición de ('127.0.0.1', 60862): heartbeat
+2025-09-22 07:23:20,066 - INFO - Petición de ('127.0.0.1', 52281): consultar
+2025-09-22 07:23:26,820 - INFO - Petición de ('127.0.0.1', 58843): heartbeat
+2025-09-22 07:23:32,262 - INFO - Petición de ('127.0.0.1', 51260): heartbeat
+2025-09-22 07:23:35,400 - INFO - Petición de ('127.0.0.1', 55435): consultar
+2025-09-22 07:23:35,401 - INFO - Petición de ('127.0.0.1', 55436): leer
+2025-09-22 07:23:56,822 - INFO - Petición de ('127.0.0.1', 64247): heartbeat
+2025-09-22 07:24:02,264 - INFO - Petición de ('127.0.0.1', 64248): heartbeat
+2025-09-22 07:24:26,824 - INFO - Petición de ('127.0.0.1', 50964): heartbeat
+2025-09-22 07:24:32,266 - INFO - Petición de ('127.0.0.1', 63217): heartbeat
+2025-09-22 07:24:56,826 - INFO - Petición de ('127.0.0.1', 64027): heartbeat
+2025-09-22 07:25:02,268 - INFO - Petición de ('127.0.0.1', 64028): heartbeat
+2025-09-22 07:25:26,828 - INFO - Petición de ('127.0.0.1', 61153): heartbeat
+2025-09-22 07:25:32,270 - INFO - Petición de ('127.0.0.1', 49538): heartbeat
+2025-09-22 07:25:56,831 - INFO - Petición de ('127.0.0.1', 56812): heartbeat
+2025-09-22 07:26:02,273 - INFO - Petición de ('127.0.0.1', 56431): heartbeat
+2025-09-22 07:26:26,833 - INFO - Petición de ('127.0.0.1', 51645): heartbeat
+2025-09-22 07:26:32,275 - INFO - Petición de ('127.0.0.1', 51648): heartbeat
+2025-09-22 07:26:56,835 - INFO - Petición de ('127.0.0.1', 56744): heartbeat
+2025-09-22 07:27:02,278 - INFO - Petición de ('127.0.0.1', 56745): heartbeat
+2025-09-22 07:27:26,836 - INFO - Petición de ('127.0.0.1', 52110): heartbeat
+2025-09-22 07:27:32,280 - INFO - Petición de ('127.0.0.1', 52111): heartbeat
+2025-09-22 07:27:56,839 - INFO - Petición de ('127.0.0.1', 52385): heartbeat
+2025-09-22 07:28:02,283 - INFO - Petición de ('127.0.0.1', 52386): heartbeat
+2025-09-22 07:28:26,841 - INFO - Petición de ('127.0.0.1', 59969): heartbeat
+2025-09-22 07:28:32,285 - INFO - Petición de ('127.0.0.1', 51633): heartbeat
+2025-09-22 07:28:56,843 - INFO - Petición de ('127.0.0.1', 56605): heartbeat
+2025-09-22 07:29:02,289 - INFO - Petición de ('127.0.0.1', 60325): heartbeat
+2025-09-22 07:29:26,845 - INFO - Petición de ('127.0.0.1', 63486): heartbeat
+2025-09-22 07:29:32,291 - INFO - Petición de ('127.0.0.1', 56877): heartbeat
+2025-09-22 07:29:46,448 - INFO - Petición de ('127.0.0.1', 61884): listar_archivos
+2025-09-22 07:29:56,848 - INFO - Petición de ('127.0.0.1', 61885): heartbeat
+2025-09-22 07:30:02,293 - INFO - Petición de ('127.0.0.1', 61886): heartbeat
+2025-09-22 07:30:07,246 - INFO - Petición de ('127.0.0.1', 61887): consultar
+2025-09-22 07:30:07,247 - INFO - Petición de ('127.0.0.1', 61888): leer
+2025-09-22 07:30:26,850 - INFO - Petición de ('127.0.0.1', 61328): heartbeat
+2025-09-22 07:30:32,295 - INFO - Petición de ('127.0.0.1', 61329): heartbeat
+2025-09-22 07:30:56,852 - INFO - Petición de ('127.0.0.1', 54181): heartbeat
+2025-09-22 07:31:02,297 - INFO - Petición de ('127.0.0.1', 57686): heartbeat
+2025-09-22 07:31:26,855 - INFO - Petición de ('127.0.0.1', 61012): heartbeat
+2025-09-22 07:31:32,299 - INFO - Petición de ('127.0.0.1', 60816): heartbeat
+2025-09-22 07:31:56,857 - INFO - Petición de ('127.0.0.1', 49726): heartbeat
+2025-09-22 07:32:02,302 - INFO - Petición de ('127.0.0.1', 49727): heartbeat
+2025-09-22 07:32:26,859 - INFO - Petición de ('127.0.0.1', 49616): heartbeat
+2025-09-22 07:32:32,304 - INFO - Petición de ('127.0.0.1', 49617): heartbeat
+2025-09-22 07:32:56,862 - INFO - Petición de ('127.0.0.1', 54126): heartbeat
+2025-09-22 07:33:02,306 - INFO - Petición de ('127.0.0.1', 64856): heartbeat
+2025-09-22 07:33:26,865 - INFO - Petición de ('127.0.0.1', 59485): heartbeat
+2025-09-22 07:33:32,309 - INFO - Petición de ('127.0.0.1', 58252): heartbeat
+2025-09-22 07:33:56,867 - INFO - Petición de ('127.0.0.1', 57016): heartbeat
+2025-09-22 07:34:02,312 - INFO - Petición de ('127.0.0.1', 51612): heartbeat
+2025-09-22 07:34:26,869 - INFO - Petición de ('127.0.0.1', 54245): heartbeat
+2025-09-22 07:34:32,314 - INFO - Petición de ('127.0.0.1', 54074): heartbeat
+2025-09-22 07:34:56,872 - INFO - Petición de ('127.0.0.1', 62041): heartbeat
+2025-09-22 07:35:02,316 - INFO - Petición de ('127.0.0.1', 53267): heartbeat
+2025-09-22 07:35:26,875 - INFO - Petición de ('127.0.0.1', 56310): heartbeat
+2025-09-22 07:35:32,318 - INFO - Petición de ('127.0.0.1', 50912): heartbeat
+2025-09-22 07:35:56,877 - INFO - Petición de ('127.0.0.1', 52831): heartbeat
+2025-09-22 07:36:02,320 - INFO - Petición de ('127.0.0.1', 52832): heartbeat
+2025-09-22 07:36:26,880 - INFO - Petición de ('127.0.0.1', 59142): heartbeat
+2025-09-22 07:36:32,322 - INFO - Petición de ('127.0.0.1', 49786): heartbeat
+2025-09-22 07:36:56,882 - INFO - Petición de ('127.0.0.1', 55521): heartbeat
+2025-09-22 07:37:02,324 - INFO - Petición de ('127.0.0.1', 57031): heartbeat
+2025-09-22 07:37:26,884 - INFO - Petición de ('127.0.0.1', 54639): heartbeat
+2025-09-22 07:37:32,326 - INFO - Petición de ('127.0.0.1', 54640): heartbeat
+2025-09-22 07:37:56,886 - INFO - Petición de ('127.0.0.1', 52652): heartbeat
+2025-09-22 07:38:02,329 - INFO - Petición de ('127.0.0.1', 52653): heartbeat
+2025-09-22 07:38:26,889 - INFO - Petición de ('127.0.0.1', 53105): heartbeat
+2025-09-22 07:38:32,331 - INFO - Petición de ('127.0.0.1', 65238): heartbeat
+2025-09-22 07:38:56,892 - INFO - Petición de ('127.0.0.1', 59399): heartbeat
+2025-09-22 07:39:02,334 - INFO - Petición de ('127.0.0.1', 60801): heartbeat
+2025-09-22 07:39:26,894 - INFO - Petición de ('127.0.0.1', 56142): heartbeat
+2025-09-22 07:39:32,336 - INFO - Petición de ('127.0.0.1', 60394): heartbeat
+2025-09-22 07:39:56,897 - INFO - Petición de ('127.0.0.1', 54396): heartbeat
+2025-09-22 07:40:02,339 - INFO - Petición de ('127.0.0.1', 51950): heartbeat
+2025-09-22 07:40:26,899 - INFO - Petición de ('127.0.0.1', 51435): heartbeat
+2025-09-22 07:40:32,341 - INFO - Petición de ('127.0.0.1', 65105): heartbeat
+2025-09-22 07:40:56,901 - INFO - Petición de ('127.0.0.1', 50808): heartbeat
+2025-09-22 07:41:02,343 - INFO - Petición de ('127.0.0.1', 50809): heartbeat
+2025-09-22 07:41:26,904 - INFO - Petición de ('127.0.0.1', 57473): heartbeat
+2025-09-22 07:41:32,346 - INFO - Petición de ('127.0.0.1', 60363): heartbeat
+2025-09-22 07:41:56,907 - INFO - Petición de ('127.0.0.1', 57868): heartbeat
+2025-09-22 07:42:02,348 - INFO - Petición de ('127.0.0.1', 61609): heartbeat
+2025-09-22 07:42:26,910 - INFO - Petición de ('127.0.0.1', 53520): heartbeat
+2025-09-22 07:42:32,351 - INFO - Petición de ('127.0.0.1', 61841): heartbeat
+2025-09-22 07:42:56,913 - INFO - Petición de ('127.0.0.1', 54028): heartbeat
+2025-09-22 07:43:02,354 - INFO - Petición de ('127.0.0.1', 54029): heartbeat
+2025-09-22 07:43:26,916 - INFO - Petición de ('127.0.0.1', 58322): heartbeat
+2025-09-22 07:43:32,356 - INFO - Petición de ('127.0.0.1', 51157): heartbeat
+2025-09-22 07:43:56,919 - INFO - Petición de ('127.0.0.1', 64818): heartbeat
+2025-09-22 07:44:02,359 - INFO - Petición de ('127.0.0.1', 55008): heartbeat
+2025-09-22 07:44:26,921 - INFO - Petición de ('127.0.0.1', 51290): heartbeat
+2025-09-22 07:44:32,361 - INFO - Petición de ('127.0.0.1', 56039): heartbeat
+2025-09-22 07:44:56,924 - INFO - Petición de ('127.0.0.1', 63690): heartbeat
+2025-09-22 07:45:02,364 - INFO - Petición de ('127.0.0.1', 54599): heartbeat
+2025-09-22 07:45:26,926 - INFO - Petición de ('127.0.0.1', 53258): heartbeat
+2025-09-22 07:45:32,366 - INFO - Petición de ('127.0.0.1', 62534): heartbeat
+2025-09-22 07:45:56,929 - INFO - Petición de ('127.0.0.1', 64279): heartbeat
+2025-09-22 07:46:02,368 - INFO - Petición de ('127.0.0.1', 58563): heartbeat
+2025-09-22 07:46:26,931 - INFO - Petición de ('127.0.0.1', 49351): heartbeat
+2025-09-22 07:46:32,370 - INFO - Petición de ('127.0.0.1', 52014): heartbeat
+2025-09-22 07:46:56,933 - INFO - Petición de ('127.0.0.1', 53989): heartbeat
+2025-09-22 07:47:02,373 - INFO - Petición de ('127.0.0.1', 50634): heartbeat
+2025-09-22 07:47:26,935 - INFO - Petición de ('127.0.0.1', 62534): heartbeat
+2025-09-22 07:47:32,375 - INFO - Petición de ('127.0.0.1', 57157): heartbeat
+2025-09-22 07:47:56,938 - INFO - Petición de ('127.0.0.1', 63783): heartbeat
+2025-09-22 07:48:02,378 - INFO - Petición de ('127.0.0.1', 49547): heartbeat
+2025-09-22 07:48:26,940 - INFO - Petición de ('127.0.0.1', 63415): heartbeat
+2025-09-22 07:48:32,380 - INFO - Petición de ('127.0.0.1', 54683): heartbeat
+2025-09-22 07:48:56,943 - INFO - Petición de ('127.0.0.1', 65406): heartbeat
+2025-09-22 07:49:02,383 - INFO - Petición de ('127.0.0.1', 60722): heartbeat
+2025-09-22 07:49:26,944 - INFO - Petición de ('127.0.0.1', 58062): heartbeat
+2025-09-22 07:49:32,385 - INFO - Petición de ('127.0.0.1', 51849): heartbeat
+2025-09-22 07:49:56,947 - INFO - Petición de ('127.0.0.1', 64380): heartbeat
+2025-09-22 07:50:02,388 - INFO - Petición de ('127.0.0.1', 64381): heartbeat
+2025-09-22 07:50:26,950 - INFO - Petición de ('127.0.0.1', 54165): heartbeat
+2025-09-22 07:50:32,390 - INFO - Petición de ('127.0.0.1', 54166): heartbeat
+2025-09-22 07:50:56,952 - INFO - Petición de ('127.0.0.1', 61755): heartbeat
+2025-09-22 07:51:02,393 - INFO - Petición de ('127.0.0.1', 61756): heartbeat
+2025-09-22 07:51:26,953 - INFO - Petición de ('127.0.0.1', 62251): heartbeat
+2025-09-22 07:51:32,394 - INFO - Petición de ('127.0.0.1', 55729): heartbeat
+2025-09-22 07:51:56,954 - INFO - Petición de ('127.0.0.1', 54184): heartbeat
+2025-09-22 07:52:02,396 - INFO - Petición de ('127.0.0.1', 54185): heartbeat
+2025-09-22 07:52:26,956 - INFO - Petición de ('127.0.0.1', 64710): heartbeat
+2025-09-22 07:52:32,397 - INFO - Petición de ('127.0.0.1', 57769): heartbeat
+2025-09-22 07:52:56,957 - INFO - Petición de ('127.0.0.1', 60555): heartbeat
+2025-09-22 07:53:02,399 - INFO - Petición de ('127.0.0.1', 60556): heartbeat
+2025-09-22 07:53:26,960 - INFO - Petición de ('127.0.0.1', 50164): heartbeat
+2025-09-22 07:54:57,594 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 07:54:57,595 - INFO - Esperando registros de servidores...
+2025-09-22 07:55:38,132 - INFO - Petición de ('127.0.0.1', 54077): registrar_servidor
+2025-09-22 07:55:38,133 - INFO - Servidor SERVER1 registrado con 5 archivos
+2025-09-22 07:58:50,391 - INFO - Petición de ('127.0.0.1', 52494): registrar_servidor
+2025-09-22 07:58:50,392 - INFO - Servidor SERVER1 registrado con 5 archivos
+2025-09-22 07:58:59,012 - INFO - Petición de ('127.0.0.1', 51948): registrar_servidor
+2025-09-22 07:58:59,014 - INFO - Servidor SERVER2 registrado con 3 archivos
+2025-09-22 07:59:16,481 - INFO - Petición de ('127.0.0.1', 63448): listar_archivos
+2025-09-22 07:59:20,396 - INFO - Petición de ('127.0.0.1', 62159): heartbeat
+2025-09-22 07:59:29,019 - INFO - Petición de ('127.0.0.1', 55663): heartbeat
+2025-09-22 07:59:50,399 - INFO - Petición de ('127.0.0.1', 49774): heartbeat
+2025-09-22 07:59:59,021 - INFO - Petición de ('127.0.0.1', 55018): heartbeat
+2025-09-22 08:00:20,402 - INFO - Petición de ('127.0.0.1', 59438): heartbeat
+2025-09-22 08:00:29,024 - INFO - Petición de ('127.0.0.1', 60290): heartbeat
+2025-09-22 08:00:50,405 - INFO - Petición de ('127.0.0.1', 53411): heartbeat
+2025-09-22 08:00:59,027 - INFO - Petición de ('127.0.0.1', 53412): heartbeat
+2025-09-22 08:01:20,408 - INFO - Petición de ('127.0.0.1', 54492): heartbeat
+2025-09-22 08:01:29,031 - INFO - Petición de ('127.0.0.1', 54493): heartbeat
+2025-09-22 08:01:50,412 - INFO - Petición de ('127.0.0.1', 62780): heartbeat
+2025-09-22 08:01:59,033 - INFO - Petición de ('127.0.0.1', 50969): heartbeat
+2025-09-22 08:02:06,179 - INFO - Petición de ('127.0.0.1', 58275): consultar
+2025-09-22 08:02:20,415 - INFO - Petición de ('127.0.0.1', 58276): heartbeat
+2025-09-22 08:02:29,037 - INFO - Petición de ('127.0.0.1', 55719): heartbeat
+2025-09-22 08:02:40,463 - INFO - Petición de ('127.0.0.1', 50098): leer
+2025-09-22 08:02:40,463 - INFO - Enviando petición leer a SERVER2 via UDP ('127.0.0.4', 6003)
+2025-09-22 08:02:40,466 - INFO - Respuesta de SERVER2: EXITO
+2025-09-22 08:02:50,418 - INFO - Petición de ('127.0.0.1', 53501): heartbeat
+2025-09-22 08:02:59,041 - INFO - Petición de ('127.0.0.1', 53813): heartbeat
+2025-09-22 08:03:20,421 - INFO - Petición de ('127.0.0.1', 64715): heartbeat
+2025-09-22 08:03:29,043 - INFO - Petición de ('127.0.0.1', 64716): heartbeat
+2025-09-22 08:03:50,423 - INFO - Petición de ('127.0.0.1', 65534): heartbeat
+2025-09-22 08:03:59,046 - INFO - Petición de ('127.0.0.1', 53243): heartbeat
+2025-09-22 08:04:20,425 - INFO - Petición de ('127.0.0.1', 63927): heartbeat
+2025-09-22 08:04:29,048 - INFO - Petición de ('127.0.0.1', 60996): heartbeat
+2025-09-22 08:04:50,427 - INFO - Petición de ('127.0.0.1', 50216): heartbeat
+2025-09-22 08:04:59,052 - INFO - Petición de ('127.0.0.1', 53156): heartbeat
+2025-09-22 08:05:20,429 - INFO - Petición de ('127.0.0.1', 63798): heartbeat
+2025-09-22 08:05:29,053 - INFO - Petición de ('127.0.0.1', 49622): heartbeat
+2025-09-22 08:16:29,449 - INFO - Petición de ('127.0.0.1', 57253): heartbeat
+2025-09-22 08:16:36,614 - INFO - Eliminando servidor inactivo: SERVER2
+2025-09-22 08:16:38,074 - INFO - Petición de ('127.0.0.1', 59799): heartbeat
+2025-09-22 08:19:08,635 - INFO - Petición de ('127.0.0.1', 49538): heartbeat
+2025-09-22 08:19:17,260 - INFO - Petición de ('127.0.0.1', 57339): heartbeat
+2025-09-22 08:19:38,638 - INFO - Petición de ('127.0.0.1', 60825): heartbeat
+2025-09-22 08:19:47,261 - INFO - Petición de ('127.0.0.1', 49538): heartbeat
+2025-09-22 08:19:52,970 - INFO - Petición de ('127.0.0.1', 49539): leer
+2025-09-22 08:20:07,887 - INFO - Petición de ('127.0.0.1', 54188): escribir
+2025-09-22 08:20:07,888 - INFO - Enviando petición escribir a SERVER1 via UDP ('127.0.0.3', 6002)
+2025-09-22 08:20:12,897 - INFO - Respuesta de SERVER1: EXITO
+2025-09-22 08:20:12,898 - INFO - Nuevo archivo 'libro2.txt' creado en servidor SERVER1
+2025-09-22 08:20:12,899 - INFO - Petición de ('127.0.0.1', 54190): registrar_servidor
+2025-09-22 08:20:12,900 - INFO - Servidor SERVER1 registrado con 6 archivos
+2025-09-22 08:20:12,900 - INFO - Petición de ('127.0.0.1', 54191): heartbeat
+2025-09-22 08:20:12,907 - INFO - Error procesando petición de ('127.0.0.1', 54191): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,909 - INFO - Petición de ('127.0.0.1', 54192): registrar_servidor
+2025-09-22 08:20:12,910 - INFO - Servidor SERVER1 registrado con 6 archivos
+2025-09-22 08:20:12,912 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,913 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,914 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,915 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,916 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,918 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,919 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,920 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,921 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,921 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,922 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,923 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,924 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,924 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,925 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,926 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,927 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,927 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,927 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,928 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,928 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,929 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,929 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,930 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,931 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,931 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,932 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,933 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,933 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,933 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,934 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,935 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,935 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,936 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,936 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,937 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,937 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,938 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,938 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,938 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,939 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,940 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,941 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,942 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,943 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,943 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,944 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,945 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,945 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,945 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,946 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,946 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,947 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,947 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,947 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,948 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,948 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,948 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,949 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,949 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,950 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,951 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,952 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,953 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,954 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,954 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,955 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,956 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,958 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,958 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,959 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,959 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,960 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,960 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,961 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,962 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,963 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,964 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,965 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,965 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,966 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,966 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,967 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,967 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,968 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,969 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,970 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,971 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,972 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,972 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,972 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,973 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,974 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,975 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,976 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,976 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,977 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,978 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,979 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,980 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,981 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,982 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,983 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,983 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,984 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,984 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,985 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,985 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,986 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,986 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,987 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,987 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,988 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,988 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,989 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,989 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,990 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,990 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,990 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:12,990 - INFO - Error procesando petición de ('127.0.0.1', 54192): [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-09-22 08:20:17,264 - INFO - Petición de ('127.0.0.1', 65298): heartbeat
+2025-09-22 08:20:41,655 - INFO - Petición de ('127.0.0.1', 65442): heartbeat
+2025-09-22 08:20:47,267 - INFO - Petición de ('127.0.0.1', 65443): heartbeat
+2025-09-22 08:21:11,657 - INFO - Petición de ('127.0.0.1', 59909): heartbeat
+2025-09-22 08:21:17,270 - INFO - Petición de ('127.0.0.1', 59910): heartbeat
+2025-09-22 08:21:41,660 - INFO - Petición de ('127.0.0.1', 55206): heartbeat
+2025-09-22 08:21:47,273 - INFO - Petición de ('127.0.0.1', 59233): heartbeat
+2025-09-22 08:22:11,663 - INFO - Petición de ('127.0.0.1', 54764): heartbeat
+2025-09-22 08:22:17,276 - INFO - Petición de ('127.0.0.1', 54765): heartbeat
+2025-09-22 14:44:12,976 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 14:44:12,979 - INFO - Esperando registros de servidores...
+2025-09-22 14:45:08,264 - INFO - Petición de ('127.0.0.1', 57388): registrar_servidor
+2025-09-22 14:45:08,265 - INFO - Servidor SERVER1 registrado con 5 archivos
+2025-09-22 14:45:15,958 - INFO - Petición de ('127.0.0.1', 58039): registrar_servidor
+2025-09-22 14:45:15,959 - INFO - Servidor SERVER2 registrado con 3 archivos
+2025-09-22 14:45:38,268 - INFO - Petición de ('127.0.0.1', 51959): heartbeat
+2025-09-22 14:45:45,961 - INFO - Petición de ('127.0.0.1', 60919): heartbeat
+2025-09-22 14:45:56,126 - INFO - Petición de ('127.0.0.1', 52552): listar_archivos
+2025-09-22 14:46:08,271 - INFO - Petición de ('127.0.0.1', 58339): heartbeat
+2025-09-22 14:46:15,963 - INFO - Petición de ('127.0.0.1', 58340): heartbeat
+2025-09-22 14:46:38,273 - INFO - Petición de ('127.0.0.1', 54633): heartbeat
+2025-09-22 14:46:45,966 - INFO - Petición de ('127.0.0.1', 49319): heartbeat
+2025-09-22 14:47:08,276 - INFO - Petición de ('127.0.0.1', 59351): heartbeat
+2025-09-22 14:47:15,969 - INFO - Petición de ('127.0.0.1', 65507): heartbeat
+2025-09-22 14:47:26,981 - INFO - Petición de ('127.0.0.1', 63850): listar_archivos
+2025-09-22 14:47:34,337 - INFO - Petición de ('127.0.0.1', 60533): leer
+2025-09-22 14:47:34,338 - INFO - Enviando petición leer a SERVER1 via UDP ('127.0.0.3', 6002)
+2025-09-22 14:47:34,356 - INFO - Respuesta de SERVER1: EXITO
+2025-09-22 14:47:38,279 - INFO - Petición de ('127.0.0.1', 60535): heartbeat
+2025-09-22 14:47:42,690 - INFO - Petición de ('127.0.0.1', 60536): leer
+2025-09-22 14:47:42,691 - INFO - Enviando petición leer a SERVER1 via UDP ('127.0.0.3', 6002)
+2025-09-22 14:47:42,695 - INFO - Respuesta de SERVER1: EXITO
+2025-09-22 14:47:45,972 - INFO - Petición de ('127.0.0.1', 60816): heartbeat
+2025-09-22 14:47:55,574 - INFO - Petición de ('127.0.0.1', 61468): checkout_archivo
+2025-09-22 14:47:55,575 - INFO - Enviando petición leer a SERVER1 via UDP ('127.0.0.3', 6002)
+2025-09-22 14:47:55,579 - INFO - Respuesta de SERVER1: EXITO
+2025-09-22 14:47:55,581 - INFO - Checkout: novela.txt de SERVER1 hacia SERVER2
+2025-09-22 14:47:55,589 - INFO - Petición de ('127.0.0.1', 61470): checkin_archivo
+2025-09-22 14:47:55,591 - INFO - Enviando petición leer a SERVER1 via UDP ('127.0.0.3', 6002)
+2025-09-22 14:47:55,598 - INFO - Respuesta de SERVER1: EXITO
+2025-09-22 14:47:55,600 - INFO - Enviando petición escribir a SERVER1 via UDP ('127.0.0.3', 6002)
+2025-09-22 14:47:55,605 - INFO - Respuesta de SERVER1: EXITO
+2025-09-22 14:47:55,612 - INFO - Enviando petición eliminar_temporal a SERVER2 via UDP ('127.0.0.4', 6003)
+2025-09-22 14:47:55,616 - INFO - Respuesta de SERVER2: EXITO
+2025-09-22 14:47:55,618 - INFO - Check-in exitoso: novela.txt actualizado en SERVER1
+2025-09-22 14:48:08,282 - INFO - Petición de ('127.0.0.1', 58111): heartbeat
+2025-09-22 14:48:15,974 - INFO - Petición de ('127.0.0.1', 55413): heartbeat
+2025-09-22 14:48:38,284 - INFO - Petición de ('127.0.0.1', 49259): heartbeat
+2025-09-22 14:48:45,977 - INFO - Petición de ('127.0.0.1', 53094): heartbeat
+2025-09-22 14:49:08,288 - INFO - Petición de ('127.0.0.1', 59953): heartbeat
+2025-09-22 14:49:15,980 - INFO - Petición de ('127.0.0.1', 62355): heartbeat
+2025-09-22 14:49:38,291 - INFO - Petición de ('127.0.0.1', 56440): heartbeat
+2025-09-22 14:49:45,983 - INFO - Petición de ('127.0.0.1', 56976): heartbeat
+2025-09-22 14:50:08,294 - INFO - Petición de ('127.0.0.1', 58515): heartbeat
+2025-09-22 14:50:15,985 - INFO - Petición de ('127.0.0.1', 64806): heartbeat
+2025-09-22 14:50:17,490 - INFO - Petición de ('127.0.0.1', 51793): listar_archivos
+2025-09-22 14:50:38,297 - INFO - Petición de ('127.0.0.1', 56625): heartbeat
+2025-09-22 14:50:45,988 - INFO - Petición de ('127.0.0.1', 64918): heartbeat
+2025-09-22 14:50:46,688 - INFO - Petición de ('127.0.0.1', 64919): listar_archivos
+2025-09-22 14:51:02,015 - INFO - Petición de ('127.0.0.1', 56718): listar_archivos
+2025-09-22 14:51:08,299 - INFO - Petición de ('127.0.0.1', 55361): heartbeat
+2025-09-22 14:51:15,991 - INFO - Petición de ('127.0.0.1', 50914): heartbeat
+2025-09-22 14:51:38,302 - INFO - Petición de ('127.0.0.1', 51186): heartbeat
+2025-09-22 14:51:45,994 - INFO - Petición de ('127.0.0.1', 60869): heartbeat
+2025-09-22 14:52:08,305 - INFO - Petición de ('127.0.0.1', 49538): heartbeat
+2025-09-22 14:52:15,997 - INFO - Petición de ('127.0.0.1', 60473): heartbeat
+2025-09-22 14:52:38,307 - INFO - Petición de ('127.0.0.1', 57958): heartbeat
+2025-09-22 14:52:45,999 - INFO - Petición de ('127.0.0.1', 57119): heartbeat
+2025-09-22 14:53:08,310 - INFO - Petición de ('127.0.0.1', 53452): heartbeat
+2025-09-22 14:53:16,002 - INFO - Petición de ('127.0.0.1', 63574): heartbeat
+2025-09-22 14:53:38,312 - INFO - Petición de ('127.0.0.1', 59992): heartbeat
+2025-09-22 14:53:46,004 - INFO - Petición de ('127.0.0.1', 53954): heartbeat
+2025-09-22 14:54:08,315 - INFO - Petición de ('127.0.0.1', 60634): heartbeat
+2025-09-22 14:54:16,007 - INFO - Petición de ('127.0.0.1', 50424): heartbeat
+2025-09-22 14:54:38,317 - INFO - Petición de ('127.0.0.1', 53743): heartbeat
+2025-09-22 14:54:46,010 - INFO - Petición de ('127.0.0.1', 55023): heartbeat
+2025-09-22 14:55:08,319 - INFO - Petición de ('127.0.0.1', 63295): heartbeat
+2025-09-22 14:55:16,014 - INFO - Petición de ('127.0.0.1', 65169): heartbeat
+2025-09-22 14:55:38,322 - INFO - Petición de ('127.0.0.1', 53294): heartbeat
+2025-09-22 14:55:46,016 - INFO - Petición de ('127.0.0.1', 59059): heartbeat
+2025-09-22 14:56:08,324 - INFO - Petición de ('127.0.0.1', 60445): heartbeat
+2025-09-22 14:56:16,019 - INFO - Petición de ('127.0.0.1', 63641): heartbeat
+2025-09-22 14:56:38,327 - INFO - Petición de ('127.0.0.1', 64877): heartbeat
+2025-09-22 14:56:46,021 - INFO - Petición de ('127.0.0.1', 50472): heartbeat
+2025-09-22 14:57:08,329 - INFO - Petición de ('127.0.0.1', 65380): heartbeat
+2025-09-22 14:57:16,023 - INFO - Petición de ('127.0.0.1', 54281): heartbeat
+2025-09-22 14:57:38,332 - INFO - Petición de ('127.0.0.1', 51923): heartbeat
+2025-09-22 14:57:46,026 - INFO - Petición de ('127.0.0.1', 63016): heartbeat
+2025-09-22 14:58:08,334 - INFO - Petición de ('127.0.0.1', 55824): heartbeat
+2025-09-22 14:58:16,028 - INFO - Petición de ('127.0.0.1', 59767): heartbeat
+2025-09-22 14:58:38,336 - INFO - Petición de ('127.0.0.1', 62992): heartbeat
+2025-09-22 14:58:46,031 - INFO - Petición de ('127.0.0.1', 54965): heartbeat
+2025-09-22 14:59:08,339 - INFO - Petición de ('127.0.0.1', 64280): heartbeat
+2025-09-22 14:59:16,033 - INFO - Petición de ('127.0.0.1', 62870): heartbeat
+2025-09-22 14:59:38,341 - INFO - Petición de ('127.0.0.1', 60136): heartbeat
+2025-09-22 14:59:46,036 - INFO - Petición de ('127.0.0.1', 55363): heartbeat
+2025-09-22 15:00:08,344 - INFO - Petición de ('127.0.0.1', 50146): heartbeat
+2025-09-22 15:00:16,039 - INFO - Petición de ('127.0.0.1', 52793): heartbeat
+2025-09-22 15:00:38,345 - INFO - Petición de ('127.0.0.1', 50199): heartbeat
+2025-09-22 15:00:46,041 - INFO - Petición de ('127.0.0.1', 57564): heartbeat
+2025-09-22 15:01:08,347 - INFO - Petición de ('127.0.0.1', 50061): heartbeat
+2025-09-22 15:01:16,043 - INFO - Petición de ('127.0.0.1', 65419): heartbeat
+2025-09-22 15:01:38,349 - INFO - Petición de ('127.0.0.1', 50816): heartbeat
+2025-09-22 15:01:46,045 - INFO - Petición de ('127.0.0.1', 55875): heartbeat
+2025-09-22 15:02:08,351 - INFO - Petición de ('127.0.0.1', 57450): heartbeat
+2025-09-22 15:02:16,047 - INFO - Petición de ('127.0.0.1', 62773): heartbeat
+2025-09-22 15:02:38,354 - INFO - Petición de ('127.0.0.1', 56982): heartbeat
+2025-09-22 15:02:46,050 - INFO - Petición de ('127.0.0.1', 59368): heartbeat
+2025-09-22 15:03:08,356 - INFO - Petición de ('127.0.0.1', 55553): heartbeat
+2025-09-22 15:03:16,052 - INFO - Petición de ('127.0.0.1', 61903): heartbeat
+2025-09-22 15:03:38,359 - INFO - Petición de ('127.0.0.1', 64686): heartbeat
+2025-09-22 15:03:46,055 - INFO - Petición de ('127.0.0.1', 64663): heartbeat
+2025-09-22 15:04:08,361 - INFO - Petición de ('127.0.0.1', 58100): heartbeat
+2025-09-22 15:04:16,059 - INFO - Petición de ('127.0.0.1', 55600): heartbeat
+2025-09-22 15:04:38,363 - INFO - Petición de ('127.0.0.1', 51972): heartbeat
+2025-09-22 15:04:46,061 - INFO - Petición de ('127.0.0.1', 61474): heartbeat
+2025-09-22 15:05:08,366 - INFO - Petición de ('127.0.0.1', 54276): heartbeat
+2025-09-22 15:05:16,063 - INFO - Petición de ('127.0.0.1', 51960): heartbeat
+2025-09-22 15:05:38,368 - INFO - Petición de ('127.0.0.1', 52302): heartbeat
+2025-09-22 15:05:46,065 - INFO - Petición de ('127.0.0.1', 49974): heartbeat
+2025-09-22 15:06:08,371 - INFO - Petición de ('127.0.0.1', 58006): heartbeat
+2025-09-22 15:06:16,067 - INFO - Petición de ('127.0.0.1', 51194): heartbeat
+2025-09-22 15:06:38,374 - INFO - Petición de ('127.0.0.1', 60205): heartbeat
+2025-09-22 15:06:46,069 - INFO - Petición de ('127.0.0.1', 65466): heartbeat
+2025-09-22 15:07:08,376 - INFO - Petición de ('127.0.0.1', 50905): heartbeat
+2025-09-22 15:07:16,071 - INFO - Petición de ('127.0.0.1', 53800): heartbeat
+2025-09-22 15:07:38,379 - INFO - Petición de ('127.0.0.1', 63656): heartbeat
+2025-09-22 15:07:46,074 - INFO - Petición de ('127.0.0.1', 52542): heartbeat
+2025-09-22 15:08:08,381 - INFO - Petición de ('127.0.0.1', 54736): heartbeat
+2025-09-22 15:08:16,077 - INFO - Petición de ('127.0.0.1', 53153): heartbeat
+2025-09-22 15:08:38,383 - INFO - Petición de ('127.0.0.1', 50583): heartbeat
+2025-09-22 15:08:46,079 - INFO - Petición de ('127.0.0.1', 64813): heartbeat
+2025-09-22 15:09:08,385 - INFO - Petición de ('127.0.0.1', 50061): heartbeat
+2025-09-22 15:09:16,082 - INFO - Petición de ('127.0.0.1', 54996): heartbeat
+2025-09-22 15:09:38,387 - INFO - Petición de ('127.0.0.1', 58385): heartbeat
+2025-09-22 15:09:46,085 - INFO - Petición de ('127.0.0.1', 58313): heartbeat
+2025-09-22 15:10:08,389 - INFO - Petición de ('127.0.0.1', 49307): heartbeat
+2025-09-22 15:10:16,088 - INFO - Petición de ('127.0.0.1', 56716): heartbeat
+2025-09-22 15:10:38,392 - INFO - Petición de ('127.0.0.1', 56170): heartbeat
+2025-09-22 15:10:46,091 - INFO - Petición de ('127.0.0.1', 64503): heartbeat
+2025-09-22 15:11:08,394 - INFO - Petición de ('127.0.0.1', 53430): heartbeat
+2025-09-22 15:11:16,093 - INFO - Petición de ('127.0.0.1', 53651): heartbeat
+2025-09-22 15:11:38,400 - INFO - Petición de ('127.0.0.1', 51904): heartbeat
+2025-09-22 15:11:46,095 - INFO - Petición de ('127.0.0.1', 62400): heartbeat
+2025-09-22 15:12:08,401 - INFO - Petición de ('127.0.0.1', 63715): heartbeat
+2025-09-22 15:12:16,097 - INFO - Petición de ('127.0.0.1', 61755): heartbeat
+2025-09-22 15:12:38,404 - INFO - Petición de ('127.0.0.1', 51240): heartbeat
+2025-09-22 15:12:46,099 - INFO - Petición de ('127.0.0.1', 56962): heartbeat
+2025-09-22 15:13:08,406 - INFO - Petición de ('127.0.0.1', 51810): heartbeat
+2025-09-22 15:13:16,102 - INFO - Petición de ('127.0.0.1', 58096): heartbeat
+2025-09-22 15:13:38,408 - INFO - Petición de ('127.0.0.1', 58494): heartbeat
+2025-09-22 15:13:46,104 - INFO - Petición de ('127.0.0.1', 57957): heartbeat
+2025-09-22 15:14:08,412 - INFO - Petición de ('127.0.0.1', 59799): heartbeat
+2025-09-22 15:14:16,106 - INFO - Petición de ('127.0.0.1', 58575): heartbeat
+2025-09-22 15:14:38,414 - INFO - Petición de ('127.0.0.1', 53898): heartbeat
+2025-09-22 15:14:46,108 - INFO - Petición de ('127.0.0.1', 58289): heartbeat
+2025-09-22 15:15:08,416 - INFO - Petición de ('127.0.0.1', 54783): heartbeat
+2025-09-22 15:15:16,110 - INFO - Petición de ('127.0.0.1', 58082): heartbeat
+2025-09-22 15:15:38,418 - INFO - Petición de ('127.0.0.1', 64722): heartbeat
+2025-09-22 15:15:46,112 - INFO - Petición de ('127.0.0.1', 58948): heartbeat
+2025-09-22 15:16:08,421 - INFO - Petición de ('127.0.0.1', 61143): heartbeat
+2025-09-22 15:16:16,114 - INFO - Petición de ('127.0.0.1', 65134): heartbeat
+2025-09-22 15:16:37,775 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 15:16:37,776 - INFO - Esperando registros de servidores...
+2025-09-22 15:17:22,267 - INFO - Petición de ('127.0.0.1', 60832): registrar_servidor
+2025-09-22 15:17:22,269 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 15:17:54,169 - INFO - Petición de ('127.0.0.1', 60092): registrar_servidor
+2025-09-22 15:17:54,169 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 15:19:01,019 - INFO - Petición de ('127.0.0.1', 64478): registrar_servidor
+2025-09-22 15:19:01,019 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 15:19:09,145 - INFO - Petición de ('127.0.0.1', 52050): registrar_servidor
+2025-09-22 15:19:09,146 - INFO - Servidor SERVER2 registrado con 2 archivos
+2025-09-22 15:19:11,029 - INFO - Petición de ('127.0.0.1', 63896): registrar_servidor
+2025-09-22 15:19:11,029 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 15:19:11,030 - INFO - Petición de ('127.0.0.1', 63897): registrar_servidor
+2025-09-22 15:19:11,031 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 15:19:19,155 - INFO - Petición de ('127.0.0.1', 55880): registrar_servidor
+2025-09-22 15:19:19,155 - INFO - Servidor SERVER2 registrado con 2 archivos
+2025-09-22 15:19:19,156 - INFO - Petición de ('127.0.0.1', 55881): registrar_servidor
+2025-09-22 15:19:19,157 - INFO - Servidor SERVER2 registrado con 2 archivos
+2025-09-22 15:19:21,063 - INFO - Petición de ('127.0.0.1', 54203): listar_archivos
+2025-09-22 15:19:31,023 - INFO - Petición de ('127.0.0.1', 49666): heartbeat
+2025-09-22 15:19:39,150 - INFO - Petición de ('127.0.0.1', 64884): heartbeat
+2025-09-22 15:20:01,026 - INFO - Petición de ('127.0.0.1', 61874): heartbeat
+2025-09-22 15:20:09,152 - INFO - Petición de ('127.0.0.1', 59379): heartbeat
+2025-09-22 15:20:31,028 - INFO - Petición de ('127.0.0.1', 51721): heartbeat
+2025-09-22 15:20:39,154 - INFO - Petición de ('127.0.0.1', 59218): heartbeat
+2025-09-22 15:21:01,031 - INFO - Petición de ('127.0.0.1', 56364): heartbeat
+2025-09-22 15:21:09,156 - INFO - Petición de ('127.0.0.1', 51515): heartbeat
+2025-09-22 15:21:29,203 - INFO - Petición de ('127.0.0.1', 63215): registrar_servidor
+2025-09-22 15:21:29,204 - INFO - Servidor SERVER2 registrado con 0 archivos
+2025-09-22 15:21:29,205 - INFO - Petición de ('127.0.0.1', 63216): registrar_servidor
+2025-09-22 15:21:29,205 - INFO - Servidor SERVER2 registrado con 3 archivos
+2025-09-22 15:21:31,033 - INFO - Petición de ('127.0.0.1', 62186): heartbeat
+2025-09-22 15:21:39,159 - INFO - Petición de ('127.0.0.1', 63291): heartbeat
+2025-09-22 15:22:01,035 - INFO - Petición de ('127.0.0.1', 63783): heartbeat
+2025-09-22 15:22:09,162 - INFO - Petición de ('127.0.0.1', 57370): heartbeat
+2025-09-22 15:22:31,037 - INFO - Petición de ('127.0.0.1', 51268): heartbeat
+2025-09-22 15:22:39,164 - INFO - Petición de ('127.0.0.1', 60402): heartbeat
+2025-09-22 22:40:58,968 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 22:40:58,970 - INFO - Esperando registros de servidores...
+2025-09-22 22:54:47,549 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 22:54:47,549 - INFO - Esperando registros de servidores...
+2025-09-22 22:55:04,812 - INFO - Petición de ('127.0.0.1', 50303): registrar_servidor
+2025-09-22 22:55:04,812 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 22:55:07,612 - INFO - Petición de ('127.0.0.1', 50304): registrar_servidor
+2025-09-22 22:55:07,612 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 22:55:11,627 - INFO - Petición de ('127.0.0.1', 50305): registrar_servidor
+2025-09-22 22:55:11,628 - INFO - Servidor SERVER3 registrado con 3 archivos
+2025-09-22 22:55:14,831 - INFO - Petición de ('127.0.0.1', 50306): registrar_servidor
+2025-09-22 22:55:14,831 - INFO - Servidor SERVER1 registrado con 0 archivos
+2025-09-22 22:55:14,832 - INFO - Petición de ('127.0.0.1', 50307): registrar_servidor
+2025-09-22 22:55:14,832 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 22:55:16,634 - INFO - Petición de ('127.0.0.1', 50126): registrar_servidor
+2025-09-22 22:55:16,634 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-22 22:55:17,618 - INFO - Petición de ('127.0.0.1', 52462): registrar_servidor
+2025-09-22 22:55:17,619 - INFO - Servidor SERVER2 registrado con 0 archivos
+2025-09-22 22:55:17,620 - INFO - Petición de ('127.0.0.1', 52463): registrar_servidor
+2025-09-22 22:55:17,620 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 22:55:21,634 - INFO - Petición de ('127.0.0.1', 52464): registrar_servidor
+2025-09-22 22:55:21,634 - INFO - Servidor SERVER3 registrado con 0 archivos
+2025-09-22 22:55:21,635 - INFO - Petición de ('127.0.0.1', 52465): registrar_servidor
+2025-09-22 22:55:21,636 - INFO - Servidor SERVER3 registrado con 3 archivos
+2025-09-22 22:55:22,640 - INFO - Petición de ('127.0.0.1', 52466): registrar_servidor
+2025-09-22 22:55:22,640 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-22 22:55:26,649 - INFO - Petición de ('127.0.0.1', 51875): registrar_servidor
+2025-09-22 22:55:26,651 - INFO - Servidor SERVER_MARCO registrado con 0 archivos
+2025-09-22 22:55:26,652 - INFO - Petición de ('127.0.0.1', 51876): registrar_servidor
+2025-09-22 22:55:26,653 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-22 22:55:29,737 - INFO - Petición de ('127.0.0.1', 51877): registrar_servidor
+2025-09-22 22:55:29,737 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 22:55:32,646 - INFO - Petición de ('127.0.0.1', 51878): registrar_servidor
+2025-09-22 22:55:32,646 - INFO - Servidor SERVER_DAN registrado con 0 archivos
+2025-09-22 22:55:32,647 - INFO - Petición de ('127.0.0.1', 51879): registrar_servidor
+2025-09-22 22:55:32,647 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-22 22:55:34,583 - INFO - Error decodificando JSON de ('127.0.0.1', 60275): Expecting value: line 1 column 1 (char 0)
+2025-09-22 22:55:34,815 - INFO - Petición de ('127.0.0.1', 60282): heartbeat
+2025-09-22 22:55:37,615 - INFO - Petición de ('127.0.0.1', 60285): heartbeat
+2025-09-22 22:55:39,744 - INFO - Petición de ('127.0.0.1', 54513): registrar_servidor
+2025-09-22 22:55:39,744 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 22:55:39,745 - INFO - Petición de ('127.0.0.1', 54514): registrar_servidor
+2025-09-22 22:55:39,746 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 22:55:41,631 - INFO - Petición de ('127.0.0.1', 64438): heartbeat
+2025-09-22 22:55:46,638 - INFO - Petición de ('127.0.0.1', 64439): heartbeat
+2025-09-22 22:55:52,643 - INFO - Petición de ('127.0.0.1', 64440): heartbeat
+2025-09-22 22:55:59,742 - INFO - Petición de ('127.0.0.1', 64443): heartbeat
+2025-09-22 22:56:04,818 - INFO - Petición de ('127.0.0.1', 64444): heartbeat
+2025-09-22 22:56:07,617 - INFO - Petición de ('127.0.0.1', 64447): heartbeat
+2025-09-22 22:56:22,645 - INFO - Petición de ('127.0.0.1', 60026): heartbeat
+2025-09-22 22:56:29,744 - INFO - Petición de ('127.0.0.1', 63041): heartbeat
+2025-09-22 22:56:34,820 - INFO - Petición de ('127.0.0.1', 63042): heartbeat
+2025-09-22 23:00:47,550 - INFO - Eliminando servidor inactivo: SERVER3
+2025-09-22 23:01:24,704 - INFO - DNS General detenido por el usuario
+2025-09-22 23:01:24,704 - INFO - Eliminando servidor inactivo: SERVER_MARCO
+2025-09-22 23:01:24,705 - INFO - DNS General detenido
+2025-09-22 23:01:43,888 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 23:01:43,889 - INFO - Esperando registros de servidores...
+2025-09-22 23:02:21,653 - INFO - Petición de ('127.0.0.1', 64201): registrar_servidor
+2025-09-22 23:02:21,654 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 23:02:31,665 - INFO - Petición de ('127.0.0.1', 56610): registrar_servidor
+2025-09-22 23:02:31,666 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 23:02:31,669 - INFO - Petición de ('127.0.0.1', 56611): registrar_servidor
+2025-09-22 23:02:31,670 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 23:02:54,354 - INFO - Petición de ('127.0.0.1', 53010): registrar_servidor
+2025-09-22 23:02:54,356 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 23:03:04,366 - INFO - Petición de ('127.0.0.1', 54579): registrar_servidor
+2025-09-22 23:03:04,368 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 23:03:04,377 - INFO - Petición de ('127.0.0.1', 54580): registrar_servidor
+2025-09-22 23:03:04,377 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 23:03:29,136 - INFO - Petición de ('127.0.0.1', 50153): registrar_servidor
+2025-09-22 23:03:29,137 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 23:03:39,144 - INFO - Petición de ('127.0.0.1', 50154): registrar_servidor
+2025-09-22 23:03:39,148 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 23:03:39,149 - INFO - Petición de ('127.0.0.1', 50155): registrar_servidor
+2025-09-22 23:03:39,149 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 23:03:59,140 - INFO - Petición de ('127.0.0.1', 49584): heartbeat
+2025-09-22 23:04:29,142 - INFO - Petición de ('127.0.0.1', 56305): heartbeat
+2025-09-22 23:04:59,144 - INFO - Petición de ('127.0.0.1', 61851): heartbeat
+2025-09-22 23:05:29,146 - INFO - Petición de ('127.0.0.1', 56187): heartbeat
+2025-09-22 23:05:59,149 - INFO - Petición de ('127.0.0.1', 56441): heartbeat
+2025-09-22 23:06:29,152 - INFO - Petición de ('127.0.0.1', 52323): heartbeat
+2025-09-22 23:06:59,154 - INFO - Petición de ('127.0.0.1', 58212): heartbeat
+2025-09-22 23:07:29,157 - INFO - Petición de ('127.0.0.1', 63121): heartbeat
+2025-09-22 23:07:43,890 - INFO - Eliminando servidor inactivo: SERVER1
+2025-09-22 23:07:59,160 - INFO - Petición de ('127.0.0.1', 58122): heartbeat
+2025-09-22 23:08:29,163 - INFO - Petición de ('127.0.0.1', 56884): heartbeat
+2025-09-22 23:08:43,891 - INFO - Eliminando servidor inactivo: SERVER2
+2025-09-22 23:08:59,166 - INFO - Petición de ('127.0.0.1', 57625): heartbeat
+2025-09-22 23:09:29,168 - INFO - Petición de ('127.0.0.1', 51602): heartbeat
+2025-09-22 23:09:59,170 - INFO - Petición de ('127.0.0.1', 65333): heartbeat
+2025-09-22 23:10:29,173 - INFO - Petición de ('127.0.0.1', 58103): heartbeat
+2025-09-22 23:10:59,175 - INFO - Petición de ('127.0.0.1', 52862): heartbeat
+2025-09-22 23:11:29,177 - INFO - Petición de ('127.0.0.1', 58845): heartbeat
+2025-09-22 23:11:59,180 - INFO - Petición de ('127.0.0.1', 58698): heartbeat
+2025-09-22 23:12:29,182 - INFO - Petición de ('127.0.0.1', 49994): heartbeat
+2025-09-22 23:12:59,184 - INFO - Petición de ('127.0.0.1', 62656): heartbeat
+2025-09-22 23:13:29,187 - INFO - Petición de ('127.0.0.1', 63692): heartbeat
+2025-09-22 23:13:59,189 - INFO - Petición de ('127.0.0.1', 54786): heartbeat
+2025-09-22 23:14:29,191 - INFO - Petición de ('127.0.0.1', 62289): heartbeat
+2025-09-22 23:14:59,194 - INFO - Petición de ('127.0.0.1', 49378): heartbeat
+2025-09-22 23:15:29,197 - INFO - Petición de ('127.0.0.1', 56002): heartbeat
+2025-09-22 23:15:59,199 - INFO - Petición de ('127.0.0.1', 50061): heartbeat
+2025-09-22 23:16:29,201 - INFO - Petición de ('127.0.0.1', 59087): heartbeat
+2025-09-22 23:16:59,204 - INFO - Petición de ('127.0.0.1', 50236): heartbeat
+2025-09-22 23:17:29,206 - INFO - Petición de ('127.0.0.1', 54993): heartbeat
+2025-09-22 23:17:59,208 - INFO - Petición de ('127.0.0.1', 63821): heartbeat
+2025-09-22 23:18:29,210 - INFO - Petición de ('127.0.0.1', 49693): heartbeat
+2025-09-22 23:18:59,212 - INFO - Petición de ('127.0.0.1', 64555): heartbeat
+2025-09-22 23:19:29,217 - INFO - Petición de ('127.0.0.1', 56216): heartbeat
+2025-09-22 23:19:59,219 - INFO - Petición de ('127.0.0.1', 52620): heartbeat
+2025-09-22 23:23:43,586 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-22 23:23:43,587 - INFO - Esperando registros de servidores...
+2025-09-22 23:35:00,657 - INFO - Petición de ('127.0.0.1', 59753): registrar_servidor
+2025-09-22 23:35:00,658 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 23:35:10,669 - INFO - Petición de ('127.0.0.1', 57155): registrar_servidor
+2025-09-22 23:35:10,677 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 23:35:10,680 - INFO - Petición de ('127.0.0.1', 57156): registrar_servidor
+2025-09-22 23:35:10,682 - INFO - Servidor SERVER_GUS registrado con 2 archivos
+2025-09-22 23:35:30,662 - INFO - Petición de ('127.0.0.1', 61953): heartbeat
+2025-09-22 23:36:00,666 - INFO - Petición de ('127.0.0.1', 51391): heartbeat
+2025-09-22 23:36:30,668 - INFO - Petición de ('127.0.0.1', 49938): heartbeat
+2025-09-22 23:37:00,670 - INFO - Petición de ('127.0.0.1', 65500): heartbeat
+2025-09-22 23:37:30,673 - INFO - Petición de ('127.0.0.1', 58461): heartbeat
+2025-09-22 23:38:00,676 - INFO - Petición de ('127.0.0.1', 60875): heartbeat
+2025-09-22 23:38:30,681 - INFO - Petición de ('127.0.0.1', 52961): heartbeat
+2025-09-22 23:39:00,685 - INFO - Petición de ('127.0.0.1', 56531): heartbeat
+2025-09-22 23:39:30,687 - INFO - Petición de ('127.0.0.1', 51213): heartbeat
+2025-09-22 23:40:00,691 - INFO - Petición de ('127.0.0.1', 51214): heartbeat
+2025-09-22 23:40:30,693 - INFO - Petición de ('127.0.0.1', 65389): heartbeat
+2025-09-22 23:41:00,696 - INFO - Petición de ('127.0.0.1', 57058): heartbeat
+2025-09-22 23:41:29,350 - INFO - Petición de ('127.0.0.1', 59631): registrar_servidor
+2025-09-22 23:41:29,352 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-22 23:41:30,700 - INFO - Petición de ('127.0.0.1', 58730): heartbeat
+2025-09-22 23:41:39,359 - INFO - Petición de ('127.0.0.1', 64810): registrar_servidor
+2025-09-22 23:41:39,360 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-22 23:41:39,361 - INFO - Petición de ('127.0.0.1', 64811): registrar_servidor
+2025-09-22 23:41:39,362 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-22 23:41:59,356 - INFO - Petición de ('127.0.0.1', 63191): heartbeat
+2025-09-22 23:42:00,703 - INFO - Petición de ('127.0.0.1', 51028): heartbeat
+2025-09-22 23:42:29,358 - INFO - Petición de ('127.0.0.1', 62377): heartbeat
+2025-09-22 23:42:30,707 - INFO - Petición de ('127.0.0.1', 62378): heartbeat
+2025-09-22 23:42:59,362 - INFO - Petición de ('127.0.0.1', 55152): heartbeat
+2025-09-22 23:43:00,710 - INFO - Petición de ('127.0.0.1', 55153): heartbeat
+2025-09-22 23:43:29,364 - INFO - Petición de ('127.0.0.1', 52750): heartbeat
+2025-09-22 23:43:30,712 - INFO - Petición de ('127.0.0.1', 57187): heartbeat
+2025-09-22 23:43:59,367 - INFO - Petición de ('127.0.0.1', 52153): heartbeat
+2025-09-22 23:44:00,715 - INFO - Petición de ('127.0.0.1', 52154): heartbeat
+2025-09-22 23:44:29,371 - INFO - Petición de ('127.0.0.1', 51438): heartbeat
+2025-09-22 23:44:30,718 - INFO - Petición de ('127.0.0.1', 51439): heartbeat
+2025-09-22 23:44:51,497 - INFO - Petición de ('127.0.0.1', 56468): registrar_servidor
+2025-09-22 23:44:51,498 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-22 23:44:59,374 - INFO - Petición de ('127.0.0.1', 53478): heartbeat
+2025-09-22 23:45:00,721 - INFO - Petición de ('127.0.0.1', 53479): heartbeat
+2025-09-22 23:45:01,505 - INFO - Petición de ('127.0.0.1', 53480): registrar_servidor
+2025-09-22 23:45:01,507 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-22 23:45:01,508 - INFO - Petición de ('127.0.0.1', 53481): registrar_servidor
+2025-09-22 23:45:01,509 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-22 23:45:21,502 - INFO - Petición de ('127.0.0.1', 53482): heartbeat
+2025-09-22 23:45:29,377 - INFO - Petición de ('127.0.0.1', 52905): heartbeat
+2025-09-22 23:45:30,733 - INFO - Petición de ('127.0.0.1', 63835): heartbeat
+2025-09-22 23:45:51,506 - INFO - Petición de ('127.0.0.1', 50234): heartbeat
+2025-09-22 23:45:59,379 - INFO - Petición de ('127.0.0.1', 65268): heartbeat
+2025-09-22 23:46:00,736 - INFO - Petición de ('127.0.0.1', 54827): heartbeat
+2025-09-22 23:46:21,509 - INFO - Petición de ('127.0.0.1', 56319): heartbeat
+2025-09-22 23:46:29,382 - INFO - Petición de ('127.0.0.1', 54804): heartbeat
+2025-09-22 23:46:30,740 - INFO - Petición de ('127.0.0.1', 54805): heartbeat
+2025-09-22 23:46:51,511 - INFO - Petición de ('127.0.0.1', 55660): heartbeat
+2025-09-22 23:46:59,385 - INFO - Petición de ('127.0.0.1', 50933): heartbeat
+2025-09-22 23:47:00,743 - INFO - Petición de ('127.0.0.1', 50934): heartbeat
+2025-09-22 23:47:21,514 - INFO - Petición de ('127.0.0.1', 65101): heartbeat
+2025-09-22 23:47:29,387 - INFO - Petición de ('127.0.0.1', 59730): heartbeat
+2025-09-22 23:47:30,745 - INFO - Petición de ('127.0.0.1', 59731): heartbeat
+2025-09-22 23:47:51,517 - INFO - Petición de ('127.0.0.1', 61456): heartbeat
+2025-09-22 23:47:59,390 - INFO - Petición de ('127.0.0.1', 52587): heartbeat
+2025-09-22 23:48:00,748 - INFO - Petición de ('127.0.0.1', 52588): heartbeat
+2025-09-22 23:48:21,520 - INFO - Petición de ('127.0.0.1', 59357): heartbeat
+2025-09-22 23:48:29,392 - INFO - Petición de ('127.0.0.1', 60595): heartbeat
+2025-09-22 23:48:30,750 - INFO - Petición de ('127.0.0.1', 60596): heartbeat
+2025-09-22 23:48:51,523 - INFO - Petición de ('127.0.0.1', 59440): heartbeat
+2025-09-22 23:48:54,073 - INFO - Petición de ('127.0.0.1', 59441): registrar_servidor
+2025-09-22 23:48:54,075 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 23:48:59,395 - INFO - Petición de ('127.0.0.1', 61515): heartbeat
+2025-09-22 23:49:00,753 - INFO - Petición de ('127.0.0.1', 64035): heartbeat
+2025-09-22 23:49:04,087 - INFO - Petición de ('127.0.0.1', 64547): registrar_servidor
+2025-09-22 23:49:04,089 - INFO - Servidor SERVER1 registrado con 0 archivos
+2025-09-22 23:49:04,090 - INFO - Petición de ('127.0.0.1', 64548): registrar_servidor
+2025-09-22 23:49:04,092 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-22 23:49:17,136 - INFO - Petición de ('127.0.0.1', 61974): registrar_servidor
+2025-09-22 23:49:17,137 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 23:49:21,527 - INFO - Petición de ('127.0.0.1', 63010): heartbeat
+2025-09-22 23:49:24,080 - INFO - Petición de ('127.0.0.1', 49189): heartbeat
+2025-09-22 23:49:27,147 - INFO - Petición de ('127.0.0.1', 59118): registrar_servidor
+2025-09-22 23:49:27,149 - INFO - Servidor SERVER2 registrado con 0 archivos
+2025-09-22 23:49:27,151 - INFO - Petición de ('127.0.0.1', 59119): registrar_servidor
+2025-09-22 23:49:27,152 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-22 23:49:29,398 - INFO - Petición de ('127.0.0.1', 59120): heartbeat
+2025-09-22 23:49:30,755 - INFO - Petición de ('127.0.0.1', 59121): heartbeat
+2025-09-22 23:49:38,449 - INFO - Petición de ('127.0.0.1', 56861): listar_archivos
+2025-09-22 23:49:47,141 - INFO - Petición de ('127.0.0.1', 56862): heartbeat
+2025-09-22 23:49:51,530 - INFO - Petición de ('127.0.0.1', 54829): heartbeat
+2025-09-22 23:49:54,083 - INFO - Petición de ('127.0.0.1', 54830): heartbeat
+2025-09-22 23:49:59,403 - INFO - Petición de ('127.0.0.1', 59260): heartbeat
+2025-09-22 23:50:00,758 - INFO - Petición de ('127.0.0.1', 59261): heartbeat
+2025-09-22 23:50:17,144 - INFO - Petición de ('127.0.0.1', 53009): heartbeat
+2025-09-22 23:50:21,532 - INFO - Petición de ('127.0.0.1', 53010): heartbeat
+2025-09-22 23:50:24,086 - INFO - Petición de ('127.0.0.1', 53011): heartbeat
+2025-09-22 23:50:29,406 - INFO - Petición de ('127.0.0.1', 49539): heartbeat
+2025-09-22 23:50:30,762 - INFO - Petición de ('127.0.0.1', 49540): heartbeat
+2025-09-22 23:50:47,147 - INFO - Petición de ('127.0.0.1', 64809): heartbeat
+2025-09-22 23:50:51,535 - INFO - Petición de ('127.0.0.1', 59686): heartbeat
+2025-09-22 23:50:54,089 - INFO - Petición de ('127.0.0.1', 59687): heartbeat
+2025-09-22 23:50:59,410 - INFO - Petición de ('127.0.0.1', 58462): heartbeat
+2025-09-22 23:51:00,765 - INFO - Petición de ('127.0.0.1', 62955): heartbeat
+2025-09-22 23:51:17,150 - INFO - Petición de ('127.0.0.1', 53956): heartbeat
+2025-09-22 23:51:21,539 - INFO - Petición de ('127.0.0.1', 53957): heartbeat
+2025-09-22 23:51:24,092 - INFO - Petición de ('127.0.0.1', 53958): heartbeat
+2025-09-22 23:51:29,413 - INFO - Petición de ('127.0.0.1', 55117): heartbeat
+2025-09-22 23:51:30,768 - INFO - Petición de ('127.0.0.1', 55118): heartbeat
+2025-09-22 23:51:47,153 - INFO - Petición de ('127.0.0.1', 59594): heartbeat
+2025-09-22 23:51:51,543 - INFO - Petición de ('127.0.0.1', 65350): heartbeat
+2025-09-22 23:51:51,618 - INFO - Petición de ('127.0.0.1', 65351): leer
+2025-09-22 23:51:51,619 - INFO - Enviando petición leer a SERVER_MARCO via UDP ('127.0.0.8', 6005)
+2025-09-22 23:51:51,648 - INFO - Respuesta de SERVER_MARCO: EXITO
+2025-09-22 23:51:54,096 - INFO - Petición de ('127.0.0.1', 60399): heartbeat
+2025-09-22 23:51:55,042 - INFO - Petición de ('127.0.0.1', 64143): leer
+2025-09-22 23:51:55,043 - INFO - Enviando petición leer a SERVER_MARCO via UDP ('127.0.0.8', 6005)
+2025-09-22 23:51:55,045 - INFO - Respuesta de SERVER_MARCO: EXITO
+2025-09-22 23:51:59,415 - INFO - Petición de ('127.0.0.1', 53679): heartbeat
+2025-09-22 23:51:59,980 - INFO - Petición de ('127.0.0.1', 53680): checkout_archivo
+2025-09-22 23:51:59,981 - INFO - Enviando petición leer a SERVER_MARCO via UDP ('127.0.0.8', 6005)
+2025-09-22 23:51:59,983 - INFO - Respuesta de SERVER_MARCO: EXITO
+2025-09-22 23:51:59,984 - INFO - Checkout: poesia.txt de SERVER_MARCO hacia SERVER2
+2025-09-22 23:51:59,992 - INFO - Petición de ('127.0.0.1', 53682): checkin_archivo
+2025-09-22 23:51:59,993 - INFO - Enviando petición leer a SERVER_MARCO via UDP ('127.0.0.8', 6005)
+2025-09-22 23:51:59,995 - INFO - Respuesta de SERVER_MARCO: EXITO
+2025-09-22 23:51:59,999 - INFO - Enviando petición escribir a SERVER_MARCO via UDP ('127.0.0.8', 6005)
+2025-09-22 23:52:00,003 - INFO - Respuesta de SERVER_MARCO: EXITO
+2025-09-22 23:52:00,004 - INFO - Enviando petición eliminar_temporal a SERVER2 via UDP ('127.0.0.4', 6003)
+2025-09-22 23:52:00,014 - INFO - Respuesta de SERVER2: EXITO
+2025-09-22 23:52:00,018 - INFO - Check-in exitoso: poesia.txt actualizado en SERVER_MARCO
+2025-09-22 23:52:00,771 - INFO - Petición de ('127.0.0.1', 53686): heartbeat
+2025-09-22 23:52:16,650 - INFO - Petición de ('127.0.0.1', 54765): listar_archivos
+2025-09-22 23:52:17,156 - INFO - Petición de ('127.0.0.1', 61251): heartbeat
+2025-09-22 23:52:21,546 - INFO - Petición de ('127.0.0.1', 50223): heartbeat
+2025-09-22 23:52:24,098 - INFO - Petición de ('127.0.0.1', 64576): heartbeat
+2025-09-22 23:52:29,418 - INFO - Petición de ('127.0.0.1', 61804): heartbeat
+2025-09-22 23:52:30,774 - INFO - Petición de ('127.0.0.1', 55421): heartbeat
+2025-09-22 23:52:47,159 - INFO - Petición de ('127.0.0.1', 53502): heartbeat
+2025-09-22 23:52:51,548 - INFO - Petición de ('127.0.0.1', 53503): heartbeat
+2025-09-22 23:52:54,101 - INFO - Petición de ('127.0.0.1', 53504): heartbeat
+2025-09-22 23:52:59,421 - INFO - Petición de ('127.0.0.1', 50881): heartbeat
+2025-09-22 23:53:00,783 - INFO - Petición de ('127.0.0.1', 61936): heartbeat
+2025-09-22 23:53:17,162 - INFO - Petición de ('127.0.0.1', 61937): heartbeat
+2025-09-22 23:53:21,551 - INFO - Petición de ('127.0.0.1', 61938): heartbeat
+2025-09-22 23:53:24,104 - INFO - Petición de ('127.0.0.1', 61939): heartbeat
+2025-09-22 23:53:29,424 - INFO - Petición de ('127.0.0.1', 59739): heartbeat
+2025-09-22 23:53:30,786 - INFO - Petición de ('127.0.0.1', 59740): heartbeat
+2025-09-22 23:53:47,165 - INFO - Petición de ('127.0.0.1', 51749): heartbeat
+2025-09-22 23:53:51,553 - INFO - Petición de ('127.0.0.1', 59784): heartbeat
+2025-09-22 23:53:54,106 - INFO - Petición de ('127.0.0.1', 59785): heartbeat

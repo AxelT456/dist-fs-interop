@@ -56,7 +56,7 @@ def b2i(b: bytes) -> int:
     """Convierte una cadena de bytes (big-endian) a un entero."""
     return int.from_bytes(b, "big")
 
-# ===================== “RSA toy” para Firmas (Solo para simulación) =======================
+# ===================== "RSA toy" para Firmas (Solo para simulación) =======================
 
 # Clave pública y privada del servidor (fija para la demo)
 RSA_N = int("C65F3F1B9B97E19B", 16)
@@ -98,36 +98,53 @@ class SecureSession:
     """
     def __init__(self):
         self.state = "START"
-        self.keys: Dict[str, bytes] = {} # Almacenará key_enc, key_mac, nonce, prk
+        self.keys: Dict[str, bytes] = {}
         self.seq_send = 0
-        self.seq_recv = 0 # Se necesitará para verificar la secuencia de recepción
+        self.seq_recv = 0
 
-    def derive_keys(self, shared_secret: int, server_nonce: bytes, client_nonce: bytes = None):
+    def derive_keys(self, shared_secret: int, client_id: str, server_id: str, is_client: bool = True):
         """
-        Deriva las claves de cifrado y MAC a partir del secreto compartido.
-        El nonce del cliente es opcional para el lado del servidor al inicio.
+        Deriva las claves de cifrado y MAC de manera determinística.
+        Ambos lados deben usar los mismos parámetros para generar las mismas claves.
         """
-        # La "sal" para el extract inicial puede ser el nonce del servidor o una combinación
-        salt = server_nonce
+        print(f"[Security] Derivando claves: shared_secret={shared_secret}, client_id={client_id}, server_id={server_id}, is_client={is_client}")
+        
+        # Crear contexto único pero determinístico
+        context = f"{client_id}:{server_id}".encode()
+        salt = hashlib.sha256(context).digest()
+        
+        # Extraer PRK del secreto compartido
         prk = hkdf_extract(salt, i2b(shared_secret))
         
-        # El "info" para el expand puede incluir más datos del transcript si se desea
-        key_block = hkdf_expand(prk, b"key-schedule", 32 + 32 + 12) # key_enc, key_mac, nonce_base
+        # Expandir para obtener material de clave
+        key_material = hkdf_expand(prk, b"handshake", 76)  # 32+32+12 bytes
         
-        self.keys = {
-            "key_enc": key_block[:32],
-            "key_mac": key_block[32:64],
-            "nonce_base": key_block[64:76],
-            "prk": prk
-        }
+        # Asignar claves de manera determinística
+        if is_client:
+            # Cliente usa la primera mitad para envío, segunda para recepción
+            self.keys = {
+                "key_enc": key_material[:32],
+                "key_mac": key_material[32:64], 
+                "nonce_base": key_material[64:76],
+                "prk": prk
+            }
+        else:
+            # Servidor usa claves intercambiadas
+            self.keys = {
+                "key_enc": key_material[:32],  # Mismas claves simétricas
+                "key_mac": key_material[32:64],
+                "nonce_base": key_material[64:76],
+                "prk": prk
+            }
+        
         self.seq_send = 0
         self.seq_recv = 0
         self.state = "ESTABLISHED"
-        print("[Security] ✅ Claves de sesión derivadas y listas para usar.")
+        print(f"[Security] Claves derivadas correctamente. Estado: {self.state}")
 
     def encrypt(self, plaintext: bytes) -> Dict:
         """
-        Cifra un payload y le añade un MAC para protegerlo. (Antes 'protect_record')
+        Cifra un payload y le añade un MAC para protegerlo.
         """
         if not self.keys:
             raise RuntimeError("La sesión segura no ha sido establecida, no se puede cifrar.")
@@ -142,15 +159,18 @@ class SecureSession:
         # MAC calculado sobre el header (seq) y el texto cifrado
         tag = hmac256(self.keys["key_mac"], seq_header, ciphertext)
         
-        return {
+        encrypted_record = {
             "seq": self.seq_send - 1,
             "ct": ciphertext.hex(),
             "tag": tag.hex()
         }
+        
+        print(f"[Security] Mensaje cifrado: seq={encrypted_record['seq']}, ct_len={len(ciphertext)}")
+        return encrypted_record
 
     def decrypt(self, record: Dict) -> bytes:
         """
-        Verifica el MAC y descifra un payload recibido. (Antes 'unprotect_record')
+        Verifica el MAC y descifra un payload recibido.
         """
         if not self.keys:
             raise RuntimeError("La sesión segura no ha sido establecida, no se puede descifrar.")
@@ -161,18 +181,25 @@ class SecureSession:
         
         seq_header = seq.to_bytes(8, "big")
         
+        print(f"[Security] Descifrando mensaje: seq={seq}, ct_len={len(ciphertext)}")
+        
         # Recalcular el MAC y verificar la integridad
         expected_tag = hmac256(self.keys["key_mac"], seq_header, ciphertext)
+        
+        print(f"[Security] MAC recibido: {received_tag.hex()[:16]}...")
+        print(f"[Security] MAC esperado: {expected_tag.hex()[:16]}...")
+        
         if not hmac.compare_digest(expected_tag, received_tag):
+            print(f"[Security] ERROR: MAC no válido")
+            print(f"[Security] Claves actuales:")
+            print(f"  key_enc: {self.keys['key_enc'].hex()[:16]}...")
+            print(f"  key_mac: {self.keys['key_mac'].hex()[:16]}...")
+            print(f"  nonce_base: {self.keys['nonce_base'].hex()}")
             raise ValueError("Error de integridad: El MAC no es válido.")
         
-        # (Opcional) Verificación de replay attacks
-        # if seq < self.seq_recv:
-        #     raise ValueError("Error de secuencia: Posible ataque de repetición.")
-        # self.seq_recv = seq + 1
-
         # Descifrar el payload
         keystream = prf_keystream(self.keys["key_enc"], self.keys["nonce_base"] + seq_header, len(ciphertext))
         plaintext = xor_bytes(ciphertext, keystream)
         
+        print(f"[Security] Mensaje descifrado correctamente")
         return plaintext

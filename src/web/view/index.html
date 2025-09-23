@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href='style.css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Archivos Disponibles</title>
+</head>
+<body>
+    <h1>Lista de Archivos</h1>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Nombre del Archivo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for archivo in archivos %}
+            <tr>
+                <td>{{ archivo }}</td>
+                <td>
+                    <a href="{{ url_for('editar', nombre_archivo=archivo) }}">Editar</a> |
+                    <a href="{{ url_for('descargar', nombre_archivo=archivo) }}">Descargar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

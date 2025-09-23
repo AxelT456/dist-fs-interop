@@ -1,0 +1,13 @@
+{
+  "folder": "C:\\Users\\marco\\OneDrive\\Desktop\\Archivosv1\\gits\\dist-fs-interop\\archivos_server_dan",
+  "files": {
+    "algoritmos.txt": {
+      "publish": true,
+      "ttl": 300
+    },
+    "programacion.txt": {
+      "publish": true,
+      "ttl": 300
+    }
+  }
+}

@@ -13,12 +13,12 @@ PORT = 8080
 
 def run_test_server():
     transport = ReliableTransport(HOST, PORT)
-    print(f"✅ Servidor de prueba escuchando en {HOST}:{PORT}...")
+    print(f"Servidor de prueba escuchando en {HOST}:{PORT}...")
 
     while True: # Bucle para poder reiniciar la prueba sin reiniciar el script
-        print("\n   Esperando una conexión de cliente...")
+        print("\nEsperando una conexión de cliente...")
         encrypted_payload, client_addr = transport.listen()
-        print(f"<- Paquete de datos recibido de {client_addr}")
+        print(f"Paquete de datos recibido de {client_addr}")
 
         # --- NUEVO PASO: DESCIFRAR EL PAYLOAD ---
         # 1. Crear la sesión de seguridad con las mismas claves mágicas
@@ -32,12 +32,12 @@ def run_test_server():
             decrypted_payload = session.decrypt(encrypted_payload)
             
             # 3. Mostrar el resultado
-            print(f"\n✅ ¡Éxito! Payload descifrado correctamente.")
+            print(f"\nÉxito! Payload descifrado correctamente.")
             print(f"   Contenido: {decrypted_payload.decode('utf-8')}")
             print(f"   Desde: {client_addr}")
 
         except Exception as e:
-            print(f"❌ Error al descifrar el payload: {e}")
+            print(f"Error al descifrar el payload: {e}")
 
 if __name__ == "__main__":
     run_test_server()

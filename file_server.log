@@ -1,0 +1,39 @@
+[2025-09-22T23:29:28.818901] No existe archivo de configuración. Se creará uno nuevo.
+[2025-09-22T23:29:28.831671] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-22T23:29:28.834156] Nuevo archivo detectado: libro2.txt
+[2025-09-22T23:29:32.139398] Archivo 'libro2.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:29:32.151749] Nuevo archivo detectado: nuevo_s2.txt
+[2025-09-22T23:29:34.803404] Archivo 'nuevo_s2.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:29:34.804974] Nuevo archivo detectado: guia.txt
+[2025-09-22T23:29:37.169910] Archivo 'guia.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:29:37.170768] Nuevo archivo detectado: manual.txt
+[2025-09-22T23:29:39.722411] Archivo 'manual.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:29:39.725062] Configuración guardada en file_permissions_config.json_chris
+[2025-09-22T23:29:39.728681] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-22T23:29:39.729377] Configuración guardada en file_permissions_config.json_chris
+[2025-09-22T23:33:02.507633] No existe archivo de configuración. Se creará uno nuevo.
+[2025-09-22T23:33:02.519829] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-22T23:33:02.521051] IP detectada del servidor: 192.168.100.10
+[2025-09-22T23:33:02.522555] Nuevo archivo detectado: biografias.txt
+[2025-09-22T23:33:08.274030] Archivo 'biografias.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:33:08.275640] Nuevo archivo detectado: historia.txt
+[2025-09-22T23:33:10.323886] Archivo 'historia.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:33:10.326582] Configuración guardada en file_permissions_config.json_gus
+[2025-09-22T23:33:10.329119] Servidor UDP iniciado en 192.168.100.10:5002
+[2025-09-22T23:33:10.330295] Configuración guardada en file_permissions_config.json_gus
+[2025-09-22T23:34:06.660452] Terminando proceso...
+[2025-09-22T23:34:39.734166] Configuración guardada en file_permissions_config.json_chris
+[2025-09-22T23:39:39.738225] Configuración guardada en file_permissions_config.json_chris
+[2025-09-22T23:44:39.743492] Configuración guardada en file_permissions_config.json_chris
+[2025-09-22T23:47:10.087898] No existe archivo de configuración. Se creará uno nuevo.
+[2025-09-22T23:47:10.089350] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-22T23:47:10.090263] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-22T23:47:10.092148] Nuevo archivo detectado: biografias.txt
+[2025-09-22T23:47:13.424610] Archivo 'biografias.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:47:13.427264] Nuevo archivo detectado: historia.txt
+[2025-09-22T23:47:15.909731] Archivo 'historia.txt' agregado con permiso True y TTL 300
+[2025-09-22T23:47:15.912600] Configuración guardada en file_permissions_config_gus.json
+[2025-09-22T23:47:15.916313] Configuración guardada en file_permissions_config_gus.json
+[2025-09-22T23:47:15.916992] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
+[2025-09-22T23:49:39.748050] Configuración guardada en file_permissions_config.json_chris
+[2025-09-22T23:52:15.926231] Configuración guardada en file_permissions_config_gus.json
