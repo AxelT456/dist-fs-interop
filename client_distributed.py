@@ -55,14 +55,6 @@ DNS_SERVERS = [
         "server_ip": "127.0.0.10",
         "server_port": 5007,
         "description": "DNS Servidor Gus"
-    },
-    {
-        "id": "DNS3",
-        "ip": "127.0.0.7", 
-        "port": 50001,
-        "server_ip": "127.0.0.6",
-        "server_port": 5004,
-        "description": "DNS Servidor Alternativo"
     }
 ]
 
@@ -89,6 +81,7 @@ class ClienteDistribuido:
     
     def seleccionar_dns_aleatorio(self):
         """Selecciona un DNS aleatoriamente de la lista disponible"""
+        dns_elegido=DNS_SERVERS[0] #elige el server de axel/christian/marco/dan/gus
         dns_elegido = random.choice(DNS_SERVERS)
         self.dns_info = dns_elegido
         print(f"DNS seleccionado aleatoriamente: {dns_elegido['description']} ({dns_elegido['id']})")

@@ -28,3 +28,77 @@
 2025-09-22 23:48:20 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
 2025-09-22 23:48:20 | INFO | ScannerThread | Config guardada
 2025-09-22 23:53:20 | INFO | ScannerThread | Config guardada
+2025-09-23 11:18:40 | INFO | MainThread | Config cargada
+2025-09-23 11:18:40 | INFO | MainThread | Config guardada
+2025-09-23 11:18:40 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 11:18:40 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 11:18:40 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.1:5002. Presiona Ctrl+C para salir.
+2025-09-23 11:18:40 | INFO | ScannerThread | Config guardada
+2025-09-23 11:18:43 | INFO | MainThread | Saliendo...
+2025-09-23 11:18:52 | INFO | MainThread | Config cargada
+2025-09-23 11:18:52 | INFO | MainThread | Config guardada
+2025-09-23 11:18:52 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 11:18:52 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 11:18:52 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 11:18:52 | INFO | ScannerThread | Config guardada
+2025-09-23 11:23:52 | INFO | ScannerThread | Config guardada
+2025-09-23 11:28:52 | INFO | ScannerThread | Config guardada
+2025-09-23 11:30:34 | INFO | MainThread | Config cargada
+2025-09-23 11:30:34 | INFO | MainThread | Config guardada
+2025-09-23 11:30:34 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 11:30:34 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 11:30:34 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 11:30:34 | INFO | ScannerThread | Config guardada
+2025-09-23 11:35:34 | INFO | ScannerThread | Config guardada
+2025-09-23 11:40:34 | INFO | ScannerThread | Config guardada
+2025-09-23 11:45:34 | INFO | ScannerThread | Config guardada
+2025-09-23 11:51:47 | INFO | MainThread | Config cargada
+2025-09-23 11:51:47 | INFO | MainThread | Config guardada
+2025-09-23 11:51:47 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 11:51:47 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 11:51:47 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 11:51:47 | INFO | ScannerThread | Config guardada
+2025-09-23 11:56:47 | INFO | ScannerThread | Config guardada
+2025-09-23 12:01:47 | INFO | ScannerThread | Config guardada
+2025-09-23 12:06:47 | INFO | ScannerThread | Config guardada
+2025-09-23 12:11:47 | INFO | ScannerThread | Config guardada
+2025-09-23 12:16:47 | INFO | ScannerThread | Config guardada
+2025-09-23 12:21:47 | INFO | ScannerThread | Config guardada
+2025-09-23 12:26:47 | INFO | ScannerThread | Config guardada
+2025-09-23 21:09:42 | INFO | MainThread | Config cargada
+2025-09-23 21:09:42 | INFO | MainThread | Config guardada
+2025-09-23 21:09:42 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 21:09:42 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 21:09:42 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 21:09:42 | INFO | ScannerThread | Config guardada
+2025-09-23 21:15:38 | INFO | MainThread | Config cargada
+2025-09-23 21:15:38 | INFO | MainThread | Config guardada
+2025-09-23 21:15:38 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 21:15:38 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 21:15:38 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 21:15:38 | INFO | ScannerThread | Config guardada
+2025-09-23 21:20:40 | INFO | ScannerThread | Config guardada
+2025-09-23 21:25:40 | INFO | ScannerThread | Config guardada
+2025-09-23 21:30:19 | INFO | MainThread | Config cargada
+2025-09-23 21:30:19 | INFO | MainThread | Config guardada
+2025-09-23 21:30:19 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 21:30:19 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 21:30:19 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 21:30:19 | INFO | ScannerThread | Config guardada
+2025-09-23 21:35:19 | INFO | ScannerThread | Config guardada
+2025-09-23 21:40:19 | INFO | ScannerThread | Config guardada
+2025-09-23 21:45:19 | INFO | ScannerThread | Config guardada
+2025-09-23 21:48:13 | INFO | MainThread | Config cargada
+2025-09-23 21:48:13 | INFO | MainThread | Config guardada
+2025-09-23 21:48:13 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 21:48:13 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 21:48:13 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 21:48:13 | INFO | ScannerThread | Config guardada
+2025-09-23 21:53:13 | INFO | ScannerThread | Config guardada
+2025-09-23 21:58:13 | INFO | ScannerThread | Config guardada
+2025-09-23 22:00:23 | INFO | MainThread | Config cargada
+2025-09-23 22:00:23 | INFO | MainThread | Config guardada
+2025-09-23 22:00:23 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-23 22:00:23 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-23 22:00:23 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-23 22:00:23 | INFO | ScannerThread | Config guardada

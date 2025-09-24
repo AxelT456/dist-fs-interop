@@ -14,3 +14,247 @@
 2025-09-22 23:39:11,416 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
 2025-09-22 23:44:11,419 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
 2025-09-22 23:49:11,437 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:17:36,757 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 11:17:36,760 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:17:36,763 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 11:17:36,766 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 11:22:36,765 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:27:36,768 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:29:34,510 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 11:29:34,521 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:29:34,523 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 11:29:34,526 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 11:31:30,773 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49820): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-23 11:34:34,525 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:39:34,527 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:44:34,528 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:48:51,780 - MainThread - INFO - Deteniendo el servidor...
+2025-09-23 11:51:00,485 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 11:51:00,488 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 11:51:00,490 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 11:51:00,493 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 11:56:00,492 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 12:01:00,494 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 12:06:00,496 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 12:11:00,498 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 12:16:00,500 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 12:21:00,502 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 12:26:00,505 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:08:13,629 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 21:08:13,649 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:08:13,656 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 21:08:13,662 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 21:10:27,990 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54536): {'accion': 'listar_archivos'}
+2025-09-23 21:10:27,992 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 54536)
+2025-09-23 21:10:32,370 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53687): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-23 21:10:57,995 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58500): {'accion': 'listar_archivos'}
+2025-09-23 21:10:57,997 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 58500)
+2025-09-23 21:11:28,001 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62923): {'accion': 'listar_archivos'}
+2025-09-23 21:11:28,002 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 62923)
+2025-09-23 21:11:58,006 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57738): {'accion': 'listar_archivos'}
+2025-09-23 21:11:58,007 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57738)
+2025-09-23 21:12:28,012 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56199): {'accion': 'listar_archivos'}
+2025-09-23 21:12:28,013 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56199)
+2025-09-23 21:12:58,017 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54366): {'accion': 'listar_archivos'}
+2025-09-23 21:12:58,019 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 54366)
+2025-09-23 21:13:13,660 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:13:28,023 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58122): {'accion': 'listar_archivos'}
+2025-09-23 21:13:28,024 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 58122)
+2025-09-23 21:13:58,029 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49939): {'accion': 'listar_archivos'}
+2025-09-23 21:13:58,031 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49939)
+2025-09-23 21:14:25,756 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 21:14:25,761 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:14:25,764 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 21:14:25,769 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 21:16:35,379 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54067): {'accion': 'listar_archivos'}
+2025-09-23 21:16:35,382 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 54067)
+2025-09-23 21:17:05,385 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61746): {'accion': 'listar_archivos'}
+2025-09-23 21:17:05,386 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 61746)
+2025-09-23 21:17:35,388 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62961): {'accion': 'listar_archivos'}
+2025-09-23 21:17:35,390 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 62961)
+2025-09-23 21:18:05,395 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60016): {'accion': 'listar_archivos'}
+2025-09-23 21:18:05,398 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60016)
+2025-09-23 21:18:35,403 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52532): {'accion': 'listar_archivos'}
+2025-09-23 21:18:35,405 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52532)
+2025-09-23 21:19:05,410 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50320): {'accion': 'listar_archivos'}
+2025-09-23 21:19:05,411 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 50320)
+2025-09-23 21:19:27,076 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:19:35,415 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65233): {'accion': 'listar_archivos'}
+2025-09-23 21:19:35,417 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 65233)
+2025-09-23 21:20:05,420 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63760): {'accion': 'listar_archivos'}
+2025-09-23 21:20:05,422 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63760)
+2025-09-23 21:20:35,425 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55244): {'accion': 'listar_archivos'}
+2025-09-23 21:20:35,427 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 55244)
+2025-09-23 21:21:05,432 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52863): {'accion': 'listar_archivos'}
+2025-09-23 21:21:05,433 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52863)
+2025-09-23 21:21:35,438 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63623): {'accion': 'listar_archivos'}
+2025-09-23 21:21:35,439 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63623)
+2025-09-23 21:22:05,442 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64781): {'accion': 'listar_archivos'}
+2025-09-23 21:22:05,444 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 64781)
+2025-09-23 21:22:35,448 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61498): {'accion': 'listar_archivos'}
+2025-09-23 21:22:35,449 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 61498)
+2025-09-23 21:23:05,466 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61257): {'accion': 'listar_archivos'}
+2025-09-23 21:23:05,467 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 61257)
+2025-09-23 21:23:35,471 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52808): {'accion': 'listar_archivos'}
+2025-09-23 21:23:35,473 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52808)
+2025-09-23 21:24:05,476 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62802): {'accion': 'listar_archivos'}
+2025-09-23 21:24:05,478 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 62802)
+2025-09-23 21:24:27,079 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:24:35,482 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59100): {'accion': 'listar_archivos'}
+2025-09-23 21:24:35,483 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 59100)
+2025-09-23 21:25:05,487 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64482): {'accion': 'listar_archivos'}
+2025-09-23 21:25:05,488 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 64482)
+2025-09-23 21:25:35,493 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52690): {'accion': 'listar_archivos'}
+2025-09-23 21:25:35,496 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52690)
+2025-09-23 21:26:05,500 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54842): {'accion': 'listar_archivos'}
+2025-09-23 21:26:05,502 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 54842)
+2025-09-23 21:26:35,509 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63547): {'accion': 'listar_archivos'}
+2025-09-23 21:26:35,510 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63547)
+2025-09-23 21:27:05,514 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51601): {'accion': 'listar_archivos'}
+2025-09-23 21:27:05,516 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 51601)
+2025-09-23 21:27:35,520 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49542): {'accion': 'listar_archivos'}
+2025-09-23 21:27:35,522 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49542)
+2025-09-23 21:28:05,525 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49552): {'accion': 'listar_archivos'}
+2025-09-23 21:28:05,526 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49552)
+2025-09-23 21:28:35,530 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57854): {'accion': 'listar_archivos'}
+2025-09-23 21:28:35,531 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57854)
+2025-09-23 21:29:05,535 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57098): {'accion': 'listar_archivos'}
+2025-09-23 21:29:05,536 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57098)
+2025-09-23 21:29:27,083 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:29:35,541 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52232): {'accion': 'listar_archivos'}
+2025-09-23 21:29:35,543 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52232)
+2025-09-23 21:30:00,612 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 21:30:00,616 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:30:00,619 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 21:30:00,623 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 21:31:43,147 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56004): {'accion': 'listar_archivos'}
+2025-09-23 21:31:43,148 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56004)
+2025-09-23 21:32:13,150 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60761): {'accion': 'listar_archivos'}
+2025-09-23 21:32:13,151 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60761)
+2025-09-23 21:32:43,154 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61501): {'accion': 'listar_archivos'}
+2025-09-23 21:32:43,155 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 61501)
+2025-09-23 21:33:13,159 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59612): {'accion': 'listar_archivos'}
+2025-09-23 21:33:13,160 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 59612)
+2025-09-23 21:33:43,163 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63009): {'accion': 'listar_archivos'}
+2025-09-23 21:33:43,164 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63009)
+2025-09-23 21:34:13,168 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60878): {'accion': 'listar_archivos'}
+2025-09-23 21:34:13,169 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60878)
+2025-09-23 21:34:43,171 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64342): {'accion': 'listar_archivos'}
+2025-09-23 21:34:43,173 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 64342)
+2025-09-23 21:35:00,622 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:35:13,176 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50404): {'accion': 'listar_archivos'}
+2025-09-23 21:35:13,177 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 50404)
+2025-09-23 21:35:43,180 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56553): {'accion': 'listar_archivos'}
+2025-09-23 21:35:43,181 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56553)
+2025-09-23 21:36:13,184 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63560): {'accion': 'listar_archivos'}
+2025-09-23 21:36:13,185 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63560)
+2025-09-23 21:36:43,188 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62718): {'accion': 'listar_archivos'}
+2025-09-23 21:36:43,190 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 62718)
+2025-09-23 21:37:13,193 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 51178): {'accion': 'listar_archivos'}
+2025-09-23 21:37:13,195 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 51178)
+2025-09-23 21:37:43,199 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49558): {'accion': 'listar_archivos'}
+2025-09-23 21:37:43,200 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49558)
+2025-09-23 21:38:13,204 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 55561): {'accion': 'listar_archivos'}
+2025-09-23 21:38:13,206 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 55561)
+2025-09-23 21:38:43,209 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49939): {'accion': 'listar_archivos'}
+2025-09-23 21:38:43,212 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49939)
+2025-09-23 21:39:13,217 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63849): {'accion': 'listar_archivos'}
+2025-09-23 21:39:13,218 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63849)
+2025-09-23 21:40:00,625 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:40:30,584 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50062): {'accion': 'listar_archivos'}
+2025-09-23 21:40:30,585 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 50062)
+2025-09-23 21:40:35,659 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56538): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-23 21:41:00,589 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56571): {'accion': 'listar_archivos'}
+2025-09-23 21:41:00,590 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56571)
+2025-09-23 21:41:30,594 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53142): {'accion': 'listar_archivos'}
+2025-09-23 21:41:30,596 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 53142)
+2025-09-23 21:42:00,599 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56675): {'accion': 'listar_archivos'}
+2025-09-23 21:42:00,600 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56675)
+2025-09-23 21:42:30,613 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59451): {'accion': 'listar_archivos'}
+2025-09-23 21:42:30,614 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 59451)
+2025-09-23 21:43:00,618 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62537): {'accion': 'listar_archivos'}
+2025-09-23 21:43:00,619 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 62537)
+2025-09-23 21:43:30,623 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 58848): {'accion': 'listar_archivos'}
+2025-09-23 21:43:30,624 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 58848)
+2025-09-23 21:44:00,627 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60622): {'accion': 'listar_archivos'}
+2025-09-23 21:44:00,628 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60622)
+2025-09-23 21:44:30,631 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 65532): {'accion': 'listar_archivos'}
+2025-09-23 21:44:30,632 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 65532)
+2025-09-23 21:45:00,627 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:45:00,636 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56196): {'accion': 'listar_archivos'}
+2025-09-23 21:45:00,637 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56196)
+2025-09-23 21:45:30,644 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64983): {'accion': 'listar_archivos'}
+2025-09-23 21:45:30,645 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 64983)
+2025-09-23 21:46:00,649 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60931): {'accion': 'listar_archivos'}
+2025-09-23 21:46:00,650 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60931)
+2025-09-23 21:46:30,654 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61658): {'accion': 'listar_archivos'}
+2025-09-23 21:46:30,656 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 61658)
+2025-09-23 21:47:00,660 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50595): {'accion': 'listar_archivos'}
+2025-09-23 21:47:00,661 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 50595)
+2025-09-23 21:47:26,715 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 21:47:26,719 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:47:26,733 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 21:47:26,737 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 21:48:59,104 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64412): {'accion': 'listar_archivos'}
+2025-09-23 21:48:59,106 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 64412)
+2025-09-23 21:49:29,109 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 64570): {'accion': 'listar_archivos'}
+2025-09-23 21:49:29,110 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 64570)
+2025-09-23 21:49:59,113 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49265): {'accion': 'listar_archivos'}
+2025-09-23 21:49:59,115 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49265)
+2025-09-23 21:50:29,118 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56507): {'accion': 'listar_archivos'}
+2025-09-23 21:50:29,119 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56507)
+2025-09-23 21:50:59,123 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56237): {'accion': 'listar_archivos'}
+2025-09-23 21:50:59,124 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56237)
+2025-09-23 21:51:29,127 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60047): {'accion': 'listar_archivos'}
+2025-09-23 21:51:29,128 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60047)
+2025-09-23 21:51:59,131 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49578): {'accion': 'listar_archivos'}
+2025-09-23 21:51:59,133 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49578)
+2025-09-23 21:52:26,736 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:52:29,136 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52113): {'accion': 'listar_archivos'}
+2025-09-23 21:52:29,137 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52113)
+2025-09-23 21:52:59,141 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60876): {'accion': 'listar_archivos'}
+2025-09-23 21:52:59,142 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60876)
+2025-09-23 21:53:29,146 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53479): {'accion': 'listar_archivos'}
+2025-09-23 21:53:29,147 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 53479)
+2025-09-23 21:53:59,153 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 59697): {'accion': 'listar_archivos'}
+2025-09-23 21:53:59,155 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 59697)
+2025-09-23 21:54:29,159 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60312): {'accion': 'listar_archivos'}
+2025-09-23 21:54:29,160 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60312)
+2025-09-23 21:54:59,164 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49599): {'accion': 'listar_archivos'}
+2025-09-23 21:54:59,165 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49599)
+2025-09-23 21:55:29,169 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61721): {'accion': 'listar_archivos'}
+2025-09-23 21:55:29,171 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 61721)
+2025-09-23 21:55:59,176 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49198): {'accion': 'listar_archivos'}
+2025-09-23 21:55:59,177 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49198)
+2025-09-23 21:56:29,181 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 60769): {'accion': 'listar_archivos'}
+2025-09-23 21:56:29,182 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 60769)
+2025-09-23 21:56:59,186 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63674): {'accion': 'listar_archivos'}
+2025-09-23 21:56:59,189 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63674)
+2025-09-23 21:57:26,738 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 21:57:29,194 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57947): {'accion': 'listar_archivos'}
+2025-09-23 21:57:29,196 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57947)
+2025-09-23 21:57:59,199 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 62615): {'accion': 'listar_archivos'}
+2025-09-23 21:57:59,202 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 62615)
+2025-09-23 21:58:29,205 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52032): {'accion': 'listar_archivos'}
+2025-09-23 21:58:29,207 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52032)
+2025-09-23 21:58:59,210 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57804): {'accion': 'listar_archivos'}
+2025-09-23 21:58:59,212 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57804)
+2025-09-23 22:00:12,869 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-23 22:00:12,873 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-23 22:00:12,877 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-23 22:00:12,882 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-23 22:01:08,128 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57669): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-23 22:01:08,567 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56964): {'accion': 'listar_archivos'}
+2025-09-23 22:01:08,568 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56964)
+2025-09-23 22:01:38,571 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50333): {'accion': 'listar_archivos'}
+2025-09-23 22:01:38,572 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 50333)
+2025-09-23 22:02:08,576 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52491): {'accion': 'listar_archivos'}
+2025-09-23 22:02:08,578 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52491)
+2025-09-23 22:02:38,595 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 50193): {'accion': 'listar_archivos'}
+2025-09-23 22:02:38,596 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 50193)
+2025-09-23 22:03:08,602 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49284): {'accion': 'listar_archivos'}
+2025-09-23 22:03:08,604 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49284)
+2025-09-23 22:03:38,607 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63500): {'accion': 'listar_archivos'}
+2025-09-23 22:03:38,609 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63500)
+2025-09-23 22:04:08,614 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49661): {'accion': 'listar_archivos'}
+2025-09-23 22:04:08,616 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49661)
