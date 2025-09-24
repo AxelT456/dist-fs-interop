@@ -37,3 +37,132 @@
 [2025-09-22T23:47:15.916992] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
 [2025-09-22T23:49:39.748050] Configuración guardada en file_permissions_config.json_chris
 [2025-09-22T23:52:15.926231] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:17:53.717884] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T11:17:53.720402] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T11:17:53.723781] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:17:53.726923] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T11:17:53.727433] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:18:29.333047] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T11:18:29.333972] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T11:18:29.334474] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T11:18:29.336284] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:18:29.338858] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:18:29.338909] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
+[2025-09-23T11:22:53.730174] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:23:29.342904] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:27:53.733518] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:28:29.346037] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:29:53.825267] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T11:29:53.826711] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T11:29:53.829381] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:29:53.833026] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T11:29:53.833687] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:30:22.212092] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T11:30:22.213172] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T11:30:22.214339] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T11:30:22.216869] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:30:22.219401] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:30:22.220189] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
+[2025-09-23T11:34:53.837631] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:35:22.222604] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:39:53.841236] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:40:22.226397] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:44:53.844578] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:45:22.230399] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:51:16.881885] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T11:51:16.883134] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T11:51:16.886452] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:51:16.889430] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T11:51:16.890806] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:51:39.165157] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T11:51:39.166219] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T11:51:39.167246] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T11:51:39.168870] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:51:39.171512] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
+[2025-09-23T11:51:39.171934] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T11:56:16.894787] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T11:56:39.174847] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T12:01:16.899109] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T12:01:39.177476] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T12:06:16.902944] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T12:06:39.180308] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T12:11:16.905636] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T12:11:39.185297] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T12:16:16.908207] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T12:16:39.188750] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T12:21:16.912230] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T12:21:39.192374] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T12:26:16.915098] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T12:26:39.194614] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:08:43.065013] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T21:08:43.068765] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:08:43.071722] Archivo eliminado detectado: libro2.txt
+[2025-09-23T21:08:43.074124] Archivo 'libro2.txt' removido de la lista
+[2025-09-23T21:08:43.078340] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:08:43.084935] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:09:18.181799] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T21:09:18.184995] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:09:18.186560] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T21:09:18.189263] Nuevo archivo detectado: manual.txt
+[2025-09-23T21:09:30.832472] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T21:09:30.833768] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:09:30.835407] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T21:09:30.849492] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:09:30.854760] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
+on
+[2025-09-23T21:13:43.090685] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:14:45.716293] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T21:14:45.718075] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:14:45.724196] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:14:45.749360] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:14:45.755960] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T21:15:21.628703] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T21:15:21.630241] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:15:21.632141] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T21:15:21.635734] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:15:21.640311] Servidor DNS iniciado y escuchando en 127.0.0.21:50000
+on
+[2025-09-23T21:19:47.063416] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:20:22.953531] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:24:47.081605] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:25:22.957537] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:30:43.378330] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T21:30:43.379483] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:30:43.382820] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:30:43.386411] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T21:30:43.387096] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:31:02.357624] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T21:31:02.359715] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:31:02.361412] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T21:31:02.364434] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:31:02.368966] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:35:43.391097] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:36:02.383721] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:40:43.407771] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:41:02.387874] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:45:43.413428] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:46:02.393679] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:47:47.880179] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T21:47:47.882023] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:47:47.886738] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:47:47.891688] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T21:47:47.892617] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:48:06.587395] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T21:48:06.588863] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:48:06.590460] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T21:48:06.596057] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:48:06.601586] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:52:47.898017] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:53:06.606460] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:57:47.913390] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:58:06.623126] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T21:59:47.316250] Cargada configuración desde file_permissions_config.json_chris
+[2025-09-23T21:59:47.321150] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T21:59:47.326287] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:59:47.357248] Configuración guardada en file_permissions_config.json_chris
+[2025-09-23T21:59:47.375810] Servidor UDP iniciado en 127.0.0.12:50000
+[2025-09-23T22:00:03.566322] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-23T22:00:03.567900] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-23T22:00:03.569517] Este DNS anunciará la IP del servidor de archivos: 127.0.0.10:5007
+[2025-09-23T22:00:03.573327] Configuración guardada en file_permissions_config_gus.json
+[2025-09-23T22:00:03.578268] Configuración guardada en file_permissions_config_gus.json

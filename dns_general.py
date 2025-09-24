@@ -35,7 +35,104 @@ class DNSGeneral:
         # Índice global de archivos
         self.global_file_index = {}  # {nombre_archivo: [{"server_id": id, "ip": ip, "port": port, "ttl": ttl}]}
         
+        # Sistema de bloqueos de archivos para escritura exclusiva
+        self.file_locks = {}  # {nombre_archivo: {"locked_by": server_id, "client_id": client_id, "timestamp": time, "operation": "write"}}
+        
         self.lock = threading.Lock()
+        
+    def solicitar_bloqueo_archivo(self, request: Dict) -> Dict:
+        """Solicita bloqueo exclusivo de un archivo para escritura"""
+        nombre_archivo = request.get("nombre_archivo")
+        server_solicitante = request.get("requesting_server")
+        client_id = request.get("client_id", f"{server_solicitante}_client")
+        
+        with self.lock:
+            # Verificar si el archivo ya está bloqueado
+            if nombre_archivo in self.file_locks:
+                lock_info = self.file_locks[nombre_archivo]
+                current_time = time.time()
+                
+                # Verificar si el bloqueo ha expirado (10 minutos)
+                if current_time - lock_info["timestamp"] > 600:
+                    self.log(f"Bloqueo expirado para {nombre_archivo}, liberando...")
+                    del self.file_locks[nombre_archivo]
+                else:
+                    # Archivo bloqueado por otro cliente
+                    return {
+                        "status": "BLOQUEADO",
+                        "mensaje": f"Archivo '{nombre_archivo}' bloqueado para escritura",
+                        "bloqueado_por": lock_info["locked_by"],
+                        "desde": lock_info["timestamp"]
+                    }
+            
+            # Crear bloqueo
+            self.file_locks[nombre_archivo] = {
+                "locked_by": server_solicitante,
+                "client_id": client_id,
+                "timestamp": time.time(),
+                "operation": "write"
+            }
+            
+            self.log(f"Archivo '{nombre_archivo}' bloqueado para escritura por {server_solicitante}")
+            
+            return {
+                "status": "BLOQUEO_CONCEDIDO",
+                "mensaje": f"Archivo '{nombre_archivo}' bloqueado exitosamente",
+                "expira_en": 600  # 10 minutos
+            }
+    
+    def liberar_bloqueo_archivo(self, request: Dict) -> Dict:
+        """Libera el bloqueo de un archivo"""
+        nombre_archivo = request.get("nombre_archivo")
+        server_solicitante = request.get("requesting_server")
+        
+        with self.lock:
+            if nombre_archivo in self.file_locks:
+                lock_info = self.file_locks[nombre_archivo]
+                
+                # Verificar que sea el mismo servidor que lo bloqueó
+                if lock_info["locked_by"] == server_solicitante:
+                    del self.file_locks[nombre_archivo]
+                    self.log(f"Bloqueo liberado para '{nombre_archivo}' por {server_solicitante}")
+                    
+                    return {
+                        "status": "BLOQUEO_LIBERADO",
+                        "mensaje": f"Archivo '{nombre_archivo}' desbloqueado"
+                    }
+                else:
+                    return {
+                        "status": "ERROR",
+                        "mensaje": f"Solo {lock_info['locked_by']} puede liberar este bloqueo"
+                    }
+            else:
+                return {
+                    "status": "ERROR",
+                    "mensaje": f"Archivo '{nombre_archivo}' no está bloqueado"
+                }
+    
+    def verificar_bloqueo_archivo(self, request: Dict) -> Dict:
+        """Verifica si un archivo está bloqueado"""
+        nombre_archivo = request.get("nombre_archivo")
+        
+        with self.lock:
+            if nombre_archivo in self.file_locks:
+                lock_info = self.file_locks[nombre_archivo]
+                current_time = time.time()
+                
+                # Verificar si el bloqueo ha expirado
+                if current_time - lock_info["timestamp"] > 600:
+                    del self.file_locks[nombre_archivo]
+                    return {"status": "LIBRE", "bloqueado": False}
+                
+                return {
+                    "status": "BLOQUEADO",
+                    "bloqueado": True,
+                    "bloqueado_por": lock_info["locked_by"],
+                    "desde": lock_info["timestamp"],
+                    "expira_en": 600 - (current_time - lock_info["timestamp"])
+                }
+            else:
+                return {"status": "LIBRE", "bloqueado": False}
         
     def log(self, message):
         logging.info(message)
@@ -360,36 +457,62 @@ class DNSGeneral:
                     "mensaje": "Archivo no existe, se puede crear nuevo"
                 }
     
+    # Dentro de la función procesar_checkin_archivo en dns_general.py
+
     def procesar_checkin_archivo(self, request: Dict) -> Dict:
         """Procesa el check-in de un archivo editado"""
         nombre_archivo = request.get("nombre_archivo")
         contenido = request.get("contenido")
         server_solicitante = request.get("requesting_server")
-        
-        checkout_key = f"{server_solicitante}:{nombre_archivo}"
-        
-        if not hasattr(self, 'checkouts_activos'):
-            self.checkouts_activos = {}
-        
-        if checkout_key not in self.checkouts_activos:
-            # No hay checkout activo, tratar como archivo nuevo
-            return self.escribir_archivo_distribuido(request)
-        
-        checkout_info = self.checkouts_activos[checkout_key]
-        server_origen = checkout_info["server_origen"]
-        
-        # Verificar si el archivo original todavía existe en el servidor origen
-        verify_request = {
-            "server_id": server_origen,
-            "accion": "leer",
-            "nombre_archivo": nombre_archivo,
-            "origen_server_id": "DNS_GENERAL"
-        }
-        
-        verify_response = self.solicitar_accion_remota(verify_request)
-        
-        if verify_response.get("status") == "EXITO":
-            # El archivo original aún existe, escribir ahí los cambios
+
+        # --- LÓGICA DE CORRECCIÓN ---
+        # Primero, verificamos si el archivo existe en el índice global
+        archivo_en_indice = False
+        server_origen = None
+        with self.lock:
+            if nombre_archivo in self.global_file_index and self.global_file_index[nombre_archivo]:
+                archivo_en_indice = True
+                server_origen = self.global_file_index[nombre_archivo][0]["server_id"]
+
+        # Si el archivo ya no existe en el índice o su servidor de origen ya no lo tiene,
+        # procedemos directamente a la lógica de "nuevo propietario".
+        if not archivo_en_indice or not self._verificar_archivo_existe(server_origen, nombre_archivo):
+            self.log(f"Archivo original no encontrado para '{nombre_archivo}'. {server_solicitante} se convierte en el nuevo propietario.")
+            
+            # Actualizar el índice global para reflejar el nuevo propietario
+            with self.lock:
+                if server_solicitante in self.registered_servers:
+                    server_info = self.registered_servers[server_solicitante]
+                    # Eliminar entradas antiguas si existían
+                    if nombre_archivo in self.global_file_index:
+                        self.global_file_index[nombre_archivo] = [
+                            e for e in self.global_file_index[nombre_archivo] if e["server_id"] != server_origen
+                        ]
+                    else:
+                        self.global_file_index[nombre_archivo] = []
+                    
+                    # Añadir la nueva entrada del propietario
+                    self.global_file_index[nombre_archivo].insert(0, {
+                        "server_id": server_solicitante,
+                        "ip": server_info["ip"],
+                        "port": server_info["port"],
+                        "ttl": 3600,
+                        "bandera": 0
+                    })
+            
+            # Limpiar cualquier checkout activo que pudiera haber quedado
+            checkout_key = f"{server_solicitante}:{nombre_archivo}"
+            if hasattr(self, 'checkouts_activos') and checkout_key in self.checkouts_activos:
+                del self.checkouts_activos[checkout_key]
+            
+            return {
+                "status": "CHECKIN_NUEVO_PROPIETARIO",
+                "mensaje": f"Archivo original perdido. {server_solicitante} es ahora el propietario",
+                "servidor_final": server_solicitante
+            }
+
+        # Si el archivo original SÍ existe, procedemos con la escritura normal
+        else:
             write_request = {
                 "server_id": server_origen,
                 "accion": "escribir",
@@ -402,17 +525,9 @@ class DNSGeneral:
             
             if response.get("status") == "EXITO":
                 # Limpiar checkout
-                del self.checkouts_activos[checkout_key]
-                
-                # Solicitar eliminación de copia temporal
-                delete_request = {
-                    "server_id": server_solicitante,
-                    "accion": "eliminar_temporal",
-                    "nombre_archivo": nombre_archivo,
-                    "origen_server_id": "DNS_GENERAL"
-                }
-                
-                self.solicitar_accion_remota(delete_request)
+                checkout_key = f"{server_solicitante}:{nombre_archivo}"
+                if hasattr(self, 'checkouts_activos') and checkout_key in self.checkouts_activos:
+                    del self.checkouts_activos[checkout_key]
                 
                 self.log(f"Check-in exitoso: {nombre_archivo} actualizado en {server_origen}")
                 
@@ -420,44 +535,9 @@ class DNSGeneral:
                     "status": "CHECKIN_EXITOSO",
                     "mensaje": f"Archivo actualizado en servidor original {server_origen}",
                     "servidor_final": server_origen,
-                    "copia_temporal_eliminada": True
                 }
             else:
                 return response
-        else:
-            # El archivo original ya no existe, el servidor solicitante se convierte en el nuevo propietario
-            self.log(f"Archivo original perdido, {server_solicitante} se convierte en propietario de {nombre_archivo}")
-            
-            # Actualizar el índice global
-            with self.lock:
-                if nombre_archivo in self.global_file_index:
-                    # Actualizar la entrada existente
-                    for entry in self.global_file_index[nombre_archivo]:
-                        if entry["server_id"] == server_origen:
-                            entry["server_id"] = server_solicitante
-                            entry["ip"] = self.registered_servers[server_solicitante]["ip"]
-                            entry["port"] = self.registered_servers[server_solicitante]["port"]
-                            break
-                else:
-                    # Crear nueva entrada
-                    server_info = self.registered_servers[server_solicitante]
-                    self.global_file_index[nombre_archivo] = [{
-                        "server_id": server_solicitante,
-                        "ip": server_info["ip"],
-                        "port": server_info["port"],
-                        "ttl": 3600,
-                        "bandera": 0
-                    }]
-            
-            # Limpiar checkout
-            del self.checkouts_activos[checkout_key]
-            
-            return {
-                "status": "CHECKIN_NUEVO_PROPIETARIO",
-                "mensaje": f"Archivo original perdido. {server_solicitante} es ahora el propietario",
-                "servidor_final": server_solicitante,
-                "nuevo_propietario": True
-            }
 
     def manejar_archivo_eliminado(self, request: Dict) -> Dict:
         """Maneja la eliminación de un archivo y busca copias en otros servidores"""
@@ -560,6 +640,14 @@ class DNSGeneral:
             return self.escribir_archivo_distribuido(request)
         elif accion == "solicitar_remoto":
             return self.solicitar_accion_remota(request)
+        # AGREGAR ESTAS LÍNEAS PARA MANEJAR BLOQUEOS:
+        elif accion == "solicitar_bloqueo":
+            return self.solicitar_bloqueo_archivo(request)
+        elif accion == "liberar_bloqueo":
+            return self.liberar_bloqueo_archivo(request)
+        elif accion == "verificar_bloqueo":
+            return self.verificar_bloqueo_archivo(request)
+        # FIN DE LÍNEAS AGREGADAS
         elif accion == "heartbeat":
             server_id = request.get("server_id")
             if server_id in self.registered_servers:
