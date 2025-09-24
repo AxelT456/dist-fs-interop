@@ -102,3 +102,10 @@
 2025-09-23 22:00:23 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
 2025-09-23 22:00:23 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
 2025-09-23 22:00:23 | INFO | ScannerThread | Config guardada
+2025-09-24 12:47:11 | INFO | MainThread | Config cargada
+2025-09-24 12:47:11 | INFO | MainThread | Config guardada
+2025-09-24 12:47:11 | INFO | ScannerThread | Hilo de escaneo iniciado cada 300s
+2025-09-24 12:47:11 | INFO | UDPServer | Servidor UDP escuchando en 127.0.0.19:50000
+2025-09-24 12:47:11 | INFO | MainThread | Servidor iniciado. Anunciando IP 127.0.0.9:5006. Presiona Ctrl+C para salir.
+2025-09-24 12:47:11 | INFO | ScannerThread | Config guardada
+2025-09-24 12:48:31 | INFO | MainThread | Saliendo...

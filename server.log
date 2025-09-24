@@ -258,3 +258,5 @@
 2025-09-23 22:03:38,609 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63500)
 2025-09-23 22:04:08,614 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49661): {'accion': 'listar_archivos'}
 2025-09-23 22:04:08,616 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49661)
+2025-09-24 12:47:05,099 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-24 12:47:05,101 - MainThread - WARNING - No se encontró una ruta válida en la configuración.

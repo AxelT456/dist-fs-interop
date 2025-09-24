@@ -5326,3 +5326,5 @@
 2025-09-23 22:04:08,582 - INFO - Petición de ('127.0.0.1', 49660): heartbeat
 2025-09-23 22:04:12,234 - INFO - Petición de ('127.0.0.1', 49662): heartbeat
 2025-09-23 22:04:18,317 - INFO - Petición de ('127.0.0.1', 49664): heartbeat
+2025-09-24 12:46:02,641 - INFO - DNS General iniciado en 127.0.0.5:50005
+2025-09-24 12:46:02,641 - INFO - Esperando registros de servidores...
