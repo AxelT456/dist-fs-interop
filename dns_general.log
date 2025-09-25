@@ -7314,3 +7314,35 @@
 2025-09-25 07:43:46,797 - INFO - Petición de ('127.0.0.1', 52499): heartbeat
 2025-09-25 07:43:47,398 - INFO - Petición de ('127.0.0.1', 52500): heartbeat
 2025-09-25 07:43:47,877 - INFO - Petición de ('127.0.0.1', 52501): heartbeat
+2025-09-25 07:55:44,682 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-25 07:55:44,683 - INFO - Esperando registros de servidores...
+2025-09-25 07:56:52,336 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-25 07:56:52,336 - INFO - Esperando registros de servidores...
+2025-09-25 07:57:36,286 - INFO - Petición de ('127.0.0.1', 51235): registrar_servidor
+2025-09-25 07:57:36,287 - INFO - Servidor server_marco registrado con 2 archivos
+2025-09-25 07:57:46,295 - INFO - Petición de ('127.0.0.1', 59437): registrar_servidor
+2025-09-25 07:57:46,296 - INFO - Servidor server_marco registrado con 0 archivos
+2025-09-25 07:57:46,297 - INFO - Petición de ('127.0.0.1', 59438): registrar_servidor
+2025-09-25 07:57:46,298 - INFO - Servidor server_marco registrado con 2 archivos
+2025-09-25 07:58:06,291 - INFO - Petición de ('127.0.0.1', 56151): heartbeat
+2025-09-25 07:58:36,294 - INFO - Petición de ('127.0.0.1', 54362): heartbeat
+2025-09-25 07:59:06,298 - INFO - Petición de ('127.0.0.1', 58450): heartbeat
+2025-09-25 07:59:36,301 - INFO - Petición de ('127.0.0.1', 52218): heartbeat
+2025-09-25 08:00:06,304 - INFO - Petición de ('127.0.0.1', 59086): heartbeat
+2025-09-25 08:00:36,307 - INFO - Petición de ('127.0.0.1', 59452): heartbeat
+2025-09-25 08:01:06,310 - INFO - Petición de ('127.0.0.1', 52389): heartbeat
+2025-09-25 08:01:36,313 - INFO - Petición de ('127.0.0.1', 52400): heartbeat
+2025-09-25 08:02:06,315 - INFO - Petición de ('127.0.0.1', 63274): heartbeat
+2025-09-25 08:02:36,317 - INFO - Petición de ('127.0.0.1', 60623): heartbeat
+2025-09-25 08:03:06,319 - INFO - Petición de ('127.0.0.1', 53209): heartbeat
+2025-09-25 08:03:36,322 - INFO - Petición de ('127.0.0.1', 53509): heartbeat
+2025-09-25 08:04:06,325 - INFO - Petición de ('127.0.0.1', 52224): heartbeat
+2025-09-25 08:04:36,328 - INFO - Petición de ('127.0.0.1', 50865): heartbeat
+2025-09-25 08:05:06,341 - INFO - Petición de ('127.0.0.1', 63214): heartbeat
+2025-09-25 08:05:36,348 - INFO - Petición de ('127.0.0.1', 49331): heartbeat
+2025-09-25 08:06:06,350 - INFO - Petición de ('127.0.0.1', 55360): heartbeat
+2025-09-25 08:06:36,352 - INFO - Petición de ('127.0.0.1', 55313): heartbeat
+2025-09-25 08:07:06,354 - INFO - Petición de ('127.0.0.1', 57906): heartbeat
+2025-09-25 08:07:53,411 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-25 08:07:53,413 - INFO - Esperando registros de servidores...
+2025-09-25 08:18:23,113 - INFO - DNS General iniciado en 0.0.0.0:50005

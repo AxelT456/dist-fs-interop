@@ -14,7 +14,7 @@ with open('network_config.json', 'r') as f:
     net_config = json.load(f)
 
 # Obtener la configuración específica para este peer
-peer_config = net_config['peers']['server_marco']
+peer_config = net_config['peers']['SERVER_MARCO']
 
 # --- CONFIGURACIÓN DE RED ---
 DNS_IP = "0.0.0.0" # Siempre escucha en 0.0.0.0
