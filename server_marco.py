@@ -9,12 +9,10 @@ CONFIG_FILE = "config_marco.json"
 LOG_FILE = "server.log"
 
 # --- CONFIGURACIÓN DE RED ---
-# 1. IP y Puerto donde este DNS escuchará las peticiones.
-DNS_IP = "127.0.0.20"
-DNS_PORT = 50000
-
-# 2. IP y Puerto del servidor de archivos que se anunciará en las respuestas.
-SERVER_IP = "127.0.0.8"
+# DESPUÉS (CORREGIDO):
+DNS_IP = "0.0.0.0"
+DNS_PORT = 50001
+SERVER_IP = "127.0.0.108" # <--- ¡CAMBIO! Ahora anuncia la IP del servidor de archivos.
 SERVER_PORT = 5005
 
 
@@ -143,6 +141,7 @@ class UDPServer(threading.Thread):
         # CAMBIO: Usar las constantes DNS para el bind
         self.sock.bind((DNS_IP, DNS_PORT))
 
+    # En server_marco.py, reemplaza el método run de la clase UDPServer
     def run(self):
         print(f"Servidor DNS escuchando en {DNS_IP}:{DNS_PORT}...")
         while True:
@@ -150,36 +149,24 @@ class UDPServer(threading.Thread):
             response = {}
             try:
                 request = json.loads(data.decode())
-                action = request.get("accion")
-                
                 print(f"Petición recibida de {addr}: {request}")
+                action = request.get("accion")
 
-                if action == "consultar":
+                if action == "consultar" and request.get("nombre_archivo") == "servidor_info":
+                    response = { "status": "ACK", "ip": self.server_ip, "puerto": self.server_port }
+                elif action == "consultar":
                     name = request.get("name")
                     ext = request.get("extension")
                     file_entry = self.file_manager.get_available_file(name, ext)
-                    
                     if file_entry:
-                        response = {
-                            "status": "ACK",
-                            "ip": self.server_ip,
-                            "port": self.server_port,
-                            "ttl": file_entry.ttl
-                        }
+                        response = { "status": "ACK", "ip": self.server_ip, "port": self.server_port, "ttl": file_entry.ttl }
                     else:
                         response = {"status": "NACK", "error": "Archivo no encontrado o TTL expirado"}
-
                 elif action == "listar_archivos":
                     files = self.file_manager.get_all_available_files()
-                    response = {
-                        "status": "ACK",
-                        "ip": self.server_ip,
-                        "port": self.server_port,
-                        "files": [f.to_dict() for f in files]
-                    }
+                    response = { "status": "ACK", "ip": self.server_ip, "port": self.server_port, "files": [f.to_dict() for f in files] }
                 else:
                     response = {"status": "ERROR", "message": "Acción no reconocida"}
-
             except Exception as e:
                 response = {"status": "ERROR", "message": str(e)}
             

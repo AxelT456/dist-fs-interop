@@ -10,5 +10,11 @@
         "extension": "txt",
         "ttl": 300,
         "can_publish": true
+    },
+    "novela.txt": {
+        "name": "novela",
+        "extension": "txt",
+        "ttl": 300,
+        "can_publish": true
     }
 }

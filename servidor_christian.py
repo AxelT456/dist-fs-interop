@@ -8,10 +8,10 @@ from datetime import datetime
 CONFIG_FILE = "file_permissions_config.json_chris"
 LOG_FILE = "file_server.log"
 UPDATE_INTERVAL = 300  # 5 minutos
-DNS_PORT=50000
-DNS_IP="127.0.0.12"
-SERVER_IP="127.0.0.11"
-SERVER_PORT=5002
+DNS_PORT=50003
+DNS_IP="0.0.0.0"
+SERVER_IP="127.0.0.112"
+SERVER_PORT=5003
 
 lock = threading.Lock()
 

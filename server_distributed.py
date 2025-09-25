@@ -1021,26 +1021,23 @@ class ServidorDistribuido:
             return {"status": "ERROR", "mensaje": f"Error eliminando temporal: {e}"}
         
     def _start_file_monitor(self):
-        """Inicia el monitor de archivos sincronizado con DNS local"""
+        """Inicia el monitor de archivos para detectar cambios locales (Versión Simplificada)"""
         def file_monitor():
             last_scan = {}  # {nombre_archivo: timestamp_modificacion}
             
             while self.running:
                 try:
-                    time.sleep(30)  # Verificar cada 30 segundos
+                    time.sleep(10)  # Verificar cada 10 segundos
                     if not self.running:
                         break
-                    
-                    # Obtener lista de archivos del DNS local
-                    archivos_dns = self._consultar_archivos_dns_local()
                     
                     current_files = {}
                     changes_detected = False
                     
-                    # Escanear archivos físicos locales
+                    # Escanear archivos físicos actuales en la carpeta
                     if os.path.exists(self.folder_path):
                         for filename in os.listdir(self.folder_path):
-                            if filename.endswith('.temp_checkout') or filename.endswith('.temp_editing'):
+                            if filename.endswith(('.temp_checkout', '.temp_editing')):
                                 continue  # Ignorar archivos temporales
                             
                             filepath = os.path.join(self.folder_path, filename)
@@ -1048,30 +1045,13 @@ class ServidorDistribuido:
                                 mtime = os.path.getmtime(filepath)
                                 current_files[filename] = mtime
                     
-                    # Sincronizar con archivos del DNS local
-                    archivos_dns_names = set()
-                    if archivos_dns.get("status") == "ACK":
-                        for archivo_dns in archivos_dns.get("archivos", []):
-                            archivo_name = archivo_dns.get("nombre_archivo")
-                            if archivo_name and archivo_dns.get("publicado", False):
-                                archivos_dns_names.add(archivo_name)
-                    
-                    # Detectar archivos nuevos (que están en DNS pero no localmente)
-                    archivos_faltantes = archivos_dns_names - set(current_files.keys())
-                    if archivos_faltantes:
-                        for archivo in archivos_faltantes:
-                            self.log(f"Archivo en DNS pero no local: {archivo}")
-                            # No agregamos archivos que no existen físicamente
-                    
                     # Detectar archivos nuevos locales
                     nuevos_archivos = set(current_files.keys()) - set(last_scan.keys())
                     if nuevos_archivos:
                         for archivo in nuevos_archivos:
-                            # Solo procesar si no está en el DNS o no está publicado
-                            if archivo not in archivos_dns_names:
-                                self.log(f"Archivo nuevo detectado localmente: {archivo}")
-                                self._handle_nuevo_archivo(archivo)
-                                changes_detected = True
+                            self.log(f"Archivo nuevo detectado localmente: {archivo}")
+                            self._handle_nuevo_archivo(archivo)
+                        changes_detected = True
                     
                     # Detectar archivos eliminados localmente
                     archivos_eliminados = set(last_scan.keys()) - set(current_files.keys())
@@ -1081,7 +1061,7 @@ class ServidorDistribuido:
                             self._handle_archivo_eliminado(archivo)
                         changes_detected = True
                     
-                    # Si hubo cambios, actualizar registro
+                    # Si hubo cambios, escanear de nuevo y re-registrar en el DNS General
                     if changes_detected:
                         self._scan_local_files()
                         self._register_with_dns_general()
@@ -1090,12 +1070,12 @@ class ServidorDistribuido:
                     
                 except Exception as e:
                     self.log(f"Error en monitor de archivos: {e}")
-                    time.sleep(10)  # Esperar más tiempo si hay error
+                    time.sleep(10)
         
         # Iniciar en hilo separado
         thread = threading.Thread(target=file_monitor, daemon=True)
         thread.start()
-        self.log("Monitor de archivos iniciado (sincronizado con DNS local)")
+        self.log("Monitor de archivos simplificado iniciado")
     
     def _consultar_archivos_dns_local(self) -> Dict:
         """Consulta los archivos disponibles en el DNS local"""
@@ -1262,7 +1242,7 @@ def crear_servidor(config_name: str):
     configs = {
         "server1": {
             "server_id": "SERVER1",
-            "host": "127.0.0.3",
+            "host": "127.0.0.3", # Coincide con lo que anuncia servidor_nombres.py
             "port": 5002,
             "dns_local_ip": "127.0.0.2",
             "dns_local_port": 50000,
@@ -1270,23 +1250,16 @@ def crear_servidor(config_name: str):
         },
         "server2": {
             "server_id": "SERVER2", 
-            "host": "127.0.0.4",
+            "host": "127.0.0.112", # Coincide con lo que anuncia servidor_christian.py
             "port": 5003,
             "dns_local_ip": "127.0.0.12",
             "dns_local_port": 50000,
             "folder_path": "archivos_server2"
         },
-        "server3": {
-            "server_id": "SERVER3",
-            "host": "127.0.0.6", 
-            "port": 5004,
-            "dns_local_ip": "127.0.0.7",
-            "dns_local_port": 50001,
-            "folder_path": "archivos_server3"
-        },
+        # server3 no lo estás usando, lo quito para claridad
         "server_marco": {
             "server_id": "SERVER_MARCO",
-            "host": "127.0.0.8",
+            "host": "127.0.0.108", # <--- NUEVA IP
             "port": 5005,
             "dns_local_ip": "127.0.0.8",
             "dns_local_port": 50000,
@@ -1294,7 +1267,7 @@ def crear_servidor(config_name: str):
         },
         "server_dan": {
             "server_id": "SERVER_DAN",
-            "host": "127.0.0.9",
+            "host": "127.0.0.109", # <--- NUEVA IP
             "port": 5006,
             "dns_local_ip": "127.0.0.9",
             "dns_local_port": 50000,
@@ -1302,7 +1275,7 @@ def crear_servidor(config_name: str):
         },
         "server_gus": {
             "server_id": "SERVER_GUS",
-            "host": "127.0.0.10",
+            "host": "127.0.0.110", # <--- NUEVA IP
             "port": 5007,
             "dns_local_ip": "127.0.0.10",
             "dns_local_port": 50000,

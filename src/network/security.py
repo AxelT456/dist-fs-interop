@@ -102,45 +102,27 @@ class SecureSession:
         self.seq_send = 0
         self.seq_recv = 0
 
-    def derive_keys(self, shared_secret: int, client_id: str, server_id: str, is_client: bool = True):
+    def derive_keys(self, shared_secret: int, client_id: str, server_id: str):
         """
-        Deriva las claves de cifrado y MAC de manera determinística.
-        Ambos lados deben usar los mismos parámetros para generar las mismas claves.
+        Deriva las claves de cifrado y MAC de manera determinística y ordenada.
         """
-        print(f"[Security] Derivando claves: shared_secret={shared_secret}, client_id={client_id}, server_id={server_id}, is_client={is_client}")
-        
-        # Crear contexto único pero determinístico
-        context = f"{client_id}:{server_id}".encode()
+        # Ordenar los IDs alfabéticamente asegura que ambos lados generen el mismo contexto
+        sorted_ids = sorted([client_id, server_id])
+        context = f"{sorted_ids[0]}:{sorted_ids[1]}".encode()
+
         salt = hashlib.sha256(context).digest()
-        
-        # Extraer PRK del secreto compartido
         prk = hkdf_extract(salt, i2b(shared_secret))
-        
-        # Expandir para obtener material de clave
-        key_material = hkdf_expand(prk, b"handshake", 76)  # 32+32+12 bytes
-        
-        # Asignar claves de manera determinística
-        if is_client:
-            # Cliente usa la primera mitad para envío, segunda para recepción
-            self.keys = {
-                "key_enc": key_material[:32],
-                "key_mac": key_material[32:64], 
-                "nonce_base": key_material[64:76],
-                "prk": prk
-            }
-        else:
-            # Servidor usa claves intercambiadas
-            self.keys = {
-                "key_enc": key_material[:32],  # Mismas claves simétricas
-                "key_mac": key_material[32:64],
-                "nonce_base": key_material[64:76],
-                "prk": prk
-            }
-        
+        key_material = hkdf_expand(prk, b"handshake_keys", 76)
+
+        self.keys = {
+            "key_enc": key_material[:32],
+            "key_mac": key_material[32:64],
+            "nonce_base": key_material[64:76],
+        }
+
         self.seq_send = 0
         self.seq_recv = 0
         self.state = "ESTABLISHED"
-        print(f"[Security] Claves derivadas correctamente. Estado: {self.state}")
 
     def encrypt(self, plaintext: bytes) -> Dict:
         """

@@ -7,11 +7,12 @@ from datetime import datetime
 
 # --- VALORES AJUSTADOS ---
 # 1. El DNS ahora se inicializa y escucha en esta IP.
-DNS_IP = "127.0.0.21"
-DNS_PORT = 50000
+DNS_IP = "0.0.0.0"
+DNS_PORT = 50002
 
 # 2. La IP y Puerto que el DNS enviará en sus respuestas.
-SERVER_IP = "127.0.0.10"
+
+SERVER_IP = "127.0.0.110" # <--- ¡CAMBIO! Ahora anuncia la IP del servidor de archivos.
 SERVER_PORT = 5007
 
 # --- OTROS VALORES DE CONFIGURACIÓN ---

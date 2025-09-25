@@ -35,8 +35,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", type=str, default="config.json", help="Ruta al archivo de configuración")
     parser.add_argument("--scan-interval", type=int, default=300, help="Segundos entre escaneos (default 300)")
     # --- Argumentos nuevos ---
-    parser.add_argument("--server-ip", type=str, default="127.0.0.1", help="IP del servidor de archivos a anunciar")
-    parser.add_argument("--server-port", type=int, default=5002, help="Puerto del servidor de archivos a anunciar")
+    parser.add_argument("--server-ip", type=str, default="127.0.0.109", help="IP del servidor de archivos a anunciar")
+    parser.add_argument("--server-port", type=int, default=5006, help="Puerto del servidor de archivos a anunciar")
     return parser.parse_args()
 
 

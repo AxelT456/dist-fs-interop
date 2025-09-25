@@ -8,11 +8,11 @@ import sys
 
 CONFIG_FILE = 'config.json_axel'
 LOG_FILE = 'server.log'
-UDP_IP = "127.0.0.2"  
-UDP_PORT = 50000
 UPDATE_INTERVAL_SECONDS = 300  #segundos
-SERVER_IP="127.0.0.3"
-SERVER_PORT=5002
+UDP_IP = "0.0.0.0"      # Correcto, escucha en todas partes.
+UDP_PORT = 50000
+SERVER_IP = "127.0.0.3" # Correcto, anuncia la IP del server_distributed server1.
+SERVER_PORT = 5002
 
 # --- Variables Globales ---
 lista_archivos = []

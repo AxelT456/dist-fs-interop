@@ -9,7 +9,7 @@ from typing import Dict, List, Tuple
 from datetime import datetime
 
 # Configuración
-DNS_GENERAL_IP = "127.0.0.5"
+DNS_GENERAL_IP = "0.0.0.0"  # <--- CAMBIAR A 0.0.0.0 PARA ESCUCHAR
 DNS_GENERAL_PORT = 50005
 LOG_FILE = "dns_general.log"
 

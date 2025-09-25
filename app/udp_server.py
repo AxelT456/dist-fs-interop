@@ -16,8 +16,8 @@ class UdpServer:
         self,
         config: ConfigManager,
         # CAMBIO: IP y puerto donde este servidor DNS escuchará
-        host: str = "127.0.0.19",
-        port: int = 50000,
+        host: str = "0.0.0.0",
+        port: int = 50004,
         # CAMBIO: IP y puerto del servidor de archivos que se anunciará
         server_ip: str = "127.0.0.9",
         server_port: int = 5006,
@@ -28,28 +28,23 @@ class UdpServer:
         self._server_ip = server_ip
         self._server_port = server_port
 
+    # En app/udp_server.py, reemplaza el método _handle_request
     def _handle_request(self, data: bytes, addr: Tuple[str, int]) -> bytes:
-        """
-        Procesa una solicitud entrante y determina la acción a realizar.
-        """
         try:
             payload = json.loads(data.decode("utf-8"))
             action = payload.get("accion")
 
-            if action == "consultar_ip":
+            if action == "consultar" and payload.get("nombre_archivo") == "servidor_info":
+                response = { "status": "ACK", "ip": self._server_ip, "puerto": self._server_port, }
+            elif action == "consultar_ip":
                 response = self._handle_query(payload)
             elif action == "listar_archivos":
                 response = self._handle_list()
             else:
                 response = {"status": "NACK", "error": "accion no reconocida"}
-
-        except (json.JSONDecodeError, UnicodeDecodeError) as e:
-            log.warning(f"Solicitud inválida (JSON malformado) desde {addr}: {e}")
-            response = {"status": "NACK", "error": "bad request"}
         except Exception as e:
-            log.error(f"Error inesperado procesando la solicitud de {addr}: {e}")
+            log.error(f"Error procesando la solicitud de {addr}: {e}")
             response = {"status": "NACK", "error": "internal server error"}
-
         return json.dumps(response).encode("utf-8")
 
     def _handle_query(self, payload: Dict[str, Any]) -> Dict[str, Any]:
