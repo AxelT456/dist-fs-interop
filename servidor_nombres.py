@@ -151,8 +151,15 @@ def hilo_servidor_udp():
             data, addr = servidor_socket.recvfrom(1024) # Buffer de 1024 bytes
             peticion = json.loads(data.decode('utf-8'))
             logging.info(f"Petición recibida de {addr}: {peticion}")
-
-            if peticion.get('accion') == 'consultar':
+            if peticion.get('accion') == 'consultar' and peticion.get('nombre_archivo') == 'servidor_info':
+                respuesta_obj = {
+                    "status": "ACK",
+                    "ip": SERVER_IP,
+                    "puerto": SERVER_PORT
+                }
+                respuesta_json = json.dumps(respuesta_obj).encode('utf-8')
+                servidor_socket.sendto(respuesta_json, addr)
+            elif peticion.get('accion') == 'consultar':
                 nombre_buscado = peticion.get('nombre_archivo')
                 respuesta_obj = None
 

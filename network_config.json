@@ -2,7 +2,7 @@
   "mode": "distributed",
   "dns_general": {
     "listen_ip": "0.0.0.0",
-    "connect_ip": "192.168.43.128",
+    "connect_ip": "192.168.43.99",
     "port": 50005
   },
   "peers": {

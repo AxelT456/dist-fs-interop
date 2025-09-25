@@ -7355,3 +7355,68 @@
 2025-09-25 08:29:28,864 - INFO - Esperando registros de servidores...
 2025-09-25 08:30:45,721 - INFO - DNS General iniciado en 0.0.0.0:50005
 2025-09-25 08:30:45,722 - INFO - Esperando registros de servidores...
+2025-09-25 08:38:47,078 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-25 08:38:47,080 - INFO - Esperando registros de servidores...
+2025-09-25 08:41:39,049 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-25 08:41:39,050 - INFO - Esperando registros de servidores...
+2025-09-25 08:41:41,326 - INFO - Petición de ('192.168.43.128', 59585): registrar_servidor
+2025-09-25 08:41:41,328 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-25 08:41:51,615 - INFO - Petición de ('192.168.43.128', 59587): registrar_servidor
+2025-09-25 08:41:51,616 - INFO - Servidor SERVER1 registrado con 0 archivos
+2025-09-25 08:41:51,618 - INFO - Petición de ('192.168.43.128', 59588): registrar_servidor
+2025-09-25 08:41:51,619 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-25 08:41:57,752 - INFO - Petición de ('192.168.43.99', 61267): registrar_servidor
+2025-09-25 08:41:57,753 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-25 08:42:07,762 - INFO - Petición de ('192.168.43.99', 54915): registrar_servidor
+2025-09-25 08:42:07,763 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-25 08:42:07,764 - INFO - Petición de ('192.168.43.99', 54916): registrar_servidor
+2025-09-25 08:42:07,765 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-25 08:42:11,338 - INFO - Petición de ('192.168.43.128', 52196): heartbeat
+2025-09-25 08:42:27,757 - INFO - Petición de ('192.168.43.99', 58955): heartbeat
+2025-09-25 08:42:41,428 - INFO - Petición de ('192.168.43.128', 52197): heartbeat
+2025-09-25 08:42:57,759 - INFO - Petición de ('192.168.43.99', 53800): heartbeat
+2025-09-25 08:43:11,668 - INFO - Petición de ('192.168.43.128', 54711): heartbeat
+2025-09-25 08:43:27,762 - INFO - Petición de ('192.168.43.99', 55779): heartbeat
+2025-09-25 08:43:44,457 - INFO - Petición de ('192.168.43.128', 51407): heartbeat
+2025-09-25 08:46:39,915 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-25 08:46:39,916 - INFO - Esperando registros de servidores...
+2025-09-25 08:46:58,476 - INFO - Petición de ('192.168.43.128', 58392): registrar_servidor
+2025-09-25 08:46:58,477 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-25 08:47:02,480 - INFO - Petición de ('192.168.43.99', 56974): registrar_servidor
+2025-09-25 08:47:02,481 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-25 08:47:08,553 - INFO - Petición de ('192.168.43.128', 57678): registrar_servidor
+2025-09-25 08:47:08,554 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-25 08:47:08,555 - INFO - Petición de ('192.168.43.128', 57679): registrar_servidor
+2025-09-25 08:47:08,556 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-25 08:47:12,492 - INFO - Petición de ('192.168.43.99', 54682): registrar_servidor
+2025-09-25 08:47:12,492 - INFO - Servidor SERVER_MARCO registrado con 0 archivos
+2025-09-25 08:47:12,494 - INFO - Petición de ('192.168.43.99', 51006): registrar_servidor
+2025-09-25 08:47:12,495 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-25 08:47:16,078 - INFO - Petición de ('192.168.43.99', 62000): listar_archivos
+2025-09-25 08:47:21,227 - INFO - Petición de ('192.168.43.99', 63151): listar_archivos
+2025-09-25 08:47:28,573 - INFO - Petición de ('192.168.43.128', 50540): heartbeat
+2025-09-25 08:47:32,486 - INFO - Petición de ('192.168.43.99', 50208): heartbeat
+2025-09-25 08:47:58,685 - INFO - Petición de ('192.168.43.128', 64381): heartbeat
+2025-09-25 08:48:02,488 - INFO - Petición de ('192.168.43.99', 52014): heartbeat
+2025-09-25 08:48:24,926 - INFO - Petición de ('192.168.43.99', 54649): listar_archivos
+2025-09-25 08:48:28,781 - INFO - Petición de ('192.168.43.128', 63977): heartbeat
+2025-09-25 08:48:31,440 - INFO - Petición de ('192.168.43.99', 63223): verificar_bloqueo
+2025-09-25 08:48:32,490 - INFO - Petición de ('192.168.43.99', 65480): heartbeat
+2025-09-25 08:48:33,197 - INFO - Petición de ('192.168.43.99', 65232): verificar_bloqueo
+2025-09-25 08:48:56,088 - INFO - Petición de ('192.168.43.99', 53599): listar_archivos
+2025-09-25 08:48:58,802 - INFO - Petición de ('192.168.43.128', 54098): heartbeat
+2025-09-25 08:49:02,493 - INFO - Petición de ('192.168.43.99', 53600): heartbeat
+2025-09-25 08:49:23,690 - INFO - Petición de ('192.168.43.99', 51026): listar_archivos
+2025-09-25 08:49:28,892 - INFO - Petición de ('192.168.43.128', 50943): heartbeat
+2025-09-25 08:49:32,495 - INFO - Petición de ('192.168.43.99', 63454): heartbeat
+2025-09-25 08:49:44,268 - INFO - Petición de ('192.168.43.99', 53911): verificar_bloqueo
+2025-09-25 08:49:49,670 - INFO - Petición de ('192.168.43.99', 54686): verificar_bloqueo
+2025-09-25 08:49:58,997 - INFO - Petición de ('192.168.43.128', 54361): heartbeat
+2025-09-25 08:49:59,734 - INFO - Petición de ('192.168.43.99', 51903): listar_archivos
+2025-09-25 08:49:59,847 - INFO - Petición de ('192.168.43.99', 51904): listar_archivos
+2025-09-25 08:50:02,498 - INFO - Petición de ('192.168.43.99', 53639): heartbeat
+2025-09-25 08:50:04,854 - INFO - Petición de ('192.168.43.99', 58641): verificar_bloqueo
+2025-09-25 08:50:29,108 - INFO - Petición de ('192.168.43.128', 54146): heartbeat
+2025-09-25 08:50:32,500 - INFO - Petición de ('192.168.43.99', 54350): heartbeat
+2025-09-25 09:02:06,949 - INFO - Petición de ('192.168.43.99', 60655): heartbeat
+2025-09-25 09:02:44,364 - INFO - Eliminando servidor inactivo: SERVER1

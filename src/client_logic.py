@@ -32,7 +32,7 @@ class ClientLogic:
         self.server_info = None
         self.dns_info = None
         self.is_connected = False
-        self.client_host = "127.0.0.1"
+        self.client_host = "0.0.0.0"
         self.client_port = 0
         self.waiting_for_response = False
         self.last_response = None
