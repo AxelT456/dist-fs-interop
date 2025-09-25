@@ -14,8 +14,12 @@ from src.network.peer_conector import PeerConnector
 from src.network.transport import ReliableTransport
 
 # Configuración
-DNS_GENERAL_IP = "127.0.0.5"
-DNS_GENERAL_PORT = 50005
+with open('network_config.json', 'r') as f:
+    net_config = json.load(f)
+
+# Configuración
+DNS_GENERAL_IP = net_config['dns_general']['connect_ip']
+DNS_GENERAL_PORT = net_config['dns_general']['port']
 
 # Configuración de logging
 logging.basicConfig(
@@ -1238,57 +1242,22 @@ class ServidorDistribuido:
 
 # Función para crear configuraciones de servidores
 def crear_servidor(config_name: str):
-    """Crea un servidor con configuración específica"""
-    configs = {
-        "server1": {
-            "server_id": "SERVER1",
-            "host": "127.0.0.3", # Coincide con lo que anuncia servidor_nombres.py
-            "port": 5002,
-            "dns_local_ip": "127.0.0.2",
-            "dns_local_port": 50000,
-            "folder_path": "archivos_server1"
-        },
-        "server2": {
-            "server_id": "SERVER2", 
-            "host": "127.0.0.112", # Coincide con lo que anuncia servidor_christian.py
-            "port": 5003,
-            "dns_local_ip": "127.0.0.12",
-            "dns_local_port": 50000,
-            "folder_path": "archivos_server2"
-        },
-        # server3 no lo estás usando, lo quito para claridad
-        "server_marco": {
-            "server_id": "SERVER_MARCO",
-            "host": "127.0.0.108", # <--- NUEVA IP
-            "port": 5005,
-            "dns_local_ip": "127.0.0.8",
-            "dns_local_port": 50000,
-            "folder_path": "archivos_server_marco"
-        },
-        "server_dan": {
-            "server_id": "SERVER_DAN",
-            "host": "127.0.0.109", # <--- NUEVA IP
-            "port": 5006,
-            "dns_local_ip": "127.0.0.9",
-            "dns_local_port": 50000,
-            "folder_path": "archivos_server_dan"
-        },
-        "server_gus": {
-            "server_id": "SERVER_GUS",
-            "host": "127.0.0.110", # <--- NUEVA IP
-            "port": 5007,
-            "dns_local_ip": "127.0.0.10",
-            "dns_local_port": 50000,
-            "folder_path": "archivos_server_gus"
-        }
-    }
-    
-    if config_name not in configs:
-        print(f"Configuración '{config_name}' no encontrada. Disponibles: {list(configs.keys())}")
+    """Crea un servidor leyendo la configuración de network_config.json"""
+    if config_name not in net_config['peers']:
+        print(f"Configuración '{config_name}' no encontrada en network_config.json.")
         return None
-    
-    config = configs[config_name]
-    return ServidorDistribuido(**config)
+
+    peer_config = net_config['peers'][config_name]
+
+    server_config = {
+        "server_id": config_name,
+        "host": peer_config['server_ip'],
+        "port": peer_config['server_port'],
+        "dns_local_ip": peer_config['dns_ip'],
+        "dns_local_port": peer_config['dns_port'],
+        "folder_path": f"archivos_{config_name.lower()}"
+    }
+    return ServidorDistribuido(**server_config)
 
 if __name__ == "__main__":
     import sys

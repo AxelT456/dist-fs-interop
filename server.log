@@ -517,3 +517,26 @@
 2025-09-24 21:37:00,834 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
 2025-09-24 21:37:00,837 - MainThread - INFO - Configuración guardada exitosamente en config.json
 2025-09-24 21:37:00,841 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-25 07:19:23,250 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-25 07:19:23,270 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-25 07:19:23,275 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-25 07:19:23,280 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-25 07:25:00,967 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-25 07:25:00,971 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-25 07:25:00,986 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-25 07:25:00,991 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-25 07:25:58,437 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-25 07:25:58,441 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-25 07:25:58,443 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-25 07:25:58,448 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-25 07:27:38,032 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-09-25 07:27:38,036 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-25 07:27:38,040 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-09-25 07:27:38,045 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-09-25 07:28:06,450 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61748): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-25 07:28:17,675 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49542): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-25 07:28:44,571 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61479): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-25 07:28:49,208 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63099): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-09-25 07:32:38,044 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-25 07:37:38,049 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-09-25 07:42:38,052 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1

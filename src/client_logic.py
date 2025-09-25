@@ -12,28 +12,18 @@ from src.network.peer_conector import PeerConnector
 from src.network.transport import ReliableTransport
 
 # Configuración de DNS disponibles (expandida)
-DNS_SERVERS = [
-    {
-        "id": "DNS1", "ip": "127.0.0.2", "port": 50000, # Axel
-        "description": "DNS Servidor Nombres (Axel)"
-    },
-    {
-        "id": "DNS_MARCO", "ip": "127.0.0.8", "port": 50001, # Marco
-        "description": "DNS Servidor Marco"
-    },
-    {
-        "id": "DNS_GUS", "ip": "127.0.0.10", "port": 50002, # Gus
-        "description": "DNS Servidor Gus"
-    },
-    {
-        "id": "DNS2", "ip": "127.0.0.12", "port": 50003, # Christian
-        "description": "DNS Servidor Christian"
-    },
-    {
-        "id": "DNS_DAN", "ip": "127.0.0.9", "port": 50004, # Dan
-        "description": "DNS Servidor Dan"
-    }
-]
+with open('network_config.json', 'r') as f:
+    net_config = json.load(f)
+
+# Construir DNS_SERVERS dinámicamente
+DNS_SERVERS = []
+for peer in net_config['peers'].values():
+    DNS_SERVERS.append({
+        "id": peer['id_dns_cliente'],
+        "ip": peer['dns_ip'],
+        "port": peer['dns_port'],
+        "description": f"DNS para {peer['id_dns_cliente'].replace('DNS_', '')}"
+    })
 
 class ClientLogic:
     def __init__(self):

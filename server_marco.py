@@ -10,10 +10,17 @@ LOG_FILE = "server.log"
 
 # --- CONFIGURACIÓN DE RED ---
 # DESPUÉS (CORREGIDO):
-DNS_IP = "0.0.0.0"
-DNS_PORT = 50001
-SERVER_IP = "127.0.0.108" # <--- ¡CAMBIO! Ahora anuncia la IP del servidor de archivos.
-SERVER_PORT = 5005
+with open('network_config.json', 'r') as f:
+    net_config = json.load(f)
+
+# Obtener la configuración específica para este peer
+peer_config = net_config['peers']['server_marco']
+
+# --- CONFIGURACIÓN DE RED ---
+DNS_IP = "0.0.0.0" # Siempre escucha en 0.0.0.0
+DNS_PORT = peer_config['dns_port']
+SERVER_IP = peer_config['server_ip']
+SERVER_PORT = peer_config['server_port']
 
 
 class FileEntry:

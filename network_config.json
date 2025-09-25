@@ -1,0 +1,24 @@
+{
+  "mode": "local",
+  "dns_general": {
+    "listen_ip": "0.0.0.0",
+    "connect_ip": "127.0.0.5",
+    "port": 50005
+  },
+  "peers": {
+    "server_axel": {
+      "id_dns_cliente": "DNS1",
+      "dns_ip": "127.0.0.2",
+      "dns_port": 50000,
+      "server_ip": "127.0.0.3",
+      "server_port": 5002
+    },
+    "server_marco": {
+      "id_dns_cliente": "DNS_MARCO",
+      "dns_ip": "127.0.0.8",
+      "dns_port": 50001,
+      "server_ip": "127.0.0.108",
+      "server_port": 5005
+    }
+  }
+}

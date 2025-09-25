@@ -6,15 +6,17 @@ import socket
 from datetime import datetime
 
 # --- VALORES AJUSTADOS ---
-# 1. El DNS ahora se inicializa y escucha en esta IP.
-DNS_IP = "0.0.0.0"
-DNS_PORT = 50002
+with open('network_config.json', 'r') as f:
+    net_config = json.load(f)
 
-# 2. La IP y Puerto que el DNS enviará en sus respuestas.
+# Obtener la configuración específica para este peer
+peer_config = net_config['peers']['server_gus']
 
-SERVER_IP = "127.0.0.110" # <--- ¡CAMBIO! Ahora anuncia la IP del servidor de archivos.
-SERVER_PORT = 5007
-
+# --- CONFIGURACIÓN DE RED ---
+DNS_IP = "0.0.0.0" # Siempre escucha en 0.0.0.0
+DNS_PORT = peer_config['dns_port']
+SERVER_IP = peer_config['server_ip']
+SERVER_PORT = peer_config['server_port']
 # --- OTROS VALORES DE CONFIGURACIÓN ---
 CONFIG_FILE = "file_permissions_config_gus.json"
 LOG_FILE = "file_server.log"

@@ -9,8 +9,13 @@ from typing import Dict, List, Tuple
 from datetime import datetime
 
 # Configuración
-DNS_GENERAL_IP = "0.0.0.0"  # <--- CAMBIAR A 0.0.0.0 PARA ESCUCHAR
-DNS_GENERAL_PORT = 50005
+# --- Cargar Configuración ---
+with open('network_config.json', 'r') as f:
+    net_config = json.load(f)
+
+# Configuración
+DNS_GENERAL_IP = net_config['dns_general']['listen_ip']
+DNS_GENERAL_PORT = net_config['dns_general']['port']
 LOG_FILE = "dns_general.log"
 
 # Configuración de logging

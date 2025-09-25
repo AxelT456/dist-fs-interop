@@ -9,17 +9,25 @@ import sys
 CONFIG_FILE = 'config.json_axel'
 LOG_FILE = 'server.log'
 UPDATE_INTERVAL_SECONDS = 300  #segundos
-UDP_IP = "0.0.0.0"      # Correcto, escucha en todas partes.
-UDP_PORT = 50000
-SERVER_IP = "127.0.0.3" # Correcto, anuncia la IP del server_distributed server1.
-SERVER_PORT = 5002
+
+with open('network_config.json', 'r') as f:
+    net_config = json.load(f)
+
+# Obtener la configuración específica para este peer
+peer_config = net_config['peers']['server_axel']
+
+# --- CONFIGURACIÓN DE RED ---
+UDP_IP = "0.0.0.0" # Siempre escucha en 0.0.0.0
+UDP_PORT = peer_config['dns_port']
+SERVER_IP = peer_config['server_ip']
+SERVER_PORT = peer_config['server_port']
 
 # --- Variables Globales ---
 lista_archivos = []
 lista_archivos_lock = threading.Lock()
 folder_path = ""
 
-# --- Configuración del Logging ---
+# --- Configuración del Logging --
 def setup_logging():
     logging.basicConfig(
         level=logging.INFO,
