@@ -48,7 +48,7 @@ class ServidorDistribuido:
         self.transport = ReliableTransport(host, port)
         self.peer_connector = PeerConnector(
             self.transport, 
-            f"{host}:{port}", 
+            self.server_id, # <--- ¡Correcto! Usa el ID lógico.
             self._handle_secure_message
         )
         
