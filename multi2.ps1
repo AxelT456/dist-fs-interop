@@ -1,9 +1,12 @@
+# Carpeta donde está este script .ps1 (tu repo dist-fs-interop)
+$basePath = Split-Path -Parent $MyInvocation.MyCommand.Definition
+
 $commands = @(
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\server_distributed.py server1",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\server_distributed.py server2",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\server_distributed.py server_dan",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\server_distributed.py server_gus",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\server_distributed.py server_marco"
+  "python $(Join-Path $basePath 'server_distributed.py') server1",
+  "python $(Join-Path $basePath 'server_distributed.py') server2",
+  "python $(Join-Path $basePath 'server_distributed.py') server_dan",
+  "python $(Join-Path $basePath 'server_distributed.py') server_gus",
+  "python $(Join-Path $basePath 'server_distributed.py') server_marco"
 )
 
 foreach ($c in $commands) {

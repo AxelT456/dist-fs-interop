@@ -1,10 +1,13 @@
+# Obtiene la ruta absoluta de la carpeta donde está este script .ps1
+$basePath = Split-Path -Parent $MyInvocation.MyCommand.Definition
+
 $commands = @(
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\dns_general.py",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\servidor_nombres.py",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\servidor_dan.py",
-  "python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\server_marco.py",
-  "cmd /c echo C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server2 | python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\servidor_christian.py",
-  "cmd /c echo C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server_gus | python C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\servidor_gus.py"
+  "python $(Join-Path $basePath 'dns_general.py')",
+  "python $(Join-Path $basePath 'servidor_nombres.py')",
+  "python $(Join-Path $basePath 'servidor_dan.py')",
+  "python $(Join-Path $basePath 'server_marco.py')",
+  "cmd /c echo $(Join-Path $basePath 'archivos_server2') | python $(Join-Path $basePath 'servidor_christian.py')",
+  "cmd /c echo $(Join-Path $basePath 'archivos_server_gus') | python $(Join-Path $basePath 'servidor_gus.py')"
 )
 
 foreach ($c in $commands) {

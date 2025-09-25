@@ -7085,3 +7085,36 @@
 2025-09-24 21:29:08,806 - INFO - Petición de ('127.0.0.1', 50449): heartbeat
 2025-09-24 21:29:09,341 - INFO - Petición de ('127.0.0.1', 53897): heartbeat
 2025-09-24 21:29:09,779 - INFO - Petición de ('127.0.0.1', 61510): heartbeat
+2025-09-24 21:37:01,242 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-09-24 21:37:01,243 - INFO - Esperando registros de servidores...
+2025-09-24 21:37:10,562 - INFO - Petición de ('127.0.0.1', 50884): registrar_servidor
+2025-09-24 21:37:10,564 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-24 21:37:11,043 - INFO - Petición de ('127.0.0.1', 50885): registrar_servidor
+2025-09-24 21:37:11,044 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-24 21:37:11,503 - INFO - Petición de ('127.0.0.1', 50886): registrar_servidor
+2025-09-24 21:37:11,504 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-24 21:37:11,988 - INFO - Petición de ('127.0.0.1', 63448): registrar_servidor
+2025-09-24 21:37:11,991 - INFO - Servidor SERVER_GUS registrado con 3 archivos
+2025-09-24 21:37:12,406 - INFO - Petición de ('127.0.0.1', 63449): registrar_servidor
+2025-09-24 21:37:12,407 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-24 21:37:20,578 - INFO - Petición de ('127.0.0.1', 52396): registrar_servidor
+2025-09-24 21:37:20,579 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-24 21:37:20,580 - INFO - Petición de ('127.0.0.1', 52397): registrar_servidor
+2025-09-24 21:37:20,581 - INFO - Servidor SERVER1 registrado con 4 archivos
+2025-09-24 21:37:21,053 - INFO - Petición de ('127.0.0.1', 52399): registrar_servidor
+2025-09-24 21:37:21,053 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-24 21:37:21,054 - INFO - Petición de ('127.0.0.1', 52400): registrar_servidor
+2025-09-24 21:37:21,054 - INFO - Servidor SERVER2 registrado con 4 archivos
+2025-09-24 21:37:21,513 - INFO - Petición de ('127.0.0.1', 52401): registrar_servidor
+2025-09-24 21:37:21,514 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-24 21:37:21,515 - INFO - Petición de ('127.0.0.1', 52402): registrar_servidor
+2025-09-24 21:37:21,515 - INFO - Servidor SERVER_DAN registrado con 2 archivos
+2025-09-24 21:37:21,999 - INFO - Petición de ('127.0.0.1', 52403): registrar_servidor
+2025-09-24 21:37:22,000 - INFO - Servidor SERVER_GUS registrado con 3 archivos
+2025-09-24 21:37:22,001 - INFO - Petición de ('127.0.0.1', 52404): registrar_servidor
+2025-09-24 21:37:22,001 - INFO - Servidor SERVER_GUS registrado con 3 archivos
+2025-09-24 21:37:22,414 - INFO - Petición de ('127.0.0.1', 57327): registrar_servidor
+2025-09-24 21:37:22,415 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-24 21:37:22,416 - INFO - Petición de ('127.0.0.1', 57328): registrar_servidor
+2025-09-24 21:37:22,417 - INFO - Servidor SERVER_MARCO registrado con 2 archivos
+2025-09-24 21:37:25,549 - INFO - Petición de ('127.0.0.1', 53689): listar_archivos
