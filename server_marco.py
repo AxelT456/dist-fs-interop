@@ -159,9 +159,8 @@ class UDPServer(threading.Thread):
                 print(f"Petición recibida de {addr}: {request}")
                 action = request.get("accion")
 
-                if action == "consultar" and request.get("nombre_archivo") == "servidor_info":
-                    response = { "status": "ACK", "ip": self.server_ip, "puerto": self.server_port }
-                elif action == "consultar":
+                # --- LÓGICA ORIGINAL RESTAURADA ---
+                if action == "consultar":
                     name = request.get("name")
                     ext = request.get("extension")
                     file_entry = self.file_manager.get_available_file(name, ext)

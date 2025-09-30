@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizando: {{ filename }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Estilo simple para el contenido del archivo */
+        .file-content {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            white-space: pre-wrap; /* Mantiene los saltos de línea y espacios */
+            word-wrap: break-word; /* Evita que el texto se desborde */
+            font-family: monospace;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Visualizando: <strong>{{ filename }}</strong></h1>
+        </header>
+        <main>
+            <div class="file-content">
+                {{ content }}
+            </div>
+            <div class="form-actions">
+                <a href="{{ url_for('list_files') }}" class="btn btn-secondary">Volver a la Lista</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -143,7 +143,7 @@ class DNSGeneral:
         logging.info(message)
         
     def register_server(self, server_info: Dict) -> Dict:
-        """Registra un servidor en el DNS General"""
+        """Registra un servidor en el DNS General y actualiza el conteo total."""
         server_id = server_info.get("server_id")
         ip = server_info.get("ip")
         port = server_info.get("port")
@@ -160,10 +160,13 @@ class DNSGeneral:
                 "last_update": datetime.now().timestamp()
             }
             
-            # Actualizar índice global
             self._update_global_index(server_id, archivos, ip, port)
             
-        self.log(f"Servidor {server_id} registrado con {len(archivos)} archivos")
+        self.log(f"Servidor {server_id} registrado con {len(archivos)} archivos.")
+        
+        # --- CAMBIO: Añadimos un log con el conteo total ---
+        self.log(f"Índice actualizado. Total de archivos únicos en el sistema: {len(self.global_file_index)}")
+        
         return {"status": "ACK", "mensaje": f"Servidor {server_id} registrado correctamente"}
     
     def _update_global_index(self, server_id: str, archivos: List[Dict], ip: str, port: int):

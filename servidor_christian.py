@@ -2,6 +2,7 @@ import os
 import json
 import threading
 import time
+import sys
 import socket
 from datetime import datetime
 
@@ -114,18 +115,20 @@ class FileServer:
         return can_publish, ttl
     
     def update_files(self):
+        """Escanea la carpeta y publica automáticamente los archivos."""
         current_files = self.scan_folder()
         with lock:
             known_files = set(self.file_list.keys())
 
-            # Archivos nuevos
+            # Archivos nuevos: publicarlos automáticamente
             new_files = current_files - known_files
             for f in new_files:
                 name, ext = f.rsplit(".", 1)
-                self.log(f"Nuevo archivo detectado: {f}")
-                can_publish, ttl = self.ask_user_for_file(name, ext)
+                self.log(f"Nuevo archivo detectado y auto-publicado: {f}")
+                # Asignamos permiso y un TTL por defecto de 1 hora
+                can_publish = True
+                ttl = 3600
                 self.file_list[f] = FileEntry(name, ext, ttl, can_publish)
-                self.log(f"Archivo '{f}' agregado con permiso {can_publish} y TTL {ttl}")
             
             # Archivos eliminados
             removed_files = known_files - current_files
@@ -152,10 +155,11 @@ class FileServer:
         while self.running:
             try:
                 data, addr = sock.recvfrom(1024)
+                self.log(f"Paquete UDP recibido de {addr}")
                 msg = data.decode("utf-8")
                 try:
                     req = json.loads(msg)
-
+                    self.log(f"entrada request: {req}")
                     # 👇 Nuevo caso: consulta de info del servidor
                     if req.get("accion") == "consultar" and req.get("nombre_archivo") == "servidor_info":
                         resp = {
@@ -205,6 +209,8 @@ class FileServer:
                 except json.JSONDecodeError:
                     resp = {"response": "NACK", "reason": "JSON inválido"}
                     
+                self.log(f"Salida request: {req}")  
+                self.log(f"Respuesta enviada a {addr}: {resp}")  
                 resp_bytes = json.dumps(resp).encode("utf-8")
                 sock.sendto(resp_bytes, addr)
                 
@@ -232,9 +238,17 @@ class FileServer:
 
 
 if __name__ == "__main__":
-    folder = input("Introduce la ruta absoluta de la carpeta a monitorear: ").strip()
+    folder = ""
+    # Revisa si se pasó una ruta como argumento
+    if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
+        folder = sys.argv[1]
+    else:
+        # Si no, pregunta al usuario como antes
+        folder = input("Introduce la ruta absoluta de la carpeta a monitorear: ").strip()
+
     if not os.path.isdir(folder):
         print("La carpeta no existe o no es válida.")
         exit(1)
+        
     server = FileServer(folder)
     server.start()

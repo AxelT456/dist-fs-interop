@@ -10,6 +10,7 @@
     <div class="container">
         <header>
             <h1>Editando: <strong>{{ filename }}</strong></h1>
+            <p class="lock-info">🔒 Has bloqueado este archivo para edición. Se liberará automáticamente si abandonas esta página.</p>
         </header>
 
         <main>
@@ -19,11 +20,35 @@
                 <textarea name="content" rows="20">{{ content }}</textarea>
                 
                 <div class="form-actions">
-                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <a href="{{ url_for('cancel_edit', filename=filename) }}" class="btn btn-secondary" onclick="setLeavingFlag()">Cancelar y Liberar Bloqueo</a>
+                    <button type="submit" class="btn btn-primary" onclick="setLeavingFlag()">Guardar Cambios</button>
                 </div>
             </form>
         </main>
     </div>
+
+    <script>
+        // Esta variable nos dice si el usuario se fue usando nuestros botones.
+        let isLeavingIntentionally = false;
+
+        function setLeavingFlag() {
+            // Cuando se hace clic en 'Guardar' o 'Cancelar', activamos la bandera.
+            isLeavingIntentionally = true;
+        }
+
+        // El evento 'pagehide' es la forma moderna y fiable de detectar
+        // cuando un usuario abandona una página.
+        window.addEventListener('pagehide', function(event) {
+            // Si el usuario NO se fue usando nuestros botones (ej. usó 'Atrás'),
+            // entonces liberamos el bloqueo.
+            if (!isLeavingIntentionally) {
+                // 'navigator.sendBeacon' es una forma especial de enviar una solicitud
+                // que el navegador garantiza que se completará, incluso si la página ya se está cerrando.
+                // Es perfecto para este tipo de limpieza.
+                const url = "{{ url_for('cancel_edit', filename=filename) }}";
+                navigator.sendBeacon(url);
+            }
+        });
+    </script>
 </body>
 </html>

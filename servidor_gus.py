@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import threading
 import time
@@ -219,9 +220,17 @@ class FileServer:
 
 
 if __name__ == "__main__":
-    folder = input("Introduce la ruta absoluta de la carpeta a monitorear: ").strip()
+    folder = ""
+    # Revisa si se pasó una ruta como argumento
+    if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
+        folder = sys.argv[1]
+    else:
+        # Si no, pregunta al usuario como antes
+        folder = input("Introduce la ruta absoluta de la carpeta a monitorear: ").strip()
+
     if not os.path.isdir(folder):
         print("La carpeta no existe o no es válida.")
         exit(1)
+
     server = FileServer(folder)
     server.start()

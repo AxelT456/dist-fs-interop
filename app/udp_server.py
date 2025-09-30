@@ -10,17 +10,16 @@ from .config import ConfigManager
 
 log = logging.getLogger(__name__)
 
-
 class UdpServer:
+    # --- CAMBIO: Se eliminan los valores por defecto fijos ---
+    # Ahora, quien cree esta clase DEBE proporcionar estos valores.
     def __init__(
         self,
         config: ConfigManager,
-        # CAMBIO: IP y puerto donde este servidor DNS escuchará
+        port: int,
+        server_ip: str,
+        server_port: int,
         host: str = "0.0.0.0",
-        port: int = 50004,
-        # CAMBIO: IP y puerto del servidor de archivos que se anunciará
-        server_ip: str = "127.0.0.9",
-        server_port: int = 5006,
     ) -> None:
         self._config = config
         self._host = host
@@ -28,12 +27,12 @@ class UdpServer:
         self._server_ip = server_ip
         self._server_port = server_port
 
-    # En app/udp_server.py, reemplaza el método _handle_request
     def _handle_request(self, data: bytes, addr: Tuple[str, int]) -> bytes:
         try:
             payload = json.loads(data.decode("utf-8"))
             action = payload.get("accion")
 
+            # --- CAMBIO: Añadimos este caso especial ---
             if action == "consultar" and payload.get("nombre_archivo") == "servidor_info":
                 response = { "status": "ACK", "ip": self._server_ip, "puerto": self._server_port, }
             elif action == "consultar_ip":
@@ -48,9 +47,6 @@ class UdpServer:
         return json.dumps(response).encode("utf-8")
 
     def _handle_query(self, payload: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Maneja la acción 'consultar_ip' para un archivo específico.
-        """
         filename = payload.get("filename")
         if not filename or not isinstance(filename, str):
             return {"status": "NACK", "error": "invalid filename"}
@@ -59,41 +55,29 @@ class UdpServer:
 
         if meta and meta.publish:
             return {
-                "status": "ACK",
-                "filename": filename,
-                "ttl": meta.ttl,
-                "ip": self._server_ip,
-                "port": self._server_port,
+                "status": "ACK", "filename": filename, "ttl": meta.ttl,
+                "ip": self._server_ip, "port": self._server_port,
             }
         else:
             return {
-                "status": "NACK",
-                "filename": filename,
+                "status": "NACK", "filename": filename,
                 "error": "archivo no encontrado o no publicado",
             }
 
     def _handle_list(self) -> Dict[str, Any]:
-        """
-        Maneja la acción 'listar_archivos' para devolver todos los archivos publicados.
-        """
         published_files = self._config.list_published_files()
         
         file_list = []
         for name, config in published_files.items():
             _, ext = os.path.splitext(name)
             file_list.append({
-                "nombre_archivo": name,
-                "extension": ext.lstrip("."),
-                "publicado": config.publish,
-                "ttl": config.ttl,
+                "nombre_archivo": name, "extension": ext.lstrip("."),
+                "publicado": config.publish, "ttl": config.ttl,
             })
 
         return {
-            "status": "ACK",
-            "archivos": file_list,
-            "total": len(file_list),
-            "ip": self._server_ip,
-            "port": self._server_port,
+            "status": "ACK", "archivos": file_list, "total": len(file_list),
+            "ip": self._server_ip, "port": self._server_port,
         }
 
     def run(self) -> None:

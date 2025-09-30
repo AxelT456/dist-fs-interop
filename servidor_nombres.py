@@ -213,26 +213,28 @@ def main():
     setup_logging()
     logging.info("Iniciando el servidor de nombres de recursos...")
 
-    # Cargar configuración existente o inicializar
     lista_archivos = cargar_configuracion()
     
+    # Si la ruta no es válida, intenta obtenerla de los argumentos del script
     if not folder_path or not os.path.isdir(folder_path):
-        logging.warning("No se encontró una ruta válida en la configuración.")
-        while True:
-            folder_path = input("Por favor, introduce la ruta completa de la carpeta a monitorear: ")
-            if os.path.isdir(folder_path):
-                break
-            else:
-                print("La ruta no es válida o no es un directorio. Inténtalo de nuevo.")
+        if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
+            folder_path = sys.argv[1]
+            logging.info(f"Ruta de carpeta obtenida por argumento: {folder_path}")
+        else:
+            logging.warning("No se encontró una ruta válida en config o argumentos.")
+            # Si falla, vuelve a preguntar como antes
+            while True:
+                folder_path = input("Por favor, introduce la ruta completa de la carpeta a monitorear: ")
+                if os.path.isdir(folder_path):
+                    break
+                else:
+                    print("La ruta no es válida o no es un directorio. Inténtalo de nuevo.")
 
-    # Realizar el primer escaneo y actualización al arrancar
     escanear_y_actualizar(primera_vez=True)
     
-    # Iniciar el hilo que actualiza la carpeta periódicamente
     hilo_updater = threading.Thread(target=hilo_actualizador, name="ActualizadorCarpeta", daemon=True)
     hilo_updater.start()
 
-    # Iniciar el hilo del servidor UDP
     hilo_udp = threading.Thread(target=hilo_servidor_udp, name="ServidorUDP", daemon=True)
     hilo_udp.start()
 
@@ -245,7 +247,6 @@ def main():
     print("="*50 + "\n")
 
     try:
-        # Mantenemos el hilo principal vivo para que los hilos daemon puedan correr
         while True:
             time.sleep(1)
     except KeyboardInterrupt:

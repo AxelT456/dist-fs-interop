@@ -1,14 +1,16 @@
-# Carpeta donde está este script .ps1 (tu repo dist-fs-interop)
-$basePath = Split-Path -Parent $MyInvocation.MyCommand.Definition
+# start_distributed_servers.ps1 (Versión Final Explícita)
 
-$commands = @(
-  "python $(Join-Path $basePath 'server_distributed.py') server1",
-  "python $(Join-Path $basePath 'server_distributed.py') server2",
-  "python $(Join-Path $basePath 'server_distributed.py') server_dan",
-  "python $(Join-Path $basePath 'server_distributed.py') server_gus",
-  "python $(Join-Path $basePath 'server_distributed.py') server_marco"
-)
+# Obtiene la ruta absoluta de la carpeta donde está este script .ps1
+$basePath = (Get-Item -Path ".\" -Verbose).FullName
 
-foreach ($c in $commands) {
-  Start-Process -FilePath "powershell.exe" -ArgumentList "-NoExit","-Command",$c
-}
+# --- Definimos explícitamente la ruta al script principal ---
+$distributedScript = Join-Path $basePath 'server_distributed.py'
+
+# --- Lanzamos cada proceso con su argumento específico ---
+Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$distributedScript`" SERVER1"
+Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$distributedScript`" SERVER_MARCO"
+Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$distributedScript`" server_dan"
+Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$distributedScript`" server_gus"
+Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$distributedScript`" server_christian"
+
+Write-Host "Lanzados los servidores distribuidos."

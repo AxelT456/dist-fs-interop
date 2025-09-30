@@ -2,13 +2,13 @@
     "folder_path": "C:\\Users\\marco\\OneDrive\\Desktop\\Archivosv1\\gits\\dist-fs-interop\\archivos_server1",
     "files": [
         {
-            "nombre_archivo": "novela.txt",
+            "nombre_archivo": "archivo1.txt",
             "extension": ".txt",
             "publicado": true,
             "ttl": 300
         },
         {
-            "nombre_archivo": "archivo1.txt",
+            "nombre_archivo": "novela.txt",
             "extension": ".txt",
             "publicado": true,
             "ttl": 300

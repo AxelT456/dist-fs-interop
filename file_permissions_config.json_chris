@@ -1,26 +1,26 @@
 {
+    "manual.txt": {
+        "name": "manual",
+        "extension": "txt",
+        "ttl": 3600,
+        "can_publish": true
+    },
     "nuevo_s2.txt": {
         "name": "nuevo_s2",
         "extension": "txt",
-        "ttl": 300,
+        "ttl": 3600,
         "can_publish": true
     },
     "guia.txt": {
         "name": "guia",
         "extension": "txt",
-        "ttl": 300,
-        "can_publish": true
-    },
-    "manual.txt": {
-        "name": "manual",
-        "extension": "txt",
-        "ttl": 300,
+        "ttl": 3600,
         "can_publish": true
     },
     "libro2.txt": {
         "name": "libro2",
         "extension": "txt",
-        "ttl": 300,
+        "ttl": 3600,
         "can_publish": true
     }
 }
