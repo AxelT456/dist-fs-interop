@@ -4874,3 +4874,53 @@
 2025-10-13 08:09:12,547 - INFO - Índice actualizado. Total de archivos únicos en el sistema: 2
 2025-10-13 08:09:42,551 - INFO - Petición de ('172.26.164.194', 59248): heartbeat
 2025-10-13 08:10:12,553 - INFO - Petición de ('172.26.164.194', 55378): heartbeat
+2025-11-13 10:00:11,000 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-11-13 10:00:11,002 - INFO - Esperando registros de servidores...
+2025-11-13 10:01:53,290 - INFO - Petición de ('172.31.4.236', 54508): registrar_servidor
+2025-11-13 10:01:53,291 - INFO - Servidor SERVER_MARCO registrado con 0 archivos.
+2025-11-13 10:01:53,291 - INFO - Índice actualizado. Total de archivos únicos en el sistema: 0
+2025-11-13 10:02:23,294 - INFO - Petición de ('172.31.4.236', 64787): heartbeat
+2025-11-13 10:02:53,296 - INFO - Petición de ('172.31.4.236', 54451): heartbeat
+2025-11-13 10:03:23,298 - INFO - Petición de ('172.31.4.236', 50061): heartbeat
+2025-11-13 10:03:53,300 - INFO - Petición de ('172.31.4.236', 60514): heartbeat
+2025-11-13 10:04:23,302 - INFO - Petición de ('172.31.4.236', 59411): heartbeat
+2025-11-13 10:04:53,305 - INFO - Petición de ('172.31.4.236', 61115): heartbeat
+2025-11-13 10:05:23,307 - INFO - Petición de ('172.31.4.236', 59608): heartbeat
+2025-11-13 10:05:53,309 - INFO - Petición de ('172.31.4.236', 64618): heartbeat
+2025-11-13 10:06:23,311 - INFO - Petición de ('172.31.4.236', 51415): heartbeat
+2025-11-13 10:06:53,313 - INFO - Petición de ('172.31.4.236', 62717): heartbeat
+2025-11-13 10:07:23,316 - INFO - Petición de ('172.31.4.236', 58867): heartbeat
+2025-11-13 10:07:53,318 - INFO - Petición de ('172.31.4.236', 58330): heartbeat
+2025-11-13 10:08:23,321 - INFO - Petición de ('172.31.4.236', 49442): heartbeat
+2025-11-13 10:08:53,323 - INFO - Petición de ('172.31.4.236', 49737): heartbeat
+2025-11-13 10:09:23,325 - INFO - Petición de ('172.31.4.236', 49487): heartbeat
+2025-11-13 10:09:53,327 - INFO - Petición de ('172.31.4.236', 60688): heartbeat
+2025-11-13 10:10:23,329 - INFO - Petición de ('172.31.4.236', 58000): heartbeat
+2025-11-13 10:10:53,331 - INFO - Petición de ('172.31.4.236', 61638): heartbeat
+2025-11-13 10:11:23,385 - INFO - DNS General iniciado en 0.0.0.0:50005
+2025-11-13 10:11:23,386 - INFO - Esperando registros de servidores...
+2025-11-13 10:11:39,378 - INFO - Petición de ('172.31.4.236', 64375): registrar_servidor
+2025-11-13 10:11:39,378 - INFO - Servidor SERVER_MARCO registrado con 0 archivos.
+2025-11-13 10:11:39,379 - INFO - Índice actualizado. Total de archivos únicos en el sistema: 0
+2025-11-13 10:11:52,269 - INFO - Petición de ('172.31.4.236', 63306): listar_bloqueos
+2025-11-13 10:11:52,472 - INFO - Petición de ('172.31.4.236', 63307): listar_archivos
+2025-11-13 10:12:09,382 - INFO - Petición de ('172.31.4.236', 54576): heartbeat
+2025-11-13 10:12:49,136 - INFO - Petición de ('172.31.4.236', 62243): registrar_servidor
+2025-11-13 10:12:49,137 - INFO - Servidor SERVER_MARCO registrado con 2 archivos.
+2025-11-13 10:12:49,138 - INFO - Índice actualizado. Total de archivos únicos en el sistema: 2
+2025-11-13 10:13:01,839 - INFO - Petición de ('172.31.4.236', 64946): listar_bloqueos
+2025-11-13 10:13:02,042 - INFO - Petición de ('172.31.4.236', 64947): listar_archivos
+2025-11-13 10:13:06,678 - INFO - Petición de ('172.31.4.236', 64606): listar_bloqueos
+2025-11-13 10:13:06,881 - INFO - Petición de ('172.31.4.236', 64607): listar_archivos
+2025-11-13 10:13:07,654 - INFO - Petición de ('172.31.4.236', 64608): solicitar_bloqueo
+2025-11-13 10:13:07,655 - INFO - Archivo 'poesia.txt' bloqueado para escritura por SERVER_MARCO
+2025-11-13 10:13:15,958 - INFO - Petición de ('172.31.4.236', 62476): liberar_bloqueo
+2025-11-13 10:13:15,958 - INFO - Bloqueo liberado para 'poesia.txt' por SERVER_MARCO
+2025-11-13 10:13:16,183 - INFO - Petición de ('172.31.4.236', 62477): listar_bloqueos
+2025-11-13 10:13:16,385 - INFO - Petición de ('172.31.4.236', 62478): listar_archivos
+2025-11-13 10:13:19,140 - INFO - Petición de ('172.31.4.236', 61717): heartbeat
+2025-11-13 10:13:19,700 - INFO - Petición de ('172.31.4.236', 52110): listar_bloqueos
+2025-11-13 10:13:19,902 - INFO - Petición de ('172.31.4.236', 52111): listar_archivos
+2025-11-13 10:13:49,142 - INFO - Petición de ('172.31.4.236', 64370): heartbeat
+2025-11-13 10:14:19,145 - INFO - Petición de ('172.31.4.236', 62266): heartbeat
+2025-11-13 10:19:23,388 - INFO - Eliminando servidor inactivo: SERVER_MARCO
