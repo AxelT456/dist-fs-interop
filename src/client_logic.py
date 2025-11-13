@@ -22,7 +22,7 @@ DNS_SERVERS = []
 for peer_name, peer_data in net_config['peers'].items():
     DNS_SERVERS.append({
         "id": peer_data['id_dns_cliente'],
-        "ip": peer_data['dns_ip'],
+        "ip": peer_data['server_ip'], 
         "port": peer_data['dns_port'],
         "description": f"DNS para {peer_name}",
         # --- LÍNEA CORREGIDA QUE FALTABA ---
@@ -139,6 +139,7 @@ class ClientLogic:
         
         dns_id = self.dns_info['id']
         print(f"Intentando consultar al DNS '{dns_id}' usando el traductor...")
+        print(f"Datos a conectar '{dns_id}' ")
 
         # Creamos una petición estándar. El traductor se encargará de adaptarla.
         standard_request = {

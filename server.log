@@ -1007,3 +1007,54 @@
 2025-09-30 09:33:12,614 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 58932)
 2025-09-30 09:34:12,622 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53835): {'accion': 'listar_archivos'}
 2025-09-30 09:34:12,623 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 53835)
+[2025-09-30T10:14:01.678729] ARCHIVO AGREGADO: filosofia.txt con TTL=3600
+[2025-09-30T10:14:03.353221] ARCHIVO AGREGADO: poesia.txt con TTL=3600
+2025-10-02 09:51:31,964 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-10-02 09:51:31,983 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 09:51:31,986 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-10-02 09:51:31,990 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-10-02 09:51:40,195 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53736): {'accion': 'listar_archivos'}
+2025-10-02 09:51:40,197 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 53736)
+2025-10-02 09:51:58,385 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 61348): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-10-02 09:52:40,205 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57170): {'accion': 'listar_archivos'}
+2025-10-02 09:52:40,206 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57170)
+2025-10-02 09:53:40,208 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 52468): {'accion': 'listar_archivos'}
+2025-10-02 09:53:40,209 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 52468)
+2025-10-02 09:54:40,210 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57183): {'accion': 'listar_archivos'}
+2025-10-02 09:54:40,211 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57183)
+2025-10-02 09:55:40,213 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56731): {'accion': 'listar_archivos'}
+2025-10-02 09:55:40,214 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 56731)
+2025-10-02 09:56:31,989 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 09:56:40,216 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 57048): {'accion': 'listar_archivos'}
+2025-10-02 09:56:40,217 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 57048)
+2025-10-02 09:57:40,219 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54548): {'accion': 'listar_archivos'}
+2025-10-02 09:57:40,220 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 54548)
+2025-10-02 09:58:40,222 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 63988): {'accion': 'listar_archivos'}
+2025-10-02 09:58:40,223 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 63988)
+2025-10-02 09:59:40,225 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 54438): {'accion': 'listar_archivos'}
+2025-10-02 09:59:40,226 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 54438)
+2025-10-02 10:16:19,810 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-10-02 10:16:19,811 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 10:16:19,814 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-10-02 10:16:19,818 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-10-02 10:43:56,190 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-10-02 10:43:56,194 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 10:43:56,197 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-10-02 10:43:56,202 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-10-02 10:48:56,200 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 10:53:56,203 - ActualizadorCarpeta - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 10:55:30,410 - MainThread - INFO - Iniciando el servidor de nombres de recursos...
+2025-10-02 10:55:30,414 - MainThread - INFO - Iniciando escaneo de la carpeta: C:\Users\marco\OneDrive\Desktop\Archivosv1\gits\dist-fs-interop\archivos_server1
+2025-10-02 10:55:30,417 - MainThread - INFO - Configuración guardada exitosamente en config.json
+2025-10-02 10:55:30,423 - ServidorUDP - INFO - Servidor UDP escuchando en el puerto 50000
+2025-10-02 10:55:37,526 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 53149): {'accion': 'listar_archivos'}
+2025-10-02 10:55:37,527 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 53149)
+2025-10-02 10:55:58,756 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 56900): {'accion': 'consultar', 'nombre_archivo': 'servidor_info'}
+2025-10-02 10:56:37,605 - ServidorUDP - INFO - Petición recibida de ('127.0.0.1', 49544): {'accion': 'listar_archivos'}
+2025-10-02 10:56:37,607 - ServidorUDP - INFO - Enviada lista de 4 archivos a ('127.0.0.1', 49544)
+[2025-10-07T10:19:32.209254] ARCHIVO AGREGADO: filosofia.txt con TTL=3600
+[2025-10-07T10:19:35.162745] ARCHIVO AGREGADO: poesia.txt con TTL=3600
+[2025-10-09T12:15:11.809858] ARCHIVO AGREGADO: poesia.txt con TTL=3600
+[2025-10-09T12:15:14.312978] ARCHIVO AGREGADO: filosofia.txt con TTL=3600
+[2025-10-13T07:45:30.642741] ARCHIVO AGREGADO: poesia.txt con TTL=3600
+[2025-10-13T07:45:32.575334] ARCHIVO AGREGADO: filosofia.txt con TTL=3600

@@ -14,19 +14,24 @@ def driver_servidor_nombres(request: Dict, dns_address: Tuple[str, int]) -> Dict
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.settimeout(5)
-            # --- CAMBIO CLAVE: Especificar la IP de origen ---
-            sock.bind(('127.0.0.1', 0)) # Forzar el remitente a ser 127.0.0.1
+           # --- CAMBIO: Usar 0.0.0.0 permite salir a la red O quedarse local ---
+            # El 0 en el puerto indica al OS que asigne un puerto efímero aleatorio libre.
+            sock.bind(('0.0.0.0', 0))
             
             accion = request.get("accion")
+            print("INtento de ver info : ", accion)
             if accion == "consultar":
                 dns_request = {"accion": "consultar", "nombre_archivo": request.get("nombre_archivo", "server_info")}
             elif accion == "listar_archivos":
                 dns_request = {"accion": "listar_archivos"}
             else:
                 return {"status": "ERROR", "mensaje": f"Acción {accion} no soportada"}
-            
+            print("FIN DE CONSULTA O LISTAR a tomar en cuenta ",dns_address)
             sock.sendto(json.dumps(dns_request).encode('utf-8'), dns_address)
+            print("SEND LISTO")
             data, addr = sock.recvfrom(4096)
+            print("DATA LISTO")
+            print("Data recibida del servidor de nombres: ", data)
             return json.loads(data.decode('utf-8'))
     except Exception as e:
         return {"status": "ERROR", "mensaje": str(e)}
@@ -36,8 +41,9 @@ def driver_servidor_christian(request: Dict, dns_address: Tuple[str, int]) -> Di
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.settimeout(5)
-            # --- CAMBIO CLAVE: Especificar la IP de origen ---
-            sock.bind(('127.0.0.1', 0))
+            # --- CAMBIO: Usar 0.0.0.0 permite salir a la red O quedarse local ---
+            # El 0 en el puerto indica al OS que asigne un puerto efímero aleatorio libre.
+            sock.bind(('0.0.0.0', 0))
 
             accion = request.get("accion")
             nombre_archivo = request.get("nombre_archivo")
@@ -72,8 +78,9 @@ def driver_servidor_marco(request: Dict, dns_address: Tuple[str, int]) -> Dict:
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.settimeout(5)
-            # --- CAMBIO CLAVE: Especificar la IP de origen ---
-            sock.bind(('127.0.0.1', 0))
+            # --- CAMBIO: Usar 0.0.0.0 permite salir a la red O quedarse local ---
+            # El 0 en el puerto indica al OS que asigne un puerto efímero aleatorio libre.
+            sock.bind(('0.0.0.0', 0))
 
             accion = request.get("accion")
             nombre_archivo = request.get("nombre_archivo")
@@ -111,8 +118,9 @@ def driver_servidor_dan(request: Dict, dns_address: Tuple[str, int]) -> Dict:
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.settimeout(5)
-            # --- CAMBIO CLAVE: Especificar la IP de origen ---
-            sock.bind(('127.0.0.1', 0))
+            # --- CAMBIO: Usar 0.0.0.0 permite salir a la red O quedarse local ---
+            # El 0 en el puerto indica al OS que asigne un puerto efímero aleatorio libre.
+            sock.bind(('0.0.0.0', 0))
 
             accion = request.get("accion")
             nombre_archivo = request.get("nombre_archivo")
@@ -138,8 +146,9 @@ def driver_servidor_gus(request: Dict, dns_address: Tuple[str, int]) -> Dict:
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.settimeout(5)
-            # --- CAMBIO CLAVE: Especificar la IP de origen ---
-            sock.bind(('127.0.0.1', 0))
+           # --- CAMBIO: Usar 0.0.0.0 permite salir a la red O quedarse local ---
+            # El 0 en el puerto indica al OS que asigne un puerto efímero aleatorio libre.
+            sock.bind(('0.0.0.0', 0))
 
             accion = request.get("accion")
             if accion == "consultar" and request.get("nombre_archivo") == "servidor_info":
@@ -186,9 +195,20 @@ class DNSTranslatorIntegrated:
         self.dns_servers = {dns["id"]: dns for dns in self.config.get("dns_servers", [])}
         self.drivers = self._register_drivers()
         logging.info(f"DNSTranslatorIntegrated inicializado con {len(self.drivers)} drivers desde config.")
+        
+    def _register_drivers(self) -> Dict:
+        """Registra todos los drivers disponibles"""
+        return {
+            "driver_servidor_nombres": driver_servidor_nombres,
+            "driver_servidor_christian": driver_servidor_christian,
+            "driver_servidor_marco": driver_servidor_marco,
+            "driver_servidor_dan": driver_servidor_dan,
+            "driver_servidor_gus": driver_servidor_gus,
+            "driver_dns_general": driver_dns_general
+        }
 
     def _load_and_build_config(self) -> Dict:
-        """Carga network_config.json y construye la configuración del traductor."""
+        """Carga network_config.json y almacena AMBAS IPs (interna y externa)."""
         try:
             with open('network_config.json', 'r') as f:
                 net_config = json.load(f)
@@ -211,38 +231,20 @@ class DNSTranslatorIntegrated:
                 dns_servers_list.append({
                     "id": peer_info["id_dns_cliente"],
                     "type": type,
-                    "host": peer_info["dns_ip"],
+                    # --- CAMBIO: Almacenamos ambas IPs con nombres claros ---
+                    "host_internal": peer_info["dns_ip"],      # Para comunicación en la misma máquina
+                    "host_external": peer_info["server_ip"],   # Para comunicación entre máquinas
                     "port": peer_info["dns_port"],
                     "driver": driver,
                     "server_id": server_id
                 })
-
-        dns_general_info = net_config.get("dns_general")
-        if dns_general_info:
-            dns_servers_list.append({
-                "id": "dns_general",
-                "type": "dns_general",
-                "host": dns_general_info["connect_ip"],
-                "port": dns_general_info["port"],
-                "driver": "driver_dns_general",
-                "server_id": "DNS_GENERAL"
-            })
-        
+        # ... (el resto de la función para el dns_general no cambia) ...
         return {"dns_servers": dns_servers_list}
-    
-    def _register_drivers(self) -> Dict:
-        """Registra todos los drivers disponibles"""
-        return {
-            "driver_servidor_nombres": driver_servidor_nombres,
-            "driver_servidor_christian": driver_servidor_christian,
-            "driver_servidor_marco": driver_servidor_marco,
-            "driver_servidor_dan": driver_servidor_dan,
-            "driver_servidor_gus": driver_servidor_gus,
-            "driver_dns_general": driver_dns_general
-        }
-    
-    def _try_resolve(self, request: Dict, dns_id: str) -> Dict:
-        """Intenta resolver con un DNS específico"""
+
+    def _try_resolve(self, request: Dict, dns_id: str, caller_context: str = 'external') -> Dict:
+        """
+        Intenta resolver con un DNS específico, usando una bandera de contexto para elegir la IP.
+        """
         if dns_id not in self.dns_servers:
             return {"status": "ERROR", "mensaje": f"DNS {dns_id} no encontrado en configuración"}
         
@@ -254,7 +256,20 @@ class DNSTranslatorIntegrated:
         
         try:
             driver_function = self.drivers[driver_name]
-            dns_address = (dns_config["host"], dns_config["port"])
+            
+            # --- LÓGICA CONDICIONAL CON LA BANDERA ---
+            if caller_context == 'internal':
+                # El servidor usa la IP interna para hablar consigo mismo
+                host_to_use = dns_config["host_internal"]
+            else: # 'external' o cualquier otro valor
+                # El cliente usa la IP externa para hablar por la red
+                host_to_use = dns_config["host_external"]
+            
+            dns_address = (host_to_use, dns_config["port"])
+            
+            print(f"llegaste lejos crack ({caller_context})", dns_id)
+            print("datos de direccion a conectar : ", dns_address)
+            
             result = driver_function(request, dns_address)
             
             if isinstance(result, dict):

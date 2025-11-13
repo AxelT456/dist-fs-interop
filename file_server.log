@@ -1775,3 +1775,105 @@ ns_config.json_chris
 [2025-09-30T09:33:14.745461] entrada request: {'type': 'list'}
 [2025-09-30T09:33:14.746114] Salida request: {'type': 'list'}
 [2025-09-30T09:33:14.747206] Respuesta enviada a ('127.0.0.1', 58940): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-09-30T10:16:16.778732] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-30T10:16:16.780494] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-30T10:16:16.782141] Este DNS anunciará la IP del servidor de archivos: 10.54.106.235:5007
+[2025-09-30T10:16:16.785485] Configuración guardada en file_permissions_config_gus.json
+[2025-09-30T10:16:16.790497] Configuración guardada en file_permissions_config_gus.json
+[2025-09-30T10:18:04.871851] Configuración cargada desde file_permissions_config_gus.json
+[2025-09-30T10:18:04.873497] Iniciando servidor de nombres de recursos de archivo.
+[2025-09-30T10:18:04.875314] Este DNS anunciará la IP del servidor de archivos: 10.54.106.235:5007
+[2025-09-30T10:18:04.879458] Configuración guardada en file_permissions_config_gus.json
+[2025-09-30T10:18:04.885927] Configuración guardada en file_permissions_config_gus.json
+[2025-09-30T10:23:04.889928] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T09:51:34.343105] Cargada configuración desde file_permissions_config.json_chris
+[2025-10-02T09:51:34.346053] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T09:51:34.351511] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T09:51:34.357519] Servidor UDP iniciado en 0.0.0.0:50003
+[2025-10-02T09:51:34.358686] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T09:51:34.895214] Configuración cargada desde file_permissions_config_gus.json
+[2025-10-02T09:51:34.896278] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T09:51:34.897718] Este DNS anunciará la IP del servidor de archivos: 127.0.0.4:5007
+[2025-10-02T09:51:34.913496] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T09:51:34.917890] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T09:51:42.336163] Paquete UDP recibido de ('127.0.0.1', 58707)
+[2025-10-02T09:51:42.337316] entrada request: {'type': 'list'}
+[2025-10-02T09:51:42.338587] Salida request: {'type': 'list'}
+[2025-10-02T09:51:42.339847] Respuesta enviada a ('127.0.0.1', 58707): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:52:42.350406] Paquete UDP recibido de ('127.0.0.1', 50534)
+[2025-10-02T09:52:42.351978] entrada request: {'type': 'list'}
+[2025-10-02T09:52:42.354020] Salida request: {'type': 'list'}
+[2025-10-02T09:52:42.355897] Respuesta enviada a ('127.0.0.1', 50534): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:53:42.359408] Paquete UDP recibido de ('127.0.0.1', 52477)
+[2025-10-02T09:53:42.360480] entrada request: {'type': 'list'}
+[2025-10-02T09:53:42.362009] Salida request: {'type': 'list'}
+[2025-10-02T09:53:42.364238] Respuesta enviada a ('127.0.0.1', 52477): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:54:42.367497] Paquete UDP recibido de ('127.0.0.1', 57192)
+[2025-10-02T09:54:42.368261] entrada request: {'type': 'list'}
+[2025-10-02T09:54:42.369984] Salida request: {'type': 'list'}
+[2025-10-02T09:54:42.370766] Respuesta enviada a ('127.0.0.1', 57192): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:55:42.373610] Paquete UDP recibido de ('127.0.0.1', 56740)
+[2025-10-02T09:55:42.374411] entrada request: {'type': 'list'}
+[2025-10-02T09:55:42.375425] Salida request: {'type': 'list'}
+[2025-10-02T09:55:42.376285] Respuesta enviada a ('127.0.0.1', 56740): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:56:34.364637] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T09:56:34.942099] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T09:56:42.379291] Paquete UDP recibido de ('127.0.0.1', 57057)
+[2025-10-02T09:56:42.380358] entrada request: {'type': 'list'}
+[2025-10-02T09:56:42.381485] Salida request: {'type': 'list'}
+[2025-10-02T09:56:42.382839] Respuesta enviada a ('127.0.0.1', 57057): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:57:42.385971] Paquete UDP recibido de ('127.0.0.1', 54557)
+[2025-10-02T09:57:42.387144] entrada request: {'type': 'list'}
+[2025-10-02T09:57:42.388172] Salida request: {'type': 'list'}
+[2025-10-02T09:57:42.389328] Respuesta enviada a ('127.0.0.1', 54557): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:58:42.392566] Paquete UDP recibido de ('127.0.0.1', 63997)
+[2025-10-02T09:58:42.394651] entrada request: {'type': 'list'}
+[2025-10-02T09:58:42.395869] Salida request: {'type': 'list'}
+[2025-10-02T09:58:42.397231] Respuesta enviada a ('127.0.0.1', 63997): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T09:59:42.401122] Paquete UDP recibido de ('127.0.0.1', 54447)
+[2025-10-02T09:59:42.403644] entrada request: {'type': 'list'}
+[2025-10-02T09:59:42.404969] Salida request: {'type': 'list'}
+[2025-10-02T09:59:42.406123] Respuesta enviada a ('127.0.0.1', 54447): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '127.0.0.5', 'port': 5003}
+[2025-10-02T10:16:21.361074] Cargada configuración desde file_permissions_config.json_chris
+[2025-10-02T10:16:21.362784] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T10:16:21.365784] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:16:21.370288] Servidor UDP iniciado en 0.0.0.0:50003
+[2025-10-02T10:16:21.371361] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:16:21.886598] Configuración cargada desde file_permissions_config_gus.json
+[2025-10-02T10:16:21.888003] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T10:16:21.889006] Este DNS anunciará la IP del servidor de archivos: 172.26.160.8:5007
+[2025-10-02T10:16:21.893022] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:16:21.898813] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:43:57.959031] Cargada configuración desde file_permissions_config.json_chris
+[2025-10-02T10:43:57.960608] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T10:43:57.964308] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:43:57.968648] Servidor UDP iniciado en 0.0.0.0:50003
+[2025-10-02T10:43:57.969606] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:43:58.516244] Configuración cargada desde file_permissions_config_gus.json
+[2025-10-02T10:43:58.517679] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T10:43:58.519613] Este DNS anunciará la IP del servidor de archivos: 172.26.160.8:5007
+[2025-10-02T10:43:58.524661] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:43:58.529247] Servidor DNS iniciado y escuchando en 0.0.0.0:50002
+[2025-10-02T10:43:58.530371] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:48:57.973686] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:48:58.534497] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:53:57.978756] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:53:58.538735] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:55:31.950878] Cargada configuración desde file_permissions_config.json_chris
+[2025-10-02T10:55:31.952800] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T10:55:31.956950] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:55:31.962065] Configuración guardada en file_permissions_config.json_chris
+[2025-10-02T10:55:32.430317] Configuración cargada desde file_permissions_config_gus.json
+[2025-10-02T10:55:32.431935] Iniciando servidor de nombres de recursos de archivo.
+[2025-10-02T10:55:32.433608] Este DNS anunciará la IP del servidor de archivos: 172.26.160.8:5007
+[2025-10-02T10:55:32.438108] Configuración guardada en file_permissions_config_gus.json
+[2025-10-02T10:55:32.443187] Servidor DNS iniciado y escuchando en 0.0.0.0:50002
+.json
+[2025-10-02T10:55:39.722553] Paquete UDP recibido de ('127.0.0.1', 64929)
+[2025-10-02T10:55:39.724119] entrada request: {'type': 'list'}
+[2025-10-02T10:55:39.725762] Salida request: {'type': 'list'}
+[2025-10-02T10:55:39.727041] Respuesta enviada a ('127.0.0.1', 64929): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '172.26.160.8', 'port': 5003}
+[2025-10-02T10:56:39.764386] Paquete UDP recibido de ('127.0.0.1', 49552)
+[2025-10-02T10:56:39.766085] entrada request: {'type': 'list'}
+[2025-10-02T10:56:39.768073] Salida request: {'type': 'list'}
+[2025-10-02T10:56:39.769343] Respuesta enviada a ('127.0.0.1', 49552): {'response': 'ACK', 'files': [{'name': 'manual', 'extension': 'txt'}, {'name': 'nuevo_s2', 'extension': 'txt'}, {'name': 'guia', 'extension': 'txt'}, {'name': 'libro2', 'extension': 'txt'}], 'count': 4, 'ip': '172.26.160.8', 'port': 5003}

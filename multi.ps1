@@ -24,7 +24,7 @@ $folderGus = Join-Path $basePath 'archivos_server_gus'
 
 
 # --- Lanzamos cada proceso con su comando específico ---
-Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$dnsGeneralScript`""
+#Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$dnsGeneralScript`""
 Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$serverNombresScript`" `"$folderServer1`""
 Start-Process -FilePath "cmd.exe" -ArgumentList "/k python `"$serverDanScript`""
 # --- CAMBIO: Le pasamos la ruta a Marco como argumento ---

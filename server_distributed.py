@@ -87,7 +87,7 @@ class ServidorDistribuido:
         """Consulta la lista de archivos publicados desde el DNS local y actualiza el estado interno."""
         self.log(f"Sincronizando con DNS local '{self.dns_local_id}'...")
         request = {"accion": "listar_archivos"}
-        response = self.translator._try_resolve(request, self.dns_local_id)
+        response = self.translator._try_resolve(request, self.dns_local_id, caller_context='internal')
         
         if response and response.get("status") == "ACK":
             archivos_remotos = response.get("archivos", [])

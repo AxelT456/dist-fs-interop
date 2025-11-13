@@ -1,46 +1,46 @@
 {
-  "comment": "CONFIGURACIÓN EXCLUSIVA PARA PRUEBAS LOCALES",
+  "comment": "CONFIGURACIoN FINAL PARA MuLTIPLES MaQUINAS",
   "mode": "distributed",
   "dns_general": {
-    "listen_ip": "127.0.0.1",
-    "connect_ip": "127.0.0.1",
+    "listen_ip": "0.0.0.0",
+    "connect_ip": "172.26.164.194",
     "port": 50005
   },
   "peers": {
     "SERVER1": {
       "id_dns_cliente": "DNS1",
-      "dns_ip": "127.0.0.2",
+      "dns_ip": "127.0.0.1",
       "dns_port": 50000,
-      "server_ip": "127.0.0.2",
+      "server_ip": "10.148.190.101",
       "server_port": 5002
     },
     "SERVER_MARCO": {
       "id_dns_cliente": "DNS_MARCO",
-      "dns_ip": "127.0.0.3",
+      "dns_ip": "127.0.0.1",
       "dns_port": 50001,
-      "server_ip": "127.0.0.3",
+      "server_ip": "172.26.164.194",
       "server_port": 5005
-    },
-    "server_gus": {
-      "id_dns_cliente": "DNS_GUS",
-      "dns_ip": "127.0.0.4",
-      "dns_port": 50002,
-      "server_ip": "127.0.0.4",
-      "server_port": 5007
     },
     "server_christian": {
       "id_dns_cliente": "DNS2",
-      "dns_ip": "127.0.0.5",
+      "dns_ip": "127.0.0.1",
       "dns_port": 50003,
-      "server_ip": "127.0.0.5",
+      "server_ip": "10.71.157.52",
       "server_port": 5003
     },
     "server_dan": {
       "id_dns_cliente": "DNS_DAN",
-      "dns_ip": "127.0.0.6",
+      "dns_ip": "127.0.0.1",
       "dns_port": 50004,
-      "server_ip": "127.0.0.6",
+      "server_ip": "10.71.157.102", 
       "server_port": 5006
+    },
+    "server_gus": {
+      "id_dns_cliente": "DNS_GUS",
+      "dns_ip": "127.0.0.1",
+      "dns_port": 50002,
+      "server_ip": "10.71.157.79",
+      "server_port": 5007
     }
   }
 }
