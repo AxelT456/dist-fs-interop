@@ -1,9 +1,7 @@
 # /src/network/peer_conector.py
 
 import json
-from typing import Dict, Tuple, Optional, Callable
-
-# --- Importaciones ---
+from typing import Dict, Tuple, Callable
 from .transport import ReliableTransport
 from .security import SecureSession, dh_generate_private_key, dh_generate_public_key, dh_calculate_shared_secret
 
@@ -12,31 +10,22 @@ class PeerConnector:
         self.transport = transport_layer
         self.server_id = server_id
         self.sessions: Dict[Tuple[str, int], SecureSession] = {}
-        self.pending_handshakes: Dict[Tuple[str, int], dict] = {}
+        # Guarda la clave privada del cliente durante el handshake
+        self.pending_handshakes: Dict[Tuple[str, int], int] = {} 
         self.on_message_callback = on_message_callback
 
-    def connect_and_secure(self, peer_addr: Tuple[str, int]):
-        """Inicia un handshake de seguridad con un peer cuya dirección ya conocemos."""
-        if peer_addr in self.sessions:
-            print(f"[PeerConnector] Ya existe una sesión segura con {peer_addr}.")
-            return
-
+    def connect_and_secure(self, peer_addr: Tuple[str, int]) -> bool:
+        if not self.transport.connect(peer_addr):
+            print(f"Fallo al establecer la conexión de transporte con {peer_addr}")
+            return False
+        
+        print(f"[PeerConnector] Transporte OK. Iniciando handshake de seguridad con {peer_addr}...")
         try:
-            # Primero establecer conexión de transporte
-            if not self.transport.connect(peer_addr):
-                print(f"No se pudo establecer conexión de transporte con {peer_addr}")
-                return
-
-            print(f"[PeerConnector] Iniciando handshake de seguridad con {peer_addr}...")
             private_key = dh_generate_private_key()
             public_key = dh_generate_public_key(private_key)
             
-            # Guardar información del handshake
-            self.pending_handshakes[peer_addr] = {
-                'private_key': private_key,
-                'client_id': self.server_id,
-                'is_client': True
-            }
+            # Guarda la clave privada para usarla al recibir la respuesta
+            self.pending_handshakes[peer_addr] = private_key
             
             hello_msg = {
                 "type": "HANDSHAKE_HELLO",
@@ -44,104 +33,78 @@ class PeerConnector:
                 "public_key": public_key
             }
             self.transport.send_data(hello_msg, peer_addr)
+            return True
         except Exception as e:
-            print(f"Error al iniciar el handshake: {e}")
+            print(f"Error al iniciar el handshake de seguridad: {e}")
+            return False
 
     def handle_incoming_packet(self, payload: Dict, addr: Tuple[str, int]):
-        """Punto de entrada que delega los paquetes entrantes."""
         msg_type = payload.get("type")
-
         if msg_type == "HANDSHAKE_HELLO":
             self._handle_handshake_hello(payload, addr)
         elif msg_type == "HANDSHAKE_REPLY":
             self._handle_handshake_reply(payload, addr)
-        else:
+        elif addr in self.sessions:
             self._process_application_message(payload, addr)
 
     def _handle_handshake_hello(self, payload: Dict, addr: Tuple[str, int]):
-        """Manejador para el lado servidor del handshake."""
         print(f"[PeerConnector] Recibido HANDSHAKE_HELLO de {addr}")
         try:
-            private_key = dh_generate_private_key()
-            public_key = dh_generate_public_key(private_key)
-            shared_secret = dh_calculate_shared_secret(payload["public_key"], private_key)
+            server_private_key = dh_generate_private_key()
+            server_public_key = dh_generate_public_key(server_private_key)
+            shared_secret = dh_calculate_shared_secret(payload["public_key"], server_private_key)
             
-            # Crear IDs determinísticos para la derivación de claves
-            client_id = payload["server_id"]
-            server_id = self.server_id
-            
-            print(f"[PeerConnector] Derivando claves del servidor: client_id={client_id}, server_id={server_id}")
+            client_id, server_id = payload["server_id"], self.server_id
             
             session = SecureSession()
-            session.derive_keys(shared_secret, client_id, server_id, is_client=False)
+            session.derive_keys(shared_secret, client_id, server_id)
             self.sessions[addr] = session
             
-            reply_msg = {
-                "type": "HANDSHAKE_REPLY",
-                "server_id": self.server_id,
-                "public_key": public_key
-            }
+            reply_msg = { "type": "HANDSHAKE_REPLY", "server_id": self.server_id, "public_key": server_public_key }
             self.transport.send_data(reply_msg, addr)
-            print(f"[PeerConnector] Sesión segura establecida con {addr} (lado servidor).")
+            print(f"[PeerConnector] ✅ Sesión segura establecida con {addr} (lado servidor).")
         except Exception as e:
             print(f"Error en handshake (servidor): {e}")
 
     def _handle_handshake_reply(self, payload: Dict, addr: Tuple[str, int]):
-        """Manejador para el lado cliente del handshake."""
         print(f"[PeerConnector] Recibido HANDSHAKE_REPLY de {addr}")
         if addr not in self.pending_handshakes:
             return
 
         try:
-            handshake_info = self.pending_handshakes.pop(addr)
-            private_key = handshake_info['private_key']
-            client_id = handshake_info['client_id']
-            shared_secret = dh_calculate_shared_secret(payload["public_key"], private_key)
-            
-            # Crear IDs para la derivación de claves
-            server_id = payload["server_id"]
-            
-            print(f"[PeerConnector] Derivando claves del cliente: client_id={client_id}, server_id={server_id}")
+            # ¡Usa la clave privada original que guardamos!
+            client_private_key = self.pending_handshakes.pop(addr)
+            shared_secret = dh_calculate_shared_secret(payload["public_key"], client_private_key)
+
+            client_id, server_id = self.server_id, payload["server_id"]
             
             session = SecureSession()
-            session.derive_keys(shared_secret, client_id, server_id, is_client=True)
+            session.derive_keys(shared_secret, client_id, server_id)
             self.sessions[addr] = session
-            print(f"[PeerConnector] Sesión segura establecida con {addr} (lado cliente).")
+            print(f"[PeerConnector] ✅ Sesión segura establecida con {addr} (lado cliente).")
         except Exception as e:
             print(f"Error en handshake (cliente): {e}")
 
     def _process_application_message(self, encrypted_payload: Dict, addr: Tuple[str, int]):
-        """Descifra y delega el mensaje de aplicación al MainServer."""
         session = self.sessions.get(addr)
-        if not session:
-            print(f"No hay sesión segura con {addr} para descifrar mensaje")
-            return
-
+        if not session: return
         try:
             plaintext_bytes = session.decrypt(encrypted_payload)
             request = json.loads(plaintext_bytes.decode('utf-8'))
-            print(f"[PeerConnector] Mensaje descifrado de {addr}: {request.get('accion', 'unknown')}")
-            if self.on_message_callback:
-                self.on_message_callback(request, addr)
+            self.on_message_callback(request, addr)
         except Exception as e:
-            print(f"Error al descifrar mensaje de {addr}: {e}")
+            print(f"Error al descifrar mensaje: {e}")
 
     def send_message(self, message: Dict, peer_addr: Tuple[str, int]):
-        """Cifra y envía un mensaje de aplicación."""
         session = self.sessions.get(peer_addr)
-        if not session:
-            print(f"No hay sesión segura con {peer_addr}.")
-            return
-
+        if not session: return
         try:
             message_bytes = json.dumps(message).encode('utf-8')
-            print(f"[PeerConnector] Enviando mensaje cifrado a {peer_addr}: {message.get('accion', 'unknown')}")
             encrypted_payload = session.encrypt(message_bytes)
             self.transport.send_data(encrypted_payload, peer_addr)
         except Exception as e:
             print(f"Error al enviar mensaje cifrado: {e}")
 
     def stop(self):
-        """Detiene la capa de transporte subyacente."""
         if self.transport:
             self.transport.stop()

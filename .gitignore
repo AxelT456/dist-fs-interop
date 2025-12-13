@@ -1,0 +1,60 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Logs (Registros de actividad) ---
+*.log
+app.log
+server.log
+dns_general.log
+file_server.log
+
+# --- Configuraciones Locales (JSONs y variantes) ---
+# Ignoramos todos los json para no subir IPs o configs locales
+*.json
+# Ignoramos los backups o configs especificas de usuarios (ej. config.json_axel)
+*.json_*
+
+# --- Carpetas de Almacenamiento de Archivos (Generadas dinámicamente) ---
+# Esto evita que se suban los "libros" o archivos de prueba de cada servidor
+archivos_server_*/
+archivos_server*/
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+# --- Entornos Virtuales (Por si acaso usas uno) ---
+venv/
+env/
+.venv/
+
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# --- Logs y Bases de Datos ---
+*.log
+*.sqlite3
+
+# --- Configuración Local y Temporales ---
+# Ignoramos configs locales generadas dinámicamente, excepto el template
+config_*.json
+!network_config.json
+
+# --- Almacenamiento Dinámico ---
+# Ignoramos las carpetas creadas por el launcher
+archivos_*/
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+.vscode/
+.idea/

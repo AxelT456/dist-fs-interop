@@ -2,30 +2,104 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href='style.css'>
+    <title>Cliente Distribuido</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Archivos Disponibles</title>
 </head>
 <body>
-    <h1>Lista de Archivos</h1>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Nombre del Archivo</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for archivo in archivos %}
-            <tr>
-                <td>{{ archivo }}</td>
-                <td>
-                    <a href="{{ url_for('editar', nombre_archivo=archivo) }}">Editar</a> |
-                    <a href="{{ url_for('descargar', nombre_archivo=archivo) }}">Descargar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <header>
+            <h1>Sistema de Archivos Distribuidos</h1>
+            <div class="connection-status">
+                {% if is_connected %}
+                    <span class="status connected">● Conectado</span>
+                    <form action="{{ url_for('disconnect') }}" method="post" style="display: inline;"><button type="submit" class="btn btn-danger">Desconectar</button></form>
+                {% else %}
+                    <span class="status disconnected">● Desconectado</span>
+                    <form action="{{ url_for('connect') }}" method="post" class="connection-form">
+                        <select name="dns_choice">
+                            <option value="random">Conexión Aleatoria</option>
+                            {% for dns in dns_servers %}
+                                <option value="{{ dns.id }}">{{ dns.description or dns.id }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-primary">Conectar</button>
+                    </form>
+                {% endif %}
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message | safe }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <main>
+            {% if is_connected %}
+            <div class="actions-panel">
+                <a href="{{ url_for('list_files') }}" class="btn btn-success">Desplegar Libros Disponibles</a>
+                <form action="{{ url_for('search_file') }}" method="post" class="search-form">
+                    <input type="text" name="filename" placeholder="Buscar si libro existe...">
+                    <button type="submit" class="btn">Buscar</button>
+                </form>
+            </div>
+            
+            {% if local_files is defined and local_files %}
+                <h3 class="server-group-title">Mis Libros (Servidor Actual: {{ current_server_id }})</h3>
+                <div class="file-list">
+                    <ul>
+                        {% for file in local_files %}
+                        <li class="{% if file.is_locked %}locked{% endif %}">
+                            <div class="file-info">
+                                <span>{{ file.nombre_archivo }}</span>
+                                {% if file.is_locked %}<span class="lock-status">🔒 Bloqueado por: {{ file.locked_by }}</span>{% endif %}
+                            </div>
+                            <div class="file-actions">
+                                <a href="{{ url_for('view_file', filename=file.nombre_archivo) }}" class="btn btn-info">Visualizar</a>
+                                {% if file.is_locked %}
+                                    <a href="#" class="btn btn-primary" disabled>Escribir</a>
+                                {% else %}
+                                    <a href="{{ url_for('edit_file', filename=file.nombre_archivo) }}" class="btn btn-primary">Escribir</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if external_files is defined and external_files %}
+                <h3 class="server-group-title">Libros Externos</h3>
+                <div class="file-list">
+                    <ul>
+                        {% for file in external_files %}
+                        <li class="{% if file.is_locked %}locked{% endif %}">
+                            <div class="file-info">
+                                <span>{{ file.nombre_archivo }} (en {{ file.servidor_principal }})</span>
+                                {% if file.is_locked %}<span class="lock-status">🔒 Bloqueado por: {{ file.locked_by }}</span>{% endif %}
+                            </div>
+                            <div class="file-actions">
+                                <a href="{{ url_for('view_file', filename=file.nombre_archivo) }}" class="btn btn-info">Visualizar</a>
+                                {% if file.is_locked %}
+                                    <a href="#" class="btn btn-primary" disabled>Escribir</a>
+                                {% else %}
+                                    <a href="{{ url_for('edit_file', filename=file.nombre_archivo) }}" class="btn btn-primary">Escribir</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% else %}
+                <p>Por favor, conéctate a un servidor para empezar.</p>
+            {% endif %}
+        </main>
+    </div>
 </body>
 </html>

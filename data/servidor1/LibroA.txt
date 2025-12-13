@@ -1,2 +1,0 @@
-Contenido del Libro A
-Este es un libro de ejemplo para el servidor 1.

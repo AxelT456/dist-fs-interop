@@ -33,52 +33,50 @@ class ConnectionState:
         self.fin_acked = False
 
 class ReliableTransport:
-    # ... (el __init__ no cambia) ...
     def __init__(self, host: str, port: int):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.bind((host, port))
-        self.sock.settimeout(0.2)
+        self.sock.settimeout(0.1) # Timeout más corto para agilizar
         self.connections: Dict[Tuple[str, int], ConnectionState] = {}
         print(f"[Transport]   Servidor escuchando en {host}:{port}")
 
-    # --- NUEVO MÉTODO PARA EL CLIENTE ---
     def connect(self, addr: Tuple[str, int]) -> bool:
-        """Inicia el handshake de transporte (lado cliente)."""
-        if addr in self.connections:
-            return True # Ya conectado
+        """Inicia el handshake de transporte (lado cliente) y ESPERA a que se complete."""
+        if addr in self.connections and self.connections[addr].state == "ESTABLISHED":
+            return True
 
         cid = random.randint(1000, 999999)
         st = ConnectionState(addr, cid)
         self.connections[addr] = st
         
-        print(f"[Transport] Enviando SYN a {addr} con CID={cid}")
         syn_msg = {"type": "SYN", "seq": cid}
-        jsend(self.sock, syn_msg, addr)
-        st.last_activity = time.time()
         
-        # Esperar por el SYN-ACK
-        start_time = time.time()
-        while time.time() - start_time < RTO * 3: # Esperar un tiempo razonable
-            try:
-                data, _ = self.sock.recvfrom(65535)
-                msg = json.loads(data.decode("utf-8").strip())
-                if msg.get("type") == "SYN-ACK" and msg.get("ack") == cid + 1:
-                    st.state = "ESTABLISHED"
-                    st.sid = msg["sid"]
-                    st.next_seq_to_send = msg["ack"]
-                    ack_msg = {"type": "ACK", "ack": msg["seq"] + 1, "cid": cid, "sid": st.sid}
-                    jsend(self.sock, ack_msg, addr)
-                    print(f"[Transport] ✅ Conexión establecida con {addr}")
-                    return True
-            except (socket.timeout, json.JSONDecodeError):
-                continue
+        # Intentar enviar SYN y esperar SYN-ACK varias veces
+        for attempt in range(5): # 5 intentos
+            print(f"[Transport] Enviando SYN a {addr} (Intento {attempt + 1})")
+            jsend(self.sock, syn_msg, addr)
+            
+            start_time = time.time()
+            while time.time() - start_time < 1.0: # Esperar 1 segundo por la respuesta
+                try:
+                    data, _ = self.sock.recvfrom(65535)
+                    msg = json.loads(data.decode("utf-8").strip())
+                    if msg.get("type") == "SYN-ACK" and msg.get("ack") == cid + 1:
+                        st.state = "ESTABLISHED"
+                        st.sid = msg["sid"]
+                        st.next_seq_to_send = msg["ack"]
+                        ack_msg = {"type": "ACK", "ack": msg["seq"] + 1, "cid": cid, "sid": st.sid}
+                        jsend(self.sock, ack_msg, addr)
+                        print(f"[Transport] ✅ Conexión establecida con {addr}")
+                        return True
+                except (socket.timeout, json.JSONDecodeError):
+                    continue
         
         print(f"❌ Timeout estableciendo conexión de transporte con {addr}")
         del self.connections[addr]
         return False
 
-    # --- MÉTODOS EXISTENTES (con pequeñas correcciones) ---
-    def _get_or_create_connection(self, addr: Tuple[str, int], msg: Dict) -> ConnectionState:
+    def _get_or_create_connection(self, addr: Tuple[str, int], msg: Dict) -> Optional[ConnectionState]:
         if addr in self.connections:
             return self.connections[addr]
         
@@ -90,36 +88,33 @@ class ReliableTransport:
             st = ConnectionState(addr, cid, sid)
             self.connections[addr] = st
             
-            print(f"[Transport] SYN recibido de {addr}, CID={cid}, generando SID={sid}")
             synack = {"type": "SYN-ACK", "seq": sid, "ack": cid + 1, "cid": cid, "sid": sid}
             jsend(self.sock, synack, addr)
-            st.last_activity = time.time()
             return st
         return None
 
     def _handle_ack(self, st: ConnectionState, msg: Dict):
         ack = msg.get("ack")
         if ack is None: return
-        st.last_activity = time.time()
 
         if st.state == "SYN_RCVD" and ack == st.expected_final_ack:
             st.state = "ESTABLISHED"
-            print(f"[Transport] ✅ Conexión establecida con {st.addr}")
+            print(f"[Transport] ✅ Conexión establecida con {st.addr} (lado servidor)")
             return
 
         if st.state == "ESTABLISHED" and st.waiting_ack_for is not None:
             if ack >= st.waiting_ack_for:
                 st.waiting_ack_for = None
-                st.last_sent_payload = None
-                st.dup_ack_count = 0
-                st.last_ack_val = ack
 
     def send_data(self, payload: Dict, addr: Tuple[str, int]):
         st = self.connections.get(addr)
+        # Verificación crucial: solo enviar si la conexión está ESTABLISHED
         if not st or st.state != "ESTABLISHED":
-            print(f"❌ [Transport] Error: Conexión con {addr} no está establecida. Estado: {st.state if st else 'N/A'}")
-            return
-            
+            if not self.connect(addr):
+                 print(f"❌ [Transport] Fallo al conectar. No se puede enviar data a {addr}")
+                 return
+            st = self.connections.get(addr) # Re-obtener el estado de conexión
+
         msg = {
             "type": "DATA",
             "seq": st.next_seq_to_send,
@@ -128,18 +123,13 @@ class ReliableTransport:
             "payload": payload
         }
         jsend(self.sock, msg, addr)
-        
-        st.last_sent_payload = payload
-        st.waiting_ack_for = st.next_seq_to_send + 1 # Esperamos ACK para este paquete
-        st.next_seq_to_send += len(json.dumps(payload)) # Simulación de tamaño de paquete
-        st.last_send_time = time.time()
-        st.last_activity = st.last_send_time
+        st.waiting_ack_for = st.next_seq_to_send + len(json.dumps(payload))
+        st.next_seq_to_send = st.waiting_ack_for
 
     def listen(self) -> Tuple[Optional[Dict], Optional[Tuple[str, int]]]:
         try:
             data, addr = self.sock.recvfrom(65535)
         except socket.timeout:
-            self._check_timeouts()
             return None, None
         except OSError:
             return None, None
@@ -163,12 +153,7 @@ class ReliableTransport:
                 return msg.get("payload"), addr
         return None, None
 
-    def _check_timeouts(self):
-        # ... (este método no necesita cambios) ...
-        pass
-    
     def stop(self):
-        print("[Transport] Cerrando el socket.")
         if self.sock:
             self.sock.close()
             self.sock = None
