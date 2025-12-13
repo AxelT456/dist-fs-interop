@@ -100,9 +100,9 @@ def connect():
 
 @app.route('/disconnect', methods=['POST'])
 def disconnect():
-    if 'locked_file' in session and session['locked_file']:
-        client.release_lock(session['locked_file'])
-        session.pop('locked_file', None)
+    # Limpiar cualquier sesión de edición sin liberar bloqueos
+    # (Los bloqueos son manejados por el servidor, no por el cliente)
+    session.pop('editing_file', None)
     client.disconnect()
     flash('Desconectado del servidor.', 'info')
     return redirect(url_for('index'))
@@ -125,68 +125,57 @@ def edit_file(filename):
         flash('Necesitas estar conectado para editar.', 'warning')
         return redirect(url_for('index'))
 
-    # 1. Intentamos solicitar el bloqueo
-    lock_response = client.request_lock(filename)
-
-    if lock_response.get("status") != "BLOQUEO_CONCEDIDO":
-        # --- NUEVA LÓGICA INTELIGENTE ---
-        # Si el bloqueo falla, comprobamos por qué
-        check_response = client.check_lock_status(filename)
-        
-        # Identificamos nuestro propio server_id para la comparación
-        current_server_id = next((d['server_id'] for d in DNS_SERVERS if client.dns_info and d['id'] == client.dns_info['id']), None)
-
-        # Si el archivo está bloqueado, pero por NOSOTROS, permitimos la entrada
-        if check_response.get("bloqueado") and check_response.get("bloqueado_por") == current_server_id:
-            flash(f"Reingresando a la edición de '{filename}', que ya tenías bloqueado.", "info")
-            # Continuamos al paso 3
-        else:
-            # Si está bloqueado por otro, mostramos el error y redirigimos
-            flash(f"No se puede editar: {lock_response.get('mensaje', 'El archivo está bloqueado por otro usuario.')}", 'danger')
-            return redirect(url_for('list_files'))
-    else:
-        # Si el bloqueo fue exitoso la primera vez, lo guardamos en la sesión
-        session['locked_file'] = filename
-        flash(f"Has bloqueado '{filename}' para edición.", 'info')
-
-    # 3. Leemos el contenido del archivo (este código ahora se ejecuta en ambos casos)
+    # NOTE: NO solicitamos bloqueo aquí. El bloqueo será manejado completamente por el servidor
+    # al momento de escribir. Esto evita conflictos de bloqueo doble.
+    
+    # 1. Leemos el contenido del archivo
     read_response = client.read_file(filename)
     content = ""
     if read_response.get("status") == "EXITO":
         content = read_response.get("contenido", "")
     else:
-        flash(f"Advertencia: No se pudo cargar el contenido previo. {read_response.get('mensaje', '')}", 'warning')
+        flash(f"Advertencia: No se pudo cargar el contenido. {read_response.get('mensaje', '')}", 'warning')
 
-    # 4. Renderizamos la plantilla de edición
+    # 2. Guardamos el nombre del archivo en sesión para validar en save_file
+    session['editing_file'] = filename
+    
+    # 3. Renderizamos la plantilla de edición
     return render_template('edit_file.html', filename=filename, content=content)
 
 @app.route('/save', methods=['POST'])
 def save_file():
-    if not client.is_connected or 'locked_file' not in session:
+    if not client.is_connected:
         return redirect(url_for('index'))
-    filename = request.form['filename']
-    content = request.form['content']
-    if session['locked_file'] != filename:
-        flash('Error: Intentando guardar un archivo para el que no tienes bloqueo.', 'danger')
+    
+    filename = request.form.get('filename')
+    content = request.form.get('content', '')
+    
+    # Validar que el usuario esté editando este archivo
+    if 'editing_file' not in session or session['editing_file'] != filename:
+        flash('Error: Intentando guardar un archivo que no estabas editando.', 'danger')
         return redirect(url_for('list_files'))
+    
+    # El servidor maneja todo el bloqueo internamente al escribir
+    # No necesitamos bloqueos del lado del cliente
     response = client.write_file(filename, content)
+    
     if response.get("status") == "EXITO":
-        flash(f"'{filename}' guardado con éxito.", 'success')
+        flash(f"✅ '{filename}' guardado con éxito.", 'success')
     else:
-        flash(f"Error al guardar: {response.get('mensaje')}", 'danger')
-    client.release_lock(filename)
-    session.pop('locked_file', None)
+        flash(f"❌ Error al guardar: {response.get('mensaje', 'Error desconocido')}", 'danger')
+    
+    # Limpiar la sesión de edición
+    session.pop('editing_file', None)
     return redirect(url_for('list_files'))
 
 @app.route('/cancel_edit/<filename>', methods=['GET', 'POST'])
 def cancel_edit(filename):
-    # El resto de la función no necesita cambios
-    if 'locked_file' in session and session['locked_file'] == filename:
-        client.release_lock(filename)
-        session.pop('locked_file', None)
-        # No mostramos mensaje flash en la petición beacon para no generar errores
+    # Simplemente limpiar la sesión de edición
+    # No hay bloqueo del cliente que liberar (es manejado por el servidor)
+    if 'editing_file' in session and session['editing_file'] == filename:
+        session.pop('editing_file', None)
         if request.method == 'GET':
-            flash(f"Edición de '{filename}' cancelada y bloqueo liberado.", 'info')
+            flash(f"Edición de '{filename}' cancelada.", 'info')
     
     if request.method == 'GET':
         return redirect(url_for('list_files'))

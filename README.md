@@ -1,24 +1,83 @@
-# dist-fs-interop
-Un sistema de archivos distribuido peer-to-peer con interoperabilidad entre múltiples servicios DNS personalizados, implementado en Python.
-//
-Para la parte del test se ocupa hacer 
-python initi_data.py                    //crea archivos simulados(no tan simulados)
-python test_dns_server.py               //inicializa lo que serian los dns nuestros (dns por server)
-python test_dns_server.py --server1     //server que compartiriamos creo
-python test_dns_server2.py --server2
-python test_dns_client.py               //inicializa un cliente que se conecta aleatoriamente a un server
+# Sistema de Archivos Distribuido P2P con Interoperabilidad DNS
 
-El flujo de esto es 
-Cliente -> DNS
-DNS -> "mira ip's"
-DNS -> regresa ip del server -> cliente
-Cliente -> Conecta con server -> Server
-Lo implementado fue el translator.py que lo que hace es ser un
-traductor para los diferentes DNS, hace funciones que segun como sea la entrada que pide
-el DNS acomoda para que regrese de esa forma 
-peer_conector parecida a la parte de tranport.py hace la conexion con el cliente o server dependiendo de quien se conecte a donde
-los test que pueden ayudar a haer el main, casos aplicados del uso de esas dos cosas
-pide la ip a traves de que sabe un nombre, se conecte, hace sus cosas y poco mas
-eso si, toca checar el como pide las cosas al server, mas que nada los metodos que faltan
-tiene dentro un query <libro> que lo que hace es buscar el libro en el server actual y en otros servers
-esto a traves de que el server se conecta con otros
+Este proyecto implementa un sistema de archivos distribuido (DFS) resiliente y descentralizado en Python. Cuenta con una arquitectura personalizada que incluye servidores de nombres (DNS) locales y generales, mecanismos de bloqueo de archivos (locking) para consistencia en escrituras, y descubrimiento de pares.
+
+## 🚀 Características
+
+- **Arquitectura Híbrida**: Combina un DNS General (Coordinador) con DNS Locales para resolución de nombres distribuida.
+- **Interoperabilidad**: Sistema de traducción (`Translator`) para comunicar diferentes protocolos de nodos.
+- **Consistencia de Datos**: Implementación de bloqueos (Locks) y Check-in/Check-out para evitar condiciones de carrera.
+- **Persistencia**: Almacenamiento local en cada nodo servidor.
+- **Cliente Interactivo**: CLI basada en `prompt_toolkit` con autocompletado y menús.
+
+## 📋 Requisitos
+
+- Python 3.8+
+- Dependencias listadas en `requirements.txt`
+
+## 🛠️ Instalación
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/dist-fs-interop.git
+cd dist-fs-interop
+```
+
+### 2. Crear y activar entorno virtual (opcional pero recomendado)
+```bash
+python -m venv venv
+
+# En Windows:
+venv\Scripts\activate
+
+# En Unix/MacOS:
+source venv/bin/activate
+```
+
+### 3. Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
+
+## ⚙️ Configuración
+
+El sistema se configura a través de `network_config.json`. Define las IPs y puertos de:
+
+- **DNS General**: El orquestador central.
+- **Peers**: Cada nodo con su servidor de archivos y su DNS local asociado.
+
+## ▶️ Ejecución
+
+El proyecto incluye un lanzador maestro que coordina todos los procesos necesarios para una simulación local completa.
+
+### Iniciar el Sistema Completo
+```bash
+python system_launcher.py
+```
+
+Selecciona la **Opción 4** (Iniciar sistema completo) para levantar el DNS General, los DNS Locales y los Servidores de Archivos automáticamente.
+
+### Iniciar Cliente
+
+En una nueva terminal (o usando la opción 5 del lanzador), ejecuta:
+```bash
+python src/client_distributed.py
+```
+
+## 🏗️ Arquitectura del Proyecto
+```text
+├── network_config.json       # Configuración global de la topología
+├── system_launcher.py        # Script maestro de orquestación
+├── dns_general.py            # Servidor de nombres principal
+├── dns_local_service.py      # Servicio de DNS Local (Instanciable)
+├── server_distributed.py     # Nodo servidor de archivos
+├── src/
+│   ├── client_distributed.py # Cliente CLI
+│   ├── core/                 # Lógica de manejo de archivos
+│   └── network/              # Capa de transporte y seguridad
+└── archivos_server*/         # Directorios de almacenamiento (GitIgnored)
+```
+
+## 🤝 Contribución
+
+Proyecto académico realizado colaborativamente.

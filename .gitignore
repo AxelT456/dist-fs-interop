@@ -29,3 +29,32 @@ Thumbs.db
 venv/
 env/
 .venv/
+
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# --- Logs y Bases de Datos ---
+*.log
+*.sqlite3
+
+# --- Configuración Local y Temporales ---
+# Ignoramos configs locales generadas dinámicamente, excepto el template
+config_*.json
+!network_config.json
+
+# --- Almacenamiento Dinámico ---
+# Ignoramos las carpetas creadas por el launcher
+archivos_*/
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+.vscode/
+.idea/
